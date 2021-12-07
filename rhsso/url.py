@@ -16,7 +16,7 @@ class RestURL:
         target_url = default_scheme + "://"+self.uri.hostname  
 
         if self.uri.port:
-            target_url = target_url + ":" + self.uri.port
+            target_url = target_url + ":" + str(self.uri.port)
 
         return target_url
 
@@ -69,6 +69,10 @@ class RestURL:
 
     def replaceResource(self, origin, replacement):
       self.resources = [replacement if entry==origin else entry for entry in self.resources] 
+
+    def replaceCurrentResourceTarget(self, resReplacementName):
+        popped = self.resources.pop()
+        self.resources.append(resReplacementName)
 
     def buildResURL(self): 
         resource_section = ""

@@ -70,7 +70,7 @@ class Testing_SSO_API(unittest.TestCase):
 
         users = self.kc.build("users", "realm-does-not-exist") 
         silent_fail = users.removeFirstByKV('username', 'aquaman')
-        self.assertEqual(silent_fail, None)
+        self.assertEqual(silent_fail, False)
 
 
     def testing_client_API(self): 
@@ -121,6 +121,32 @@ class Testing_SSO_API(unittest.TestCase):
         self.assertEqual(ammount_of_roles, 2)
 
 
+    def testing_resource_shift_by_crud_api(self):
+        users = self.kc.build("users", self.test_realm)
+        users_list = len(users.findAll().resp().json())
+        self.assertEqual(users_list, 2)
+
+        roles = users.buildNew('groups')
+        state = roles.create({"name": "magic1"}).isOk() 
+        self.assertTrue(state)
+        
+        roles.removeFirstByKV("name", "magic1")
+        roles_list = len(roles.findAll().resp().json())
+        self.assertEqual(roles_list, 1)
+
+
+    def testing_case_sensitive_resource(self):
+        myCaseTrickyUser = {"enabled":'true',"attributes":{},"username":"The Punisher","firstName":"Bruce", "lastName":"Wayne", "emailVerified":""}
+
+        users = self.kc.build('users', self.test_realm) 
+        state = users.create(myCaseTrickyUser).isOk()
+        self.assertTrue(state)
+
+        removed = users.removeFirstByKV('username', 'The Punisher')
+        self.assertTrue(removed)
+
+        is_empty = not users.findFirstByKV('username', 'The Punisher')
+        self.assertTrue(is_empty)
 
     @classmethod
     def setUpClass(self):
@@ -147,8 +173,6 @@ class Testing_SSO_API(unittest.TestCase):
     @classmethod
     def tearDownClass(self):
         remove_state = self.master_realm.remove(self.test_realm)
-
-        
 
 if __name__ == '__main__':
     unittest.main()

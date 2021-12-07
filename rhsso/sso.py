@@ -2,13 +2,14 @@ import requests, json
 from .url import RestURL
 from .crud import KeycloakCRUD
 from .oid import OpenID
-from .patches import Roles
+from .patches import Roles, Users
+from .relational import UserAndGroupRelation
 
 #sso-cvaldezr-dev.apps.sandbox.x8i5.p1.openshiftapps.com
 
 DEBUG = False
 
-factory = {"roles": Roles}
+factory = {"roles": Roles, "users": Users}
 
 class KeycloakAdmin: 
     def __init__(self, conf, url):
@@ -76,5 +77,13 @@ class Keycloak:
         endpoint = self.restURL.copy() 
         endpoint.addResources(["realms", realm, resourceName])
         return self.__create(endpoint, resourceName) 
+
+    def group_joining_api(self, realm): 
+        endpoint = self.restURL.copy() 
+        users = self.build('users', realm)
+        groups = self.build('groups', realm)
+        endpoint.addResources(["realms", realm])
+        return UserAndGroupRelation(users, groups, endpoint)
+
 
     

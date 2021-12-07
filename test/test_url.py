@@ -81,7 +81,10 @@ class Testing_URL_API(unittest.TestCase):
     def testing_getting_target(self):
         self.assertEqual(self.url.target(), "https://my-sso.com")
 
-
+    def testing_replace_current_resource_target(self):
+        url = self.url.copy()
+        url.replaceCurrentResourceTarget('resource-new')
+        self.assertEqual(str(url), "https://my-sso.com/resource-new")
 
 
     def testing_removing_resources(self):
@@ -89,6 +92,11 @@ class Testing_URL_API(unittest.TestCase):
         myURL = self.url.copy()
         myURL.removeResources(["resource1", "res2"])
         self.assertEqual(str(myURL), url)
+
+    def testing_with_ipv4_host(self):
+        url = "http://192.168.1.100:8080/"
+        myURL = RestURL(url)
+        self.assertEqual(str(myURL), url[:-1])
 
 
     @classmethod

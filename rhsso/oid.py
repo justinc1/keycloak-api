@@ -9,7 +9,8 @@ class OpenID:
             if param not in params:
                 raise Exception("Missing parameter on OpenId class: ", param)
 
-   def __raise_error(self, resp, url):
+   @staticmethod
+   def __raise_error(resp, url):
         code = resp.status_code
 
         if code in [404]: 
@@ -36,7 +37,7 @@ class OpenID:
         if resp.status_code == 200: 
             return resp.json()
 
-        self.__raise_error(resp, discovery_url)
+        OpenID.__raise_error(resp, discovery_url)
 
    def __init__(self, credentials, url = None):
         self.__check_params(credentials)
@@ -72,6 +73,6 @@ class OpenID:
             self.token = resp.json()["access_token"]
             return self.token
         else:
-            self.__raise_error(resp, url)
+            OpenID.__raise_error(resp, url)
 
 

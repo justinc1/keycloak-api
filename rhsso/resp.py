@@ -10,6 +10,8 @@ class ResponseHandler:
         if code == 401:
             raise Exception("Server returned 401: Unauthorized. Please check username or password.")
 
+        print('status code: ', code)
+
         json_data = resp.json()
         error_message = json_data["error"] + "--" + json_data["error_description"] 
         raise Exception("Error: " + str(code) + " \n for URL:" + str(url) + " \n Response: " +  error_message)
@@ -28,7 +30,7 @@ class ResponseHandler:
             return self
 
     def isOk(self): 
-        if self.status >= 200 and self.status <208: 
+        if self.status >= 200 and self.status <=208: 
             return True
         else: 
             self.__handle_failure(self.response, self.URL)

@@ -19,6 +19,21 @@ class KeycloakCRUD:
                 'Authorization': 'Bearer '+ self.token
                 }
 
+    def extend(self, list_res): 
+        newURL = self.resource_url.copy()
+        newURL.addResources(list_res)
+
+        return KeycloakCRUD(str(newURL), self.token) 
+
+    def getURL(self):
+        return self.resource_url
+
+
+    def buildNew(self, resourceName): 
+        newURL = self.resource_url.copy()
+        newURL.replaceCurrentResourceTarget(resourceName)
+        return KeycloakCRUD(str(newURL), self.token) 
+        
     def __target(self, _id):
         url = self.resource_url.copy()
         url.addResource(_id)
@@ -26,10 +41,10 @@ class KeycloakCRUD:
     
     def create(self, obj):
         ret = requests.post(self.resource_url, data=json.dumps(obj), headers=self.getHeaders() )
-
         return self.resp.handleResponse(ret)
 
     def update(self, _id, obj):
+        target = str(self.__target(_id))
         ret = requests.put(str(self.__target(_id)), data=json.dumps(obj), headers=self.getHeaders() )
         return self.resp.handleResponse(ret)
 
@@ -47,14 +62,14 @@ class KeycloakCRUD:
         try: 
             rows = self.findAll().verify().resp().json()
             for row in rows: 
-                if row[key] == value:
+                if row[key].lower() == value.lower():
                     return row
 
         except Exception as E: 
             if "404" in str(E): 
-                return None 
+                return False 
 
-        return None
+        return False
 
     def updateUsingKV(self, key, value, obj): 
         res_data = self.findFirstByKV(key,value)
@@ -64,10 +79,7 @@ class KeycloakCRUD:
             res_data.update(obj)
             return self.update(data_id, res_data).isOk() 
         else:
-            return None
-
-
-
+            return False
 
     def removeFirstByKV(self, key, value): 
         row = self.findFirstByKV(key,value)
@@ -75,12 +87,11 @@ class KeycloakCRUD:
         if row:
             return self.remove(row['id']).isOk()
         else:
-            return None
-
+            return False
 
     def existByKV(self, key, value): 
         ret = self.findFirstByKV(key, value)
-        return ret != None
+        return ret != False
 
     def findAll(self):
         ret = requests.get(self.resource_url, headers=self.getHeaders())
@@ -94,8 +105,4 @@ class KeycloakCRUD:
                 return False
             else: 
                 raise E
-
-
-            
-
 
