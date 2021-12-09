@@ -2,16 +2,11 @@ import requests, json
 from .resp import ResponseHandler
 from .url import RestURL
 
-DEBUG = False
-
 class KeycloakCRUD:
     def __init__(self, url, token): 
         self.resource_url = RestURL(url)
         self.token = token
         self.resp = ResponseHandler(url)
-
-        if DEBUG: 
-            print("url: ", self.resource_url)
 
     def getHeaders(self):
         return {
@@ -27,7 +22,6 @@ class KeycloakCRUD:
 
     def getURL(self):
         return self.resource_url
-
 
     def buildNew(self, resourceName): 
         newURL = self.resource_url.copy()
@@ -57,6 +51,10 @@ class KeycloakCRUD:
         ret = requests.get(str(self.__target(_id)), headers=self.getHeaders())
         #return ResponseHandler(ret).resp().json()
         return self.resp.handleResponse(ret)
+
+
+    def findFirst(self, params): 
+        return self.findFirstByKV(params['key'], params['value'])
 
     def findFirstByKV(self, key, value):
         try: 

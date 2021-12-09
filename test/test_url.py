@@ -93,6 +93,17 @@ class Testing_URL_API(unittest.TestCase):
         myURL.removeResources(["resource1", "res2"])
         self.assertEqual(str(myURL), url)
 
+    def testing_adding_none_values_to_resources(self):
+        urlString = "https://my-sso.com"
+        url = RestURL(urlString)
+        url.addResource(None, None)
+        url.addResources([None, None, None])
+
+        self.assertEqual(urlString, str(url))
+
+        url.addResources([None, None, None, "id", "5"])
+        self.assertEqual("https://my-sso.com/id/5", str(url))
+
     def testing_with_ipv4_host(self):
         url = "http://192.168.1.100:8080/"
         myURL = RestURL(url)

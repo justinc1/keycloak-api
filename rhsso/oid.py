@@ -1,5 +1,5 @@
 import requests, json
-from .url import RestURL
+from .rest import RestURL
 
 class OpenID: 
    def __check_params(self, params):
@@ -29,8 +29,7 @@ class OpenID:
    # Retrieves the Well Known Endpoint: https://openid.net/specs/openid-connect-discovery-1_0.html 
    @staticmethod
    def discover(url, realm): 
-        discovery_url = url.copy()
-        discovery_url.addResources(['auth', 'realms', realm, '.well-known', 'openid-configuration'])
+        discovery_url = RestURL(url, ['auth', 'realms', realm, '.well-known', 'openid-configuration'])
 
         resp = requests.get(url=str(discovery_url))
 
@@ -47,7 +46,7 @@ class OpenID:
         self.token = None
 
         if url: 
-            self.urlObject = RestURL(url) 
+            self.urlObject = url 
 
 
    @staticmethod 
@@ -63,7 +62,7 @@ class OpenID:
         return OpenID(__props)
 
    def getToken(self, target_url = None):
-        url = RestURL(target_url) if target_url else self.urlObject
+        url = target_url if target_url else self.urlObject
 
         token_endpoint = OpenID.discover(url, self.realm)['token_endpoint']
 

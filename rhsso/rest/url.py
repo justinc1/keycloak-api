@@ -46,11 +46,12 @@ class RestURL:
     def setId(self, _id):
         self.addResource(_id)
 
-    def addResources(self, list_res):
-        for res in list_res: 
-            self.pushResource(res)
+    def addResources(self, resources):
+        for resource in resources: 
+            if resource:
+                self.pushResource(resource)
 
-    def addResource(self, name, value = None):
+    def addResource(self, name = None, value = None):
         if name:
             self.pushResource(name)
         if value: 

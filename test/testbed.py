@@ -1,4 +1,4 @@
-from rhsso import OpenID, KeycloakAdmin, Keycloak
+from rhsso import OpenID, Keycloak
 
 def readFromJSON(filename):
     with open(filename) as json_file:
@@ -9,11 +9,19 @@ class TestBed:
         token = OpenID.createAdminClient(username, password).getToken(endpoint)
         self.kc = Keycloak(token, endpoint)
         self.master_realm = self.kc.admin()
-        
+        self.realm = realm 
+
+    def createRealms(self):
+        realm = self.realm
         self.master_realm.create({"enabled": "true", "id": realm, "realm": realm})
 
-
-        self.realm = realm 
+    def createGroups(self):
+        group = self.kc.build('groups', self.realm)
+        g_creation_state = group.create({"name": "DC"}).isOk()
+        roles = self.kc.build('roles', self.realm)
+        roles.create({"name": "level-1"}).isOk() 
+        roles.create({"name": "level-2"}).isOk() 
+        roles.create({"name": "level-3"}).isOk() 
 
 
     def createClients(self):
@@ -36,11 +44,8 @@ class TestBed:
         for usr in test_users: 
             users.create(usr).isOk()
 
-
-
     def goodBye(self): 
         remove_state = self.master_realm.remove(self.realm)
-
 
     def getKeycloak(self):
         return self.kc

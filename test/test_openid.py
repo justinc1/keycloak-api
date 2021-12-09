@@ -1,5 +1,5 @@
 import unittest, time
-from rhsso import OpenID, KeycloakAdmin,RestURL
+from rhsso import OpenID, RestURL
 
 wrong_URL = 'https://sso-cvaldezr-dev.apps.sandbox.x8i5.p1.openshiftapps.com'
 good_URL = 'https://sso-cvaldezr-stage.apps.sandbox-m2.ll9k.p1.openshiftapps.com'

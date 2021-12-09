@@ -1,5 +1,5 @@
 import unittest, time
-from rhsso import OpenID, KeycloakAdmin,RestURL
+from rhsso import OpenID, RestURL
 from .testbed import TestBed 
 import json
 
@@ -10,8 +10,6 @@ ADMIN_USER = "admin"
 ADMIN_PSW  = "admin1234"
 REALM = "test_heroes_test"
 ENDPOINT = 'https://sso-cvaldezr-stage.apps.sandbox-m2.ll9k.p1.openshiftapps.com'
-
-
 
 class Testing_User_API(unittest.TestCase):
     
@@ -46,6 +44,7 @@ class Testing_User_API(unittest.TestCase):
     @classmethod
     def setUpClass(self):
         self.testbed = TestBed(REALM, ADMIN_USER, ADMIN_PSW, ENDPOINT)
+        self.testbed.createRealms()
         self.testbed.createUsers()
         self.testbed.createClients()
         

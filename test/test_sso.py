@@ -1,5 +1,5 @@
 import unittest, time
-from rhsso import OpenID, KeycloakAdmin, Keycloak
+from rhsso import OpenID, Keycloak
 
 rhsso_host = 'sso-cvaldezr-stage.apps.sandbox-m2.ll9k.p1.openshiftapps.com'
 keycloak_root_endpoint = "https://sso-cvaldezr-stage.apps.sandbox-m2.ll9k.p1.openshiftapps.com"

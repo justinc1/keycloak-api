@@ -1,16 +1,16 @@
 import unittest, time
-from rhsso import OpenID, KeycloakAdmin, Keycloak
+from rhsso import OpenID, Keycloak
+from .testbed import TestBed 
 
-rhsso_host = 'sso-cvaldezr-stage.apps.sandbox-m2.ll9k.p1.openshiftapps.com'
-keycloak_root_endpoint = "https://sso-cvaldezr-stage.apps.sandbox-m2.ll9k.p1.openshiftapps.com"
-resource = "my-realm-1"
-USER = "admin"
-PSW  = "admin1234"
+ADMIN_USER = "admin"
+ADMIN_PSW  = "admin1234"
+REALM = "test_heroes_test"
+ENDPOINT = 'https://sso-cvaldezr-stage.apps.sandbox-m2.ll9k.p1.openshiftapps.com'
 
 class Testing_Relational_API(unittest.TestCase):
 
     def testing_adding_user_to_group(self):
-        users = self.kc.build('users', self.test_realm)
+        users = self.kc.build('users', self.realm)
         self.assertTrue(hasattr(users, "joinGroup"))
 
         usr = {"key": "username", "value": "batman"}
@@ -20,13 +20,13 @@ class Testing_Relational_API(unittest.TestCase):
         self.assertTrue(join_state)
 
     def testing_that_group_has_changed(self):
-        users = self.kc.build('users', self.test_realm)
+        users = self.kc.build('users', self.realm)
         self.assertTrue(hasattr(users, "groups"))
         groups = users.groups({"key": "username", "value":"batman"})
         self.assertEqual(groups[0]['name'], 'DC')
 
     def testing_user_leaving_group(self):
-        users = self.kc.build('users', self.test_realm)
+        users = self.kc.build('users', self.realm)
         self.assertTrue(hasattr(users, "joinGroup"))
 
         usr = {"key": "username", "value": "batman"}
@@ -36,43 +36,35 @@ class Testing_Relational_API(unittest.TestCase):
         self.assertTrue(leave_status)
         groups = users.groups(usr)
         self.assertEqual(len(groups), 0)
-        
+
+    def testing_adding_roles_to_group(self): 
+        groups = self.kc.build('groups', self.realm)
+        self.assertTrue(hasattr(groups, "addRealmRoles"))
+
+        #TestBed class will create one group called "DC" 
+        #And three roles called [level-1, level-2, level-3]
+
+        group = {"key":"name", "value":'DC'}
+        state = groups.addRealmRoles(group, ["level-1", "level-2"])
+        self.assertTrue(state)
+
+        realmRoles = groups.getRealmRoles(group)
+        self.assertEqual(len(realmRoles), 2)
 
     @classmethod
     def setUpClass(self):
-        self.test_realm = "realm_for_testing"
-        self.token = OpenID.createAdminClient(USER, PSW).getToken(keycloak_root_endpoint)
-        self.kc = Keycloak(self.token, keycloak_root_endpoint)
-        self.master_realm = self.kc.admin()
+        self.testbed = TestBed(REALM, ADMIN_USER, ADMIN_PSW, ENDPOINT)
+        self.testbed.createRealms()
+        self.testbed.createUsers()
+        self.testbed.createClients()
+        self.testbed.createGroups()
+        self.kc = self.testbed.getKeycloak()
+        self.realm = REALM 
         
-        self.master_realm.create({"enabled": "true", "id": self.test_realm, "realm": self.test_realm})
-        e = self.master_realm.exist(resource)
-
-        test_users = [
-                {"enabled":'true',"attributes":{},"username":"batman","firstName":"Bruce", "lastName":"Wayne", "emailVerified":""}, 
-                {"enabled":'true',"attributes":{},"username":"superman","firstName":"Clark", "lastName":"Kent", "emailVerified":""}, 
-                {"enabled":'true',"attributes":{},"username":"aquaman","firstName":"AAA%", "lastName":"Corrupt", "emailVerified":""}
-        ]
-
-        users = self.kc.build('users', self.test_realm)
-
-        for usr in test_users: 
-            users.create(usr).isOk()
-
-
-        time.sleep(1)
-        if e:
-            self.master_realm.remove(resource)
-
-        group = self.kc.build('groups', self.test_realm)
-        g_creation_state = group.create({"name": "DC"}).isOk()
-
-
     @classmethod
     def tearDownClass(self):
-        remove_state = self.master_realm.remove(self.test_realm)
-
-        
+        self.testbed.goodBye()
+        return True
 
 if __name__ == '__main__':
     unittest.main()
