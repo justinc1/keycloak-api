@@ -49,3 +49,5 @@ class TestBed:
 
     def getKeycloak(self):
         return self.kc
+    def getAdminRealm(self):
+        return self.master_realm

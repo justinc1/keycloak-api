@@ -51,6 +51,10 @@ class Testing_Relational_API(unittest.TestCase):
         realmRoles = groups.getRealmRoles(group)
         self.assertEqual(len(realmRoles), 2)
 
+        groups.removeRealmRoles(group, ["level-1", "level-2"])
+        realmRoles = groups.getRealmRoles(group)
+        self.assertEqual(len(realmRoles), 0)
+
     @classmethod
     def setUpClass(self):
         self.testbed = TestBed(REALM, ADMIN_USER, ADMIN_PSW, ENDPOINT)

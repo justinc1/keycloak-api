@@ -3,6 +3,9 @@ from .resp import ResponseHandler
 from .url import RestURL
 
 class KeycloakCRUD:
+    def __req(self): 
+        return requests 
+
     def __init__(self, url, token): 
         self.resource_url = RestURL(url)
         self.token = token
