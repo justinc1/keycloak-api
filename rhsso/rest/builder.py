@@ -3,8 +3,14 @@ from .groups import Groups
 from .roles import Roles   
 from .users import Users   
 from .url import RestURL
+from .auth_flows import AuthenticationFlows
 
-KCResourceTypes = {"roles": Roles, "users": Users, "groups": Groups}
+KCResourceTypes = {
+        "roles": Roles, 
+        "users": Users, 
+        "groups": Groups, 
+        "authentication": AuthenticationFlows,
+}
 
 class KCResourceBuilder:
     def __URLSetup(self, url):

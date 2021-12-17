@@ -13,6 +13,9 @@ class TestBed:
 
     def createRealms(self):
         realm = self.realm
+        if self.master_realm.existByKV("id", realm): 
+            self.master_realm.removeFirstByKV("id", realm)
+
         self.master_realm.create({"enabled": "true", "id": realm, "realm": realm})
 
     def createGroups(self):

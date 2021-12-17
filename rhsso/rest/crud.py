@@ -30,6 +30,15 @@ class KeycloakCRUD:
         newURL = self.resource_url.copy()
         newURL.replaceCurrentResourceTarget(resourceName)
         return KeycloakCRUD(str(newURL), self.token) 
+
+
+    def removeResources(self, resources):
+        self.resource_url.removeResources(resources)
+        return self
+
+    def addResources(self, resources): 
+        self.resource_url.addResources(resources)
+        return self
         
     def __target(self, _id):
         url = self.resource_url.copy()
@@ -72,6 +81,9 @@ class KeycloakCRUD:
 
         return False
 
+    def all(self):
+        return self.findAll().verify().resp().json()
+
     def updateUsingKV(self, key, value, obj): 
         res_data = self.findFirstByKV(key,value)
 
@@ -95,7 +107,9 @@ class KeycloakCRUD:
         return ret != False
 
     def findAll(self):
-        ret = requests.get(self.resource_url, headers=self.getHeaders())
+        url = str(self.resource_url)
+        print('--->', url)
+        ret = requests.get(url, headers=self.getHeaders())
         return self.resp.handleResponse(ret)
 
     def exist(self, _id):

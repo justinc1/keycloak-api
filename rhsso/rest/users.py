@@ -3,12 +3,12 @@ from .helper import ValidateParams
 
 
 class Users(KeycloakCRUD):
-    def joinGroup(self, user, group): 
-        userID = super().findFirst(user)['id']
-        groupID = super().buildNew('groups').findFirst(group)['id']
+    def joingroup(self, user, group): 
+        userid = super().findfirst(user)['id']
+        groupid = super().buildnew('groups').findfirst(group)['id']
         
-        reqBody = {'groupId': groupID, 'userId': userID} 
-        return super().extend([userID, 'groups']).update(groupID, reqBody)
+        reqbody = {'groupid': groupid, 'userid': userid} 
+        return super().extend([userid, 'groups']).update(groupid, reqbody)
 
     def groups(self, user):
         userID = super().findFirst(user)['id']
