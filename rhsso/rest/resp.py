@@ -4,7 +4,7 @@ class ResponseHandler:
     def __handle_failure(self, resp, url):
         code = resp.status_code
 
-        if code in [503, 500, 409, 404]: 
+        if code in [503, 500, 409, 404, 400]: 
             raise Exception("Server Error: " + str(code) +  " Message: "+ resp.text +  " URL: ", str(url))
 
         if code == 401:

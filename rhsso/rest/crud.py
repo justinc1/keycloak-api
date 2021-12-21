@@ -6,10 +6,50 @@ class KeycloakCRUD:
     def __req(self): 
         return requests 
 
-    def __init__(self, url, token): 
-        self.resource_url = RestURL(url)
+    ''' 
+        The guys at Keycloak don't use standard intuitive Rest path for all the activities,
+        for example to create a car you can do:
+            Post /car, 
+
+        But to delete it you have to do:
+            Delete /dealer/1, 
+
+        Thats why we need this targets dictionary, to be able to modify the target when subclassing.  
+    '''
+    def __populate_targets(self, _url):
+        url = RestURL(_url)
+
+        targets = {
+                    "create": url.copy(),
+                    "update": url.copy(),
+                    "delete": url.copy(),
+                    "read":   url.copy(),
+        }
+        return targets
+        
+    def __init__(self, url = None, token = None, KeycloakAPI = {}): 
         self.token = token
-        self.resp = ResponseHandler(url)
+        self.__targets = {}
+
+        if url:
+            self.resp = ResponseHandler(url)
+            self.__targets = self.__populate_targets(url) 
+        else:
+            self.__targets = KeycloakAPI.make_copy_of_targets()
+
+        if len(self.__targets) < 1:
+            raise Exception('A list of URL targets are required.')
+
+    
+    def getMethod(self, name): 
+        return self.__targets[name]
+
+    def make_copy_of_targets(self):
+        urls = {}
+        for key in self.__targets: 
+            urls[key] = self.__targets[key].copy()
+        return urls 
+
 
     def getHeaders(self):
         return {
@@ -17,67 +57,74 @@ class KeycloakCRUD:
                 'Authorization': 'Bearer '+ self.token
                 }
 
-    def extend(self, list_res): 
-        newURL = self.resource_url.copy()
-        newURL.addResources(list_res)
+    def extend(self, resources): 
+        kc = KeycloakCRUD(None, self.token, KeycloakAPI = self) 
+        kc.addResources(resources)
+        return kc
 
-        return KeycloakCRUD(str(newURL), self.token) 
+    def getURLs(self):
+        return self.__targets 
 
-    def getURL(self):
-        return self.resource_url
-
-    def buildNew(self, resourceName): 
-        newURL = self.resource_url.copy()
-        newURL.replaceCurrentResourceTarget(resourceName)
-        return KeycloakCRUD(str(newURL), self.token) 
-
+    def changeTarget(self, resourceName): 
+        for method in self.__targets: 
+            self.__targets[method].replaceCurrentResourceTarget(resourceName)
 
     def removeResources(self, resources):
-        self.resource_url.removeResources(resources)
+        for url in self.__targets: 
+            url.removeResources(resources)
         return self
+
+    def addResourcesFor(self, name, resources):
+        self.__targets[name].addResources(resources)
 
     def addResources(self, resources): 
-        self.resource_url.addResources(resources)
+        for method in self.__targets: 
+            self.__targets[method].addResources(resources)
         return self
         
-    def __target(self, _id):
-        url = self.resource_url.copy()
-        url.addResource(_id)
-        return url
+    def __target(self, _id, url):
+        return url.copy().addResource(_id)
     
     def create(self, obj):
-        ret = requests.post(self.resource_url, data=json.dumps(obj), headers=self.getHeaders() )
-        return self.resp.handleResponse(ret)
+        url = self.__targets['create']
+        ret = requests.post(url, data=json.dumps(obj), headers=self.getHeaders() )
+        return ResponseHandler(url).handleResponse(ret)
 
     def update(self, _id, obj):
-        target = str(self.__target(_id))
-        ret = requests.put(str(self.__target(_id)), data=json.dumps(obj), headers=self.getHeaders() )
-        return self.resp.handleResponse(ret)
+        url = self.__targets['update']
+        target = str(self.__target(_id, url))
+
+        ret = requests.put(target, data=json.dumps(obj), headers=self.getHeaders() )
+        return ResponseHandler(target).handleResponse(ret)
 
     def remove(self, _id):
-        ret = requests.delete(str(self.__target(_id)), headers=self.getHeaders() )
-        #return ResponseHandler(ret).no_content()
-        return self.resp.handleResponse(ret)
+        url = self.__target(_id, self.__targets['delete'])
+        ret = requests.delete(url, headers=self.getHeaders() )
+        return ResponseHandler(url).handleResponse(ret)
         
-    def findById(self, _id):
-        ret = requests.get(str(self.__target(_id)), headers=self.getHeaders())
-        #return ResponseHandler(ret).resp().json()
-        return self.resp.handleResponse(ret)
+    def get(self, _id):
+        url = self.__targets['read']
+        ret = requests.get(str(self.__target(_id, url)), headers=self.getHeaders())
+        return ResponseHandler(url).handleResponse(ret)
+
+    def findAll(self):
+        url = self.__targets['read']
+        ret = requests.get(url, headers=self.getHeaders())
+        return ResponseHandler(url).handleResponse(ret)
 
 
     def findFirst(self, params): 
         return self.findFirstByKV(params['key'], params['value'])
 
     def findFirstByKV(self, key, value):
-        try: 
-            rows = self.findAll().verify().resp().json()
-            for row in rows: 
-                if row[key].lower() == value.lower():
-                    return row
+        rows = self.findAll().verify().resp().json()
 
-        except Exception as E: 
-            if "404" in str(E): 
-                return False 
+        if not rows:
+            return False
+        
+        for row in rows: 
+            if row[key].lower() == value.lower():
+                return row
 
         return False
 
@@ -106,15 +153,9 @@ class KeycloakCRUD:
         ret = self.findFirstByKV(key, value)
         return ret != False
 
-    def findAll(self):
-        url = str(self.resource_url)
-        print('--->', url)
-        ret = requests.get(url, headers=self.getHeaders())
-        return self.resp.handleResponse(ret)
-
     def exist(self, _id):
         try:
-            return self.findById(_id).isOk()
+            return self.get(_id).isOk()
         except Exception as E: 
             if "404" in str(E):
                 return False

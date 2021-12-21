@@ -3,22 +3,38 @@ from .helper import ValidateParams
 
 
 class Users(KeycloakCRUD):
-    def joingroup(self, user, group): 
-        userid = super().findfirst(user)['id']
-        groupid = super().buildnew('groups').findfirst(group)['id']
+    def __init__(self, url, token, custom_targets = None): 
+        super().__init__(url, token, custom_targets)
+
+        groupsAPI = KeycloakCRUD(token = token, KeycloakAPI=self)
+        groupsAPI.changeTarget('groups')
+        self.findGrp = groupsAPI.findFirst
+
         
-        reqbody = {'groupid': groupid, 'userid': userid} 
-        return super().extend([userid, 'groups']).update(groupid, reqbody)
+
+
+    def __userGroupMappingAPI(self, userID): 
+        kc = KeycloakCRUD(None, self.token, KeycloakAPI = self) 
+        kc.addResources([userID, 'groups'])
+        return kc
+
+    def joinGroup(self, user, group): 
+        userID = self.findFirst(user)['id']
+        groupID = self.findGrp(group)['id']
+
+        requestBody = {'groupId': groupID, 'userId': userID} 
+
+        return self.__userGroupMappingAPI(userID).update(groupID, requestBody)
 
     def groups(self, user):
         userID = super().findFirst(user)['id']
-        return super().extend([userID, 'groups']).findAll().verify().resp().json()
+        return self.__userGroupMappingAPI(userID).all()
 
     def leaveGroup(self, user, group):
-        userID = super().findFirst(user)['id']
-        groupID = super().buildNew('groups').findFirst(group)['id']
+        userID  = super().findFirst(user)['id']
+        groupID = self.findGrp(group)['id']
 
-        return super().extend([userID, 'groups']).remove(groupID)
+        return self.__userGroupMappingAPI(userID).remove(groupID)
 
     # 
     # credentials: {type: "password", value: "passphrases", temporary: true} 
@@ -32,7 +48,10 @@ class Users(KeycloakCRUD):
         
         params.update(credentials)
         ValidateParams(['type', 'value', 'temporary'],params)
+        
+        credentials = KeycloakCRUD(token = self.token, KeycloakAPI=self)
+        credentials.addResources([userID, 'reset-password'])
 
-        return super().extend([userID, 'reset-password']).update('', params)
+        return credentials.update('', params)
 
 

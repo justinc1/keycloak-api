@@ -1,33 +1,58 @@
 from .crud import KeycloakCRUD
 from .helper import ValidateParams
+from .url import RestURL
 import requests, json
 
-def patchCreate(obj, resource): 
-    mutated = obj.extend([resource])
-    obj.create = lambda payload: mutated.create(payload)
+# The keycloak API is a bit crazy here they add with: 
+# Post /parentId/executions/execution 
+# 
+# But they delete with: 
+#
+# DELETE /executions/<id>
+#
+# Sadly we need to customize the URL's in order to make it work.
+#
+#
 
-    return obj
+def FlowBuilder(token, kcAPI, parentFlow):
+    parentFlowAlias = parentFlow['alias']
+    flow = KeycloakCRUD(token = token, KeycloakAPI=kcAPI)
+    flow.addResourcesFor('create',[parentFlowAlias, 'executions', 'flow'])
+    flow.addResourcesFor('read',[parentFlowAlias, 'executions'])
 
+    deleteMethod = flow.getMethod('delete')
+    deleteMethod.replaceResource('flows', 'executions')
 
+    return flow
+    
+def ExecutionBuilder(token, kcAPI, parentFlow):
+    parentFlowAlias = parentFlow['alias']
+    flow = KeycloakCRUD(token = token, KeycloakAPI=kcAPI)
+    flow.addResourcesFor('create',[parentFlowAlias, 'executions', 'execution'])
+    flow.addResourcesFor('read',[parentFlowAlias, 'executions'])
 
+    deleteMethod = flow.getMethod('delete')
+    deleteMethod.replaceResource('flows', 'executions')
+
+    return flow
+ 
 class AuthenticationFlows(KeycloakCRUD):
     def __init__(self, url, token): 
         super().__init__(url, token)
-        
-        #/authentication/flows, is the real root URL for this functionality.
         self.addResources(['flows'])
 
-    def __addChild(self, executionType, authFlow):
-        alias = authFlow['alias']
-        ret_obj = super().extend([alias, 'executions'])
+    # Generate a CRUD object pointing to /realm/<realm>/authentication/flow_alias/executions/flow
+    def flows(self, authFlow):
+        return FlowBuilder( 
+                token=self.token, 
+                kcAPI=self, 
+                parentFlow=authFlow)
 
-        return patchCreate(ret_obj, authFlow) 
+    # Generate a CRUD object pointing to /realm/<realm>/authentication/flow_alias/executions/execution
+    def executions(self, authFlow):
+        return ExecutionBuilder( 
+                token=self.token, 
+                kcAPI=self, 
+                parentFlow=authFlow)
 
-    # Generate a CRUD object pointing to /realm/<realm>/authentication/alias/executions/flow
-    def subFlowFor(self, authFlow):
-        return self.__addChild('flow', authFlow)
-
-    # Generate a CRUD object pointing to /realm/<realm>/authentication/alias/executions/executions
-    def executionFor(self, authFlow):
-        return self.__addChild('execution', authFlow)
 

@@ -47,25 +47,6 @@ class TestingSSOAPI(unittest.TestCase):
         remove_state = realm.remove("my_realm_1")
         self.assertEqual(remove_state, True)
 
-    def testing_client_API(self): 
-        client_payload = {"enabled":True,"attributes":{},"redirectUris":[],"clientId":"deleteme","protocol":"openid-connect"}
-
-        clientAPI = self.admin.buildRealmAPI("clients", self.test_realm)
-        state = clientAPI.create(client_payload)
-        self.assertEqual(state, True)
-
-    def testing_client_API(self): 
-        clientAPI = self.admin.buildRealmAPI("clients", self.test_realm)
-        state = clientAPI.findAll()
-        self.assertEqual(state.status_code, 200)
-     
-
-    def testing_group_API(self):
-        group_payload = {"name":"XX"}
-        group = self.admin.buildRealmAPI("groups", self.test_realm)
-        state = group.create(group_payload)
-        self.assertEqual(state, True)
-
 
     def testing_building_your_own_URL(self):
        my_url =  RestURL("https://sso-cvaldezr-dev.apps.sandbox.x8i5.p1.openshiftapps.com/auth/admin")

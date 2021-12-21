@@ -51,11 +51,14 @@ class RestURL:
             if resource:
                 self.pushResource(resource)
 
+        return self
+
     def addResource(self, name = None, value = None):
         if name:
             self.pushResource(name)
         if value: 
             self.pushResource(value)
+        return self
 
     def removeResources(self, res_list): 
         for res in res_list: 
@@ -74,6 +77,7 @@ class RestURL:
     def replaceCurrentResourceTarget(self, resReplacementName):
         popped = self.resources.pop()
         self.resources.append(resReplacementName)
+        return self
 
     def buildResURL(self): 
         resource_section = ""
