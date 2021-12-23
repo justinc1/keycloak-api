@@ -4,17 +4,14 @@ from .testbed import TestBed
 import json
 import time
 
-USER = 'batman'
-PASSWORD = '1234'
-
-ADMIN_PSW  = "admin1234"
-REALM = "test_heroes_test"
-ENDPOINT = 'https://sso-cvaldezr-stage.apps.sandbox-m2.ll9k.p1.openshiftapps.com'
-
 def create_testing_flows(flows, authenticationFlow):
         for flow in flows:
             state = authenticationFlow.create(flow)
 
+def new_flow_definition(name):
+    flow = {"alias":name,"type":"basic-flow","description":"testing","provider":"registration-page-form"}
+    return dict(flow) 
+        
 class Testing_Authentication_Flows_API(unittest.TestCase):
     def test_flow_api_instantiantion(self):
         flows = self.authenticationFlow.all()
@@ -50,11 +47,13 @@ class Testing_Authentication_Flows_API(unittest.TestCase):
 
     def testing_nested_flows(self): 
         basic_flow = self.flows[0]
-        nestedFlow = {"alias":"_11111_","type":"basic-flow","description":"11111111","provider":"registration-page-form"}
+        name = '--yyyyyyy---'
+        nestedFlow = new_flow_definition(name) 
         nestedExecution = {"provider":"auth-x509-client-username-form"} 
 
         flows = self.authenticationFlow.flows(basic_flow)
-        flows.create(nestedFlow)
+        resp = flows.create(nestedFlow)
+        self.assertTrue(resp.isOk())
 
         nested_flows = flows.all()
         self.assertTrue(len(nested_flows) > 0)
@@ -69,8 +68,52 @@ class Testing_Authentication_Flows_API(unittest.TestCase):
         x509 = executions.findFirstByKV('displayName', 'X509/Validate Username Form')
 
         self.assertIsNotNone(x509)
-        self.assertTrue(len( flows.all() ) == 3)
-        self.assertTrue(len( executions.all() ) == 3)
+        flow_size = len( flows.all() )
+        self.assertEqual(flow_size, 3)
+        
+        execs_size = len( executions.all() )
+        self.assertEqual(execs_size, 3)
+
+
+    def testing_flows_inside_flows(self):
+        parent_flow = self.flows[3]
+        x1_def = new_flow_definition('x1') 
+        x12_def = new_flow_definition('x12') 
+        x123_def = new_flow_definition('x123') 
+        
+        #Top node 
+        #parent --> child x1 
+        parent = self.authenticationFlow.flows(parent_flow)
+        state = parent.create(x1_def).isOk()
+        self.assertTrue(state)
+
+        #Adding child
+        #parent --> child x1 --> x12 
+        x1 = self.authenticationFlow.flows(x1_def)
+        state = x1.create(x12_def).isOk()
+        self.assertTrue(state)
+
+        #Adding nested child
+        #parent --> child x1 --> x12 --> x123 
+        x12 = self.authenticationFlow.flows(x12_def)
+        state = x12.create(x123_def).isOk()
+        self.assertTrue(state)
+        
+        #Adding a nested executor to the last node 
+        #parent --> child x1 --> x12 --> x123  
+        #                                 | 
+        #                                 v 
+        #                             client-x509
+        x123 = self.authenticationFlow.executions(x123_def)
+        execution = {"provider":"docker-http-basic-authenticator"} 
+        state = x123.create(execution).isOk()
+        self.assertTrue(state)
+
+
+        executions = self.authenticationFlow.executions(parent_flow)
+        exec_size = len( parent.all() )
+
+        self.assertEqual(exec_size, 4)
 
 
 
@@ -78,23 +121,31 @@ class Testing_Authentication_Flows_API(unittest.TestCase):
         client_flow = self.flows[1]
         nestedExecution = {"provider":"client-x509"} 
         execs = self.authenticationFlow.executions(client_flow)
-        state = execs.create(nestedExecution)
-        state = execs.create(nestedExecution)
 
-        self.assertTrue(len( execs.all() ) == 2)
+        resp = execs.create(nestedExecution)
+        self.assertTrue(resp.isOk())
+        
+        resp = execs.create(nestedExecution)
+        self.assertTrue(resp.isOk())
+
+        elen = len( execs.all() )
+        self.assertEqual(elen, 2)
 
         execs.removeFirstByKV('providerId', 'client-x509')
 
-        self.assertTrue(len( execs.all() ) == 1)
+        elen = len( execs.all() )
+        self.assertEqual(elen, 1)
         
         execs.removeFirstByKV('providerId', 'client-x509')
 
-        self.assertTrue(len( execs.all() ) == 0)
+        elen = len( execs.all() )
+        self.assertEqual(elen, 0)
+        
 
     def testing_remove_nested_flows(self): 
         basic_flow = self.flows[2]
-        nf1 = {"alias":"_00000_","type":"basic-flow","description":"11111111","provider":"registration-page-form"}
-        nf2 = {"alias":"_22222_","type":"basic-flow","description":"22222222","provider":"registration-page-form"}
+        nf1 = {"alias":"_aaaaaa_","type":"basic-flow","description":"11111111","provider":"registration-page-form"}
+        nf2 = {"alias":"_bbbbbb_","type":"basic-flow","description":"22222222","provider":"registration-page-form"}
 
         flows = self.authenticationFlow.flows(basic_flow)
         state1 = flows.create(nf1)
@@ -142,13 +193,22 @@ class Testing_Authentication_Flows_API(unittest.TestCase):
                 "builtIn":False
         }
         
-        self.flows = [basic_flow, client_flow, basic_flow_2]
+        flow_3 = {
+                "alias":"_nested_",
+                "providerId":"basic-flow",
+                "description":"my_new_basic_flow",
+                "topLevel":True,
+                "builtIn":False
+        }
+        
+        self.flows = [basic_flow, client_flow, basic_flow_2, flow_3 ]
         create_testing_flows(self.flows, self.authenticationFlow)
 
         
     @classmethod
     def tearDownClass(self):
         self.testbed.goodBye()
+        return True
       
 if __name__ == '__main__':
     unittest.main()
