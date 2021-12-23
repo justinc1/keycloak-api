@@ -7,7 +7,6 @@ import time
 USER = 'batman'
 PASSWORD = '1234'
 
-ADMIN_USER = "admin"
 ADMIN_PSW  = "admin1234"
 REALM = "test_heroes_test"
 ENDPOINT = 'https://sso-cvaldezr-stage.apps.sandbox-m2.ll9k.p1.openshiftapps.com'
@@ -15,7 +14,6 @@ ENDPOINT = 'https://sso-cvaldezr-stage.apps.sandbox-m2.ll9k.p1.openshiftapps.com
 def create_testing_flows(flows, authenticationFlow):
         for flow in flows:
             state = authenticationFlow.create(flow)
- 
 
 class Testing_Authentication_Flows_API(unittest.TestCase):
     def test_flow_api_instantiantion(self):
@@ -112,15 +110,13 @@ class Testing_Authentication_Flows_API(unittest.TestCase):
         self.assertTrue(len(flows_list) == 1)
         self.assertEqual(flows_list[0]['displayName'], nf2['alias'])
 
-     
-
     @classmethod
     def setUpClass(self):
-        self.testbed = TestBed(REALM, ADMIN_USER, ADMIN_PSW, ENDPOINT)
+        self.testbed = TestBed()
         self.testbed.createRealms()
         self.testbed.createUsers()
         self.testbed.createClients()
-        self.authenticationFlow = self.testbed.getKeycloak().build('authentication', REALM)
+        self.authenticationFlow = self.testbed.getKeycloak().build('authentication', self.testbed.REALM)
 
         basic_flow = {
                 "alias":"my_new_basic_flow",

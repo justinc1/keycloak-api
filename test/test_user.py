@@ -3,18 +3,10 @@ from rhsso import OpenID, RestURL
 from .testbed import TestBed 
 import json
 
-USER = 'batman'
-PASSWORD = '1234'
-
-ADMIN_USER = "admin"
-ADMIN_PSW  = "admin1234"
-REALM = "test_heroes_test"
-ENDPOINT = 'https://sso-cvaldezr-stage.apps.sandbox-m2.ll9k.p1.openshiftapps.com'
-
 class Testing_User_API(unittest.TestCase):
     
     def test_adding_credentials_with_wrong_params(self):
-        users = self.testbed.getKeycloak().build('users', REALM)
+        users = self.testbed.getKeycloak().build('users', self.REALM)
         user_info = {'key': 'username', 'value': 'batman'}
         user_credentials = {'temporary': False, 'passwordWrongParam':'12345'}
         try: 
@@ -24,7 +16,7 @@ class Testing_User_API(unittest.TestCase):
 
     def test_adding_credentials_to_user(self):
 
-        users = self.testbed.getKeycloak().build('users', REALM)
+        users = self.testbed.getKeycloak().build('users', self.REALM)
         user_info = {'key': 'username', 'value': 'batman'}
         user_credentials = {'temporary': False, 'value':'12345'}
         state = users.updateCredentials(user_info, user_credentials).isOk()
@@ -35,18 +27,19 @@ class Testing_User_API(unittest.TestCase):
             "username": "batman", 
             "password":"12345", 
             "grant_type":"password",
-            "realm" : REALM 
-            }, ENDPOINT)
+            "realm" : self.REALM 
+            }, self.testbed.ENDPOINT)
 
         token = oid_client.getToken()
         self.assertNotEqual(token, None)
 
     @classmethod
     def setUpClass(self):
-        self.testbed = TestBed(REALM, ADMIN_USER, ADMIN_PSW, ENDPOINT)
+        self.testbed = TestBed()
         self.testbed.createRealms()
         self.testbed.createUsers()
         self.testbed.createClients()
+        self.REALM = self.testbed.REALM
         
     @classmethod
     def tearDownClass(self):

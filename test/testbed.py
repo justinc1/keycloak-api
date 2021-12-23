@@ -1,15 +1,22 @@
 from rhsso import OpenID, Keycloak
+import os
 
 def readFromJSON(filename):
     with open(filename) as json_file:
         return json.load(json_file)
 
 class TestBed:
-    def __init__(self, realm, username, password, endpoint): 
-        token = OpenID.createAdminClient(username, password).getToken(endpoint)
-        self.kc = Keycloak(token, endpoint)
+    def __init__(self, realm = None, username = None, password = None, endpoint = None): 
+
+        self.USER = os.getenv('KC_USER')
+        self.PASSWORD = os.environ.get('KC_PASSWORD')
+        self.REALM = os.environ.get('KC_REALM')
+        self.ENDPOINT = os.environ.get('KC_ENDPOINT')
+        
+        token = OpenID.createAdminClient(self.USER, self.PASSWORD).getToken(self.ENDPOINT)
+        self.kc = Keycloak(token, self.ENDPOINT)
         self.master_realm = self.kc.admin()
-        self.realm = realm 
+        self.realm = self.REALM 
 
     def createRealms(self):
         realm = self.realm
@@ -29,7 +36,14 @@ class TestBed:
 
     def createClients(self):
         realm = self.realm
-        client = {"enabled":True,"attributes":{},"redirectUris":[],"clientId":"dc","protocol":"openid-connect", "directAccessGrantsEnabled":True}
+        client = {"enabled":True,
+                  "attributes":{},
+                  "redirectUris":[],
+                  "clientId":"dc",
+                  "protocol":"openid-connect", 
+                  "directAccessGrantsEnabled":True
+                  }
+
         clients = self.kc.build('clients', realm)
         if not clients.create(client).isOk(): 
             raise Exception('Cannot create Client')
@@ -54,3 +68,5 @@ class TestBed:
         return self.kc
     def getAdminRealm(self):
         return self.master_realm
+
+    

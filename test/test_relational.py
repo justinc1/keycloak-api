@@ -57,13 +57,13 @@ class Testing_Relational_API(unittest.TestCase):
 
     @classmethod
     def setUpClass(self):
-        self.testbed = TestBed(REALM, ADMIN_USER, ADMIN_PSW, ENDPOINT)
+        self.testbed = TestBed()
         self.testbed.createRealms()
         self.testbed.createUsers()
         self.testbed.createClients()
         self.testbed.createGroups()
         self.kc = self.testbed.getKeycloak()
-        self.realm = REALM 
+        self.realm = self.testbed.REALM 
         
     @classmethod
     def tearDownClass(self):
