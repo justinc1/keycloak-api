@@ -73,7 +73,7 @@ The constructor takes two parameters:
 
 #### Methods
 
-##### build
+#### build
 This methods build a REST client (capabilities detailed below) targeting a specific Keycloak REST resource.
 
 ```python
@@ -102,7 +102,7 @@ Here is a quick list of supported resources:
 <BR>
 
 
-##### admin
+#### admin
 Similar to the ``build`` method but the client points to the ``master`` realm, allowing us operation such as realm creation.
 
 ```python
@@ -141,7 +141,7 @@ state = users.create(batman).isOk()
 
 Following the example above lets see the methods we have starting with the usual CRUD methods:
 
-###### create
+#### create
 
 This method ``POST`` a dictionary into any given resource:
 
@@ -163,7 +163,7 @@ state = users.create(batman).isOk()
 
 
 
-###### update
+#### update
 
 This method performs a ``PUT`` on the resource.
 
@@ -180,7 +180,7 @@ state = users.update(id, batman_update).isOk()
 - **id**: Id of the resource in Keycloak.
 - **dictionary**: Dictionary representing the updated fields.  
 
-###### remove
+#### remove
 This method sends a ``DELETE`` to the pointed resource.
 
 ```python
@@ -197,7 +197,7 @@ state = users.remove(id).isOk()
 - **dictionary**: Dictionary representing the updated fields.  
 
 
-###### get
+#### get
 Send a ``GET`` request to retrieve a specific Keycloak resource.
 
 ```python
@@ -206,7 +206,7 @@ id = 'bf81a9d9-811f-4807-bd69-3d74eecbe9f4'
 user = users.get(id).response()
 ```
 
-###### all
+#### all
 
 Return all objects of a particular resource type.
 
@@ -216,7 +216,7 @@ users = self.kc.build('users', 'DC')
 # Create a user called batman in DC
 user_list = users.all() # [ {id:'xxx-yyy', username: 'batman', ...} ]   
 ```
-###### findFirst
+#### findFirst
 Finds a resource by passing an arbitrary key/value pair.
 
 ```Python
@@ -225,7 +225,7 @@ users = self.kc.build('users', 'DC')
 users.findFirst({"key":"username", "value": 'batman'})
 ```
 
-###### exist
+#### exist
 Check if a resource matching the provided ``id`` exists:
 ```Python
 users = self.kc.build('users', 'DC')
@@ -234,7 +234,7 @@ id = 'bf81a9d9-811f-4807-bd69-3d74eecbe9f4'
 users.exists(id) #True
 ```
 
-###### existByKV
+#### existByKV
 Check if a resource matching the provided key/value pair, exists.
 
 
@@ -252,7 +252,7 @@ Each **CRUD** method returns a ``ResponseHandler`` class with the following meth
 #### Methods
 
 
-###### response
+##### response
 returns the requests [response object](https://docs.python-requests.org/en/latest/api/#requests.Response).
 
 ```Python
@@ -260,7 +260,7 @@ users.update(id, batman_update).response().status_code #HTTP 201
 ```
 
 
-###### isOk
+##### isOk
 
 Return ``True`` if the request complete  successfully otherwise it will raise an exception.
 
@@ -268,7 +268,7 @@ Return ``True`` if the request complete  successfully otherwise it will raise an
 state = users.update(id, batman_update).isOk() # Return True here.
 ```
 
-###### verify
+##### verify
 
 Does the same as ``isOk`` but it allow you to chain more methods.
 
