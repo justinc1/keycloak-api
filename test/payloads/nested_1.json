@@ -1,0 +1,43 @@
+[
+    {
+        "authenticationFlow": true,
+        "configurable": false,
+        "displayName": "_test_registration_",
+        "flowId": "157a24e0-f13b-4159-b0a8-1224f398a31f",
+        "id": "5b646ef3-5a96-495e-8a74-e713874f090f",
+        "index": 0,
+        "level": 0,
+        "requirement": "REQUIRED",
+        "requirementChoices": [
+            "ALTERNATIVE",
+            "REQUIRED",
+            "DISABLED"
+        ]
+    },
+    {
+        "configurable": false,
+        "displayName": "Basic Auth Challenge",
+        "id": "a5852c5b-84ed-432c-b88b-8aaa8173fe1d",
+        "index": 0,
+        "level": 1,
+        "providerId": "basic-auth",
+        "requirement": "DISABLED",
+        "requirementChoices": [
+            "REQUIRED",
+            "OPTIONAL",
+            "DISABLED"
+        ]
+    },
+    {
+        "configurable": true,
+        "displayName": "X509/Validate Username",
+        "id": "ec2b3277-1a82-4352-9995-00ec92819872",
+        "index": 1,
+        "level": 1,
+        "providerId": "direct-grant-auth-x509-username",
+        "requirement": "DISABLED",
+        "requirementChoices": [
+            "REQUIRED"
+        ]
+    }
+]

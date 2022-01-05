@@ -1,0 +1,113 @@
+[
+    {
+        "authenticationFlow": true,
+        "configurable": false,
+        "displayName": "_xx1_",
+        "flowId": "f45125ec-0939-4c47-94b0-832cee4c163e",
+        "id": "188b49bb-b40e-44fa-9cd3-3c3cbd5f3418",
+        "index": 0,
+        "level": 0,
+        "providerId": "registration-page-form",
+        "requirement": "DISABLED",
+        "requirementChoices": [
+            "REQUIRED",
+            "DISABLED"
+        ]
+    },
+    {
+        "authenticationFlow": true,
+        "configurable": false,
+        "displayName": "__ppppp__",
+        "flowId": "df0a75eb-ed22-446b-b5b6-d098e1d5bd8c",
+        "id": "487571a7-8649-4875-a3a4-f05b94998bfe",
+        "index": 1,
+        "level": 0,
+        "requirement": "DISABLED",
+        "requirementChoices": [
+            "ALTERNATIVE",
+            "REQUIRED",
+            "DISABLED"
+        ]
+    },
+    {
+        "configurable": false,
+        "displayName": "Browser Redirect/Refresh",
+        "id": "6fb24e1e-3ebd-4ccf-908e-21de221528c0",
+        "index": 0,
+        "level": 1,
+        "providerId": "no-cookie-redirect",
+        "requirement": "DISABLED",
+        "requirementChoices": [
+            "REQUIRED"
+        ]
+    },
+    {
+        "authenticationFlow": true,
+        "configurable": false,
+        "displayName": "__x1",
+        "flowId": "be55af9e-c863-4cf9-8269-45d9c091cc08",
+        "id": "c787b98a-446b-482f-a7dc-d15d2f73c084",
+        "index": 2,
+        "level": 0,
+        "requirement": "DISABLED",
+        "requirementChoices": [
+            "ALTERNATIVE",
+            "REQUIRED",
+            "DISABLED"
+        ]
+    },
+    {
+        "authenticationFlow": true,
+        "configurable": false,
+        "displayName": "__x12",
+        "flowId": "03eefc01-873e-4bf7-a217-e01babefe1cc",
+        "id": "b7ed70ab-4e29-488f-aa29-a6cdb53ff14d",
+        "index": 0,
+        "level": 1,
+        "requirement": "DISABLED",
+        "requirementChoices": [
+            "ALTERNATIVE",
+            "REQUIRED",
+            "DISABLED"
+        ]
+    },
+    {
+        "authenticationFlow": true,
+        "configurable": false,
+        "displayName": "__x123",
+        "flowId": "97aaf5ff-7d98-46e5-996e-5a877cc5c886",
+        "id": "ba93cefa-8285-408a-b47f-055d1a51a5bf",
+        "index": 0,
+        "level": 2,
+        "requirement": "DISABLED",
+        "requirementChoices": [
+            "ALTERNATIVE",
+            "REQUIRED",
+            "DISABLED"
+        ]
+    },
+    {
+        "configurable": false,
+        "displayName": "Docker Authenticator",
+        "id": "7cd83de9-47cb-4617-a08a-8d9717ab5c0d",
+        "index": 0,
+        "level": 3,
+        "providerId": "docker-http-basic-authenticator",
+        "requirement": "DISABLED",
+        "requirementChoices": [
+            "REQUIRED"
+        ]
+    },
+    {
+        "configurable": false,
+        "displayName": "Browser Redirect/Refresh",
+        "id": "148e7e61-2021-4e87-bc79-2d77f3a01829",
+        "index": 3,
+        "level": 0,
+        "providerId": "no-cookie-redirect",
+        "requirement": "DISABLED",
+        "requirementChoices": [
+            "REQUIRED"
+        ]
+    }
+]

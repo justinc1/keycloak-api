@@ -55,7 +55,7 @@ class KeycloakCRUD:
         return {
                 'Content-type': 'application/json', 
                 'Authorization': 'Bearer '+ self.token
-                }
+        }
 
     def extend(self, resources): 
         kc = KeycloakCRUD(None, self.token, KeycloakAPI = self) 
@@ -82,35 +82,38 @@ class KeycloakCRUD:
             self.__targets[method].addResources(resources)
         return self
         
-    def __target(self, _id, url):
-        return url.copy().addResource(_id)
+    def __target(self, _id = None, url = None):
+        if _id:
+            return url.copy().addResource(_id)
+        else:
+            return url
     
     def create(self, obj):
         url = self.__targets['create']
         ret = requests.post(url, data=json.dumps(obj), headers=self.getHeaders() )
-        return ResponseHandler(url).handleResponse(ret)
+        return ResponseHandler(url, method='Post').handleResponse(ret)
 
-    def update(self, _id, obj):
+    def update(self, _id=None, obj=None):
         url = self.__targets['update']
         target = str(self.__target(_id, url))
 
         ret = requests.put(target, data=json.dumps(obj), headers=self.getHeaders() )
-        return ResponseHandler(target).handleResponse(ret)
+        return ResponseHandler(target, method='Put').handleResponse(ret)
 
     def remove(self, _id):
         url = self.__target(_id, self.__targets['delete'])
         ret = requests.delete(url, headers=self.getHeaders() )
-        return ResponseHandler(url).handleResponse(ret)
+        return ResponseHandler(url, method='Delete').handleResponse(ret)
         
     def get(self, _id):
         url = self.__targets['read']
         ret = requests.get(str(self.__target(_id, url)), headers=self.getHeaders())
-        return ResponseHandler(url).handleResponse(ret)
+        return ResponseHandler(url, method='Get').handleResponse(ret)
 
     def findAll(self):
         url = self.__targets['read']
         ret = requests.get(url, headers=self.getHeaders())
-        return ResponseHandler(url).handleResponse(ret)
+        return ResponseHandler(url, method='Get').handleResponse(ret)
 
 
     def findFirst(self, params): 

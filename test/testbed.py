@@ -1,4 +1,4 @@
-from rhsso import OpenID, Keycloak
+from kcapi import OpenID, Keycloak
 import os
 
 def readFromJSON(filename):

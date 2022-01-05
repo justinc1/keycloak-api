@@ -1,3 +1,3 @@
-from .rhsso import Keycloak, OpenID
+from .keycloak import Keycloak, OpenID
 
 

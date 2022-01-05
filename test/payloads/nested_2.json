@@ -1,0 +1,122 @@
+[
+    {
+        "authenticationFlow": true,
+        "configurable": false,
+        "displayName": "__x1__",
+        "flowId": "f9e8cfea-2d79-48bb-a808-2a5ec7314155",
+        "id": "38591009-1d16-4826-b71a-c2259563b3bc",
+        "index": 0,
+        "level": 0,
+        "requirement": "DISABLED",
+        "requirementChoices": [
+            "ALTERNATIVE",
+            "REQUIRED",
+            "DISABLED"
+        ]
+    },
+    {
+        "configurable": false,
+        "displayName": "Browser Redirect/Refresh",
+        "id": "e908eee3-09ae-4f84-b573-7634f5645ce1",
+        "index": 0,
+        "level": 1,
+        "providerId": "no-cookie-redirect",
+        "requirement": "DISABLED",
+        "requirementChoices": [
+            "REQUIRED"
+        ]
+    },
+    {
+        "configurable": false,
+        "displayName": "Choose User",
+        "id": "0ea03969-8538-4827-9cdf-9f6a7609f8a6",
+        "index": 1,
+        "level": 1,
+        "providerId": "reset-credentials-choose-user",
+        "requirement": "DISABLED",
+        "requirementChoices": [
+            "REQUIRED"
+        ]
+    },
+    {
+        "configurable": false,
+        "displayName": "Password",
+        "id": "c8675012-b2d4-408b-8e1c-0e93c2a0f76b",
+        "index": 2,
+        "level": 1,
+        "providerId": "direct-grant-validate-password",
+        "requirement": "DISABLED",
+        "requirementChoices": [
+            "REQUIRED",
+            "DISABLED"
+        ]
+    },
+    {
+        "configurable": false,
+        "displayName": "HTTP Basic Authentication",
+        "id": "aa75697a-784a-4e6d-ae4e-630a93644835",
+        "index": 3,
+        "level": 1,
+        "providerId": "http-basic-authenticator",
+        "requirement": "DISABLED",
+        "requirementChoices": [
+            "REQUIRED",
+            "ALTERNATIVE",
+            "OPTIONAL",
+            "DISABLED"
+        ]
+    },
+    {
+        "authenticationFlow": true,
+        "configurable": false,
+        "displayName": "_ppppp_",
+        "flowId": "8dda3d2d-9d88-4d20-9e63-a3a32f1e1559",
+        "id": "9ddd474e-f885-4e04-bb1d-a9e8c35603be",
+        "index": 1,
+        "level": 0,
+        "requirement": "DISABLED",
+        "requirementChoices": [
+            "ALTERNATIVE",
+            "REQUIRED",
+            "DISABLED"
+        ]
+    },
+    {
+        "configurable": false,
+        "displayName": "Browser Redirect/Refresh",
+        "id": "ca060740-66b7-4aa2-b2e3-0f61bc4fbb89",
+        "index": 0,
+        "level": 1,
+        "providerId": "no-cookie-redirect",
+        "requirement": "DISABLED",
+        "requirementChoices": [
+            "REQUIRED"
+        ]
+    },
+    {
+        "configurable": false,
+        "displayName": "Browser Redirect/Refresh",
+        "id": "083b87a8-e49e-45c5-8ff3-951bc7e40056",
+        "index": 1,
+        "level": 1,
+        "providerId": "no-cookie-redirect",
+        "requirement": "DISABLED",
+        "requirementChoices": [
+            "REQUIRED"
+        ]
+    },
+    {
+        "configurable": false,
+        "displayName": "Basic Auth Password+OTP",
+        "id": "8b7bf748-d5c8-4cf7-a39c-56a99008981d",
+        "index": 2,
+        "level": 1,
+        "providerId": "basic-auth-otp",
+        "requirement": "DISABLED",
+        "requirementChoices": [
+            "REQUIRED",
+            "OPTIONAL",
+            "DISABLED"
+        ]
+    }
+]

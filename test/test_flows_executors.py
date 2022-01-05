@@ -1,5 +1,6 @@
 import unittest, time
-from rhsso import OpenID, RestURL
+from kcapi import OpenID, RestURL    
+from kcapi.ie import AuthenticationFlowsImporter   
 from .testbed import TestBed 
 import json
 import time
@@ -11,7 +12,20 @@ def create_testing_flows(flows, authenticationFlow):
 def new_flow_definition(name):
     flow = {"alias":name,"type":"basic-flow","description":"testing","provider":"registration-page-form"}
     return dict(flow) 
-        
+
+def load_sample(fname):
+    f = open(fname)
+    file1 = json.loads(f.read())
+    f.close()
+    return file1
+
+def isConsitent(assertEqual,execs, flows):
+    for index in range(len(flows)):
+        assertEqual(flows[index]['displayName'], execs[index]['displayName'])
+        assertEqual(flows[index]['index'], execs[index]['index'])
+        assertEqual(flows[index]['level'], execs[index]['level'])
+        assertEqual(flows[index]['requirement'], execs[index]['requirement'])
+
 class Testing_Authentication_Flows_API(unittest.TestCase):
     def test_flow_api_instantiantion(self):
         flows = self.authenticationFlow.all()
@@ -75,45 +89,7 @@ class Testing_Authentication_Flows_API(unittest.TestCase):
         self.assertEqual(execs_size, 3)
 
 
-    def testing_flows_inside_flows(self):
-        parent_flow = self.flows[3]
-        x1_def = new_flow_definition('x1') 
-        x12_def = new_flow_definition('x12') 
-        x123_def = new_flow_definition('x123') 
-        
-        #Top node 
-        #parent --> child x1 
-        parent = self.authenticationFlow.flows(parent_flow)
-        state = parent.create(x1_def).isOk()
-        self.assertTrue(state)
 
-        #Adding child
-        #parent --> child x1 --> x12 
-        x1 = self.authenticationFlow.flows(x1_def)
-        state = x1.create(x12_def).isOk()
-        self.assertTrue(state)
-
-        #Adding nested child
-        #parent --> child x1 --> x12 --> x123 
-        x12 = self.authenticationFlow.flows(x12_def)
-        state = x12.create(x123_def).isOk()
-        self.assertTrue(state)
-        
-        #Adding a nested executor to the last node 
-        #parent --> child x1 --> x12 --> x123  
-        #                                 | 
-        #                                 v 
-        #                             client-x509
-        x123 = self.authenticationFlow.executions(x123_def)
-        execution = {"provider":"docker-http-basic-authenticator"} 
-        state = x123.create(execution).isOk()
-        self.assertTrue(state)
-
-
-        executions = self.authenticationFlow.executions(parent_flow)
-        exec_size = len( parent.all() )
-
-        self.assertEqual(exec_size, 4)
 
 
 
@@ -161,6 +137,84 @@ class Testing_Authentication_Flows_API(unittest.TestCase):
         self.assertTrue(len(flows_list) == 1)
         self.assertEqual(flows_list[0]['displayName'], nf2['alias'])
 
+    def testing_flows_inside_flows(self):
+        parent_flow = self.flows[3]
+        x1_def = new_flow_definition('x1') 
+        x12_def = new_flow_definition('x12') 
+        x123_def = new_flow_definition('x123') 
+        
+        #Top node 
+        #parent --> child x1 
+        parent = self.authenticationFlow.flows(parent_flow)
+        state = parent.create(x1_def).isOk()
+        self.assertTrue(state)
+
+        #Adding child
+        #parent --> child x1 --> x12 
+        x1 = self.authenticationFlow.flows(x1_def)
+        state = x1.create(x12_def).isOk()
+        self.assertTrue(state)
+
+        #Adding nested child
+        #parent --> child x1 --> x12 --> x123 
+        x12 = self.authenticationFlow.flows(x12_def)
+        state = x12.create(x123_def).isOk()
+        self.assertTrue(state)
+        
+        #Adding a nested executor to the last node 
+        #parent --> child x1 --> x12 --> x123  
+        #                                 | 
+        #                                 v 
+        #                             client-x509
+        x123 = self.authenticationFlow.executions(x123_def)
+        execution = {"provider":"docker-http-basic-authenticator"} 
+        state = x123.create(execution).isOk()
+        self.assertTrue(state)
+
+        executions = self.authenticationFlow.executions(parent_flow)
+        exec_size = len( parent.all() )
+
+        self.assertEqual(exec_size, 4)
+
+    def testing_import_authentication_flows(self):
+        parent_flow = self.flows[6]
+        publisher = AuthenticationFlowsImporter(self.authenticationFlow) 
+        self.assertIsNotNone(publisher)
+
+        flows = load_sample('./test/payloads/nested.json')
+ 
+        publisher.publish(parent_flow, flows)
+
+        execs = self.authenticationFlow.executions(parent_flow).all()
+        isConsitent(self.assertEqual, flows, execs)
+
+    def testing_import_authentication_flows_2(self):
+        parent_flow = self.flows[5]
+        publisher = AuthenticationFlowsImporter(self.authenticationFlow) 
+        self.assertIsNotNone(publisher)
+
+        flows = load_sample('./test/payloads/nested_2.json')
+ 
+        publisher.publish(parent_flow, flows)
+
+        execs = self.authenticationFlow.executions(parent_flow).all()
+        isConsitent(self.assertEqual, flows, execs)
+
+
+    def testing_import_authentication_flows_1(self):
+        parent_flow = self.flows[4]
+        publisher = AuthenticationFlowsImporter(self.authenticationFlow) 
+        self.assertIsNotNone(publisher)
+
+        flows = load_sample('./test/payloads/nested_1.json')
+ 
+        publisher.publish(parent_flow, flows)
+
+        execs = self.authenticationFlow.executions(parent_flow).all()
+        isConsitent(self.assertEqual, flows, execs)
+
+
+        
     @classmethod
     def setUpClass(self):
         self.testbed = TestBed()
@@ -200,11 +254,34 @@ class Testing_Authentication_Flows_API(unittest.TestCase):
                 "topLevel":True,
                 "builtIn":False
         }
-        
-        self.flows = [basic_flow, client_flow, basic_flow_2, flow_3 ]
+
+        flow_4 = {
+                "alias":"_import_",
+                "providerId":"basic-flow",
+                "description":"my_new_basic_flow",
+                "topLevel":True,
+                "builtIn":False
+        }
+
+        flow_5 = {
+                "alias":"_import_nested_",
+                "providerId":"basic-flow",
+                "description":"my_new_basic_flow",
+                "topLevel":True,
+                "builtIn":False
+        }
+
+        flow_6 = {
+                "alias":"_import_nested_complex_",
+                "providerId":"basic-flow",
+                "description":"my_new_basic_flow",
+                "topLevel":True,
+                "builtIn":False
+        }
+
+        self.flows = [basic_flow, client_flow, basic_flow_2, flow_3, flow_4, flow_5, flow_6]
         create_testing_flows(self.flows, self.authenticationFlow)
 
-        
     @classmethod
     def tearDownClass(self):
         self.testbed.goodBye()
