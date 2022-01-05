@@ -9,9 +9,9 @@ pip install kcapi
 ```
 
 
-## API
+## API
 
-### OpenID
+### OpenID
 
 This class provides takes care of OpenID login using [password owner credentials](https://datatracker.ietf.org/doc/html/rfc6749#section-1.3.3) flow.
 
@@ -99,6 +99,7 @@ Here is a quick list of supported resources:
 
 - **components**: This API allows you configure things like [user federation](https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.0/html/server_administration_guide/user-storage-federation) or [Realm keys](https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.2/html/server_administration_guide/admin_permissions#realm_keys).
 
+<BR>
 
 
 ##### admin
