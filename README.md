@@ -158,7 +158,7 @@ batman = {
 state = users.create(batman).isOk()
 ```
 
-- - **dictionary**: Dictionary with the fields we want to POST to the server.
+- **dictionary**: Dictionary with the fields we want to POST to the server.
 
 
 
@@ -252,7 +252,7 @@ Each **CRUD** method returns a ``ResponseHandler`` class with the following meth
 #### Methods
 
 
-##### response
+#### response
 returns the requests [response object](https://docs.python-requests.org/en/latest/api/#requests.Response).
 
 ```Python
@@ -260,7 +260,7 @@ users.update(id, batman_update).response().status_code #HTTP 201
 ```
 
 
-##### isOk
+#### isOk
 
 Return ``True`` if the request complete  successfully otherwise it will raise an exception.
 
@@ -268,7 +268,7 @@ Return ``True`` if the request complete  successfully otherwise it will raise an
 state = users.update(id, batman_update).isOk() # Return True here.
 ```
 
-##### verify
+#### verify
 
 Does the same as ``isOk`` but it allow you to chain more methods.
 
