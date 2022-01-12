@@ -62,7 +62,7 @@ This class builds all the Keycloak configuration REST resources by using REST co
 #### Constructor
 
 ```Python
-self.kc = Keycloak(token, self.ENDPOINT)
+kc = Keycloak(token, self.ENDPOINT)
 ```
 
 The constructor takes two parameters:
@@ -77,7 +77,7 @@ The constructor takes two parameters:
 This methods build a REST client (capabilities detailed below) targeting a specific Keycloak REST resource.
 
 ```python
-groups = self.kc.build('groups', 'my_realm')
+groups = kc.build('groups', 'my_realm')
 
 # Create a group called DC
 state = groups.create({"name": "DC"}).isOk()
@@ -89,9 +89,9 @@ state = groups.create({"name": "DC"}).isOk()
 
 Here is a quick list of supported resources:
 
-- **groups**:  [groups API](https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.0/html/server_administration_guide/groups).
 - **users**:  [users API](https://access.redhat.com/webassets/avalon/d/red-hat-single-sign-on/version-7.0.0/restapi/#_create_a_new_user).
 - **clients**: [client API](https://access.redhat.com/webassets/avalon/d/red-hat-single-sign-on/version-7.0.0/restapi/#_create_a_new_client).  
+- **groups**:  [groups API](https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.0/html/server_administration_guide/groups).
 - **roles**: [roles API](https://access.redhat.com/webassets/avalon/d/red-hat-single-sign-on/version-7.0.0/restapi/#_create_a_new_role_for_the_realm_or_client_2)
 
 
@@ -99,14 +99,14 @@ Here is a quick list of supported resources:
 
 - **components**: This API allows you configure things like [user federation](https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.0/html/server_administration_guide/user-storage-federation) or [Realm keys](https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.2/html/server_administration_guide/admin_permissions#realm_keys).
 
+- **authentication**: Provide access to built-in and/or custom authentication flows.
 <BR>
-
 
 #### admin
 Similar to the ``build`` method but the client points to the ``master`` realm, allowing us operation such as realm creation.
 
 ```python
-    main_realm = self.kc.admin()
+    main_realm = kc.admin()
 
     # Creates a realm called my_realm
     main_realm.create({"enabled": "true", "id": my_realm, "realm": my_realm})
@@ -131,7 +131,7 @@ batman = {
     "emailVerified":""
 }
 
-users = self.kc.build('users', 'DC')
+users = kc.build('users', 'DC')
 
 # Create a user called batman in DC
 state = users.create(batman).isOk()
@@ -211,7 +211,7 @@ user = users.get(id).response()
 Return all objects of a particular resource type.
 
 ```Python
-users = self.kc.build('users', 'DC')
+users = kc.build('users', 'DC')
 
 # Create a user called batman in DC
 user_list = users.all() # [ {id:'xxx-yyy', username: 'batman', ...} ]   
@@ -220,7 +220,7 @@ user_list = users.all() # [ {id:'xxx-yyy', username: 'batman', ...} ]
 Finds a resource by passing an arbitrary key/value pair.
 
 ```Python
-users = self.kc.build('users', 'DC')
+users = kc.build('users', 'DC')
 
 users.findFirst({"key":"username", "value": 'batman'})
 ```
@@ -228,7 +228,7 @@ users.findFirst({"key":"username", "value": 'batman'})
 #### exist
 Check if a resource matching the provided ``id`` exists:
 ```Python
-users = self.kc.build('users', 'DC')
+users = kc.build('users', 'DC')
 id = 'bf81a9d9-811f-4807-bd69-3d74eecbe9f4'
 
 users.exists(id) #True
@@ -239,7 +239,7 @@ Check if a resource matching the provided key/value pair, exists.
 
 
 ```Python
-users = self.kc.build('users', 'DC')
+users = kc.build('users', 'DC')
 
 users.existByKV({"key":"username", "value": 'batman'}) #False
 ```
@@ -281,4 +281,142 @@ batman_update = {
 id = 'bf81a9d9-811f-4807-bd69-3d74eecbe9f4'
 
 cookies = users.update(id, batman_update).verify().response().cookies # Get cookies.
+```
+
+
+## Specialisations
+
+Some objects provide additional methods like:
+
+
+### Users
+
+#### updateCredentials
+
+Update user credentials.
+
+```js
+user_credentials = {
+          'temporary': False,
+          'value':'12345'
+}
+
+state = users.updateCredentials(user_info, user_credentials).isOk() # Updated user password.
+```
+Where:
+- **temporary**: Boolean where if ``True`` provide a temporary password just for the first login.  
+- **value**: String with the password.
+
+
+#### joinGroup
+
+Add a user into a existing [group](https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.0/html/server_administration_guide/groups).
+
+First we need a group:
+```python
+def createDCGroup():
+  group = kc.build('groups', 'heroes')
+  return group.create({"name": "DC"}).isOk()
+```
+
+Then we can join the group the following way:
+
+```python
+  createDCGroup()
+
+  users = kc.build('users', 'heroes')
+  user = {"key": "username", "value": "batman"}
+  group = {"key": "name", "value": "DC"}
+
+  users.joinGroup(user, group).isOk()
+```
+
+> The API works by matching the first occurrence between the provided ``key/value`` for the two resources (User and Group), this can help in various situation for example if we want to target the user by ``uuid``.
+
+
+Using ``uuid`` as user identifier.
+
+```python
+  createDCGroup()
+
+  users = kc.build('users', 'heroes')
+  user = {"key": "uuid", "value": "23e4567-e89b-..."}
+  group = {"key": "name", "value": "DC"}
+
+  users.joinGroup(user, group).isOk()
+```
+
+Or we want to use the group ``id``:
+
+```python
+  user = {"key": "uuid", "value": "23e4567-e89b-..."}
+  group = {"key": "id", "value": "f8d91722-a1f0-45e..."}
+
+  users.joinGroup(user, group).isOk()
+```
+> If the field criteria don't return a unique value, the first entry in the list will be used.
+#### leaveGroup
+
+Remove a user from a group.
+
+```python
+  createDCGroup()
+
+  users = kc.build('users', 'heroes')
+  user = {"key": "username", "value": "batman"}
+  group = {"key": "uuid", "value": "123e4567-e89b-..."}
+
+  users.leaveGroup(user, group).isOk()
+
+  user = {"key": "uuid", "value": "12d3-a456-4"}
+  group = {"key": "id", "value": "123e4567-e89b-..."}
+
+  users.leaveGroup(user, group).isOk()
+
+```
+
+> The same rules for ``key/value`` discussed above also applies here.
+
+
+### Groups
+
+To manage the relationship between realm level [roles](keycloak.org/docs/latest/server_admin/#assigning-permissions-and-access-using-roles-and-groups) and groups, we can use the **RealmsRolesMapping**.
+
+To get an instance of this class you need to instantiate the ``group`` resource class:
+
+```Python
+groups = kc.build('groups', 'heroes')
+```
+
+And use the method ``realmRoles`` passing a valid [group dictionary](https://access.redhat.com/webassets/avalon/d/red-hat-single-sign-on/version-7.0.0/restapi/#_grouprepresentation):
+
+```python
+realmsRoles = groups.realmRoles({"key":"name", "value":'DC'})
+```
+
+Then we get a class with following methods:
+
+#### add
+
+Add a list of existing roles to a group.
+
+```python
+def makeRoles(self):
+    roles = kc.build('roles', self.realm)
+    lvl1 = roles.create({"name": "level-1"}).isOk()
+    lvl2 = roles.create({"name": "level-2"}).isOk()
+    return lvl1 and lvl2
+
+
+if makeRoles():
+  realmsRoles = groups.realmRoles({"key":"name", "value":'DC'})
+  realmsRoles.add(["level-1", "level-2"])
+```
+
+#### remove
+Remove a list of associated roles from a group.
+
+```python
+realmsRoles = groups.realmRoles({"key":"name", "value":'DC'})
+realmsRoles.remove(["level-1", "level-2"])
 ```

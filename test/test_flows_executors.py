@@ -88,11 +88,6 @@ class Testing_Authentication_Flows_API(unittest.TestCase):
         execs_size = len( executions.all() )
         self.assertEqual(execs_size, 3)
 
-
-
-
-
-
     def testing_remove_executions_flows(self): 
         client_flow = self.flows[1]
         nestedExecution = {"provider":"client-x509"} 

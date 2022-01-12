@@ -83,24 +83,7 @@ class AuthenticationFlows(KeycloakCRUD):
                 parentFlow=execution,
                 actionType='execution')
 
-
-'''
-
-    def import(rootFlow, flows):  
-        if not isinstance(flows, list):  
-            raise Exception("Bad Parameters for Authentication Flow: auth_flow parameter should be an array.")
-
-        root = rootFlow
-        currentLevel = 0
-        
-        for flow in flows:
-            publish(flow, self) 
-            currentLevel += 1
-             
-
-
-'''
-            
+           
 
 
 

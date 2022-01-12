@@ -1,10 +1,10 @@
 import unittest, time
 from rhsso import OpenID, RestURL
-from .testbed import TestBed 
+from .testbed import TestBed
 import json
 
 class Testing_User_API(unittest.TestCase):
-    
+
     def test_adding_credentials_with_wrong_params(self):
         users = self.testbed.getKeycloak().build('users', self.REALM)
         user_info = {'key': 'username', 'value': 'batman'}
@@ -13,6 +13,7 @@ class Testing_User_API(unittest.TestCase):
             state = users.updateCredentials(user_info, user_credentials).isOk()
         except Exception as E:
             self.assertEqual("Missing parameter: value" in str(E), True)
+
 
     def test_adding_credentials_to_user(self):
 
@@ -24,10 +25,10 @@ class Testing_User_API(unittest.TestCase):
 
         oid_client = OpenID({
             "client_id": "dc",
-            "username": "batman", 
-            "password":"12345", 
+            "username": "batman",
+            "password":"12345",
             "grant_type":"password",
-            "realm" : self.REALM 
+            "realm" : self.REALM
             }, self.testbed.ENDPOINT)
 
         token = oid_client.getToken()
@@ -40,7 +41,7 @@ class Testing_User_API(unittest.TestCase):
         self.testbed.createUsers()
         self.testbed.createClients()
         self.REALM = self.testbed.REALM
-        
+
     @classmethod
     def tearDownClass(self):
         self.testbed.goodBye()

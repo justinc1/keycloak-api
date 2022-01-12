@@ -1,6 +1,6 @@
 import unittest, time
-from rhsso import OpenID, Keycloak
-from .testbed import TestBed 
+from kcapi import OpenID, RestURL
+from .testbed import TestBed
 
 ADMIN_USER = "admin"
 ADMIN_PSW  = "admin1234"
@@ -34,14 +34,15 @@ class Testing_Relational_API(unittest.TestCase):
 
         leave_status = users.leaveGroup(usr, gpr).isOk()
         self.assertTrue(leave_status)
+
         groups = users.groups(usr)
         self.assertEqual(len(groups), 0)
 
-    def testing_adding_roles_to_group(self): 
+    def testing_adding_roles_to_group(self):
         groups = self.kc.build('groups', self.realm)
         self.assertTrue(hasattr(groups, "realmRoles"))
 
-        #TestBed class will create one group called "DC" 
+        #TestBed class will create one group called "DC"
         #And three roles called [level-1, level-2, level-3]
 
         group = {"key":"name", "value":'DC'}
@@ -49,8 +50,14 @@ class Testing_Relational_API(unittest.TestCase):
         state = roles_mapping.add(["level-1", "level-2"])
         self.assertTrue(state)
 
+        roles_does_exists = roles_mapping.existByKV('name', 'level-1') 
+        self.assertTrue(roles_does_exists)
+
         realmRoles = roles_mapping.all()
         self.assertEqual(len(realmRoles), 2)
+
+        roles_mapping.remove(["level-1", "level-2"])
+        self.assertEqual(len(roles_mapping.all()), 0)
 
         roles_mapping.remove(["level-1", "level-2"])
         self.assertEqual(len(roles_mapping.all()), 0)
@@ -63,8 +70,8 @@ class Testing_Relational_API(unittest.TestCase):
         self.testbed.createClients()
         self.testbed.createGroups()
         self.kc = self.testbed.getKeycloak()
-        self.realm = self.testbed.REALM 
-        
+        self.realm = self.testbed.REALM
+
     @classmethod
     def tearDownClass(self):
         #self.testbed.goodBye()

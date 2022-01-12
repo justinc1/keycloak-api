@@ -21,8 +21,6 @@ class RealmsRolesMapping(KeycloakCRUD):
         find = self.rolesAPI.findFirstByKV
         return list( map(lambda name: find('name', name), roles) )
 
-
-
     def add(self, roles): 
         populatedListOfRoles = self.__fetchRoles(roles)
         return self.create(populatedListOfRoles)
@@ -34,11 +32,8 @@ class RealmsRolesMapping(KeycloakCRUD):
 
         ret = requests.delete(remove_target, data=json.dumps(populatedListOfRoles), headers=self.getHeaders() )
         return ResponseHandler(remove_target).handleResponse(ret)
+
         
-
-     
-
-
 class Groups(KeycloakCRUD): 
     def __init__(self, url, token): 
         super().__init__(url, token)

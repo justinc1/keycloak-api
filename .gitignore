@@ -138,3 +138,5 @@ dmypy.json
 cython_debug/
 test.sh
 .DS_Store
+upload.sh
+
