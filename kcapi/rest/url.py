@@ -66,6 +66,10 @@ class RestURL:
                 index = self.resources.index(res)
                 self.resources.pop(index)
 
+    def removeLast(self):
+        self.resources.pop()
+        return self
+        
     def getCurrentResource(self):
         if not self.resources: 
             raise Exception("No URL resources found.")

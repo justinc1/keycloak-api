@@ -2,6 +2,7 @@ from .crud import KeycloakCRUD
 from .groups import Groups
 from .roles import Roles   
 from .users import Users   
+from .realms import Realms
 from .url import RestURL
 from .auth_flows import AuthenticationFlows
 
@@ -9,6 +10,7 @@ KCResourceTypes = {
         "roles": Roles, 
         "users": Users, 
         "groups": Groups, 
+        "realms": Realms,
         "authentication": AuthenticationFlows,
 }
 

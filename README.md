@@ -286,7 +286,46 @@ cookies = users.update(id, batman_update).verify().response().cookies # Get cook
 
 ## Specialisations
 
-Some objects provide additional methods like:
+### Realms 
+
+### KeycloakCaches 
+
+This class handles the Keycloak caches. 
+
+#### Instantiation 
+
+```python
+# Creates a REST API instance target the Realms API. 
+realms = kc.build('realms', 'my_realm') 
+
+# Gets the cache Realms cache API. 
+caches = realms.caches(self.REALM)
+```
+
+#### clearUserCache 
+This method tells Keycloak to clear the user cache.
+
+```python
+caches.clearUserCache()
+```
+
+
+#### clearRealmCache 
+This method tells Keycloak to clear the realm cache.
+
+```python
+caches.clearRealmCache()
+```
+
+
+#### clearKeyCache 
+This method tells Keycloak to clear the external public key cache for clients and identity providers.
+
+```python
+caches.clearKeyCache()
+```
+
+> For more information on how this caches works follow this [link](https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.0/html/server_installation_and_configuration_guide/server_cache_configuration).
 
 
 ### Users
@@ -378,7 +417,7 @@ Remove a user from a group.
 > The same rules for ``key/value`` discussed above also applies here.
 
 
-### Groups
+### Groups
 
 To manage the relationship between realm level [roles](keycloak.org/docs/latest/server_admin/#assigning-permissions-and-access-using-roles-and-groups) and groups, we can use the **RealmsRolesMapping**.
 
@@ -420,3 +459,7 @@ Remove a list of associated roles from a group.
 realmsRoles = groups.realmRoles({"key":"name", "value":'DC'})
 realmsRoles.remove(["level-1", "level-2"])
 ```
+
+
+
+

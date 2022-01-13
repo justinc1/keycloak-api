@@ -57,6 +57,10 @@ class KeycloakCRUD:
                 'Authorization': 'Bearer '+ self.token
         }
 
+
+    def append(self, resources):
+        return self.extend(resources)
+
     def extend(self, resources): 
         kc = KeycloakCRUD(None, self.token, KeycloakAPI = self) 
         kc.addResources(resources)
@@ -70,8 +74,15 @@ class KeycloakCRUD:
             self.__targets[method].replaceCurrentResourceTarget(resourceName)
 
     def removeResources(self, resources):
-        for url in self.__targets: 
-            url.removeResources(resources)
+        for method in self.__targets: 
+            self.__targets[method].removeResources(resources)
+
+        return self
+
+    def removeLast(self):
+        for method in self.__targets: 
+            self.__targets[method].removeLast()
+
         return self
 
     def addResourcesFor(self, name, resources):
@@ -90,6 +101,7 @@ class KeycloakCRUD:
     
     def create(self, obj):
         url = self.__targets['create']
+
         ret = requests.post(url, data=json.dumps(obj), headers=self.getHeaders() )
         return ResponseHandler(url, method='Post').handleResponse(ret)
 

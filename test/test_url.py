@@ -1,5 +1,5 @@
 import unittest, time
-from rhsso import RestURL 
+from kcapi import RestURL 
 
 class Testing_URL_API(unittest.TestCase):
 
@@ -109,6 +109,11 @@ class Testing_URL_API(unittest.TestCase):
         myURL = RestURL(url)
         self.assertEqual(str(myURL), url[:-1])
 
+    def testing_remove_last(self):
+        urlString = "https://my-sso.com/a/b/c"
+        url = RestURL(urlString)
+        url.removeLast()
+        self.assertEqual(str(url), "https://my-sso.com/a/b")
 
     @classmethod
     def setUpClass(self):
