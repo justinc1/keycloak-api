@@ -1,5 +1,5 @@
 import unittest, time
-from rhsso import OpenID, RestURL
+from kcapi import OpenID, RestURL
 from .testbed import TestBed
 import json
 

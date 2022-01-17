@@ -1,0 +1,25 @@
+{
+    "addReadTokenRoleOnCreate": "",
+    "alias": "oidc666",
+    "authenticateByDefault": false,
+    "config": {
+        "authorizationUrl": "https:/my_host.com/my_authorization_url",
+        "backchannelSupported": "",
+        "clientId": "_dc_",
+        "clientSecret": "2211212",
+        "disableUserInfo": "",
+        "hideOnLoginPage": "",
+        "loginHint": "",
+        "tokenUrl": "https:/my_host.com/token",
+        "uiLocales": "",
+        "useJwksUrl": "true",
+        "validateSignature": ""
+    },
+    "enabled": true,
+    "firstBrokerLoginFlowAlias": "first broker login",
+    "linkOnly": "",
+    "postBrokerLoginFlowAlias": "",
+    "providerId": "oidc",
+    "storeToken": "",
+    "trustEmail": ""
+}

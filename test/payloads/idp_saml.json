@@ -1,0 +1,29 @@
+{
+    "addReadTokenRoleOnCreate": "",
+    "alias": "saml666",
+    "authenticateByDefault": false,
+    "config": {
+        "backchannelSupported": "",
+        "forceAuthn": "",
+        "hideOnLoginPage": "",
+        "nameIDPolicyFormat": "urn:oasis:names:tc:SAML:2.0:nameid-format:persistent",
+        "postBindingAuthnRequest": "",
+        "postBindingLogout": "",
+        "postBindingResponse": "",
+        "samlXmlKeyNameTranformer": "KEY_ID",
+        "signatureAlgorithm": "RSA_SHA256",
+        "singleSignOnServiceUrl": "http://my_saml.com:9490",
+        "useJwksUrl": "true",
+        "validateSignature": "",
+        "wantAssertionsEncrypted": "",
+        "wantAssertionsSigned": "",
+        "wantAuthnRequestsSigned": ""
+    },
+    "enabled": true,
+    "firstBrokerLoginFlowAlias": "first broker login",
+    "linkOnly": "",
+    "postBrokerLoginFlowAlias": "",
+    "providerId": "saml",
+    "storeToken": "",
+    "trustEmail": ""
+}

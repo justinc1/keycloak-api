@@ -17,6 +17,7 @@ class TestBed:
         self.kc = Keycloak(token, self.ENDPOINT)
         self.master_realm = self.kc.admin()
         self.realm = self.REALM 
+        self.token = token
 
     def createRealms(self):
         realm = self.realm

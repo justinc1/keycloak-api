@@ -12,9 +12,9 @@ class KeycloakCRUD:
             Post /car, 
 
         But to delete it you have to do:
-            Delete /dealer/1, 
+            Delete /house/1,  # this delete de car above  
 
-        Thats why we need this targets dictionary, to be able to modify the target when subclassing.  
+        Thats why we need this dictionary, to specify an URL for each method just in case we find an API like the one described above.  
     '''
     def __populate_targets(self, _url):
         url = RestURL(_url)
