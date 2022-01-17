@@ -12,32 +12,15 @@ def load_sample(fname):
 
 class Testing_User_API(unittest.TestCase):
 
-    def test_adding_credentials_to_user(self):
-
-        idp = self.testbed.getKeycloak().build('identity-provider', self.REALM)
-
-        self.assertIsNotNone(idp)
-    
-        self.assertTrue(hasattr(IdentityProvider, 'supportedResources'))
-        self.assertTrue(hasattr(IdentityProvider, 'build'))
-        
-        self.assertTrue(IdentityProvider.supportedResources('idp'))
-        self.assertTrue(IdentityProvider.supportedResources('identity-provider'))
-        self.assertFalse(IdentityProvider.supportedResources('arbitrary'))
-
-    def test_creating_and_object(self):
-        endpoint = self.testbed.ENDPOINT
-        realm = self.testbed.REALM
-        token = self.testbed.token
-
-        idp = IdentityProvider.build(url=endpoint, realm=realm, token=token)
-
+    def test_identity_provider_adding_saml_and_oid_IDP_providers(self):
+        idp1 = self.kc.build('identity-provider', self.REALM)
+        idp = self.kc.build('idp', self.REALM)
         saml = load_sample('./test/payloads/idp_saml.json')
         oid = load_sample('./test/payloads/idp_oid.json')
         state = idp.create(saml).isOk()
         self.assertTrue(state)
         
-        state = idp.create(oid).isOk()
+        state = idp1.create(oid).isOk()
         self.assertTrue(state)
 
     @classmethod
@@ -47,6 +30,7 @@ class Testing_User_API(unittest.TestCase):
         self.testbed.createUsers()
         self.testbed.createClients()
         self.REALM = self.testbed.REALM
+        self.kc = self.testbed.getKeycloak()
 
     @classmethod
     def tearDownClass(self):

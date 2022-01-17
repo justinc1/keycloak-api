@@ -4,6 +4,7 @@ from .roles import Roles
 from .users import Users   
 from .realms import Realms
 from .url import RestURL
+from .idp import IdentityProvider
 from .auth_flows import AuthenticationFlows
 
 KCResourceTypes = {
@@ -12,6 +13,8 @@ KCResourceTypes = {
         "groups": Groups, 
         "realms": Realms,
         "authentication": AuthenticationFlows,
+        "idp": IdentityProvider,
+        "identity-provider": IdentityProvider
 }
 
 class KCResourceBuilder:
