@@ -93,6 +93,7 @@ Here is a quick list of supported resources:
 - **clients**: [client API](https://access.redhat.com/webassets/avalon/d/red-hat-single-sign-on/version-7.0.0/restapi/#_create_a_new_client).  
 - **groups**:  [groups API](https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.0/html/server_administration_guide/groups).
 - **roles**: [roles API](https://access.redhat.com/webassets/avalon/d/red-hat-single-sign-on/version-7.0.0/restapi/#_create_a_new_role_for_the_realm_or_client_2)
+- **identity-provider**: [identity provider API](https://access.redhat.com/webassets/avalon/d/red-hat-single-sign-on/version-7.0.0/restapi/#_get_identity_providers)
 
 
 > As long as you find a REST endpoint that follow the standard you can use this method to build a client around it, an example of this is the non well documented ``components`` endpoint.
