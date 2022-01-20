@@ -1,0 +1,21 @@
+#!/bin/zsh
+clear && 
+export KC_USER=admin
+export KC_PASSWORD=admin
+export KC_REALM=-testing_realm-
+export KC_ENDPOINT=https://sso-cvaldezr-stage.apps.sandbox-m2.ll9k.p1.openshiftapps.com
+
+#Local
+#export KC_USER=admin
+#export KC_PASSWORD=admin1234
+#export KC_REALM=-testing_realm-
+#export KC_ENDPOINT=http://192.168.1.100:8080
+
+# Run Specific Test
+python3 -m unittest test/test_crud.py -vvv
+
+
+
+# Run All Tests
+#python3 -m unittest discover -vvv
+

@@ -1,13 +1,8 @@
-from .crud import KeycloakCRUD
-from .helper import ValidateParams
-
+from .targets import Targets
 
 
 # The Keycloak guys decided to use another resource DELETE /roles-by-id, instead of sticking to DELETE /roles.
-class Roles(KeycloakCRUD):
-    def __init__(self, url, token, custom_targets = {}): 
-        super().__init__(url, token, custom_targets)
-        self._KeycloakCRUD__targets['delete'].replaceResource('roles', 'roles-by-id')
-
-
-
+def RolesURLBuilder(url):
+    targets = Targets.makeWithURL(url)
+    targets.getDeleteMethod().replaceResource('roles', 'roles-by-id')
+    return targets

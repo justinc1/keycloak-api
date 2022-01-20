@@ -4,51 +4,59 @@ from .resp import ResponseHandler
 import json, requests
 
 
-class RealmsRolesMapping(KeycloakCRUD): 
-    def __init__(self, url, token, custom_targets = None): 
-        super().__init__(url, token, custom_targets)
 
-        self.rolesAPI = KeycloakCRUD(token = token, KeycloakAPI=self)
-        self.rolesAPI.changeTarget('roles')
+class GroupAndRolesMappingBuilder(): 
+    roles = None
+    def build(self, groupName, groups): 
+        token = groups.token
+        targets = groups.targets
 
+        self.roles = self._load(token, targets, KeycloakCRUD)
+        self.rolesMappings = self._load(token, targets, KeycloakCRUD)
 
-    def setGroup(self, groupObject):
-        groupID = self.findFirst(groupObject)['id']
-        self.addResources([groupID, 'role-mappings', 'realm'])
-        return self
+        self.rolesMappings = self._initGroupMappingAPI(groupName, self.rolesMappings) 
+        self.roles.targets.change('roles')
+
+        self.rolesMappings.add = self.add
+        self.rolesMappings.__fetchRoles = self.__fetchRoles
+        self.rolesMappings.remove = self.remove
+
+        return self.rolesMappings
+
+    
+    def _load(self, token, targets, API):
+        api = API()
+        api.token = token
+        api.targets = targets.copy()
+
+        return api
+
+    def _initGroupMappingAPI(self, groupName, groupAPI):
+        groupID = groupAPI.findFirst(groupName)['id']
+        groupAPI.targets.addResources([groupID, 'role-mappings', 'realm'])
+        return groupAPI
 
     def __fetchRoles(self, roles): 
-        find = self.rolesAPI.findFirstByKV
+        find = self.roles.findFirstByKV
         return list( map(lambda name: find('name', name), roles) )
 
     def add(self, roles): 
         populatedListOfRoles = self.__fetchRoles(roles)
-        return self.create(populatedListOfRoles)
+        return self.rolesMappings.create(populatedListOfRoles)
 
     # Another example of Keycloak not using standard REST behaviour.
+    # Overriding remove from CRUD
     def remove(self, roles): 
         populatedListOfRoles = self.__fetchRoles(roles)
-        remove_target = self._KeycloakCRUD__targets['delete']
+        remove_target = self.rolesMappings.targets.url('delete')
+        headers = self.rolesMappings.getHeaders()
 
-        ret = requests.delete(remove_target, data=json.dumps(populatedListOfRoles), headers=self.getHeaders() )
+        ret = requests.delete(remove_target, data=json.dumps(populatedListOfRoles), headers=headers )
         return ResponseHandler(remove_target).handleResponse(ret)
 
-        
 class Groups(KeycloakCRUD): 
-    def __init__(self, url, token): 
-        super().__init__(url, token)
-        self.realmRolesAPI = RealmsRolesMapping(url, token)
-
     def realmRoles(self, group):
-        return self.realmRolesAPI.setGroup(group)
+        return GroupAndRolesMappingBuilder().build(group, self)
 
-    def removeRealmRoles(self, group, roles):
-        groupID = super().findFirst(group)['id']
-        roleMap = map(self.__getRole, roles) 
-
-        realmRolesAPI = self.extend([groupID, 'role-mappings', 'realm'])
-
-        ret = self._KeycloakCRUD__req().delete(str(target_url), data=json.dumps(list(roleMap)), headers=self.getHeaders() )
-        return ret
 
 

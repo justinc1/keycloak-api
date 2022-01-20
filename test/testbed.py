@@ -12,6 +12,9 @@ class TestBed:
         self.PASSWORD = os.environ.get('KC_PASSWORD')
         self.REALM = os.environ.get('KC_REALM')
         self.ENDPOINT = os.environ.get('KC_ENDPOINT')
+
+        self.groupName = 'DC'
+        self.roleNames = ['level-1', 'level-2', 'level-3'] 
         
         token = OpenID.createAdminClient(self.USER, self.PASSWORD).getToken(self.ENDPOINT)
         self.kc = Keycloak(token, self.ENDPOINT)
@@ -28,11 +31,14 @@ class TestBed:
 
     def createGroups(self):
         group = self.kc.build('groups', self.realm)
-        g_creation_state = group.create({"name": "DC"}).isOk()
+        g_creation_state = group.create({"name": self.groupName}).isOk()
+        self.createRoles()
+
+
+    def createRoles(self):
         roles = self.kc.build('roles', self.realm)
-        roles.create({"name": "level-1"}).isOk() 
-        roles.create({"name": "level-2"}).isOk() 
-        roles.create({"name": "level-3"}).isOk() 
+        for role in self.roleNames:
+            roles.create({"name": role}).isOk() 
 
 
     def createClients(self):

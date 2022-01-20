@@ -1,21 +1,34 @@
 from .crud import KeycloakCRUD
+from .targets import Targets
 from .groups import Groups
-from .roles import Roles   
+from .roles import RolesURLBuilder   
 from .users import Users   
 from .realms import Realms
 from .url import RestURL
-from .idp import IdentityProvider
-from .auth_flows import AuthenticationFlows
+from .idp import IdentityProviderURLBuilder
+from .auth_flows import AuthenticationFlows, AuthenticationFlowURLBuilder
 
 KCResourceTypes = {
-        "roles": Roles, 
         "users": Users, 
         "groups": Groups, 
         "realms": Realms,
         "authentication": AuthenticationFlows,
-        "idp": IdentityProvider,
-        "identity-provider": IdentityProvider
+ 
 }
+
+
+URLBuilders = {
+    'roles': RolesURLBuilder,
+    'authentication': AuthenticationFlowURLBuilder,
+    "idp": IdentityProviderURLBuilder,
+    "identity-provider": IdentityProviderURLBuilder
+}
+
+def GenericURLBuilder(url):
+     targets = Targets.makeWithURL(url)
+     return targets 
+
+
 
 class KCResourceBuilder:
     def __URLSetup(self, url):
@@ -36,7 +49,14 @@ class KCResourceBuilder:
 
     def build(self, token):
         KCResourceAPI = KeycloakCRUD if not self.name in KCResourceTypes else KCResourceTypes[self.name]  
+        URLBuilder = GenericURLBuilder if not self.name in URLBuilders else URLBuilders[self.name]
 
         self.url.addResources([self.realm, self.name])
-        return KCResourceAPI(str(self.url), token) 
+
+        resource = KCResourceAPI() 
+        resource.targets = URLBuilder(str(self.url))
+        resource.token = token
+
+
+        return resource 
 

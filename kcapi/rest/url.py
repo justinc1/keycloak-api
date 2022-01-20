@@ -60,14 +60,15 @@ class RestURL:
             self.pushResource(value)
         return self
 
-    def removeResources(self, res_list): 
-        for res in res_list: 
-            if res in self.resources: 
-                index = self.resources.index(res)
+    def removeResources(self, listOfResources): 
+        for resource in listOfResources: 
+            if resource in self.resources: 
+                index = self.resources.index(resource)
                 self.resources.pop(index)
 
     def removeLast(self):
-        self.resources.pop()
+        if len(self.resources) > 0: 
+            self.resources.pop()
         return self
         
     def getCurrentResource(self):

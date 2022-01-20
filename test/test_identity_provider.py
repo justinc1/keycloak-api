@@ -1,6 +1,5 @@
 import unittest, time
 from kcapi import OpenID, RestURL
-from kcapi.rest.idp import IdentityProvider 
 from .testbed import TestBed
 import json
 

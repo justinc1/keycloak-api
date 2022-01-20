@@ -3,13 +3,21 @@ from .helper import ValidateParams
 
 
 class KeycloakCaches: 
-    def __init__(self, kcrud, realmName):
+    def __init__(self, kcCRUD, realmName):
         self.name = realmName 
         self.request_body = {'realm': self.name}
-        self.kcrud = kcrud  
+        self.kcrud = KeycloakCRUD()
+        self.kcrud.token = kcCRUD.token
+        self.kcrud.targets = kcCRUD.targets.copy().removeLast()
 
     def postTo(self, target):
-        return self.kcrud.append([self.name, target]).create(self.request_body)
+        createRef =self.kcrud.targets.getCreateMethod()
+        createRef.addResource(target)
+        
+        ret = self.kcrud.create(self.request_body)
+        
+        createRef.removeLast()
+        return ret
 
     def clearUserCache(self):
         return self.postTo('clear-realm-cache')
@@ -21,9 +29,5 @@ class KeycloakCaches:
         return self.postTo('clear-keys-cache')
 
 class Realms(KeycloakCRUD):
-    def __init__(self, url, token): 
-        super().__init__(url, token)
-        self.removeLast()
-
     def caches(self, realmName): 
         return KeycloakCaches(self, realmName)

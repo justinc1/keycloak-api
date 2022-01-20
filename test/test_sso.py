@@ -82,12 +82,7 @@ class Testing_SSO_API(unittest.TestCase):
         state = clientAPI.findAll().verify().resp()
         self.assertEqual(state.status_code, 200)
      
-    def testing_group_API(self):
-        group_payload = {"name":"XX"}
-        groups = self.kc.build("groups", self.realm)
-        state = groups.create(group_payload).isOk()
-        self.assertEqual(state, True)
-
+    
     def testing_with_no_token(self): 
         try:
             self.kc = Keycloak(None, ENDPOINT)
@@ -140,9 +135,11 @@ class Testing_SSO_API(unittest.TestCase):
         
     @classmethod
     def tearDownClass(self):
-        self.testbed.goodBye()
+        #self.testbed.goodBye()
         if self.master_realm.exist(TEST_REALM): 
-            self.master_realm.remove(TEST_REALM)
+            #self.master_realm.remove(TEST_REALM)
+            return True
+        return True
 
 if __name__ == '__main__':
     unittest.main()

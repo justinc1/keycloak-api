@@ -5,18 +5,6 @@ import json
 
 class Testing_Realm_API(unittest.TestCase):
 
-    '''
-    def test_adding_credentials_with_wrong_params(self):
-        users = self.testbed.getKeycloak().build('users', self.REALM)
-        user_info = {'key': 'username', 'value': 'batman'}
-        user_credentials = {'temporary': False, 'passwordWrongParam':'12345'}
-        try: 
-            state = users.updateCredentials(user_info, user_credentials).isOk()
-        except Exception as E:
-            self.assertEqual("Missing parameter: value" in str(E), True)
-
-    '''
-    
     def testing_realm_api_methods(self):
         realms = self.testbed.getKeycloak().build('realms', self.REALM)
         self.assertTrue(hasattr(realms, 'caches'))

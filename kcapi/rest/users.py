@@ -3,24 +3,29 @@ from .helper import ValidateParams
 
 
 class Users(KeycloakCRUD):
-    def __init__(self, url, token, custom_targets = None): 
-        super().__init__(url, token, custom_targets)
+    def __lazy_load_groups(self):
+        groups = KeycloakCRUD() 
+        groups.token = self.token
+        groups.targets = self.targets.copy()
+        groups.targets.change('groups')
 
-        groupsAPI = KeycloakCRUD(token = token, KeycloakAPI=self)
-        groupsAPI.changeTarget('groups')
-        self.findGrp = groupsAPI.findFirst
+        return groups
 
-        
-
+    def __findGroup(self, group): 
+        groups = self.__lazy_load_groups()
+        return groups.findFirst(group)
 
     def __userGroupMappingAPI(self, userID): 
-        kc = KeycloakCRUD(None, self.token, KeycloakAPI = self) 
-        kc.addResources([userID, 'groups'])
+        kc = KeycloakCRUD() 
+        kc.token = self.token
+        kc.targets = self.targets.copy()
+
+        kc.targets.addResources([userID, 'groups'])
         return kc
 
     def joinGroup(self, user, group): 
         userID = self.findFirst(user)['id']
-        groupID = self.findGrp(group)['id']
+        groupID = self.__findGroup(group)['id']
 
         requestBody = {'groupId': groupID, 'userId': userID} 
 
@@ -32,9 +37,13 @@ class Users(KeycloakCRUD):
 
     def leaveGroup(self, user, group):
         userID  = super().findFirst(user)['id']
-        groupID = self.findGrp(group)['id']
+        groupID = self.__findGroup(group)['id']
 
         return self.__userGroupMappingAPI(userID).remove(groupID)
+
+    def groupMapping(self, user):
+        userID = self.findFirst(user)['id']
+        return self.__userGroupMappingAPI(userID)
 
     # 
     # credentials: {type: "password", value: "passphrases", temporary: true} 
@@ -49,8 +58,9 @@ class Users(KeycloakCRUD):
         params.update(credentials)
         ValidateParams(['type', 'value', 'temporary'],params)
         
-        credentials = KeycloakCRUD(token = self.token, KeycloakAPI=self)
-        credentials.addResources([userID, 'reset-password'])
+        credentials = KeycloakCRUD()
+        credentials.token = self.token 
+        credentials.targets = self.targets.addResourcesFor('update', [userID, 'reset-password'])
 
         return credentials.update('', params)
 
