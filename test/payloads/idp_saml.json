@@ -12,7 +12,7 @@
         "postBindingResponse": "",
         "samlXmlKeyNameTranformer": "KEY_ID",
         "signatureAlgorithm": "RSA_SHA256",
-        "singleSignOnServiceUrl": "http://my_saml.com:9490",
+        "singleSignOnServiceUrl": "https://my_saml.com:9490",
         "useJwksUrl": "true",
         "validateSignature": "",
         "wantAssertionsEncrypted": "",

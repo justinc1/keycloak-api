@@ -1,5 +1,4 @@
 import unittest, time
-from rhsso import OpenID, Keycloak
 from .testbed import TestBed 
 
 ADMIN_USER = "admin"

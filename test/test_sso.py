@@ -1,5 +1,5 @@
 import unittest, time
-from rhsso import OpenID, Keycloak
+from kcapi import OpenID, Keycloak
 from .testbed import TestBed 
 
 ADMIN_USER = "admin"
@@ -86,13 +86,13 @@ class Testing_SSO_API(unittest.TestCase):
     def testing_with_no_token(self): 
         try:
             self.kc = Keycloak(None, ENDPOINT)
-            self.assertTrue(false)
+            self.assertTrue(False)
         except Exception as E: 
             self.assertEqual("No authentication token provided" in str(E), True)
 
         try:
             self.kc = Keycloak('placeholder', None)
-            self.assertTrue(false)
+            self.assertTrue(False)
         except Exception as E: 
             self.assertEqual("No Keycloak endpoint URL" in str(E), True)
 

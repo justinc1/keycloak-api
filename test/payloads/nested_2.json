@@ -21,9 +21,11 @@
         "index": 0,
         "level": 1,
         "providerId": "no-cookie-redirect",
-        "requirement": "DISABLED",
+        "requirement": "REQUIRED",
         "requirementChoices": [
-            "REQUIRED"
+            "ALTERNATIVE",
+            "REQUIRED",
+            "DISABLED"
         ]
     },
     {
@@ -35,7 +37,9 @@
         "providerId": "reset-credentials-choose-user",
         "requirement": "DISABLED",
         "requirementChoices": [
-            "REQUIRED"
+            "ALTERNATIVE",
+            "REQUIRED",
+            "DISABLED"
         ]
     },
     {
@@ -88,9 +92,11 @@
         "index": 0,
         "level": 1,
         "providerId": "no-cookie-redirect",
-        "requirement": "DISABLED",
+        "requirement": "REQUIRED",
         "requirementChoices": [
-            "REQUIRED"
+            "ALTERNATIVE",
+            "REQUIRED",
+            "DISABLED"
         ]
     },
     {
@@ -100,7 +106,7 @@
         "index": 1,
         "level": 1,
         "providerId": "no-cookie-redirect",
-        "requirement": "DISABLED",
+        "requirement": "REQUIRED",
         "requirementChoices": [
             "REQUIRED"
         ]

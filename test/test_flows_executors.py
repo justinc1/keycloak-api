@@ -1,9 +1,7 @@
 import unittest, time
-from kcapi import OpenID, RestURL    
 from kcapi.ie import AuthenticationFlowsImporter   
 from .testbed import TestBed 
 import json
-import time
 
 def create_testing_flows(flows, authenticationFlow):
         for flow in flows:
@@ -219,7 +217,7 @@ class Testing_Authentication_Flows_API(unittest.TestCase):
         self.authenticationFlow = self.testbed.getKeycloak().build('authentication', self.testbed.REALM)
 
         basic_flow = {
-                "alias":"my_new_basic_flow",
+                "alias":"test_number_0",
                 "providerId":"basic-flow",
                 "description":"my_new_basic_flow",
                 "topLevel":True,
@@ -227,7 +225,7 @@ class Testing_Authentication_Flows_API(unittest.TestCase):
         }
         
         client_flow = {
-                "alias":"my_new_client_flow",
+                "alias":"test_number_1",
                 "providerId":"client-flow",
                 "description":"my_new_client_flow",
                 "topLevel":True,
@@ -235,7 +233,7 @@ class Testing_Authentication_Flows_API(unittest.TestCase):
         }
 
         basic_flow_2 = {
-                "alias":"my_new_basic_flow_2",
+                "alias":"test_number_2",
                 "providerId":"basic-flow",
                 "description":"my_new_basic_flow",
                 "topLevel":True,
@@ -243,7 +241,7 @@ class Testing_Authentication_Flows_API(unittest.TestCase):
         }
         
         flow_3 = {
-                "alias":"_nested_",
+                "alias":"test_number_3",
                 "providerId":"basic-flow",
                 "description":"my_new_basic_flow",
                 "topLevel":True,
@@ -251,7 +249,7 @@ class Testing_Authentication_Flows_API(unittest.TestCase):
         }
 
         flow_4 = {
-                "alias":"_import_",
+                "alias":"test_number_4",
                 "providerId":"basic-flow",
                 "description":"my_new_basic_flow",
                 "topLevel":True,
@@ -259,7 +257,7 @@ class Testing_Authentication_Flows_API(unittest.TestCase):
         }
 
         flow_5 = {
-                "alias":"_import_nested_",
+                "alias":"test_number_5",
                 "providerId":"basic-flow",
                 "description":"my_new_basic_flow",
                 "topLevel":True,
@@ -267,7 +265,7 @@ class Testing_Authentication_Flows_API(unittest.TestCase):
         }
 
         flow_6 = {
-                "alias":"_import_nested_complex_",
+                "alias":"test_number_6",
                 "providerId":"basic-flow",
                 "description":"my_new_basic_flow",
                 "topLevel":True,
@@ -279,7 +277,7 @@ class Testing_Authentication_Flows_API(unittest.TestCase):
 
     @classmethod
     def tearDownClass(self):
-        self.testbed.goodBye()
+        #self.testbed.goodBye()
         return True
       
 if __name__ == '__main__':

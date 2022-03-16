@@ -16,7 +16,6 @@ KCResourceTypes = {
  
 }
 
-
 URLBuilders = {
     'roles': RolesURLBuilder,
     'authentication': AuthenticationFlowURLBuilder,

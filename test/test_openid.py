@@ -1,5 +1,5 @@
 import unittest, time
-from rhsso import OpenID, RestURL
+from kcapi import OpenID, RestURL
 from .testbed import TestBed 
 
 WRONG_URL =  'https://sso-wrong-cvaldezr-stage.apps.sandbox-m2.ll9k.p1.openshiftapps.com'
@@ -58,7 +58,7 @@ class Testing_OpenID(unittest.TestCase):
 
         token = oid_client.getToken()
         self.assertIsNotNone(token)
-        self.assertEqual(len(token), 1011)
+        self.assertTrue(len(token) > 0)
         
     @classmethod
     def setUpClass(self):

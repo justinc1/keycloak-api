@@ -1,3 +1,3 @@
-from .keycloak import Keycloak, OpenID
+from .kcapi import Keycloak, OpenID
 
 
