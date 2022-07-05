@@ -104,11 +104,11 @@ class Testing_SSO_API(unittest.TestCase):
 
         ammount_of_roles = len(roles.findAll().resp().json())
 
-        self.assertEqual(ammount_of_roles, 3)
+        self.assertEqual(ammount_of_roles, 4)
 
         self.assertTrue(roles.removeFirstByKV("name", "magic"))
         ammount_of_roles = len(roles.findAll().resp().json())
-        self.assertEqual(ammount_of_roles, 2)
+        self.assertEqual(ammount_of_roles, 3)
 
     def testing_case_sensitive_resource(self):
         myCaseTrickyUser = {"enabled":'true',"attributes":{},"username":"The Punisher","firstName":"Bruce", "lastName":"Wayne", "emailVerified":""}
