@@ -1,5 +1,9 @@
 from .crud import KeycloakCRUD
-from .helper import ValidateParams
+from .targets import Targets
+
+
+def RealmURLBuilder(url):
+    return Targets.makeWithURL(url)
 
 
 class KeycloakCaches: 
@@ -11,7 +15,7 @@ class KeycloakCaches:
         self.kcrud.targets = kcCRUD.targets.copy().removeLast()
 
     def postTo(self, target):
-        createRef =self.kcrud.targets.getCreateMethod()
+        createRef =self.kcrud.targets.targets['create']
         createRef.addResource(target)
         
         ret = self.kcrud.create(self.request_body)

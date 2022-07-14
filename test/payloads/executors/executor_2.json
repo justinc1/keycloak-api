@@ -1,0 +1,83 @@
+[
+  {
+    "id": "53911cd0-7d83-4cde-b4d1-78d824ad9975",
+    "requirement": "REQUIRED",
+    "displayName": "Choose User",
+    "requirementChoices": [
+      "REQUIRED"
+    ],
+    "configurable": false,
+    "providerId": "reset-credentials-choose-user",
+    "level": 0,
+    "index": 0
+  },
+  {
+    "id": "6f1a3577-1b03-4354-8e41-629cf880b7d2",
+    "requirement": "REQUIRED",
+    "displayName": "Send Reset Email",
+    "requirementChoices": [
+      "REQUIRED"
+    ],
+    "configurable": false,
+    "providerId": "reset-credential-email",
+    "level": 0,
+    "index": 1
+  },
+  {
+    "id": "34b08e04-7008-4679-ba0f-1223d3743229",
+    "requirement": "REQUIRED",
+    "displayName": "Reset Password",
+    "requirementChoices": [
+      "REQUIRED",
+      "ALTERNATIVE",
+      "DISABLED"
+    ],
+    "configurable": false,
+    "providerId": "reset-password",
+    "level": 0,
+    "index": 2
+  },
+  {
+    "id": "713daf6e-ffee-40a5-80dc-9bcf389f0731",
+    "requirement": "DISABLED",
+    "displayName": "Reset - Conditional OTP",
+    "requirementChoices": [
+      "REQUIRED",
+      "ALTERNATIVE",
+      "DISABLED",
+      "CONDITIONAL"
+    ],
+    "configurable": false,
+    "authenticationFlow": true,
+    "flowId": "6474700f-de9c-467e-b903-7860c0eb49d3",
+    "level": 0,
+    "index": 3
+  },
+  {
+    "id": "d50e28ba-ca4e-4507-9b0e-ceae99a3fe76",
+    "requirement": "REQUIRED",
+    "displayName": "Condition - user configured",
+    "requirementChoices": [
+      "REQUIRED",
+      "DISABLED"
+    ],
+    "configurable": false,
+    "providerId": "conditional-user-configured",
+    "level": 1,
+    "index": 0
+  },
+  {
+    "id": "7ce6ea48-c7df-491c-9b71-535eb07c139f",
+    "requirement": "REQUIRED",
+    "displayName": "Reset OTP",
+    "requirementChoices": [
+      "REQUIRED",
+      "ALTERNATIVE",
+      "DISABLED"
+    ],
+    "configurable": false,
+    "providerId": "reset-otp",
+    "level": 1,
+    "index": 1
+  }
+]

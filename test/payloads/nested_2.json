@@ -15,13 +15,14 @@
         ]
     },
     {
-        "configurable": false,
-        "displayName": "Browser Redirect/Refresh",
-        "id": "e908eee3-09ae-4f84-b573-7634f5645ce1",
+        "alias": "federationId",
+        "authenticationConfig": "30a612cb-86aa-4db2-b55b-57763cda9bf0",
+        "configurable": true,
+        "displayName": "custom-create-unique-user",
         "index": 0,
         "level": 1,
-        "providerId": "no-cookie-redirect",
-        "requirement": "REQUIRED",
+        "providerId": "idp-confirm-link",
+        "requirement": "ALTERNATIVE",
         "requirementChoices": [
             "ALTERNATIVE",
             "REQUIRED",

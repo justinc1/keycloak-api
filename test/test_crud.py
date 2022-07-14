@@ -39,7 +39,7 @@ def test_complete_CRUD(that, users):
         that.assertEqual(ret['id'], usr['id'])
         
         _all = users.all()
-        that.assertEqual(len(_all), 4, 'All users ammount to one')
+        that.assertEqual(len(_all), 4, 'All users amount to one')
 
 
         ## DELETE
@@ -53,11 +53,7 @@ def test_complete_CRUD(that, users):
 
 class Testing_User_API(unittest.TestCase):
 
-    
     def testing_crud_API(self):
-
-        endpoint = self.testbed.ENDPOINT
-        realm = self.testbed.REALM
         token = self.testbed.token
 
         users = KeycloakCRUD()
@@ -65,12 +61,6 @@ class Testing_User_API(unittest.TestCase):
         users.token = token
 
         test_complete_CRUD(self, users)
-
-
-
-
-
-
    
     @classmethod
     def setUpClass(self):

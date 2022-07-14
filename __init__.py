@@ -1,3 +1,3 @@
-from .kcapi import Keycloak, OpenID
+from .kcapi import Keycloak, OpenID, RestURL
 
 

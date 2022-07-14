@@ -88,9 +88,9 @@ class Testing_Mappings(unittest.TestCase):
         
     @classmethod
     def tearDownClass(self):
-        #self.testbed.goodBye()
+        self.testbed.goodBye()
         if self.master_realm.exist(TEST_REALM): 
-            #self.master_realm.remove(TEST_REALM)
+            self.master_realm.remove(TEST_REALM)
             return True
         return True
 

@@ -47,7 +47,7 @@ class Users(KeycloakCRUD):
 
     # 
     # credentials: {type: "password", value: "passphrases", temporary: true} 
-    # type: **password** Is the credential type supported by Keycloak.
+    # type: password is the credential type supported by Keycloak.
     # value: Here we put the passphrase (required) 
     # temporary: **true** Means that this password would works the first time but it will force the user to setup a new one. 
     def updateCredentials(self, user, credentials):

@@ -1,18 +1,29 @@
 import requests, json
 from .resp import ResponseHandler
-from .targets import Targets
-from .url import RestURL
-
 
 class KeycloakCRUD(object):
+    @staticmethod
+    def get_child(that, resource_id, resource_name):
+        kc = KeycloakCRUD()
+        kc.token = that.token
+        kc.targets = that.targets.copy()
+
+        kc.targets.addResources([resource_id, resource_name])
+
+        return kc
+
     def __init__(self): 
         self.targets = None
         self.token = None
 
-    def getHeaders(self):
+    def headers(self):
+
+        if self.token.expired():
+            self.token = self.token.refresh()
+
         return {
                 'Content-type': 'application/json', 
-                'Authorization': 'Bearer '+ self.token
+                'Authorization': 'Bearer '+ self.token.get_token()
         }
 
     def setIdentifier(self, _id = None, url = None):
@@ -21,36 +32,36 @@ class KeycloakCRUD(object):
         else:
             return url
     
-    def create(self, obj):
+    def create(self, payload):
         url = self.targets.url('create')
 
-        ret = requests.post(url, data=json.dumps(obj), headers=self.getHeaders() )
-        return ResponseHandler(url, method='Post').handleResponse(ret)
+        ret = requests.post(url, data=json.dumps(payload), headers=self.headers())
+        return ResponseHandler(url, method='Post', payload=payload).handleResponse(ret)
 
-    def update(self, _id=None, obj=None):
+    def update(self, obj_id=None, payload=None):
         url = self.targets.url('update')
-        target = str(self.setIdentifier(_id, url))
+        target = str(self.setIdentifier(obj_id, url))
 
-        ret = requests.put(target, data=json.dumps(obj), headers=self.getHeaders() )
-        return ResponseHandler(target, method='Put').handleResponse(ret)
+        ret = requests.put(target, data=json.dumps(payload), headers=self.headers())
+        return ResponseHandler(target, method='Put', payload=payload).handleResponse(ret)
 
     def remove(self, _id):
         delete = self.targets.url('delete')
         url = self.setIdentifier(_id, delete)
-        ret = requests.delete(url, headers=self.getHeaders() )
+        ret = requests.delete(url, headers=self.headers())
         return ResponseHandler(url, method='Delete').handleResponse(ret)
         
     def get(self, _id):
         url = self.targets.url('read')
-        ret = requests.get(str(self.setIdentifier(_id, url)), headers=self.getHeaders())
+        ret = requests.get(str(self.setIdentifier(_id, url)), headers=self.headers())
         return ResponseHandler(url, method='Get').handleResponse(ret)
 
     def findAll(self):
         url = self.targets.url('read')
-        ret = requests.get(url, headers=self.getHeaders())
+        ret = requests.get(url, headers=self.headers())
         return ResponseHandler(url, method='Get').handleResponse(ret)
 
-    def findFirst(self, params): 
+    def findFirst(self, params):
         return self.findFirstByKV(params['key'], params['value'])
 
     def findFirstByKV(self, key, value):
@@ -75,11 +86,11 @@ class KeycloakCRUD(object):
         else:
             return False
 
-    def removeFirstByKV(self, key, value): 
+    def removeFirstByKV(self, key, value, custom_key="id"):
         row = self.findFirstByKV(key,value)
 
         if row:
-            return self.remove(row['id']).isOk()
+            return self.remove(row[custom_key]).isOk()
         else:
             return False
 
@@ -88,11 +99,6 @@ class KeycloakCRUD(object):
         return ret != False
 
     def exist(self, _id):
-        try:
-            return self.get(_id).isOk()
-        except Exception as E: 
-            if "404" in str(E):
-                return False
-            else: 
-                raise E
+        return self.get(_id).ok()
+
 

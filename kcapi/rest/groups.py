@@ -1,11 +1,11 @@
+import json
+import requests
+
 from .crud import KeycloakCRUD
-from .helper import ValidateParams
 from .resp import ResponseHandler
-import json, requests
 
 
-
-class GroupAndRolesMappingBuilder(): 
+class GroupAndRolesMappingBuilder():
     roles = None
     def build(self, groupName, groups): 
         token = groups.token
@@ -38,7 +38,14 @@ class GroupAndRolesMappingBuilder():
 
     def __fetchRoles(self, roles): 
         find = self.roles.findFirstByKV
-        return list( map(lambda name: find('name', name), roles) )
+        list_of_roles = list( map(lambda name: find('name', name), roles) )
+        for role in list_of_roles:
+            if not role:
+                raise Exception("One or more roles from the provided list: "+str(roles)+" do not exist.")
+
+        return list_of_roles
+
+
 
     def add(self, roles): 
         populatedListOfRoles = self.__fetchRoles(roles)
@@ -49,7 +56,7 @@ class GroupAndRolesMappingBuilder():
     def remove(self, roles): 
         populatedListOfRoles = self.__fetchRoles(roles)
         remove_target = self.rolesMappings.targets.url('delete')
-        headers = self.rolesMappings.getHeaders()
+        headers = self.rolesMappings.headers()
 
         ret = requests.delete(remove_target, data=json.dumps(populatedListOfRoles), headers=headers )
         return ResponseHandler(remove_target).handleResponse(ret)

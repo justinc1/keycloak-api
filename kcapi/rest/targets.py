@@ -20,10 +20,10 @@ class Targets:
         t = Targets()
 
         t.targets = {
-                    "create": url.copy(),
-                    "update": url.copy(),
-                    "delete": url.copy(),
-                    "read":   url.copy(),
+            "create": url.copy(),
+            "update": url.copy(),
+            "delete": url.copy(),
+            "read":   url.copy(),
         }
 
         return t
@@ -32,32 +32,26 @@ class Targets:
     def makeWithArrayOfURLs(urls = {}): 
         t = Targets()
         t.targets = urls
+
         return t
-    
-    def getDeleteMethod(self): 
-        return self.targets['delete']
 
-    def getReadMethod(self): 
-        return self.targets['read']
+    def __init__(self):
+        self.targets = {}
+        self.root_target = None
 
-    def getCreateMethod(self): 
-        return self.targets['create']
-
-    def getUpdateMethod(self): 
-        return self.targets['update']
 
     def change(self, resourceName): 
-        for method in self.targets: 
+        for method in self.targets:
             self.targets[method].replaceCurrentResourceTarget(resourceName)
 
     def removeResources(self, resources):
-        for method in self.targets: 
+        for method in self.targets:
             self.targets[method].removeResources(resources)
 
         return self
 
     def removeLast(self):
-        for method in self.targets: 
+        for method in self.targets:
             self.targets[method].removeLast()
 
         return self
@@ -67,23 +61,23 @@ class Targets:
         return self
 
     def addResources(self, resources): 
-        for method in self.targets: 
+        for method in self.targets:
             self.targets[method].addResources(resources)
         return self
 
     def copy(self):
         urls = {}
-        for key in self.targets: 
+        for key in self.targets:
             urls[key] = self.targets[key].copy()
         return Targets.makeWithArrayOfURLs(urls) 
 
     def methods(self):
         return self.targets.keys()
 
-    def url(self, methodName): 
-        if methodName not in self.targets:
-            raise Exception('Method: '+ methodName +' not supported')
+    def url(self, method_name):
+        if method_name not in self.targets:
+            raise Exception('Method: '+ method_name +' not supported')
 
-        return self.targets[methodName].copy()
+        return self.targets[method_name].copy()
 
 

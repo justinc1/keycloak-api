@@ -1,0 +1,15 @@
+[
+    {
+        "authenticationFlow": true,
+        "configurable": false,
+        "displayName": "_xx1_1649346590884",
+        "index": 0,
+        "level": 0,
+        "providerId": "registration-page-form",
+        "requirement": "DISABLED",
+        "requirementChoices": [
+            "REQUIRED",
+            "DISABLED"
+        ]
+    }
+]
