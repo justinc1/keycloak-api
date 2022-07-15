@@ -9,6 +9,26 @@ pip install kcapi
 ```
 
 
+## Testing
+
+To run the test you would need a Keycloak instance, you can run one locally or in the [cloud]( https://developers.redhat.com/developer-sandbox/get-started), then you just have to follow this steps: 
+
+```shell script
+python3.10 -m venv .venv
+source .venv/bin/activate
+pip install requests
+
+# Setup SSO server - go to https://developers.redhat.com/developer-sandbox/get-started,
+# launch sandbox environment, +Add, select some "Red Hat Single Sign-On..." template.
+export KC_USER=admin
+export KC_PASSWORD=admin_password
+export KC_REALM=myrealm  # do not use master realm, it cannot be removed
+export KC_ENDPOINT=https://my-first-sso-me-me-dev.apps.sandbox.x8i5.p1.openshiftapps.com
+
+python -m unittest
+```
+
+
 ## API
 
 ### OpenID
@@ -461,21 +481,4 @@ realmsRoles = groups.realmRoles({"key":"name", "value":'DC'})
 realmsRoles.remove(["level-1", "level-2"])
 ```
 
-## Development
 
-Testing:
-
-```shell script
-python3.10 -m venv .venv
-source .venv/bin/activate
-pip install requests
-
-# Setup SSO server - go to https://developers.redhat.com/developer-sandbox/get-started,
-# launch sandbox environment, +Add, select some "Red Hat Single Sign-On..." template.
-export KC_USER=admin
-export KC_PASSWORD=admin_password
-export KC_REALM=myrealm  # do not use master realm, it cannot be removed
-export KC_ENDPOINT=https://my-first-sso-me-me-dev.apps.sandbox.x8i5.p1.openshiftapps.com
-
-python -m unittest
-```
