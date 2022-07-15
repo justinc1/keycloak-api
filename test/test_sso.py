@@ -106,6 +106,7 @@ class Testing_SSO_API(unittest.TestCase):
         magic_role = roles.findFirstByKV('name', role_name)
         self.assertIsNotNone(magic_role, "The role named magic should be in the server.")
 
+
         self.assertTrue(roles.removeFirstByKV("name", role_name))
         magic_role = roles.findFirstByKV('name', role_name)
         self.assertEqual(magic_role, [], "The role named magic should be deleted from the server.")
