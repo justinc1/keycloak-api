@@ -11,7 +11,7 @@ pip install kcapi
 
 ## Testing
 
-To run the test you would need a Keycloak instance, you can run one locally or in the [cloud]( https://developers.redhat.com/developer-sandbox/get-started), then you just have to follow this steps: 
+To run the test you would need a Keycloak instance, you can run one locally or in the [cloud]( https://developers.redhat.com/developer-sandbox/get-started) then you just have to follow this steps: 
 
 ```shell script
 python3.10 -m venv .venv
