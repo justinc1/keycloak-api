@@ -1,8 +1,7 @@
-import unittest, time
-from kcapi.rest.crud import Targets
-from kcapi.rest.url import RestURL
 import json
+import unittest
 
+from kcapi.rest.targets import Targets
 
 TEST_URL = 'https://hello.com'
 

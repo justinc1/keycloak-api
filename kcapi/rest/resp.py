@@ -5,10 +5,10 @@ class ResponseHandler:
         code = resp.status_code
 
         if code in [503, 500, 409, 404, 400]:
-            raise Exception('Method: '+ self.method +", Server Error: " + str(code) +  " Message: "+ resp.text +  " URL: ", str(url))
+            raise Exception('Method: '+ self.method +", Server Error: " + str(code) +  " Message: "+ resp.text +  " URL: ", str(url), ' payload: ', self.payload)
 
         if code == 401:
-            raise Exception("Method: ", self.method, ", Server returned 401: Unauthorized. Please check username or password.")
+            raise Exception("URL: ", url ," Method: ", self.method, ", Server returned 401: Unauthorized. Please check username or password.")
 
 
         json_data = resp.json()
@@ -16,9 +16,10 @@ class ResponseHandler:
         raise Exception("Method: "+ self.method +" Error: " + str(code) + " \n for URL:" + str(url) + " \n Response: " +  error_message)
 
 
-    def __init__(self, urlObject, method = None):
+    def __init__(self, urlObject, method = None, payload=None):
         self.URL = urlObject
         self.method = method
+        self.payload = payload
 
     def handleResponse(self, response):
         self.response = response
@@ -36,6 +37,9 @@ class ResponseHandler:
             self.__handle_failure(self.response, self.URL)
 
         return self
+
+    def ok(self):
+        return self.status >= 200 and self.status <= 208
 
     def resp(self):
         return self.response

@@ -97,18 +97,19 @@ class Testing_SSO_API(unittest.TestCase):
             self.assertEqual("No Keycloak endpoint URL" in str(E), True)
 
     def testing_roles_creation_and_removal(self):
-        role = {"name": "magic"}
+        role_name = 'magical_2'
+        role = {"name": role_name}
         roles = self.kc.build("roles", self.realm)
         state = roles.create(role).isOk() 
         self.assertTrue(state)
 
-        ammount_of_roles = len(roles.findAll().resp().json())
+        magic_role = roles.findFirstByKV('name', role_name)
+        self.assertIsNotNone(magic_role, "The role named magic should be in the server.")
 
-        self.assertEqual(ammount_of_roles, 4)
 
-        self.assertTrue(roles.removeFirstByKV("name", "magic"))
-        ammount_of_roles = len(roles.findAll().resp().json())
-        self.assertEqual(ammount_of_roles, 3)
+        self.assertTrue(roles.removeFirstByKV("name", role_name))
+        magic_role = roles.findFirstByKV('name', role_name)
+        self.assertEqual(magic_role, [], "The role named magic should be deleted from the server.")
 
     def testing_case_sensitive_resource(self):
         myCaseTrickyUser = {"enabled":'true',"attributes":{},"username":"The Punisher","firstName":"Bruce", "lastName":"Wayne", "emailVerified":""}
@@ -135,9 +136,9 @@ class Testing_SSO_API(unittest.TestCase):
         
     @classmethod
     def tearDownClass(self):
-        #self.testbed.goodBye()
+        self.testbed.goodBye()
         if self.master_realm.exist(TEST_REALM): 
-            #self.master_realm.remove(TEST_REALM)
+            self.master_realm.remove(TEST_REALM)
             return True
         return True
 

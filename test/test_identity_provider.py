@@ -1,7 +1,7 @@
 import unittest, time
-from kcapi import OpenID, RestURL
 from .testbed import TestBed
 import json
+
 
 def load_sample(fname):
     f = open(fname)
@@ -9,18 +9,25 @@ def load_sample(fname):
     f.close()
     return file1
 
-class Testing_User_API(unittest.TestCase):
+
+class TestingUserAPI(unittest.TestCase):
 
     def test_identity_provider_adding_saml_and_oid_IDP_providers(self):
         idp1 = self.kc.build('identity-provider', self.REALM)
         idp = self.kc.build('idp', self.REALM)
         saml = load_sample('./test/payloads/idp_saml.json')
         oid = load_sample('./test/payloads/idp_oid.json')
-        state = idp.create(saml).isOk()
-        self.assertTrue(state)
-        
-        state = idp1.create(oid).isOk()
-        self.assertTrue(state)
+        state1 = idp.create(saml).isOk()
+        self.assertTrue(state1)
+
+        state2 = idp1.create(oid).isOk()
+        self.assertTrue(state2)
+
+        oidc_ip = idp1.findFirstByKV('alias', 'oidc666')
+        saml_ip = idp1.findFirstByKV('alias', 'saml666')
+
+        self.assertEqual(saml_ip['alias'], saml['alias'], 'SAML alias should match')
+        self.assertEqual(oidc_ip['alias'], oid['alias'], 'SAML alias should match')
 
     @classmethod
     def setUpClass(self):
@@ -33,8 +40,9 @@ class Testing_User_API(unittest.TestCase):
 
     @classmethod
     def tearDownClass(self):
-        #self.testbed.goodBye()
+        self.testbed.goodBye()
         return True
+
 
 if __name__ == '__main__':
     unittest.main()

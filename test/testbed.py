@@ -16,17 +16,19 @@ class TestBed:
         self.groupName = 'DC'
         self.roleNames = ['level-1', 'level-2', 'level-3'] 
         
-        token = OpenID.createAdminClient(self.USER, self.PASSWORD).getToken(self.ENDPOINT)
+        token = OpenID.createAdminClient(self.USER, self.PASSWORD, url=self.ENDPOINT).getToken()
         self.kc = Keycloak(token, self.ENDPOINT)
         self.master_realm = self.kc.admin()
         self.realm = self.REALM 
         self.token = token
 
-    def createRealms(self):
+    def deleteRealms(self):
         realm = self.realm
-        if self.master_realm.existByKV("id", realm): 
+        if self.master_realm.existByKV("id", realm):
             self.master_realm.removeFirstByKV("id", realm)
 
+    def createRealms(self):
+        realm = self.realm
         self.master_realm.create({"enabled": "true", "id": realm, "realm": realm})
 
     def createGroups(self):
@@ -69,7 +71,9 @@ class TestBed:
             users.create(usr).isOk()
 
     def goodBye(self): 
-        remove_state = self.master_realm.remove(self.realm)
+        state = self.master_realm.remove(self.realm).ok()
+        if not state:
+            raise Exception("Cannot delete the realm -> " + self.realm )
 
     def getKeycloak(self):
         return self.kc
