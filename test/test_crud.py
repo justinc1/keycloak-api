@@ -60,6 +60,9 @@ def test_complete_CRUD(that, users):
 
         that.assertFalse(removed)
 
+        ## COUNT
+        count = users.count()
+        that.assertEqual(3, count)
 
 
 class Testing_User_API(unittest.TestCase):

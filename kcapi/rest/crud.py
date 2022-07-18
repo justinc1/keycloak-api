@@ -70,6 +70,14 @@ class KeycloakCRUD(object):
         responses = ResponseHandler(url, method='Get').handleResponse(ret)
         return responses.verify().resp().json()
 
+    # Count object. Works only for /users/.
+    def count(self):
+        url = self.targets.url('read')
+        url.pushResource('count')
+        ret = requests.get(url, headers=self.getHeaders())
+        responses = ResponseHandler(url, method='Get').handleResponse(ret)
+        return responses.verify().resp().json()
+
     def findFirst(self, params):
         return self.findFirstByKV(params['key'], params['value'])
 
