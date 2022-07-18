@@ -61,6 +61,15 @@ class KeycloakCRUD(object):
         ret = requests.get(url, headers=self.headers())
         return ResponseHandler(url, method='Get').handleResponse(ret)
 
+    # Search for user by email, firstName, lastName, etc.
+    # This can be used with /users/ API endpoint,
+    # but not with /groups/ (see API definition).
+    def search(self, params):
+        url = self.targets.url('read')
+        ret = requests.get(url, params=params, headers=self.getHeaders())
+        responses = ResponseHandler(url, method='Get').handleResponse(ret)
+        return responses.verify().resp().json()
+
     def findFirst(self, params):
         return self.findFirstByKV(params['key'], params['value'])
 

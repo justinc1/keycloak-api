@@ -41,6 +41,17 @@ def test_complete_CRUD(that, users):
         _all = users.all()
         that.assertEqual(len(_all), 4, 'All users amount to one')
 
+        ## SEARCH
+        usr_list = users.search({'firstName': 'no-such-user'})
+        that.assertEqual(0, len(usr_list))
+
+        usr_list = users.search({'email': None})
+        that.assertEqual(4, len(usr_list))
+
+        usr_list = users.search({'firstName': 'pedro'})
+        that.assertEqual(1, len(usr_list))
+        that.assertEqual('pedro', usr_list[0]['firstName'])
+        that.assertEqual('pepe', usr_list[0]['username'])
 
         ## DELETE
         remove_state = users.remove(ret['id']).isOk()
