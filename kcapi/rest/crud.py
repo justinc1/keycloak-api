@@ -12,9 +12,10 @@ class KeycloakCRUD(object):
 
         return kc
 
-    def __init__(self): 
+    def __init__(self, session=None):
         self.targets = None
         self.token = None
+        self.session = session or requests.Session()
 
     def headers(self):
 
@@ -35,30 +36,30 @@ class KeycloakCRUD(object):
     def create(self, payload):
         url = self.targets.url('create')
 
-        ret = requests.post(url, data=json.dumps(payload), headers=self.headers())
+        ret = self.session.post(url, data=json.dumps(payload), headers=self.headers())
         return ResponseHandler(url, method='Post', payload=payload).handleResponse(ret)
 
     def update(self, obj_id=None, payload=None):
         url = self.targets.url('update')
         target = str(self.setIdentifier(obj_id, url))
 
-        ret = requests.put(target, data=json.dumps(payload), headers=self.headers())
+        ret = self.session.put(target, data=json.dumps(payload), headers=self.headers())
         return ResponseHandler(target, method='Put', payload=payload).handleResponse(ret)
 
     def remove(self, _id):
         delete = self.targets.url('delete')
         url = self.setIdentifier(_id, delete)
-        ret = requests.delete(url, headers=self.headers())
+        ret = self.session.delete(url, headers=self.headers())
         return ResponseHandler(url, method='Delete').handleResponse(ret)
         
     def get(self, _id):
         url = self.targets.url('read')
-        ret = requests.get(str(self.setIdentifier(_id, url)), headers=self.headers())
+        ret = self.session.get(str(self.setIdentifier(_id, url)), headers=self.headers())
         return ResponseHandler(url, method='Get').handleResponse(ret)
 
     def findAll(self):
         url = self.targets.url('read')
-        ret = requests.get(url, headers=self.headers())
+        ret = self.session.get(url, headers=self.headers())
         return ResponseHandler(url, method='Get').handleResponse(ret)
 
     # Search for user by email, firstName, lastName, etc.
@@ -66,7 +67,7 @@ class KeycloakCRUD(object):
     # but not with /groups/ (see API definition).
     def search(self, params):
         url = self.targets.url('read')
-        ret = requests.get(url, params=params, headers=self.getHeaders())
+        ret = self.session.get(url, params=params, headers=self.headers())
         responses = ResponseHandler(url, method='Get').handleResponse(ret)
         return responses.verify().resp().json()
 
@@ -74,7 +75,7 @@ class KeycloakCRUD(object):
     def count(self):
         url = self.targets.url('read')
         url.pushResource('count')
-        ret = requests.get(url, headers=self.getHeaders())
+        ret = self.session.get(url, headers=self.headers())
         responses = ResponseHandler(url, method='Get').handleResponse(ret)
         return responses.verify().resp().json()
 
