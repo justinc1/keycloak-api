@@ -2,6 +2,8 @@ import requests, json
 from .resp import ResponseHandler
 
 class KeycloakCRUD(object):
+    _global_default_session = None
+
     @staticmethod
     def get_child(that, resource_id, resource_name):
         kc = KeycloakCRUD()
@@ -12,10 +14,26 @@ class KeycloakCRUD(object):
 
         return kc
 
+    @classmethod
+    def _get_default_session(cls):
+        if KeycloakCRUD._global_default_session:
+            return KeycloakCRUD._global_default_session
+        # https://stackoverflow.com/a/66672380
+        # Request will issue only one request over a single connection, at a time.
+        # Connection is reused for a next request only when previous reply
+        # is received AND consumed.
+        KeycloakCRUD._global_default_session = requests.Session()
+        adapter = requests.adapters.HTTPAdapter(
+            pool_connections=1000,
+            pool_maxsize=100,
+        )
+        KeycloakCRUD._global_default_session.mount('https://', adapter)
+        return KeycloakCRUD._global_default_session
+
     def __init__(self, session=None):
         self.targets = None
         self.token = None
-        self.session = session or requests.Session()
+        self.session = session or KeycloakCRUD._get_default_session()
 
     def headers(self):
 
