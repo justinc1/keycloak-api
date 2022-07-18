@@ -97,6 +97,21 @@ class KeycloakCRUD(object):
         responses = ResponseHandler(url, method='Get').handleResponse(ret)
         return responses.verify().resp().json()
 
+    # Reset password. Works only for /users/.
+    def reset_password(self, user_uuid, password, temporary=True):
+        url = self.targets.url('read')
+        url.pushResource(user_uuid)
+        url.pushResource('reset-password')
+        payload = {
+            "type": "password",
+            "temporary": temporary,
+            "value": password,
+        }
+        ret = self.session.put(url, data=json.dumps(payload), headers=self.headers())
+        responses = ResponseHandler(url, method='Put').handleResponse(ret)
+        if not responses.ok():
+            raise Exception(f'Unexpected API reponse, status={responses.status} message={responses.resp().content}')
+
     def findFirst(self, params):
         return self.findFirstByKV(params['key'], params['value'])
 
