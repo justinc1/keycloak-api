@@ -50,7 +50,6 @@ def test_complete_CRUD(that, users):
         that.assertFalse(removed)
 
 
-
 class Testing_User_API(unittest.TestCase):
 
     def testing_crud_API(self):
@@ -61,7 +60,37 @@ class Testing_User_API(unittest.TestCase):
         users.token = token
 
         test_complete_CRUD(self, users)
-   
+
+    def test_slow_CRUD(self):
+        """
+        We want to test  test if long lasting requests can complete.
+        We monkey patch requests.put to achieve long upload time.
+        The access_token expires in 60 sec.
+        Assumption is that access_token is verified at beginning of request only.
+        """
+        token = self.testbed.token
+        users = KeycloakCRUD()
+        users.targets = Targets.makeWithURL(str(self.USER_ENDPOINT))
+        users.token = token
+
+        ## IS PRESENT
+        user_present = users.findFirstByKV('firstName', 'pepe')
+        self.assertFalse(user_present)
+
+        ## POST
+        state = users.create(self.USER_DATA)
+        self.assertTrue(state, 'fail while posting')
+
+        ret = users.findFirstByKV('username', 'pepe')
+        self.assertEqual('pepe', ret['firstName'], 'We expect a user with pepe as username to be created')
+
+        ## DELETE
+        remove_state = users.remove(ret['id']).isOk()
+        self.assertTrue(remove_state)
+        ## IS PRESENT
+        user_present = users.findFirstByKV('firstName', 'pepe')
+        self.assertFalse(user_present)
+
     @classmethod
     def setUpClass(self):
        
