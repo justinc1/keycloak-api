@@ -1,6 +1,7 @@
 import unittest, time, json
-from kcapi import OpenID, Keycloak
-from .testbed import TestBed 
+from tempfile import TemporaryFile
+from kcapi import OpenID, Keycloak, Token
+from test.testbed import TestBed
 
 WRONG_URL =  'https://sso-wrong-cvaldezr-stage.apps.sandbox-m2.ll9k.p1.openshiftapps.com'
 
@@ -162,6 +163,52 @@ class Testing_OpenID(unittest.TestCase):
         state_after_delay = group_using_expired_token.removeFirstByKV("name", "delete_this_group")
         self.assertTrue(state_after_delay)
 
+    def testing_token_save_to_file(self):
+        oid_client = OpenID({
+            "client_id": "admin-cli",
+            "username": self.testbed.USER,
+            "password": self.testbed.PASSWORD,
+            "grant_type": "password",
+            "realm": "master"
+        }, self.ENDPOINT)
+
+        token = oid_client.getToken()
+        with TemporaryFile(mode='w+') as fd:
+            token.save_to_file(fd)
+            # check file content
+            fd.seek(0)
+            data = json.load(fd)
+            self.assertIsInstance(data, dict)
+            self.assertIn("refresh_token", data)
+            self.assertIn("well_known", data)
+            self.assertIn("token_endpoint", data["well_known"])
+            self.assertIn("client_id", data)
+
+    def testing_token_load_from_file(self):
+        oid_client = OpenID({
+            "client_id": "admin-cli",
+            "username": self.testbed.USER,
+            "password": self.testbed.PASSWORD,
+            "grant_type": "password",
+            "realm": "master"
+        }, self.ENDPOINT)
+
+        token1 = oid_client.getToken()
+        with TemporaryFile(mode='w+') as fd:
+            token1.save_to_file(fd)
+            # load new token from file
+            fd.seek(0)
+            token2 = Token(file=fd)
+            self.assertEqual(token1.token, token2.token)
+            self.assertEqual(token1.refresh_token, token2.refresh_token)
+            self.assertEqual(token1.well_known, token2.well_known)
+            self.assertEqual(token1.client_id, token2.client_id)
+            # check token2 can be refreshed
+            token3 = token2.refresh()
+            self.assertNotEqual(token2.token, token3.token)
+            self.assertNotEqual(token2.refresh_token, token3.refresh_token)
+            self.assertEqual(token2.well_known, token3.well_known)
+            self.assertEqual(token2.client_id, token3.client_id)
 
     @classmethod
     def setUpClass(self):

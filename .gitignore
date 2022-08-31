@@ -140,3 +140,6 @@ test.sh
 .DS_Store
 upload.sh
 
+# Files with environment variables
+env.sh
+env.env
