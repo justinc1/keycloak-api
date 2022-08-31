@@ -50,6 +50,23 @@ def test_complete_CRUD(that, users):
         that.assertFalse(removed)
 
 
+class SlowFile:
+    def __init__(self, content, delays=[]):
+        self.content = bytes(content, 'utf-8')
+        self.delays = delays
+        self.ii = -1
+
+    def __iter__(self):
+        # self.ii = -1
+        return self
+
+    def __next__(self):
+        self.ii += 1
+        if self.ii >= len(self.content):
+            raise StopIteration
+        return self.content[self.ii: self.ii+1]
+
+
 class Testing_User_API(unittest.TestCase):
 
     def testing_crud_API(self):
@@ -78,7 +95,17 @@ class Testing_User_API(unittest.TestCase):
         self.assertFalse(user_present)
 
         ## POST
-        state = users.create(self.USER_DATA)
+        # state = users.create(self.USER_DATA)
+        # inline code for users.create()
+        def users_create(obj, payload):
+            import requests
+            from kcapi.rest.resp import ResponseHandler
+            url = obj.targets.url('create')
+            data_file = SlowFile(json.dumps(payload), [])
+            ret = requests.post(url, data=data_file, headers=obj.headers())
+            return ResponseHandler(url, method='Post', payload=payload).handleResponse(ret)
+
+        state = users_create(users, self.USER_DATA)
         self.assertTrue(state, 'fail while posting')
 
         ret = users.findFirstByKV('username', 'pepe')
