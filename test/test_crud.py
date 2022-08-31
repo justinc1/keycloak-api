@@ -4,6 +4,7 @@ from kcapi.rest.targets import Targets
 from kcapi.rest.url import RestURL
 from .testbed import TestBed
 import json
+import os
 
 def load_sample(fname):
     f = open(fname)
@@ -64,6 +65,8 @@ class SlowFile:
         self.ii += 1
         if self.ii >= len(self.content):
             raise StopIteration
+        if self.ii < len(self.delays):
+            time.sleep(self.delays[self.ii])
         return self.content[self.ii: self.ii+1]
 
 
@@ -78,12 +81,16 @@ class Testing_User_API(unittest.TestCase):
 
         test_complete_CRUD(self, users)
 
+    @unittest.skipIf(not int(os.environ.get("KC_RUN_SLOW_TEST", "0")), "Test is run only if KC_RUN_SLOW_TEST is set")
     def test_slow_CRUD(self):
         """
         We want to test  test if long lasting requests can complete.
         We monkey patch requests.put to achieve long upload time.
         The access_token expires in 60 sec.
         Assumption is that access_token is verified at beginning of request only.
+        Verification: run
+        KC_RUN_SLOW_TEST=1 python -m unittest test.test_crud.Testing_User_API.test_slow_CRUD
+        and check TCP traffic with tcpdump.
         """
         token = self.testbed.token
         users = KeycloakCRUD()
@@ -101,7 +108,7 @@ class Testing_User_API(unittest.TestCase):
             import requests
             from kcapi.rest.resp import ResponseHandler
             url = obj.targets.url('create')
-            data_file = SlowFile(json.dumps(payload), [])
+            data_file = SlowFile(json.dumps(payload), [10]*10)
             ret = requests.post(url, data=data_file, headers=obj.headers())
             return ResponseHandler(url, method='Post', payload=payload).handleResponse(ret)
 
