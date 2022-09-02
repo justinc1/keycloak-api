@@ -34,7 +34,7 @@ def elapsed_time(time2):
     return (time.time() - time2)
 
 class Token:
-    def __init__(self, well_known={}, payload=None, refresh_token=None, raw_json_str=None, client_id=None):
+    def __init__(self, well_known={}, payload=None, refresh_token=None, raw_json_str=None, client_id=None, file=None):
         self.token = None
         self.refresh_token = None
         self.expiring = 60
@@ -53,7 +53,10 @@ class Token:
         if raw_json_str:
             self.load_from_request_payload(json.loads(raw_json_str.replace("'", "\"")))
 
-        if not payload and not refresh_token and not raw_json_str:
+        if file:
+            self.load_from_file(file)
+
+        if not payload and not refresh_token and not raw_json_str and not file:
             raise Exception('Token not properly initialized. You have to provide a single refresh token, or otherwise a dictionary/raw JSON string with the following shape: https://datatracker.ietf.org/doc/html/rfc6749#content.')
 
 
@@ -68,6 +71,39 @@ class Token:
         self.start_time = time.time()
         self.payload = payload
 
+    def load_from_file(self, fd):
+        """
+        Load token from json content.
+        fd is readable file-like object.
+        """
+        data = json.load(fd)
+        self.token = data["access_token"]
+        self.refresh_token = data["refresh_token"]
+        self.expiring = data["expires_in"]
+        assert isinstance(self.expiring, int)
+        self.well_known = data["well_known"]
+        self.start_time = data["start_time"]
+        self.client_id = data["client_id"]
+        # hopefully payload is never used; all relevant fields should already by part of Token
+        self.payload = None
+
+    def save_to_file(self, fd):
+        """
+        Save token as json content.
+        fd is writable file-like object.
+        """
+        data = dict(
+            access_token=self.token,
+            refresh_token=self.refresh_token,
+            expires_in=self.expiring,
+            # hopefully only well_known["token_endpoint"] is needed.
+            well_known=dict(
+                token_endpoint=self.well_known["token_endpoint"],
+            ),
+            start_time=self.start_time,
+            client_id=self.client_id,
+        )
+        json.dump(data, fd, indent=4)
 
     def expired(self):
         if elapsed_time(self.start_time) >= (self.expiring - 15): # If current time is above expiring time minus 10 seconds we ask for a new token.
