@@ -4,6 +4,7 @@ from kcapi.rest.targets import Targets
 from kcapi.rest.url import RestURL
 from .testbed import TestBed
 import json
+import os
 
 def load_sample(fname):
     f = open(fname)
@@ -58,6 +59,24 @@ def test_complete_CRUD(that, users):
         that.assertFalse(existByKV_false_state,msg="[TEST existByKV False] We expect False if user does not exist")
 
 
+class SlowFile:
+    def __init__(self, content, delays=[]):
+        self.content = bytes(content, 'utf-8')
+        self.delays = delays
+        self.ii = -1
+
+    def __iter__(self):
+        # self.ii = -1
+        return self
+
+    def __next__(self):
+        self.ii += 1
+        if self.ii >= len(self.content):
+            raise StopIteration
+        if self.ii < len(self.delays):
+            time.sleep(self.delays[self.ii])
+        return self.content[self.ii: self.ii+1]
+
 
 class Testing_User_API(unittest.TestCase):
 
@@ -69,6 +88,50 @@ class Testing_User_API(unittest.TestCase):
         users.token = token
 
         test_complete_CRUD(self, users)
+
+    @unittest.skipIf(not int(os.environ.get("KC_RUN_SLOW_TEST", "0")), "Test is run only if KC_RUN_SLOW_TEST is set")
+    def test_slow_CRUD(self):
+        """
+        We want to test  test if long lasting requests can complete.
+        We monkey patch requests.put to achieve long upload time.
+        The access_token expires in 60 sec.
+        Assumption is that access_token is verified at beginning of request only.
+        Verification: run
+        KC_RUN_SLOW_TEST=1 python -m unittest test.test_crud.Testing_User_API.test_slow_CRUD
+        and check TCP traffic with tcpdump.
+        """
+        token = self.testbed.token
+        users = KeycloakCRUD()
+        users.targets = Targets.makeWithURL(str(self.USER_ENDPOINT))
+        users.token = token
+
+        ## IS PRESENT
+        user_present = users.findFirstByKV('firstName', 'pepe')
+        self.assertFalse(user_present)
+
+        ## POST
+        # state = users.create(self.USER_DATA)
+        # inline code for users.create()
+        def users_create(obj, payload):
+            import requests
+            from kcapi.rest.resp import ResponseHandler
+            url = obj.targets.url('create')
+            data_file = SlowFile(json.dumps(payload), [10]*10)
+            ret = requests.post(url, data=data_file, headers=obj.headers())
+            return ResponseHandler(url, method='Post', payload=payload).handleResponse(ret)
+
+        state = users_create(users, self.USER_DATA)
+        self.assertTrue(state, 'fail while posting')
+
+        ret = users.findFirstByKV('username', 'pepe')
+        self.assertEqual('pepe', ret['firstName'], 'We expect a user with pepe as username to be created')
+
+        ## DELETE
+        remove_state = users.remove(ret['id']).isOk()
+        self.assertTrue(remove_state)
+        ## IS PRESENT
+        user_present = users.findFirstByKV('firstName', 'pepe')
+        self.assertFalse(user_present)
 
     @classmethod
     def setUpClass(self):
