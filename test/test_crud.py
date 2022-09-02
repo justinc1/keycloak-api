@@ -23,22 +23,26 @@ def test_complete_CRUD(that, users):
         ## POST
         state = users.create(that.USER_DATA)
         that.assertTrue(state, 'fail while posting')
-     
+
         ret  = users.findFirstByKV('username', 'pepe')
         that.assertEqual('pepe', ret['firstName'], 'We expect a user with pepe as username to be created')
-        
+
+        ## TEST existByKV True
+        existByKV_true_state = users.existByKV("username",that.USER_DATA["username"])
+        that.assertTrue(existByKV_true_state,msg="[TEST existByKV True] We expect True if user does exist")
+
         ## UPDATE
         state = users.update(ret['id'], {'firstName': 'pedro'})
         that.assertTrue(state, 'fail while updating')
-        
+
         ret  = users.findFirstByKV('firstName', 'pedro')
         that.assertTrue(ret != False, 'Something wrong updating the resource.')
         that.assertEqual('pedro', ret['firstName'], 'We expect a user with pepe as username to be created')
-        
+
         ## GET
         usr = users.get(ret['id']).resp().json()
         that.assertEqual(ret['id'], usr['id'])
-        
+
         _all = users.all()
         that.assertEqual(len(_all), 4, 'All users amount to one')
 
@@ -49,6 +53,10 @@ def test_complete_CRUD(that, users):
         removed = users.findFirstByKV('firstName', 'pedro')
 
         that.assertFalse(removed)
+
+        ## TEST existByKV False
+        existByKV_false_state = users.existByKV("username","user_existByKV")
+        that.assertFalse(existByKV_false_state,msg="[TEST existByKV False] We expect False if user does not exist")
 
 
 class SlowFile:
@@ -127,17 +135,17 @@ class Testing_User_API(unittest.TestCase):
 
     @classmethod
     def setUpClass(self):
-       
+
         self.testbed = TestBed()
         self.testbed.createRealms()
         self.testbed.createUsers()
         self.REALM = self.testbed.REALM
-       
+
         self.USER_ENDPOINT = RestURL(self.testbed.ENDPOINT)
-        self.USER_ENDPOINT.addResources(['auth', 'admin', 'realms', self.REALM, 'users']) 
+        self.USER_ENDPOINT.addResources(['auth', 'admin', 'realms', self.REALM, 'users'])
 
         self.USER_DATA = {"enabled":True,"attributes":{},"username":"pepe","emailVerified":"", "firstName": 'pepe'}
-       
+
     @classmethod
     def tearDownClass(self):
         self.testbed.goodBye()
