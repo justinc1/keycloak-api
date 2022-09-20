@@ -102,7 +102,7 @@ class KeycloakCRUD(object):
 
     def existByKV(self, key, value): 
         ret = self.findFirstByKV(key, value)
-        return ret != False
+        return ret != []
 
     def exist(self, _id):
         return self.get(_id).ok()
