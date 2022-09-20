@@ -23,7 +23,8 @@ def craft_error_message(resp, url):
 def get_well_known_info(url, realm):
     discovery_url = RestURL(url, ['auth', 'realms', realm, '.well-known', 'openid-configuration'])
 
-    resp = KcSession().get(url=str(discovery_url))
+    with KcSession() as session:
+        resp = session.get(url=str(discovery_url))
 
     if resp.status_code == 200:
         return resp.json()
@@ -85,7 +86,8 @@ class Token:
             "refresh_token": self.refresh_token
         }
 
-        resp = KcSession().post(token_endpoint, data=body)
+        with KcSession() as session:
+            resp = session.post(token_endpoint, data=body)
 
         if resp.status_code != 200:
             craft_error_message(resp, token_endpoint)
@@ -138,7 +140,8 @@ class OpenID:
     def getToken(self):
         url = self.url
         well_known = get_well_known_info(url, self.realm)
-        resp = KcSession().post(well_known['token_endpoint'], data=self.credentials)  #
+        with KcSession() as session:
+            resp = session.post(well_known['token_endpoint'], data=self.credentials)
 
         if resp.status_code == 200:
             payload = resp.json()

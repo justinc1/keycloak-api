@@ -58,7 +58,8 @@ class GroupAndRolesMappingBuilder():
         remove_target = self.rolesMappings.targets.url('delete')
         headers = self.rolesMappings.headers()
 
-        ret = KcSession().delete(remove_target, data=json.dumps(populatedListOfRoles), headers=headers )
+        with KcSession() as session:
+            ret = session.delete(remove_target, data=json.dumps(populatedListOfRoles), headers=headers )
         return ResponseHandler(remove_target).handleResponse(ret)
 
 class Groups(KeycloakCRUD): 

@@ -36,30 +36,35 @@ class KeycloakCRUD(object):
     def create(self, payload):
         url = self.targets.url('create')
 
-        ret = KcSession().post(url, data=json.dumps(payload), headers=self.headers())
+        with KcSession() as session:
+            ret = session.post(url, data=json.dumps(payload), headers=self.headers())
         return ResponseHandler(url, method='Post', payload=payload).handleResponse(ret)
 
     def update(self, obj_id=None, payload=None):
         url = self.targets.url('update')
         target = str(self.setIdentifier(obj_id, url))
 
-        ret = KcSession().put(target, data=json.dumps(payload), headers=self.headers())
+        with KcSession() as session:
+            ret = session.put(target, data=json.dumps(payload), headers=self.headers())
         return ResponseHandler(target, method='Put', payload=payload).handleResponse(ret)
 
     def remove(self, _id):
         delete = self.targets.url('delete')
         url = self.setIdentifier(_id, delete)
-        ret = KcSession().delete(url, headers=self.headers())
+        with KcSession() as session:
+            ret = session.delete(url, headers=self.headers())
         return ResponseHandler(url, method='Delete').handleResponse(ret)
         
     def get(self, _id):
         url = self.targets.url('read')
-        ret = KcSession().get(str(self.setIdentifier(_id, url)), headers=self.headers())
+        with KcSession() as session:
+            ret = session.get(str(self.setIdentifier(_id, url)), headers=self.headers())
         return ResponseHandler(url, method='Get').handleResponse(ret)
 
     def findAll(self):
         url = self.targets.url('read')
-        ret = KcSession().get(url, headers=self.headers())
+        with KcSession() as session:
+            ret = session.get(url, headers=self.headers())
         return ResponseHandler(url, method='Get').handleResponse(ret)
 
     def findFirst(self, params):

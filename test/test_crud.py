@@ -117,7 +117,8 @@ class Testing_User_API(unittest.TestCase):
             from kcapi.rest.resp import ResponseHandler
             url = obj.targets.url('create')
             data_file = SlowFile(json.dumps(payload), [10]*10)
-            ret = KcSession().post(url, data=data_file, headers=obj.headers())
+            with KcSession() as session:
+                ret = session.post(url, data=data_file, headers=obj.headers())
             return ResponseHandler(url, method='Post', payload=payload).handleResponse(ret)
 
         state = users_create(users, self.USER_DATA)
