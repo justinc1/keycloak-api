@@ -28,6 +28,15 @@ export KC_ENDPOINT=https://my-first-sso-me-me-dev.apps.sandbox.x8i5.p1.openshift
 python -m unittest
 ```
 
+## Optionally disable TLS certificate verification
+
+Environment variable `KEYCLOAK_API_CA_BUNDLE` can be used to disable TLS certificate verification.
+`KEYCLOAK_API_CA_BUNDLE` can have 3 different values:
+- unset (default) - TLS verification is enforced
+- empty string - TLS verification is disabled
+- path to file or directory
+  - file contains a CA certificate bundle or,
+  - directory contains individual CA certificate files.
 
 ## API
 
