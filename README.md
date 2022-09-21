@@ -13,6 +13,16 @@ pip install kcapi
 
 To run the test you would need a Keycloak instance, you can run one locally or in the [cloud]( https://developers.redhat.com/developer-sandbox/get-started) then you just have to follow this steps: 
 
+To start a Keycloak instance in docker container use command like below.
+In this case TLS certificate verification needs to be disabled for testing.
+
+```shell
+# keycloak:15.0.2 is close to RedHat SSO 7.5
+docker run -d -p 8080:80 -p 8433:443 -e KEYCLOAK_USER=admin -e KEYCLOAK_PASSWORD=admin quay.io/keycloak/keycloak:15.0.2 -b 0.0.0.0
+```
+
+With Keycloak instance running we can start tests:
+
 ```shell script
 python3.10 -m venv .venv
 source .venv/bin/activate
