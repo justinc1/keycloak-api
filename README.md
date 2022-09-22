@@ -13,6 +13,16 @@ pip install kcapi
 
 To run the test you would need a Keycloak instance, you can run one locally or in the [cloud]( https://developers.redhat.com/developer-sandbox/get-started) then you just have to follow this steps: 
 
+To start a Keycloak instance in docker container use command like below.
+In this case TLS certificate verification needs to be disabled for testing.
+
+```shell
+# keycloak:15.0.2 is close to RedHat SSO 7.5
+docker run -d -p 8080:80 -p 8433:443 -e KEYCLOAK_USER=admin -e KEYCLOAK_PASSWORD=admin quay.io/keycloak/keycloak:15.0.2 -b 0.0.0.0
+```
+
+With Keycloak instance running we can start tests:
+
 ```shell script
 python3.10 -m venv .venv
 source .venv/bin/activate
@@ -28,6 +38,15 @@ export KC_ENDPOINT=https://my-first-sso-me-me-dev.apps.sandbox.x8i5.p1.openshift
 python -m unittest
 ```
 
+## Optionally disable TLS certificate verification
+
+Environment variable `KEYCLOAK_API_CA_BUNDLE` can be used to disable TLS certificate verification.
+`KEYCLOAK_API_CA_BUNDLE` can have 3 different values:
+- unset (default) - TLS verification is enforced
+- empty string - TLS verification is disabled
+- path to file or directory
+  - file contains a CA certificate bundle or,
+  - directory contains individual CA certificate files.
 
 ## API
 
