@@ -1,6 +1,5 @@
 import json
-from kcapi.kcsession import KcSession
-
+from .kcsession import KcSession
 from .crud import KeycloakCRUD
 from .resp import ResponseHandler
 

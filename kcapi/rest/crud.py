@@ -1,6 +1,7 @@
 import json
 from .resp import ResponseHandler
-from kcapi.kcsession import KcSession
+from .kcsession import KcSession
+
 
 class KeycloakCRUD(object):
     @staticmethod
