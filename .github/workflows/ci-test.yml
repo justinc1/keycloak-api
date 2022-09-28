@@ -1,0 +1,25 @@
+name: CI tests
+on:
+  - push
+jobs:
+  run-unittest:
+    runs-on: ubuntu-22.04
+    container: python:3.10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      # install dependencies from setup.py
+      - run: pip install .
+      - run: python -m unittest
+    env:
+      KEYCLOAK_API_CA_BUNDLE:
+      KC_ENDPOINT: https://keycloak:8443/
+      KC_USER: admin
+      KC_PASSWORD: admin
+      KC_REALM: ci-test-realm
+    services:
+      keycloak:
+        image: quay.io/keycloak/keycloak:15.0.2
+        env:
+          KEYCLOAK_USER: admin
+          KEYCLOAK_PASSWORD: admin
