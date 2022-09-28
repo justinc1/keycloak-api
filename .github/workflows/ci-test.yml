@@ -25,3 +25,18 @@ jobs:
         env:
           KEYCLOAK_USER: admin
           KEYCLOAK_PASSWORD: admin
+
+  # Install package, the check it can be imported
+  test-import:
+    runs-on: ubuntu-22.04
+    container: python:3.10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      # install dependencies from setup.py
+      - run: pip install .
+      - run: python -c 'from kcapi import OpenID; print(OpenID);'
+      - run: python -c 'from kcapi.rest.groups import Groups; print(Groups);'
+      # Do this also from some arbitrary directory
+      - run: cd /var/tmp && python -c 'from kcapi import OpenID; print(OpenID);'
+      - run: cd /var/tmp && python -c 'from kcapi.rest.groups import Groups; print(Groups);'
