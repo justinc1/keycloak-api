@@ -10,6 +10,8 @@ jobs:
         uses: actions/checkout@v3
       # install dependencies from setup.py
       - run: pip install .
+      - name: Wait on keycloak to be up
+        run: curl -k --connect-timeout 60 --retry 60 --retry-delay 1 --retry-connrefused --retry-max-time 60 https://keycloak:8443 -v
       - run: python -m unittest
     env:
       KEYCLOAK_API_CA_BUNDLE:
