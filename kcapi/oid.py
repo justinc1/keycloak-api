@@ -1,6 +1,7 @@
 import json, time
 from .rest import RestURL
-from kcsession import KcSession
+from .rest.kcsession import KcSession
+
 
 def craft_error_message(resp, url):
     code = resp.status_code
