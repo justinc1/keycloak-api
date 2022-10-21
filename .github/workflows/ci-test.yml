@@ -1,0 +1,42 @@
+name: CI tests
+on:
+  - push
+jobs:
+  run-unittest:
+    runs-on: ubuntu-22.04
+    container: python:3.10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      # install dependencies from setup.py
+      - run: pip install .
+      - name: Wait on keycloak to be up
+        run: curl -k --connect-timeout 60 --retry 60 --retry-delay 1 --retry-connrefused --retry-max-time 60 https://keycloak:8443 -v
+      - run: python -m unittest
+    env:
+      KEYCLOAK_API_CA_BUNDLE:
+      KC_ENDPOINT: https://keycloak:8443/
+      KC_USER: admin
+      KC_PASSWORD: admin
+      KC_REALM: ci-test-realm
+    services:
+      keycloak:
+        image: quay.io/keycloak/keycloak:15.0.2
+        env:
+          KEYCLOAK_USER: admin
+          KEYCLOAK_PASSWORD: admin
+
+  # Install package, the check it can be imported
+  test-import:
+    runs-on: ubuntu-22.04
+    container: python:3.10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      # install dependencies from setup.py
+      - run: pip install .
+      - run: python -c 'from kcapi import OpenID; print(OpenID);'
+      - run: python -c 'from kcapi.rest.groups import Groups; print(Groups);'
+      # Do this also from some arbitrary directory
+      - run: cd /var/tmp && python -c 'from kcapi import OpenID; print(OpenID);'
+      - run: cd /var/tmp && python -c 'from kcapi.rest.groups import Groups; print(Groups);'
