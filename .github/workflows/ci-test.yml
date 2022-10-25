@@ -43,9 +43,9 @@ jobs:
 
   # build whl and upload to pypi.org
   build_whl:
-    if: github.event.ref_type == 'tag'
+    if: github.ref_type == 'tag'
     needs:
-      - run-unittest
+      # - run-unittest
       - test-import
     runs-on: ubuntu-22.04
     container: python:3.10
@@ -59,4 +59,4 @@ jobs:
       - run: pip install -r requirements-dev.txt
       - run: python -m build
       # - run: python3 -m twine upload --repository testpypi dist/*
-      - run: python3 -m twine upload dist/*
+      - run: echo python3 -m twine upload dist/*
