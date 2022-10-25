@@ -48,6 +48,15 @@ Environment variable `KEYCLOAK_API_CA_BUNDLE` can be used to disable TLS certifi
   - file contains a CA certificate bundle or,
   - directory contains individual CA certificate files.
 
+## Build package locally
+
+```shell script
+pip install -r requirements-dev.txt
+python -m build
+# optionally upload to test.pypi.org
+TWINE_USERNAME=__token__ TWINE_PASSWORD=$MY_TOKEN python3 -m twine upload --repository testpypi dist/*
+```
+
 ## API
 
 ### OpenID
