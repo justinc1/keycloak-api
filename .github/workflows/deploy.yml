@@ -3,8 +3,8 @@ on:
   push:
     tags:
       - '*'
-    branches:
-      - 'pypi-upload'
+    # branches:
+    #   - 'pypi-upload'
 
 jobs:
   # build whl and upload to pypi.org
@@ -20,4 +20,5 @@ jobs:
       - run: echo ref_name=${{ github.ref_name }}
       - run: pip install -r requirements-dev.txt
       - run: python -m build
-      - run: python3 -m twine upload --repository testpypi dist/*
+      # - run: python3 -m twine upload --repository testpypi dist/*
+      - run: python3 -m twine upload dist/*
