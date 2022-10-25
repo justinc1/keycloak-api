@@ -1,0 +1,23 @@
+name: Deploy to pypi.org
+on:
+  push:
+    tags:
+      - '*'
+    branches:
+      - 'pypi-upload'
+
+jobs:
+  # build whl and upload to pypi.org
+  build_whl:
+    runs-on: ubuntu-22.04
+    container: python:3.10
+    env:
+      TWINE_USERNAME: __token__
+      TWINE_PASSWORD: ${{ secrets.PYPI_TWINE_TOKEN }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - run: echo ref_name=${{ github.ref_name }}
+      - run: pip install -r requirements-dev.txt
+      - run: python -m build
+      - run: python3 -m twine upload --repository testpypi dist/*
