@@ -49,9 +49,28 @@ class TestClients(unittest.TestCase):
             {"name": "new-role", "description": "here should go a description."}).isOk()
         self.assertTrue(svc_roles_state, 'The client_roles service should return a 200.')
 
-        ret_client_roles = client_roles_api.findFirstByKV('name', 'new-role')
-        self.assertNotEqual(ret_client_roles, [], 'It should return the posted client')
+        new_role = clients.get_roles(client_query)[0]
+        self.assertIsNotNone(new_role, 'It should return the posted client role.')
 
+        role = {"name": "x_black_magic_x"}
+        roles = self.testbed.getKeycloak().build("roles", self.REALM)
+        state = roles.create(role).isOk()
+
+        self.assertTrue(state, "A role should be created")
+
+        state = new_role.composite().link(role['name']).isOk()
+
+        self.assertTrue(state, "A composite role should be added to the current client role.")
+
+        composites_roles = new_role.composite().findAll().resp().json()
+        self.assertEqual(composites_roles[0]['name'], 'x_black_magic_x', "We should have a composite role called: x_black_magic_x")
+
+        state_delete = new_role.composite().unlink(role['name']).isOk()
+        self.assertTrue(state, "A composite role should be deleted from the current client role.")
+
+        empty_composites_role = new_role.composite().findAll().resp().json()
+        self.assertEqual(empty_composites_role, [],
+                         "We should have a empty roles")
 
     def test_client_roles_removal(self):
         client_payload = load_sample('./test/payloads/client.json')
@@ -73,6 +92,9 @@ class TestClients(unittest.TestCase):
         self.assertTrue(result, 'The server should return ok.')
 
         self.assertEqual(client_roles_api.findFirstByKV('name', client_role_name), [], 'It should return the posted client')
+
+
+
 
     @classmethod
     def setUpClass(self):
