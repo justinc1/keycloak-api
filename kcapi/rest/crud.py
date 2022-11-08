@@ -74,8 +74,9 @@ class KeycloakCRUD(object):
     def findFirstByKV(self, key, value):
         rows = self.findAll().verify().resp().json()
 
-        for row in rows: 
-            if row[key].lower() == value.lower():
+        for row in rows:
+            # Some components do not have Name attribute.
+            if key in row and row[key].lower() == value.lower():
                 return row
 
         return []
