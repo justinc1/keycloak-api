@@ -10,7 +10,6 @@ class Role():
         return Composites(self.kc, self.value['id'])
 
 
-
 class Composites():
     def __init__(self, kc, roleID):
         self.kc = kc
@@ -51,15 +50,17 @@ def hack_rest_roles_remove_endpoint(that, kc):
 
     return kc
 
+
 def new_child(kc, query, child_resource):
     client_id = kc.findFirst(query)['id']
-    return KeycloakCRUD.get_child(kc, [client_id, child_resource])
+    return KeycloakCRUD.get_child(kc, client_id, child_resource)
+
 
 class Clients(KeycloakCRUD):
 
     def secrets(self, client_query):
         obj = super().findFirst(client_query)
-        child = KeycloakCRUD.get_child(self, [obj['id'], 'client-secret'])
+        child = KeycloakCRUD.get_child(self, obj['id'], 'client-secret')
         return child
 
     def get_roles(self, client_query):
@@ -68,7 +69,7 @@ class Clients(KeycloakCRUD):
 
     def roles(self, client_query):
         client_id = super().findFirst(client_query)['id']
-        child = KeycloakCRUD.get_child(self, [client_id, 'roles'])
+        child = KeycloakCRUD.get_child(self, client_id, 'roles')
         client_role_api = hack_rest_roles_remove_endpoint(self, child)
 
         return client_role_api

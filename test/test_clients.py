@@ -22,7 +22,6 @@ class TestClients(unittest.TestCase):
         state = clients.create({"enabled":True,"attributes":{},"secret":secret_passphrase ,"redirectUris":[],"clientId":"44","protocol":"openid-connect", "publicClient": False}).isOk()
         self.assertTrue(state, "A private client should be created")
 
-
         #client_secrets = clients.secrets({'key': 'clientId', 'value':"44"})
         #remote_passphrase = client_secrets.all()
 
@@ -30,9 +29,6 @@ class TestClients(unittest.TestCase):
         #self.assertTrue(client_secrets_creation_state, "A secret passphrase should be assigned.")
         #remote_passphrase = client_secrets.all()
         #self.assertTrue(len(remote_passphrase)>0, "We expect to obtain a new passphrase.")
-
-
-
 
     def test_client_roles(self):
         client_payload = load_sample('./test/payloads/client.json')
@@ -92,9 +88,6 @@ class TestClients(unittest.TestCase):
         self.assertTrue(result, 'The server should return ok.')
 
         self.assertEqual(client_roles_api.findFirstByKV('name', client_role_name), [], 'It should return the posted client')
-
-
-
 
     @classmethod
     def setUpClass(self):
