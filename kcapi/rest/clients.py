@@ -29,7 +29,7 @@ class Composites():
 
         # It just adds few extra resource to the url: /id/composites
         self.post = lambda payload: KeycloakCRUD.derive(kc, ['roles-by-id' , self.id, 'composites']).create(payload)
-        self.remove = lambda payload: KeycloakCRUD.derive(kc, ['roles-by-id', self.id, 'composites']).remove(payload)
+        self.remove = lambda payload: KeycloakCRUD.derive(kc, ['roles-by-id', self.id, 'composites']).remove(_id=None, payload=payload)
 
         # It just adds few extra resource to the url: /id/composites/realm
         self.get = lambda: KeycloakCRUD.derive(kc,  ['roles-by-id' , self.id, 'composites', 'realm']).findAll()
@@ -50,7 +50,9 @@ class Composites():
         if not role:
             raise ("Error the role " + roleName + " not found!")
 
-        return self.remove(role['id'])
+        # Whole role representation needed in DELETE payload
+        # See https://www.keycloak.org/docs-api/20.0.1/rest-api/index.html#_roles_by_id_resource
+        return self.remove([role])
 
     def findAll(self):
         return self.get()
