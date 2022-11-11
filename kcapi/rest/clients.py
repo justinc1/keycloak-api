@@ -1,10 +1,21 @@
+from copy import copy
+
 from .crud import KeycloakCRUD
 
 
 class Role():
     def __init__(self, kc, role):
         self.value = role
-        self.kc = kc
+
+        # Note: Composites() kc param must be top-level API URL
+        kc_top_level = copy(kc)
+        for rest_method in kc_top_level.targets.targets:
+            custom_url = kc_top_level.targets.targets[rest_method].copy()
+            assert custom_url.resources[-1] == 'clients'
+            custom_url.removeLast()
+            kc_top_level.targets.targets[rest_method] = custom_url
+
+        self.kc = kc_top_level
 
     def composite(self):
         return Composites(self.kc, self.value['id'])
@@ -12,6 +23,7 @@ class Role():
 
 class Composites():
     def __init__(self, kc, roleID):
+        # Note: kc must be top-level API URL
         self.kc = kc
         self.id = roleID
 
@@ -39,6 +51,7 @@ class Composites():
             raise ("Error the role " + roleName + " not found!")
 
         return self.remove(role['id'])
+
     def findAll(self):
         return self.get()
 
