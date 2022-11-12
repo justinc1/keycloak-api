@@ -14,22 +14,6 @@ class KeycloakCRUD(object):
 
         return kc
 
-    # derive() is similar to get_child, but it allows to
-    # get API to grand-child (you can add 2 or more components to URL).
-    def derive(that, resources):
-        assert isinstance(resources, list)
-        for rr in resources:
-            assert isinstance(rr, str)
-
-        kc = KeycloakCRUD()
-        kc.token = that.token
-        kc.targets = that.targets.copy()
-
-        kc.targets.addResources(resources)
-
-        return kc
-
-
     def __init__(self): 
         self.targets = None
         self.token = None

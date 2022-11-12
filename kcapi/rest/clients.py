@@ -21,20 +21,21 @@ class Role():
         return Composites(self.kc, self.value['id'])
 
 
-class Composites():
+class Composites:
     def __init__(self, kc, roleID):
         # Note: kc must be top-level API URL
         self.kc = kc
         self.id = roleID
 
         # It just adds few extra resource to the url: /id/composites
-        self.post = lambda payload: KeycloakCRUD.derive(kc, ['roles-by-id' , self.id, 'composites']).create(payload)
-        self.remove = lambda payload: KeycloakCRUD.derive(kc, ['roles-by-id', self.id, 'composites']).remove(_id=None, payload=payload)
-
+        roles_by_id_api = KeycloakCRUD.get_child(kc, None, "roles-by-id")
+        self.post = lambda payload: KeycloakCRUD.get_child(roles_by_id_api, self.id, 'composites').create(payload)
+        self.remove = lambda payload: KeycloakCRUD.get_child(roles_by_id_api, self.id, 'composites').remove(_id=None, payload=payload)
         # It just adds few extra resource to the url: /id/composites/realm
-        self.get = lambda: KeycloakCRUD.derive(kc,  ['roles-by-id' , self.id, 'composites', 'realm']).findAll()
-
-        self.get_role_by_name = lambda name='': KeycloakCRUD.derive(kc, ['roles']).findFirstByKV(key='name', value=name)
+        # Hm. This assumes composite client role will contain only realm roles (not other client roles).
+        # Is this always true, does this cover all usecases?
+        self.get = lambda: KeycloakCRUD.get_child(roles_by_id_api, self.id, 'composites/realm').findAll()
+        self.get_role_by_name = lambda name='': KeycloakCRUD.get_child(kc, None, 'roles').findFirstByKV(key='name', value=name)
 
     def link(self, roleName):
         role = self.get_role_by_name(roleName)
