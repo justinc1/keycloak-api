@@ -1,29 +1,41 @@
+from copy import copy
+
 from .crud import KeycloakCRUD
 
 
 class Role():
     def __init__(self, kc, role):
         self.value = role
-        self.kc = kc
+
+        # Note: Composites() kc param must be top-level API URL
+        kc_top_level = copy(kc)
+        for rest_method in kc_top_level.targets.targets:
+            custom_url = kc_top_level.targets.targets[rest_method].copy()
+            assert custom_url.resources[-1] == 'clients'
+            custom_url.removeLast()
+            kc_top_level.targets.targets[rest_method] = custom_url
+
+        self.kc = kc_top_level
 
     def composite(self):
         return Composites(self.kc, self.value['id'])
 
 
-
-class Composites():
+class Composites:
     def __init__(self, kc, roleID):
+        # Note: kc must be top-level API URL
         self.kc = kc
         self.id = roleID
 
         # It just adds few extra resource to the url: /id/composites
-        self.post = lambda payload: KeycloakCRUD.derive(kc, ['roles-by-id' , self.id, 'composites']).create(payload)
-        self.remove = lambda payload: KeycloakCRUD.derive(kc, ['roles-by-id', self.id, 'composites']).remove(payload)
-
+        roles_by_id_api = KeycloakCRUD.get_child(kc, None, "roles-by-id")
+        self.post = lambda payload: KeycloakCRUD.get_child(roles_by_id_api, self.id, 'composites').create(payload)
+        self.remove = lambda payload: KeycloakCRUD.get_child(roles_by_id_api, self.id, 'composites').remove(_id=None, payload=payload)
         # It just adds few extra resource to the url: /id/composites/realm
-        self.get = lambda: KeycloakCRUD.derive(kc,  ['roles-by-id' , self.id, 'composites', 'realm']).findAll()
-
-        self.get_role_by_name = lambda name='': KeycloakCRUD.derive(kc, ['roles']).findFirstByKV(key='name', value=name)
+        # Hm. This assumes composite client role will contain only realm roles (not other client roles).
+        # Is this always true, does this cover all usecases?
+        self.get = lambda: KeycloakCRUD.get_child(roles_by_id_api, self.id, 'composites/realm').findAll()
+        self.get_role_by_name = lambda name='': KeycloakCRUD.get_child(kc, None, 'roles').findFirstByKV(key='name', value=name)
 
     def link(self, roleName):
         role = self.get_role_by_name(roleName)
@@ -39,7 +51,10 @@ class Composites():
         if not role:
             raise ("Error the role " + roleName + " not found!")
 
-        return self.remove(role['id'])
+        # Whole role representation needed in DELETE payload
+        # See https://www.keycloak.org/docs-api/20.0.1/rest-api/index.html#_roles_by_id_resource
+        return self.remove([role])
+
     def findAll(self):
         return self.get()
 
@@ -51,15 +66,17 @@ def hack_rest_roles_remove_endpoint(that, kc):
 
     return kc
 
+
 def new_child(kc, query, child_resource):
     client_id = kc.findFirst(query)['id']
-    return KeycloakCRUD.get_child(kc, [client_id, child_resource])
+    return KeycloakCRUD.get_child(kc, client_id, child_resource)
+
 
 class Clients(KeycloakCRUD):
 
     def secrets(self, client_query):
         obj = super().findFirst(client_query)
-        child = KeycloakCRUD.get_child(self, [obj['id'], 'client-secret'])
+        child = KeycloakCRUD.get_child(self, obj['id'], 'client-secret')
         return child
 
     def get_roles(self, client_query):
@@ -68,7 +85,7 @@ class Clients(KeycloakCRUD):
 
     def roles(self, client_query):
         client_id = super().findFirst(client_query)['id']
-        child = KeycloakCRUD.get_child(self, [client_id, 'roles'])
+        child = KeycloakCRUD.get_child(self, client_id, 'roles')
         client_role_api = hack_rest_roles_remove_endpoint(self, child)
 
         return client_role_api

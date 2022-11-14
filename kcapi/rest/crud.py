@@ -49,12 +49,12 @@ class KeycloakCRUD(object):
             ret = session.put(target, data=json.dumps(payload), headers=self.headers())
         return ResponseHandler(target, method='Put', payload=payload).handleResponse(ret)
 
-    def remove(self, _id):
+    def remove(self, _id, payload=None):
         delete = self.targets.url('delete')
         url = self.setIdentifier(_id, delete)
         with KcSession() as session:
-            ret = session.delete(url, headers=self.headers())
-        return ResponseHandler(url, method='Delete').handleResponse(ret)
+            ret = session.delete(url, data=json.dumps(payload), headers=self.headers())
+        return ResponseHandler(url, method='Delete', payload=payload).handleResponse(ret)
         
     def get(self, _id):
         url = self.targets.url('read')
