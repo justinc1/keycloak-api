@@ -1,5 +1,6 @@
 from kcapi import OpenID, Keycloak
 import os
+import json
 
 def readFromJSON(filename):
     with open(filename) as json_file:
@@ -8,10 +9,10 @@ def readFromJSON(filename):
 class TestBed:
     def __init__(self, realm = None, username = None, password = None, endpoint = None): 
 
-        self.USER = os.getenv('KC_USER')
-        self.PASSWORD = os.environ.get('KC_PASSWORD')
-        self.REALM = os.environ.get('KC_REALM')
-        self.ENDPOINT = os.environ.get('KC_ENDPOINT')
+        self.USER = os.environ['KC_USER']
+        self.PASSWORD = os.environ['KC_PASSWORD']
+        self.REALM = os.environ['KC_REALM']
+        self.ENDPOINT = os.environ['KC_ENDPOINT']
 
         self.groupName = 'DC'
         self.roleNames = ['level-1', 'level-2', 'level-3'] 

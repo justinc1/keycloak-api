@@ -1,3 +1,5 @@
+from collections import namedtuple
+
 from .rest.crud import KeycloakCRUD
 from .rest.targets import Targets
 from .rest.groups import Groups
@@ -45,6 +47,9 @@ def configure_url(url=None, resource_name=None):
     return URLBuilder(str(url))
 
 
+ServerInfo = namedtuple("ServerInfo", ["version", "profile_name"])
+
+
 MASTER_REALM = 'master'
 class Keycloak:
     @staticmethod
@@ -69,6 +74,8 @@ class Keycloak:
 
         self.token = token
         self.url = RestURL(url=url, resources=["auth", "admin", "realms"])
+        self.url_serverinfo = RestURL(url=url, resources=["auth", "admin", "serverinfo"])
+        self._server_info = None
 
     def admin(self):
         adm = resource(token=self.token)
@@ -82,3 +89,23 @@ class Keycloak:
         res = resource(token=self.token, resource_name=resource_name)
         res.targets = configure_url(url=url, resource_name=resource_name)
         return add_failiure_recovery_decorator(res)
+
+    def build_serverinfo(self):
+        # just copy-paste-change build(), we are interested in serverinfo only
+        url = self.url_serverinfo.copy()
+
+        res = resource(token=self.token, resource_name="")
+        res.targets = configure_url(url=url, resource_name="")
+        return add_failiure_recovery_decorator(res)
+
+    @property
+    def server_info(self):
+        if self._server_info is None:
+            serverinfo_api = self.build_serverinfo()
+            serverinfo = serverinfo_api.get(None).verify().resp().json()
+            self._server_info = ServerInfo(
+                version=serverinfo["systemInfo"]["version"],
+                profile_name=serverinfo["profileInfo"]["name"],
+            )
+
+        return self._server_info
