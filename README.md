@@ -33,7 +33,7 @@ Username: {REGISTRY-SERVICE-ACCOUNT-USERNAME}
 Password: {REGISTRY-SERVICE-ACCOUNT-PASSWORD}
 docker pull registry.redhat.io/rh-sso-7/sso75-openshift-rhel8:7.5-35
 
-docker run --name rhsso -it -p 8080:8080 -p 8443:443 -e SSO_ADMIN_USERNAME=admin -e SSO_ADMIN_PASSWORD=admin -it registry.redhat.io/rh-sso-7/sso75-openshift-rhel8:7.5-29
+docker run --name rhsso -it -p 8080:8080 -p 8443:443 -e SSO_ADMIN_USERNAME=admin -e SSO_ADMIN_PASSWORD=admin -it registry.redhat.io/rh-sso-7/sso75-openshift-rhel8:7.5-35
 # By default, no https for API calls.
 # Web GUI seems to be disabled.
 export KC_ENDPOINT=https://172.17.0.2:8080
