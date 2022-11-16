@@ -18,7 +18,8 @@ In this case TLS certificate verification needs to be disabled for testing.
 
 ```shell
 # keycloak:15.0.2 is close to RedHat SSO 7.5
-docker run -d -p 8080:80 -p 8433:443 -e KEYCLOAK_USER=admin -e KEYCLOAK_PASSWORD=admin quay.io/keycloak/keycloak:15.0.2 -b 0.0.0.0
+# keycloak:9.0.3 is close to RedHat SSO 7.4
+docker run -d -p 8080:80 -p 8433:443 -e KEYCLOAK_USER=admin -e KEYCLOAK_PASSWORD=admin quay.io/keycloak/keycloak:15.0.2
 ```
 
 With Keycloak instance running we can start tests:
@@ -27,13 +28,18 @@ With Keycloak instance running we can start tests:
 python3.10 -m venv .venv
 source .venv/bin/activate
 pip install requests
+pip install -e .
 
 # Setup SSO server - go to https://developers.redhat.com/developer-sandbox/get-started,
 # launch sandbox environment, +Add, select some "Red Hat Single Sign-On..." template.
+export KC_ENDPOINT=https://my-first-sso-me-me-dev.apps.sandbox.x8i5.p1.openshiftapps.com
+# Or use local docker container, with self-signed TLS server certificate
+export KEYCLOAK_API_CA_BUNDLE=
+export KC_ENDPOINT=https://172.17.0.2:8443
+
 export KC_USER=admin
 export KC_PASSWORD=admin_password
 export KC_REALM=myrealm  # do not use master realm, it cannot be removed
-export KC_ENDPOINT=https://my-first-sso-me-me-dev.apps.sandbox.x8i5.p1.openshiftapps.com
 
 python -m unittest
 ```
