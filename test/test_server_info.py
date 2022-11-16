@@ -16,6 +16,13 @@ class TestServerInfo(unittest.TestCase):
         self.assertEqual("15.0.2", kc.server_info.version)
         self.assertEqual("community", kc.server_info.profile_name)
 
+        self.assertEqual("community 15.0", kc.server_info_compound_profile_version())
+        self.assertEqual("community 15", kc.server_info_compound_profile_version(1))
+        self.assertEqual("community 15.0", kc.server_info_compound_profile_version(2))
+        self.assertEqual("community 15.0.2", kc.server_info_compound_profile_version(3))
+        self.assertEqual("community 15.0.2", kc.server_info_compound_profile_version(10))
+
+
     @classmethod
     def setUpClass(self):
         self.testbed = TestBed()

@@ -113,3 +113,9 @@ class Keycloak:
             #   profile=product version=7.5.2.GA
 
         return self._server_info
+
+    def server_info_compound_profile_version(self, version_parts=2):
+        # with version_parts=3 a string like "community 15.0" or "product 7.5" is returned
+        compound_profile_version = self.server_info.profile_name + " "
+        compound_profile_version += ".".join(self.server_info.version.split(".")[:version_parts])
+        return compound_profile_version
