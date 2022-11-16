@@ -11,6 +11,8 @@ pip install kcapi
 
 ## Testing
 
+### Start test server
+
 To run the test you would need a Keycloak instance, you can run one locally or in the [cloud]( https://developers.redhat.com/developer-sandbox/get-started) then you just have to follow this steps: 
 
 To start a Keycloak instance in docker container use command like below.
@@ -19,8 +21,25 @@ In this case TLS certificate verification needs to be disabled for testing.
 ```shell
 # keycloak:15.0.2 is close to RedHat SSO 7.5
 # keycloak:9.0.3 is close to RedHat SSO 7.4
-docker run -d -p 8080:80 -p 8433:443 -e KEYCLOAK_USER=admin -e KEYCLOAK_PASSWORD=admin quay.io/keycloak/keycloak:15.0.2
+docker run -d -p 8080:80 -p 8443:443 -e KEYCLOAK_USER=admin -e KEYCLOAK_PASSWORD=admin quay.io/keycloak/keycloak:15.0.2
 ```
+
+You can also use RedHat SSO container.
+At [sso75-openshift-rhel8](https://catalog.redhat.com/software/containers/rh-sso-7/sso75-openshift-rhel8/611418806e1e42ca4d6decf1) are instructions for RH SSH 7.5.
+
+```shell
+docker login registry.redhat.io
+Username: {REGISTRY-SERVICE-ACCOUNT-USERNAME}
+Password: {REGISTRY-SERVICE-ACCOUNT-PASSWORD}
+docker pull registry.redhat.io/rh-sso-7/sso75-openshift-rhel8:7.5-35
+
+docker run --name rhsso -it -p 8080:8080 -p 8443:443 -e SSO_ADMIN_USERNAME=admin -e SSO_ADMIN_PASSWORD=admin -it registry.redhat.io/rh-sso-7/sso75-openshift-rhel8:7.5-29
+# By default, no https for API calls.
+# Web GUI seems to be disabled.
+export KC_ENDPOINT=https://172.17.0.2:8080
+```
+
+### Run tests
 
 With Keycloak instance running we can start tests:
 

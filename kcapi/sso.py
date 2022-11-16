@@ -107,5 +107,9 @@ class Keycloak:
                 version=serverinfo["systemInfo"]["version"],
                 profile_name=serverinfo["profileInfo"]["name"],
             )
+            # Keycloak example return values:
+            #   profile=community version=15.0.2
+            # RedHat SSO example return values:
+            #   profile=product version=7.5.2.GA
 
         return self._server_info
