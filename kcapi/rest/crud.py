@@ -62,10 +62,10 @@ class KeycloakCRUD(object):
             ret = session.get(str(self.setIdentifier(_id, url)), headers=self.headers())
         return ResponseHandler(url, method='Get').handleResponse(ret)
 
-    def findAll(self):
+    def findAll(self, params=None):
         url = self.targets.url('read')
         with KcSession() as session:
-            ret = session.get(url, headers=self.headers())
+            ret = session.get(url, params=params, headers=self.headers())
         return ResponseHandler(url, method='Get').handleResponse(ret)
 
     def findFirst(self, params):
@@ -81,8 +81,8 @@ class KeycloakCRUD(object):
 
         return []
 
-    def all(self):
-        return self.findAll().verify().resp().json()
+    def all(self, params=None):
+        return self.findAll(params).verify().resp().json()
 
     def updateUsingKV(self, key, value, obj): 
         res_data = self.findFirstByKV(key,value)
