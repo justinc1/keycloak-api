@@ -3,6 +3,8 @@ from kcapi.ie import AuthenticationFlowsImporter
 from .testbed import TestBed
 import json
 
+import logging
+logging.basicConfig(level=logging.DEBUG)
 
 def create_testing_flows(flows, authenticationFlow):
     for flow in flows:
@@ -150,13 +152,32 @@ class TestingAuthenticationFlowsAPI(unittest.TestCase):
         # Some executions can be configured. Configuration cannot be deleted (in UI).
         # Seems like flows cannot be configured.
         self.assertEqual(executions[1]["providerId"], "identity-provider-redirector")
+        self.assertTrue(executions[1]["configurable"])
         self.assertNotIn("authenticationConfig", executions[1])
         execution1_id = executions[1]["id"]
 
         # here we create config for existing execution
         # POST https://172.17.0.2:8443/auth/admin/realms/<realm_realm>/authentication/executions/<execution_id=53153c56-df33-4c8c-88ed-eb63a215ebc1>/config
-        execution1_config_api = this_flow_executions_execution_api.get_child(this_flow_executions_execution_api, execution1_id, "config")
+        # execution1_config_api is usable only for .create()/POST
+
+        #         self.authenticationFlow = self.testbed.getKeycloak().build('authentication', self.testbed.REALM)
+        kc = self.testbed.getKeycloak()
+        execution1_config_api = kc.build(f"authentication/executions/{execution1_id}", "config")
+        WRONG
+
         execution1_config_api.create({"config":{"defaultProvider":"ci-exec1-idp"},"alias":"ci-exec1-alias"})
+        executions = this_flow_executions_execution_api.all()
+        self.assertIn("authenticationConfig", executions[1])
+        executions1_config_id = executions[1]["authenticationConfig"]
+
+        # PUT  https://172.17.0.2:8443/auth/admin/realms/deleteme_5/authentication/config/<config_id=c4f85020-7148-40ea-a8e5-2fde9b72b1da>
+        authentication_api = self.authenticationFlow
+        config_api = authentication_api.get_child(authentication_api, "config", None)
+        config1 = config_api.get(executions1_config_id).verify().resp().json()
+        self.assertEqual(config1["alias"], "ci-exec1-alias")
+        self.assertEqual(config1["config"], {"defaultProvider":"ci-exec1-idp"})
+        self.assertEqual(config1["id"], executions1_config_id)
+
 
         return
 
