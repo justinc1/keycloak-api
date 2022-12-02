@@ -76,7 +76,7 @@ class TestingAuthenticationFlowsAPI(unittest.TestCase):
         self.assertTrue(resp.isOk())
 
         nested_flows = flows.all()
-        self.assertTrue(len(nested_flows) > 0)
+        self.assertEqual(len(nested_flows), 1)
 
         flw = nested_flows[0]
         self.assertEqual(nestedFlow["alias"], flw["displayName"])
