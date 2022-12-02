@@ -66,6 +66,7 @@ class TestingAuthenticationFlowsAPI(unittest.TestCase):
             self.assertEqual(rows['providerId'], flow['providerId'])
 
     def testing_nested_flows(self):
+        # here
         basic_flow = self.flows[0]
         name = '--yyyyyyy---'
         nestedFlow = new_flow_definition(name)
@@ -93,6 +94,80 @@ class TestingAuthenticationFlowsAPI(unittest.TestCase):
 
         execs_size = len(executions.all())
         self.assertEqual(execs_size, 3)
+
+    def testing_configure_execution(self):
+        basic_flow = self.flows[0]
+        name = 'ci-flow-with-configured-executions'
+        nestedFlow = new_flow_definition(name)
+        nestedExecution1 = {"provider": "identity-provider-redirector"}
+        nestedExecution2 = {"provider": "auth-x509-client-username-form"}
+
+        this_flow_executions_flow_api = self.authenticationFlow.flows(basic_flow)
+        resp = this_flow_executions_flow_api.create(nestedFlow)
+        self.assertTrue(resp.isOk())
+
+        nested_flows = this_flow_executions_flow_api.all()
+        self.assertEqual(len(nested_flows), 1)
+
+        flw = nested_flows[0]
+        self.assertEqual(nestedFlow["alias"], flw["displayName"])
+
+        this_flow_executions_execution_api = self.authenticationFlow.executions(basic_flow)
+        this_flow_executions_execution_api.create(nestedExecution1)
+        this_flow_executions_execution_api.create(nestedExecution2)
+
+        # x509 = executions.findFirstByKV('displayName', 'X509/Validate Username Form')
+        # self.assertIsNotNone(x509)
+
+        flows = this_flow_executions_flow_api.all()
+        self.assertEqual(len(flows), 3)
+
+        executions = this_flow_executions_execution_api.all()
+        self.assertEqual(len(executions), 3)
+
+        # both flows_api and executions_api use same URL for .all() method, returned data must be same.
+        self.assertEqual(flows, executions)
+
+        # same as testing_nested_flows() until here - just preparing test object to be configured
+        # ----------------------------------------------------------------
+
+        # GET https://172.17.0.2:8443/auth/admin/realms/deleteme_5/authentication/flows/browser/executions  - all executions for flow_alias=browser
+        #   [2] - id="53153c56-df33-4c8c-88ed-eb63a215ebc1" ima alias="ci-alias", configurable=true, authenticationConfig not present
+        # URLs
+        # POST https://172.17.0.2:8443/auth/admin/realms/<realm_realm>/authentication/executions/<execution_id=53153c56-df33-4c8c-88ed-eb63a215ebc1>/config
+        # GET https://172.17.0.2:8443/auth/admin/realms/deleteme_5/authentication/flows/browser/executions  - all executions for flow_alias=browser
+        #   [2] - id="53153c56-df33-4c8c-88ed-eb63a215ebc1" ima alias="ci-alias", configurable=true
+        #   authenticationConfig	"c4f85020-7148-40ea-a8e5-2fde9b72b1da"
+        # GET  https://172.17.0.2:8443/auth/admin/realms/deleteme_5/authentication/config/<config_id=c4f85020-7148-40ea-a8e5-2fde9b72b1da>
+        # PUT  https://172.17.0.2:8443/auth/admin/realms/deleteme_5/authentication/config/<config_id=c4f85020-7148-40ea-a8e5-2fde9b72b1da>
+
+        # Would that be easy to use?
+        # config1_api = this_flow_executions_execution_api.get_config_api(id=execution1_id)
+        # config1_api = this_flow_executions_execution_api.get_config_api(alias=execution1_alias)
+        # this_flow_executions_execution_api.get_config_api(id=execution2_id)
+        # this_flow_executions_execution_api.get_config_api(alias=execution2_alias)
+
+        # Some executions can be configured. Configuration cannot be deleted (in UI).
+        # Seems like flows cannot be configured.
+        self.assertEqual(executions[1]["providerId"], "identity-provider-redirector")
+        self.assertNotIn("authenticationConfig", executions[1])
+        execution1_id = executions[1]["id"]
+
+        # here we create config for existing execution
+        # POST https://172.17.0.2:8443/auth/admin/realms/<realm_realm>/authentication/executions/<execution_id=53153c56-df33-4c8c-88ed-eb63a215ebc1>/config
+        execution1_config_api = this_flow_executions_execution_api.get_child(this_flow_executions_execution_api, execution1_id, "config")
+        execution1_config_api.create({"config":{"defaultProvider":"ci-exec1-idp"},"alias":"ci-exec1-alias"})
+
+        return
+
+        # How it would be nice to use:
+        # Now configure both executions
+        # for create, we must know config was not already created
+        config1_api.create({"config":{"defaultProvider":"ci-exec1-idp"},"alias":"ci-exec1-alias"})
+
+        # for update, we must know config was already created
+        # PUT https://172.17.0.2:8443/auth/admin/realms/deleteme_5/authentication/config/2f95e8dd-4165-4be6-a386-aa758284a187
+        config1_api.update({"id":"2f95e8dd-4165-4be6-a386-aa758284a187","alias":"ci-exec1-alias","config":{"defaultProvider":"ci-exec1-idp-updated"}})
 
     def testing_remove_executions_flows(self):
         client_flow = self.flows[1]

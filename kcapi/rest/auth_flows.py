@@ -101,3 +101,15 @@ class AuthenticationFlows(KeycloakCRUD):
             kc=flow,
             root_node=execution,
             action_type='execution')
+
+    # Generate a CRUD object pointing to /realm/<realm>/authentication/config/<config_id>
+    # Sample URLs
+    # GET    https://172.17.0.2:8443/auth/admin/realms/ci0-realm/authentication/flows/ci0-auth-flow-generic/executions
+
+    # GET
+    # PUT
+    # POST   https://172.17.0.2:8443/auth/admin/realms/ci0-realm/authentication/flows/ci0-auth-flow-generic-exec-4-flow-alias/executions/execution
+    # DELETE
+    def get_config_api(self, id=None, alias=None):
+        if alias:
+            executions_api = self.executions()
