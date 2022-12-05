@@ -113,3 +113,27 @@ class AuthenticationFlows(KeycloakCRUD):
     def get_config_api(self, id=None, alias=None):
         if alias:
             executions_api = self.executions()
+
+
+class AuthenticationExecution():
+    def __init__(self, kc, realm, flow_alias, execution_index=None):
+        # would make sense to search for execution by displayName?
+        self._kc_base = kc
+        self._flow_alias = flow_alias
+        self._crud = None  # TODO
+
+        auth_flows_api = kc.get_child(f"authentication/flows", realm)
+        auth_flow = None  # .getFirstByKv(), then executions etc.
+
+    def create(self, data={}):
+        pass
+
+    def get(self):
+        return {}
+
+    # update in read-modify-write sense
+    def update_rmw(self, data={}):
+        pass
+
+    def delete(self):
+        pass

@@ -170,14 +170,15 @@ class TestingAuthenticationFlowsAPI(unittest.TestCase):
         self.assertIn("authenticationConfig", executions[1])
         executions1_config_id = executions[1]["authenticationConfig"]
 
-        # test a second call to .create()
-        status = execution1_config_api.create({"config":{"defaultProvider":"ci-exec1-idp---some-change-1"},"alias":"ci-exec1-alias"})
-        # self.assertFalse(status.isOk())
-        #
-        status = execution1_config_api.create({"config":{"defaultProvider":"ci-exec1-idp---some-change-2"},"alias":"ci-exec1-alias---created-twice"})
-        # self.assertFalse(status.isOk())
-        # Problem. A second config is created and assigned to execution, and visible in web UI.
-        # The first one likely becomes orphaned - it is still accessible via UUID.
+        if 0:
+            # test a second call to .create()
+            status = execution1_config_api.create({"config":{"defaultProvider":"ci-exec1-idp---some-change-1"},"alias":"ci-exec1-alias"})
+            # self.assertFalse(status.isOk())
+            #
+            status = execution1_config_api.create({"config":{"defaultProvider":"ci-exec1-idp---some-change-2"},"alias":"ci-exec1-alias---created-twice"})
+            # self.assertFalse(status.isOk())
+            # Problem. A second config is created and assigned to execution, and visible in web UI.
+            # The first one likely becomes orphaned - it is still accessible via UUID.
 
         # PUT  https://172.17.0.2:8443/auth/admin/realms/deleteme_5/authentication/config/<config_id=c4f85020-7148-40ea-a8e5-2fde9b72b1da>
         authentication_config_api = kc.build(f"authentication/config", self.testbed.REALM)
@@ -195,6 +196,14 @@ class TestingAuthenticationFlowsAPI(unittest.TestCase):
         status = authentication_config_api.update(executions1_config_id, executions1_config)
         self.assertTrue(status.isOk())
 
+
+        # the config for the second execution object
+        # find by (parent_execution, alias)
+        # create if missing
+        # get if present
+        # update: get+update or create
+        AuthenticationExecution
+        AuthenticationConfig
 
 
 
