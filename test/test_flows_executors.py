@@ -162,21 +162,31 @@ class TestingAuthenticationFlowsAPI(unittest.TestCase):
 
         #         self.authenticationFlow = self.testbed.getKeycloak().build('authentication', self.testbed.REALM)
         kc = self.testbed.getKeycloak()
-        execution1_config_api = kc.build(f"authentication/executions/{execution1_id}", "config")
-        WRONG
-
+        # execution1_config_api - only .create() is useful
+        execution1_config_api = kc.build(f"authentication/executions/{execution1_id}/config", self.testbed.REALM)
         execution1_config_api.create({"config":{"defaultProvider":"ci-exec1-idp"},"alias":"ci-exec1-alias"})
         executions = this_flow_executions_execution_api.all()
         self.assertIn("authenticationConfig", executions[1])
         executions1_config_id = executions[1]["authenticationConfig"]
 
+        # TODO test a second call to .create()
+
         # PUT  https://172.17.0.2:8443/auth/admin/realms/deleteme_5/authentication/config/<config_id=c4f85020-7148-40ea-a8e5-2fde9b72b1da>
-        authentication_api = self.authenticationFlow
-        config_api = authentication_api.get_child(authentication_api, "config", None)
-        config1 = config_api.get(executions1_config_id).verify().resp().json()
-        self.assertEqual(config1["alias"], "ci-exec1-alias")
-        self.assertEqual(config1["config"], {"defaultProvider":"ci-exec1-idp"})
-        self.assertEqual(config1["id"], executions1_config_id)
+        authentication_config_api = kc.build(f"authentication/config", self.testbed.REALM)
+        executions1_config = authentication_config_api.get(executions1_config_id).verify().resp().json()
+        self.assertEqual(executions1_config["alias"], "ci-exec1-alias")
+        self.assertEqual(executions1_config["config"], {"defaultProvider":"ci-exec1-idp"})
+        self.assertEqual(executions1_config["id"], executions1_config_id)
+        if 1:
+            # execution1_config_api - the .create() is useless, but .update() is useful
+            executions1_config_api = authentication_config_api.get_child(authentication_config_api, executions1_config_id, None)
+            executions1_config_temp = executions1_config_api.get(None).verify().resp().json()
+            self.assertEqual(executions1_config, executions1_config_temp)
+        # read modify write
+        executions1_config["config"].update({"defaultProvider": "ci-exec1-idp-updated"})
+        status = authentication_config_api.update(executions1_config_id, executions1_config).isOk()
+
+
 
 
         return
