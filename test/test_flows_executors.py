@@ -164,12 +164,20 @@ class TestingAuthenticationFlowsAPI(unittest.TestCase):
         kc = self.testbed.getKeycloak()
         # execution1_config_api - only .create() is useful
         execution1_config_api = kc.build(f"authentication/executions/{execution1_id}/config", self.testbed.REALM)
-        execution1_config_api.create({"config":{"defaultProvider":"ci-exec1-idp"},"alias":"ci-exec1-alias"})
+        status = execution1_config_api.create({"config":{"defaultProvider":"ci-exec1-idp"},"alias":"ci-exec1-alias"})
+        self.assertTrue(status.isOk())
         executions = this_flow_executions_execution_api.all()
         self.assertIn("authenticationConfig", executions[1])
         executions1_config_id = executions[1]["authenticationConfig"]
 
-        # TODO test a second call to .create()
+        # test a second call to .create()
+        status = execution1_config_api.create({"config":{"defaultProvider":"ci-exec1-idp---some-change-1"},"alias":"ci-exec1-alias"})
+        # self.assertFalse(status.isOk())
+        #
+        status = execution1_config_api.create({"config":{"defaultProvider":"ci-exec1-idp---some-change-2"},"alias":"ci-exec1-alias---created-twice"})
+        # self.assertFalse(status.isOk())
+        # Problem. A second config is created and assigned to execution, and visible in web UI.
+        # The first one likely becomes orphaned - it is still accessible via UUID.
 
         # PUT  https://172.17.0.2:8443/auth/admin/realms/deleteme_5/authentication/config/<config_id=c4f85020-7148-40ea-a8e5-2fde9b72b1da>
         authentication_config_api = kc.build(f"authentication/config", self.testbed.REALM)
@@ -184,7 +192,8 @@ class TestingAuthenticationFlowsAPI(unittest.TestCase):
             self.assertEqual(executions1_config, executions1_config_temp)
         # read modify write
         executions1_config["config"].update({"defaultProvider": "ci-exec1-idp-updated"})
-        status = authentication_config_api.update(executions1_config_id, executions1_config).isOk()
+        status = authentication_config_api.update(executions1_config_id, executions1_config)
+        self.assertTrue(status.isOk())
 
 
 
