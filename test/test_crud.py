@@ -1,4 +1,6 @@
 import unittest, time
+from copy import copy
+
 from kcapi.rest.crud import KeycloakCRUD
 from kcapi.rest.targets import Targets
 from kcapi.rest.url import RestURL
@@ -148,14 +150,14 @@ class Testing_User_API(KcBaseTestCase):
         cls.USER_DATA = {"enabled":True,"attributes":{},"username":"pepe","emailVerified":"", "firstName": 'pepe'}
 
 
-class TestKeycloakCRUD_get_one(KcBaseTestCase):
+class TestKeycloakCRUD_part2(KcBaseTestCase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
         cls.testbed.createRealms()
         cls.testbed.createUsers()
 
-    def test_ok(self):
+    def test_get_one_ok(self):
         users_api = self.testbed.kc.build("users", self.testbed.REALM)
         user_id = users_api.findFirstByKV("username", "batman")["id"]
 
@@ -169,11 +171,40 @@ class TestKeycloakCRUD_get_one(KcBaseTestCase):
             "enabled": True,
         })
 
-    def test_invalid_id(self):
+    def test_get_one_invalid_id(self):
         users_api = self.testbed.kc.build('users', self.testbed.REALM)
-
         self.assertRaises(Exception, users_api.get_one, "no-such-user-uuid")
+
+    def test_update_rmw_ok(self):
+        users_api = self.testbed.kc.build("users", self.testbed.REALM)
+        user_old = users_api.findFirstByKV("username", "batman")
+        user_id = user_old["id"]
+
+        # data1 = {"username": "batman-new"}  # username cannot be updated, but API return 204
+        data1 = {"lastName": "Wayne-new"}
+        data2 = {"email": "bw@example.com"}
+        data3 = {"enabled": False}
+
+        ret = users_api.update_rmw(user_id, {})
+        ret = users_api.update_rmw(user_id, data1)
+        ret = users_api.update_rmw(user_id, data2)
+        ret = users_api.update_rmw(user_id, data3)
+
+        user_new = users_api.get_one(user_id)
+        # "assertDictContainsSubset(a, b)" == "a == a|b"
+        self.assertEqual(user_new, user_old | {
+            "username": "batman",
+            "lastName": "Wayne-new",
+            "email": "bw@example.com",
+            "enabled": False,
+        })
+
+    def test_update_rmw_invalid_id(self):
+        users_api = self.testbed.kc.build('users', self.testbed.REALM)
+        self.assertRaises(Exception, users_api.update_rmw, "no-such-user-uuid", {})
 
 
 if __name__ == '__main__':
     unittest.main()
+
+# setUp vs setUpClass
