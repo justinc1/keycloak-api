@@ -2,7 +2,7 @@ import unittest, time
 from kcapi.rest.crud import KeycloakCRUD
 from kcapi.rest.targets import Targets
 from kcapi.rest.url import RestURL
-from .testbed import TestBed
+from .testbed import KcBaseTestCase
 import json
 import os
 
@@ -78,7 +78,7 @@ class SlowFile:
         return self.content[self.ii: self.ii+1]
 
 
-class Testing_User_API(unittest.TestCase):
+class Testing_User_API(KcBaseTestCase):
 
     def testing_crud_API(self):
         token = self.testbed.token
@@ -92,7 +92,7 @@ class Testing_User_API(unittest.TestCase):
     @unittest.skipIf(not int(os.environ.get("KC_RUN_SLOW_TEST", "0")), "Test is run only if KC_RUN_SLOW_TEST is set")
     def test_slow_CRUD(self):
         """
-        We want to test  test if long lasting requests can complete.
+        We test if long-lasting requests can complete.
         We monkey patch requests.put to achieve long upload time.
         The access_token expires in 60 sec.
         Assumption is that access_token is verified at beginning of request only.
@@ -135,22 +135,18 @@ class Testing_User_API(unittest.TestCase):
         self.assertFalse(user_present)
 
     @classmethod
-    def setUpClass(self):
+    def setUpClass(cls):
+        super().setUpClass()
 
-        self.testbed = TestBed()
-        self.testbed.createRealms()
-        self.testbed.createUsers()
-        self.REALM = self.testbed.REALM
+        cls.testbed.createRealms()
+        cls.testbed.createUsers()
+        cls.REALM = cls.testbed.REALM
 
-        self.USER_ENDPOINT = RestURL(self.testbed.ENDPOINT)
-        self.USER_ENDPOINT.addResources(['auth', 'admin', 'realms', self.REALM, 'users'])
+        cls.USER_ENDPOINT = RestURL(cls.testbed.ENDPOINT)
+        cls.USER_ENDPOINT.addResources(['auth', 'admin', 'realms', cls.REALM, 'users'])
 
-        self.USER_DATA = {"enabled":True,"attributes":{},"username":"pepe","emailVerified":"", "firstName": 'pepe'}
+        cls.USER_DATA = {"enabled":True,"attributes":{},"username":"pepe","emailVerified":"", "firstName": 'pepe'}
 
-    @classmethod
-    def tearDownClass(self):
-        self.testbed.goodBye()
-        return True
 
 if __name__ == '__main__':
     unittest.main()
