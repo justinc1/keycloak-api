@@ -1,9 +1,9 @@
 import unittest, time
 from kcapi import OpenID, RestURL
-from .testbed import TestBed
+from .testbed import KcBaseTestCase
 
 
-class Testing_User_API(unittest.TestCase):
+class Testing_User_API(KcBaseTestCase):
 
     def test_adding_credentials_with_wrong_params(self):
         users = self.testbed.getKeycloak().build('users', self.REALM)
@@ -34,12 +34,12 @@ class Testing_User_API(unittest.TestCase):
         self.assertNotEqual(token, None)
 
     @classmethod
-    def setUpClass(self):
-        self.testbed = TestBed()
-        self.testbed.createRealms()
-        self.testbed.createUsers()
-        self.testbed.createClients()
-        self.REALM = self.testbed.REALM
+    def setUpClass(cls):
+        super().setUpClass()
+        cls.testbed.createRealms()
+        cls.testbed.createUsers()
+        cls.testbed.createClients()
+        cls.REALM = cls.testbed.REALM
 
     @classmethod
     def tearDownClass(self):

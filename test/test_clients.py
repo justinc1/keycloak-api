@@ -1,7 +1,7 @@
 import unittest
 import json
 
-from .testbed import TestBed
+from .testbed import KcBaseTestCase
 
 
 def load_sample(fname):
@@ -11,7 +11,7 @@ def load_sample(fname):
     return file1
 
 
-class TestClients(unittest.TestCase):
+class TestClients(KcBaseTestCase):
     def test_client_extra_methods(self):
         clients = self.testbed.getKeycloak().build('clients', self.REALM)
         self.assertIsNotNone(clients.roles, 'The client object should have a roles method.')
@@ -90,12 +90,12 @@ class TestClients(unittest.TestCase):
         self.assertEqual(client_roles_api.findFirstByKV('name', client_role_name), [], 'It should return the posted client')
 
     @classmethod
-    def setUpClass(self):
-        self.testbed = TestBed()
-        self.testbed.createRealms()
-        self.testbed.createUsers()
-        self.testbed.createClients()
-        self.REALM = self.testbed.REALM
+    def setUpClass(cls):
+        super().setUpClass()
+        cls.testbed.createRealms()
+        cls.testbed.createUsers()
+        cls.testbed.createClients()
+        cls.REALM = cls.testbed.REALM
 
     @classmethod
     def tearDownClass(self):

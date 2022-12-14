@@ -1,5 +1,5 @@
 import unittest, time
-from .testbed import TestBed
+from .testbed import KcBaseTestCase
 import json
 
 
@@ -10,7 +10,7 @@ def load_sample(fname):
     return file1
 
 
-class TestingUserAPI(unittest.TestCase):
+class TestingUserAPI(KcBaseTestCase):
 
     def test_identity_provider_adding_saml_and_oid_IDP_providers(self):
         idp1 = self.kc.build('identity-provider', self.REALM)
@@ -30,18 +30,13 @@ class TestingUserAPI(unittest.TestCase):
         self.assertEqual(oidc_ip['alias'], oid['alias'], 'SAML alias should match')
 
     @classmethod
-    def setUpClass(self):
-        self.testbed = TestBed()
-        self.testbed.createRealms()
-        self.testbed.createUsers()
-        self.testbed.createClients()
-        self.REALM = self.testbed.REALM
-        self.kc = self.testbed.getKeycloak()
-
-    @classmethod
-    def tearDownClass(self):
-        self.testbed.goodBye()
-        return True
+    def setUpClass(cls):
+        super().setUpClass()
+        cls.testbed.createRealms()
+        cls.testbed.createUsers()
+        cls.testbed.createClients()
+        cls.REALM = cls.testbed.REALM
+        cls.kc = cls.testbed.getKeycloak()
 
 
 if __name__ == '__main__':
