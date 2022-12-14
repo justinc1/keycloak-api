@@ -114,3 +114,17 @@ class KeycloakCRUD(object):
         Returns a dict with response content.
         """
         return self.get(obj_id).verify().resp().json()
+
+    def update_rmw(self, obj_id=None, partial_payload=None):
+        """
+        read/modify/write update - existing object will be partially updated.
+        We first read current state, then send to server new state.
+
+        Calling .update() on realm object with partial data can destroy some realm attributes.
+        See https://github.com/justinc1/keycloak-fetch-bot/commit/c68610c671193aaf2fe71c23b68e3af3c989db2f.
+        """
+        if not partial_payload:
+            partial_payload = {}
+        full_payload = self.get_one(obj_id)
+        full_payload.update(partial_payload)
+        return self.update(obj_id, full_payload)

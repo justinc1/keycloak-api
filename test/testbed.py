@@ -4,6 +4,9 @@ import json
 import unittest
 from vcr_unittest import VCRTestCase
 
+import logging
+logging.basicConfig(level=logging.DEBUG)
+
 def readFromJSON(filename):
     with open(filename) as json_file:
         return json.load(json_file)
@@ -84,7 +87,7 @@ class TestBed:
     def getAdminRealm(self):
         return self.master_realm
 
-    
+
 class KcBaseTestCase(VCRTestCase):
     @classmethod
     def setUpClass(cls):

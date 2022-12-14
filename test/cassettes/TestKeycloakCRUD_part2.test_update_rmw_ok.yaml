@@ -1,0 +1,335 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJLSlBqM1ptQ1o1SFN4NVJsZlpDSnlBT2MtNVlsWjQzWGtzZ01xTWttaVJRIn0.eyJleHAiOjE2NzEwMzE4NTQsImlhdCI6MTY3MTAzMTc5NCwianRpIjoiMThkNGMxMjMtYjA0ZS00ODBhLWI1OTMtMTcwMGQ4MDU4ZTdkIiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiN2FhYjFlZTEtN2VlMy00Yjk5LTg0MzktZTExN2NmOWM2NjUyIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6IjNlZDMyZmM5LTk4MTgtNDJiNS1iMTMwLTk5ZGE5OTc5MWZkYSIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.JmjYfZQE4QaCB0Is23JHGSVuh-DQieAtsHGZ-uzwdExMUOD9kHP6BFb03HPRb_X2tlERAyRRTL1kSGWIcoQe3Nnhly__L1qoyHxxqCbRwMW1DchFAtFz3Do16vUt6gV4AQinrBNSEFAwQsK8WjL69gm_adQnPaP-z6whDHqXn_BHjcKVmbRTHTwqmT3cuP3njt_4zb_ajJmOf3bGsDARkoXLOoUy-mqJll_3MP87-o4V9j0069z3YWBlkelBsqWS15gFP7CTNH9OGsp-QixF4VwBKKBJuNtQR4qKaVmDrzHPw9rVR2qQ1HRskqrvPcFH_9VjtWXuIPaBU2fBHRNEzw
+      Connection:
+      - keep-alive
+      Content-type:
+      - application/json
+      User-Agent:
+      - python-requests/2.28.1
+    method: GET
+    uri: https://172.17.0.2:8443/auth/admin/realms/myrealm/users
+  response:
+    body:
+      string: '[{"id":"55649796-e25c-40a7-9ed0-845379d810b2","createdTimestamp":1671031794336,"username":"aquaman","enabled":true,"totp":false,"emailVerified":false,"firstName":"AAA%","lastName":"Corrupt","disableableCredentialTypes":[],"requiredActions":[],"notBefore":0,"access":{"manageGroupMembership":true,"view":true,"mapRoles":true,"impersonate":true,"manage":true}},{"id":"3cc0d7b1-8026-40df-8ff2-d1b7a3eef9af","createdTimestamp":1671031794279,"username":"batman","enabled":true,"totp":false,"emailVerified":false,"firstName":"Bruce","lastName":"Wayne","disableableCredentialTypes":[],"requiredActions":[],"notBefore":0,"access":{"manageGroupMembership":true,"view":true,"mapRoles":true,"impersonate":true,"manage":true}},{"id":"05ae9426-35a6-4eea-86cc-61d0b125cf64","createdTimestamp":1671031794308,"username":"superman","enabled":true,"totp":false,"emailVerified":false,"firstName":"Clark","lastName":"Kent","disableableCredentialTypes":[],"requiredActions":[],"notBefore":0,"access":{"manageGroupMembership":true,"view":true,"mapRoles":true,"impersonate":true,"manage":true}}]'
+    headers:
+      Cache-Control:
+      - no-cache
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1072'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 14 Dec 2022 15:29:54 GMT
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJLSlBqM1ptQ1o1SFN4NVJsZlpDSnlBT2MtNVlsWjQzWGtzZ01xTWttaVJRIn0.eyJleHAiOjE2NzEwMzE4NTQsImlhdCI6MTY3MTAzMTc5NCwianRpIjoiMThkNGMxMjMtYjA0ZS00ODBhLWI1OTMtMTcwMGQ4MDU4ZTdkIiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiN2FhYjFlZTEtN2VlMy00Yjk5LTg0MzktZTExN2NmOWM2NjUyIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6IjNlZDMyZmM5LTk4MTgtNDJiNS1iMTMwLTk5ZGE5OTc5MWZkYSIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.JmjYfZQE4QaCB0Is23JHGSVuh-DQieAtsHGZ-uzwdExMUOD9kHP6BFb03HPRb_X2tlERAyRRTL1kSGWIcoQe3Nnhly__L1qoyHxxqCbRwMW1DchFAtFz3Do16vUt6gV4AQinrBNSEFAwQsK8WjL69gm_adQnPaP-z6whDHqXn_BHjcKVmbRTHTwqmT3cuP3njt_4zb_ajJmOf3bGsDARkoXLOoUy-mqJll_3MP87-o4V9j0069z3YWBlkelBsqWS15gFP7CTNH9OGsp-QixF4VwBKKBJuNtQR4qKaVmDrzHPw9rVR2qQ1HRskqrvPcFH_9VjtWXuIPaBU2fBHRNEzw
+      Connection:
+      - keep-alive
+      Content-type:
+      - application/json
+      User-Agent:
+      - python-requests/2.28.1
+    method: GET
+    uri: https://172.17.0.2:8443/auth/admin/realms/myrealm/users/3cc0d7b1-8026-40df-8ff2-d1b7a3eef9af
+  response:
+    body:
+      string: '{"id":"3cc0d7b1-8026-40df-8ff2-d1b7a3eef9af","createdTimestamp":1671031794279,"username":"batman","enabled":true,"totp":false,"emailVerified":false,"firstName":"Bruce","lastName":"Wayne","disableableCredentialTypes":[],"requiredActions":[],"notBefore":0,"access":{"manageGroupMembership":true,"view":true,"mapRoles":true,"impersonate":true,"manage":true}}'
+    headers:
+      Cache-Control:
+      - no-cache
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '355'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 14 Dec 2022 15:29:54 GMT
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"id": "3cc0d7b1-8026-40df-8ff2-d1b7a3eef9af", "createdTimestamp": 1671031794279,
+      "username": "batman", "enabled": true, "totp": false, "emailVerified": false,
+      "firstName": "Bruce", "lastName": "Wayne", "disableableCredentialTypes": [],
+      "requiredActions": [], "notBefore": 0, "access": {"manageGroupMembership": true,
+      "view": true, "mapRoles": true, "impersonate": true, "manage": true}}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJLSlBqM1ptQ1o1SFN4NVJsZlpDSnlBT2MtNVlsWjQzWGtzZ01xTWttaVJRIn0.eyJleHAiOjE2NzEwMzE4NTQsImlhdCI6MTY3MTAzMTc5NCwianRpIjoiMThkNGMxMjMtYjA0ZS00ODBhLWI1OTMtMTcwMGQ4MDU4ZTdkIiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiN2FhYjFlZTEtN2VlMy00Yjk5LTg0MzktZTExN2NmOWM2NjUyIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6IjNlZDMyZmM5LTk4MTgtNDJiNS1iMTMwLTk5ZGE5OTc5MWZkYSIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.JmjYfZQE4QaCB0Is23JHGSVuh-DQieAtsHGZ-uzwdExMUOD9kHP6BFb03HPRb_X2tlERAyRRTL1kSGWIcoQe3Nnhly__L1qoyHxxqCbRwMW1DchFAtFz3Do16vUt6gV4AQinrBNSEFAwQsK8WjL69gm_adQnPaP-z6whDHqXn_BHjcKVmbRTHTwqmT3cuP3njt_4zb_ajJmOf3bGsDARkoXLOoUy-mqJll_3MP87-o4V9j0069z3YWBlkelBsqWS15gFP7CTNH9OGsp-QixF4VwBKKBJuNtQR4qKaVmDrzHPw9rVR2qQ1HRskqrvPcFH_9VjtWXuIPaBU2fBHRNEzw
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '387'
+      Content-type:
+      - application/json
+      User-Agent:
+      - python-requests/2.28.1
+    method: PUT
+    uri: https://172.17.0.2:8443/auth/admin/realms/myrealm/users/3cc0d7b1-8026-40df-8ff2-d1b7a3eef9af
+  response:
+    body:
+      string: ''
+    headers:
+      Date:
+      - Wed, 14 Dec 2022 15:29:54 GMT
+    status:
+      code: 204
+      message: No Content
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJLSlBqM1ptQ1o1SFN4NVJsZlpDSnlBT2MtNVlsWjQzWGtzZ01xTWttaVJRIn0.eyJleHAiOjE2NzEwMzE4NTQsImlhdCI6MTY3MTAzMTc5NCwianRpIjoiMThkNGMxMjMtYjA0ZS00ODBhLWI1OTMtMTcwMGQ4MDU4ZTdkIiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiN2FhYjFlZTEtN2VlMy00Yjk5LTg0MzktZTExN2NmOWM2NjUyIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6IjNlZDMyZmM5LTk4MTgtNDJiNS1iMTMwLTk5ZGE5OTc5MWZkYSIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.JmjYfZQE4QaCB0Is23JHGSVuh-DQieAtsHGZ-uzwdExMUOD9kHP6BFb03HPRb_X2tlERAyRRTL1kSGWIcoQe3Nnhly__L1qoyHxxqCbRwMW1DchFAtFz3Do16vUt6gV4AQinrBNSEFAwQsK8WjL69gm_adQnPaP-z6whDHqXn_BHjcKVmbRTHTwqmT3cuP3njt_4zb_ajJmOf3bGsDARkoXLOoUy-mqJll_3MP87-o4V9j0069z3YWBlkelBsqWS15gFP7CTNH9OGsp-QixF4VwBKKBJuNtQR4qKaVmDrzHPw9rVR2qQ1HRskqrvPcFH_9VjtWXuIPaBU2fBHRNEzw
+      Connection:
+      - keep-alive
+      Content-type:
+      - application/json
+      User-Agent:
+      - python-requests/2.28.1
+    method: GET
+    uri: https://172.17.0.2:8443/auth/admin/realms/myrealm/users/3cc0d7b1-8026-40df-8ff2-d1b7a3eef9af
+  response:
+    body:
+      string: '{"id":"3cc0d7b1-8026-40df-8ff2-d1b7a3eef9af","createdTimestamp":1671031794279,"username":"batman","enabled":true,"totp":false,"emailVerified":false,"firstName":"Bruce","lastName":"Wayne","disableableCredentialTypes":[],"requiredActions":[],"notBefore":0,"access":{"manageGroupMembership":true,"view":true,"mapRoles":true,"impersonate":true,"manage":true}}'
+    headers:
+      Cache-Control:
+      - no-cache
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '355'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 14 Dec 2022 15:29:54 GMT
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"id": "3cc0d7b1-8026-40df-8ff2-d1b7a3eef9af", "createdTimestamp": 1671031794279,
+      "username": "batman", "enabled": true, "totp": false, "emailVerified": false,
+      "firstName": "Bruce", "lastName": "Wayne-new", "disableableCredentialTypes":
+      [], "requiredActions": [], "notBefore": 0, "access": {"manageGroupMembership":
+      true, "view": true, "mapRoles": true, "impersonate": true, "manage": true}}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJLSlBqM1ptQ1o1SFN4NVJsZlpDSnlBT2MtNVlsWjQzWGtzZ01xTWttaVJRIn0.eyJleHAiOjE2NzEwMzE4NTQsImlhdCI6MTY3MTAzMTc5NCwianRpIjoiMThkNGMxMjMtYjA0ZS00ODBhLWI1OTMtMTcwMGQ4MDU4ZTdkIiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiN2FhYjFlZTEtN2VlMy00Yjk5LTg0MzktZTExN2NmOWM2NjUyIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6IjNlZDMyZmM5LTk4MTgtNDJiNS1iMTMwLTk5ZGE5OTc5MWZkYSIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.JmjYfZQE4QaCB0Is23JHGSVuh-DQieAtsHGZ-uzwdExMUOD9kHP6BFb03HPRb_X2tlERAyRRTL1kSGWIcoQe3Nnhly__L1qoyHxxqCbRwMW1DchFAtFz3Do16vUt6gV4AQinrBNSEFAwQsK8WjL69gm_adQnPaP-z6whDHqXn_BHjcKVmbRTHTwqmT3cuP3njt_4zb_ajJmOf3bGsDARkoXLOoUy-mqJll_3MP87-o4V9j0069z3YWBlkelBsqWS15gFP7CTNH9OGsp-QixF4VwBKKBJuNtQR4qKaVmDrzHPw9rVR2qQ1HRskqrvPcFH_9VjtWXuIPaBU2fBHRNEzw
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '391'
+      Content-type:
+      - application/json
+      User-Agent:
+      - python-requests/2.28.1
+    method: PUT
+    uri: https://172.17.0.2:8443/auth/admin/realms/myrealm/users/3cc0d7b1-8026-40df-8ff2-d1b7a3eef9af
+  response:
+    body:
+      string: ''
+    headers:
+      Date:
+      - Wed, 14 Dec 2022 15:29:54 GMT
+    status:
+      code: 204
+      message: No Content
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJLSlBqM1ptQ1o1SFN4NVJsZlpDSnlBT2MtNVlsWjQzWGtzZ01xTWttaVJRIn0.eyJleHAiOjE2NzEwMzE4NTQsImlhdCI6MTY3MTAzMTc5NCwianRpIjoiMThkNGMxMjMtYjA0ZS00ODBhLWI1OTMtMTcwMGQ4MDU4ZTdkIiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiN2FhYjFlZTEtN2VlMy00Yjk5LTg0MzktZTExN2NmOWM2NjUyIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6IjNlZDMyZmM5LTk4MTgtNDJiNS1iMTMwLTk5ZGE5OTc5MWZkYSIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.JmjYfZQE4QaCB0Is23JHGSVuh-DQieAtsHGZ-uzwdExMUOD9kHP6BFb03HPRb_X2tlERAyRRTL1kSGWIcoQe3Nnhly__L1qoyHxxqCbRwMW1DchFAtFz3Do16vUt6gV4AQinrBNSEFAwQsK8WjL69gm_adQnPaP-z6whDHqXn_BHjcKVmbRTHTwqmT3cuP3njt_4zb_ajJmOf3bGsDARkoXLOoUy-mqJll_3MP87-o4V9j0069z3YWBlkelBsqWS15gFP7CTNH9OGsp-QixF4VwBKKBJuNtQR4qKaVmDrzHPw9rVR2qQ1HRskqrvPcFH_9VjtWXuIPaBU2fBHRNEzw
+      Connection:
+      - keep-alive
+      Content-type:
+      - application/json
+      User-Agent:
+      - python-requests/2.28.1
+    method: GET
+    uri: https://172.17.0.2:8443/auth/admin/realms/myrealm/users/3cc0d7b1-8026-40df-8ff2-d1b7a3eef9af
+  response:
+    body:
+      string: '{"id":"3cc0d7b1-8026-40df-8ff2-d1b7a3eef9af","createdTimestamp":1671031794279,"username":"batman","enabled":true,"totp":false,"emailVerified":false,"firstName":"Bruce","lastName":"Wayne-new","disableableCredentialTypes":[],"requiredActions":[],"notBefore":0,"access":{"manageGroupMembership":true,"view":true,"mapRoles":true,"impersonate":true,"manage":true}}'
+    headers:
+      Cache-Control:
+      - no-cache
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '359'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 14 Dec 2022 15:29:54 GMT
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"id": "3cc0d7b1-8026-40df-8ff2-d1b7a3eef9af", "createdTimestamp": 1671031794279,
+      "username": "batman", "enabled": true, "totp": false, "emailVerified": false,
+      "firstName": "Bruce", "lastName": "Wayne-new", "disableableCredentialTypes":
+      [], "requiredActions": [], "notBefore": 0, "access": {"manageGroupMembership":
+      true, "view": true, "mapRoles": true, "impersonate": true, "manage": true},
+      "email": "bw@example.com"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJLSlBqM1ptQ1o1SFN4NVJsZlpDSnlBT2MtNVlsWjQzWGtzZ01xTWttaVJRIn0.eyJleHAiOjE2NzEwMzE4NTQsImlhdCI6MTY3MTAzMTc5NCwianRpIjoiMThkNGMxMjMtYjA0ZS00ODBhLWI1OTMtMTcwMGQ4MDU4ZTdkIiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiN2FhYjFlZTEtN2VlMy00Yjk5LTg0MzktZTExN2NmOWM2NjUyIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6IjNlZDMyZmM5LTk4MTgtNDJiNS1iMTMwLTk5ZGE5OTc5MWZkYSIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.JmjYfZQE4QaCB0Is23JHGSVuh-DQieAtsHGZ-uzwdExMUOD9kHP6BFb03HPRb_X2tlERAyRRTL1kSGWIcoQe3Nnhly__L1qoyHxxqCbRwMW1DchFAtFz3Do16vUt6gV4AQinrBNSEFAwQsK8WjL69gm_adQnPaP-z6whDHqXn_BHjcKVmbRTHTwqmT3cuP3njt_4zb_ajJmOf3bGsDARkoXLOoUy-mqJll_3MP87-o4V9j0069z3YWBlkelBsqWS15gFP7CTNH9OGsp-QixF4VwBKKBJuNtQR4qKaVmDrzHPw9rVR2qQ1HRskqrvPcFH_9VjtWXuIPaBU2fBHRNEzw
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '418'
+      Content-type:
+      - application/json
+      User-Agent:
+      - python-requests/2.28.1
+    method: PUT
+    uri: https://172.17.0.2:8443/auth/admin/realms/myrealm/users/3cc0d7b1-8026-40df-8ff2-d1b7a3eef9af
+  response:
+    body:
+      string: ''
+    headers:
+      Date:
+      - Wed, 14 Dec 2022 15:29:54 GMT
+    status:
+      code: 204
+      message: No Content
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJLSlBqM1ptQ1o1SFN4NVJsZlpDSnlBT2MtNVlsWjQzWGtzZ01xTWttaVJRIn0.eyJleHAiOjE2NzEwMzE4NTQsImlhdCI6MTY3MTAzMTc5NCwianRpIjoiMThkNGMxMjMtYjA0ZS00ODBhLWI1OTMtMTcwMGQ4MDU4ZTdkIiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiN2FhYjFlZTEtN2VlMy00Yjk5LTg0MzktZTExN2NmOWM2NjUyIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6IjNlZDMyZmM5LTk4MTgtNDJiNS1iMTMwLTk5ZGE5OTc5MWZkYSIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.JmjYfZQE4QaCB0Is23JHGSVuh-DQieAtsHGZ-uzwdExMUOD9kHP6BFb03HPRb_X2tlERAyRRTL1kSGWIcoQe3Nnhly__L1qoyHxxqCbRwMW1DchFAtFz3Do16vUt6gV4AQinrBNSEFAwQsK8WjL69gm_adQnPaP-z6whDHqXn_BHjcKVmbRTHTwqmT3cuP3njt_4zb_ajJmOf3bGsDARkoXLOoUy-mqJll_3MP87-o4V9j0069z3YWBlkelBsqWS15gFP7CTNH9OGsp-QixF4VwBKKBJuNtQR4qKaVmDrzHPw9rVR2qQ1HRskqrvPcFH_9VjtWXuIPaBU2fBHRNEzw
+      Connection:
+      - keep-alive
+      Content-type:
+      - application/json
+      User-Agent:
+      - python-requests/2.28.1
+    method: GET
+    uri: https://172.17.0.2:8443/auth/admin/realms/myrealm/users/3cc0d7b1-8026-40df-8ff2-d1b7a3eef9af
+  response:
+    body:
+      string: '{"id":"3cc0d7b1-8026-40df-8ff2-d1b7a3eef9af","createdTimestamp":1671031794279,"username":"batman","enabled":true,"totp":false,"emailVerified":false,"firstName":"Bruce","lastName":"Wayne-new","email":"bw@example.com","disableableCredentialTypes":[],"requiredActions":[],"notBefore":0,"access":{"manageGroupMembership":true,"view":true,"mapRoles":true,"impersonate":true,"manage":true}}'
+    headers:
+      Cache-Control:
+      - no-cache
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '384'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 14 Dec 2022 15:29:54 GMT
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"id": "3cc0d7b1-8026-40df-8ff2-d1b7a3eef9af", "createdTimestamp": 1671031794279,
+      "username": "batman", "enabled": false, "totp": false, "emailVerified": false,
+      "firstName": "Bruce", "lastName": "Wayne-new", "email": "bw@example.com", "disableableCredentialTypes":
+      [], "requiredActions": [], "notBefore": 0, "access": {"manageGroupMembership":
+      true, "view": true, "mapRoles": true, "impersonate": true, "manage": true}}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJLSlBqM1ptQ1o1SFN4NVJsZlpDSnlBT2MtNVlsWjQzWGtzZ01xTWttaVJRIn0.eyJleHAiOjE2NzEwMzE4NTQsImlhdCI6MTY3MTAzMTc5NCwianRpIjoiMThkNGMxMjMtYjA0ZS00ODBhLWI1OTMtMTcwMGQ4MDU4ZTdkIiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiN2FhYjFlZTEtN2VlMy00Yjk5LTg0MzktZTExN2NmOWM2NjUyIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6IjNlZDMyZmM5LTk4MTgtNDJiNS1iMTMwLTk5ZGE5OTc5MWZkYSIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.JmjYfZQE4QaCB0Is23JHGSVuh-DQieAtsHGZ-uzwdExMUOD9kHP6BFb03HPRb_X2tlERAyRRTL1kSGWIcoQe3Nnhly__L1qoyHxxqCbRwMW1DchFAtFz3Do16vUt6gV4AQinrBNSEFAwQsK8WjL69gm_adQnPaP-z6whDHqXn_BHjcKVmbRTHTwqmT3cuP3njt_4zb_ajJmOf3bGsDARkoXLOoUy-mqJll_3MP87-o4V9j0069z3YWBlkelBsqWS15gFP7CTNH9OGsp-QixF4VwBKKBJuNtQR4qKaVmDrzHPw9rVR2qQ1HRskqrvPcFH_9VjtWXuIPaBU2fBHRNEzw
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '419'
+      Content-type:
+      - application/json
+      User-Agent:
+      - python-requests/2.28.1
+    method: PUT
+    uri: https://172.17.0.2:8443/auth/admin/realms/myrealm/users/3cc0d7b1-8026-40df-8ff2-d1b7a3eef9af
+  response:
+    body:
+      string: ''
+    headers:
+      Date:
+      - Wed, 14 Dec 2022 15:29:54 GMT
+    status:
+      code: 204
+      message: No Content
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJLSlBqM1ptQ1o1SFN4NVJsZlpDSnlBT2MtNVlsWjQzWGtzZ01xTWttaVJRIn0.eyJleHAiOjE2NzEwMzE4NTQsImlhdCI6MTY3MTAzMTc5NCwianRpIjoiMThkNGMxMjMtYjA0ZS00ODBhLWI1OTMtMTcwMGQ4MDU4ZTdkIiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiN2FhYjFlZTEtN2VlMy00Yjk5LTg0MzktZTExN2NmOWM2NjUyIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6IjNlZDMyZmM5LTk4MTgtNDJiNS1iMTMwLTk5ZGE5OTc5MWZkYSIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.JmjYfZQE4QaCB0Is23JHGSVuh-DQieAtsHGZ-uzwdExMUOD9kHP6BFb03HPRb_X2tlERAyRRTL1kSGWIcoQe3Nnhly__L1qoyHxxqCbRwMW1DchFAtFz3Do16vUt6gV4AQinrBNSEFAwQsK8WjL69gm_adQnPaP-z6whDHqXn_BHjcKVmbRTHTwqmT3cuP3njt_4zb_ajJmOf3bGsDARkoXLOoUy-mqJll_3MP87-o4V9j0069z3YWBlkelBsqWS15gFP7CTNH9OGsp-QixF4VwBKKBJuNtQR4qKaVmDrzHPw9rVR2qQ1HRskqrvPcFH_9VjtWXuIPaBU2fBHRNEzw
+      Connection:
+      - keep-alive
+      Content-type:
+      - application/json
+      User-Agent:
+      - python-requests/2.28.1
+    method: GET
+    uri: https://172.17.0.2:8443/auth/admin/realms/myrealm/users/3cc0d7b1-8026-40df-8ff2-d1b7a3eef9af
+  response:
+    body:
+      string: '{"id":"3cc0d7b1-8026-40df-8ff2-d1b7a3eef9af","createdTimestamp":1671031794279,"username":"batman","enabled":false,"totp":false,"emailVerified":false,"firstName":"Bruce","lastName":"Wayne-new","email":"bw@example.com","disableableCredentialTypes":[],"requiredActions":[],"notBefore":0,"access":{"manageGroupMembership":true,"view":true,"mapRoles":true,"impersonate":true,"manage":true}}'
+    headers:
+      Cache-Control:
+      - no-cache
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '385'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 14 Dec 2022 15:29:54 GMT
+    status:
+      code: 200
+      message: OK
+version: 1
