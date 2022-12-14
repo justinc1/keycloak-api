@@ -109,4 +109,8 @@ class KeycloakCRUD(object):
     def exist(self, _id):
         return self.get(_id).ok()
 
-
+    def get_one(self, obj_id):
+        """
+        Returns a dict with response content.
+        """
+        return self.get(obj_id).verify().resp().json()
