@@ -1,0 +1,34 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJaMXVCT2dtWGJJVkhRT2hNbGRGanRFRlVubENMQmpwODVlN3B5SnpadlVjIn0.eyJleHAiOjE2NzEwMTc3ODksImlhdCI6MTY3MTAxNzcyOSwianRpIjoiYjgyOTBlNTQtODllNi00Y2NmLWE4ZDktYTkxMWY1NWI4YTA0IiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiNzgxMDQxYzgtNjVmNC00NTJmLWEyYWUtMTRiMjI5ODZiYTBjIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6IjI4YWJhZGFlLTdiYjEtNDZlYi1hMjAxLTQwMmZmMTUxZjg3NiIsImFjciI6IjEiLCJzY29wZSI6InByb2ZpbGUgZW1haWwiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.n4FAEhp6DVo6zqnYVzKPWpdTRbY8Uc2t4YxxHX0JjB8_x_cu8MQX73ySBwdUzZ2jdPDKE9O4WImKPsymTjTFBS2fh_fUz70J1po9CcXV0KNDzsB_yOL8X8JH9Taym1yrmxiydHNFCnqENodonvfTjLAvDO4bFgZ-AE1AObfPDX16-YEX9hW61S2M71-pBOrp5mF3i2ynyazGVOi45ECFcdLMD5wsmxrlQhFZlVWGq1uaPpaIl4gIVkbOIMXDaGvLD-CkwSLRFiYHpMTmMt74etnc7ufS0KXrFv1095Qddy74Zff43j0lYSkLrhYKf-VeegRf2_ncKdp6VucMEHGV3w
+      Connection:
+      - keep-alive
+      Content-type:
+      - application/json
+      User-Agent:
+      - python-requests/2.28.1
+    method: GET
+    uri: https://172.17.0.2:8443/auth/admin/realms/myrealm/users/no-such-user-uuid
+  response:
+    body:
+      string: '{"error":"User not found"}'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '26'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 14 Dec 2022 11:35:30 GMT
+    status:
+      code: 404
+      message: Not Found
+version: 1

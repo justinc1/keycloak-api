@@ -148,5 +148,32 @@ class Testing_User_API(KcBaseTestCase):
         cls.USER_DATA = {"enabled":True,"attributes":{},"username":"pepe","emailVerified":"", "firstName": 'pepe'}
 
 
+class TestKeycloakCRUD_get_one(KcBaseTestCase):
+    @classmethod
+    def setUpClass(cls):
+        super().setUpClass()
+        cls.testbed.createRealms()
+        cls.testbed.createUsers()
+
+    def test_ok(self):
+        users_api = self.testbed.kc.build("users", self.testbed.REALM)
+        user_id = users_api.findFirstByKV("username", "batman")["id"]
+
+        user = users_api.get_one(user_id)
+
+        self.assertIsInstance(user, dict)
+        # "assertDictContainsSubset(a, b)" == "a == a|b"
+        self.assertEqual(user, user | {
+            "username": "batman",
+            "lastName": "Wayne",
+            "enabled": True,
+        })
+
+    def test_invalid_id(self):
+        users_api = self.testbed.kc.build('users', self.testbed.REALM)
+
+        self.assertRaises(Exception, users_api.get_one, "no-such-user-uuid")
+
+
 if __name__ == '__main__':
     unittest.main()
