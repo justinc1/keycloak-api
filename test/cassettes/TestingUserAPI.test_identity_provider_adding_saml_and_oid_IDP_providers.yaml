@@ -1,0 +1,312 @@
+interactions:
+- request:
+    body: '{"addReadTokenRoleOnCreate": "", "alias": "saml666", "authenticateByDefault":
+      false, "config": {"backchannelSupported": "", "forceAuthn": "", "hideOnLoginPage":
+      "", "nameIDPolicyFormat": "urn:oasis:names:tc:SAML:2.0:nameid-format:persistent",
+      "postBindingAuthnRequest": "", "postBindingLogout": "", "postBindingResponse":
+      "", "samlXmlKeyNameTranformer": "KEY_ID", "signatureAlgorithm": "RSA_SHA256",
+      "singleSignOnServiceUrl": "https://my_saml.com:9490", "useJwksUrl": "true",
+      "validateSignature": "", "wantAssertionsEncrypted": "", "wantAssertionsSigned":
+      "", "wantAuthnRequestsSigned": ""}, "enabled": true, "firstBrokerLoginFlowAlias":
+      "first broker login", "linkOnly": "", "postBrokerLoginFlowAlias": "", "providerId":
+      "saml", "storeToken": "", "trustEmail": ""}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJGdVU0Y1dPM2oyTXN6ZnZzTlE2a0NBOHlCNkhBQXM0TGxQdGx3V1YxQ1NFIn0.eyJleHAiOjE2NzEwMTA3NTIsImlhdCI6MTY3MTAxMDY5MiwianRpIjoiMTc2ODI5MjQtMDFkNy00NWM3LTk4NWMtMDM5NjI0YzAxZGRiIiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiNzcwODkzYzAtMDU3MS00YzhiLTkwMWItYTVlMTBkMmMyOTQyIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6ImRjZGJhYjU2LTdiZjMtNDkxYy04OTI4LWM4MDY1MmM4NTJiNyIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.IG_N_EqKgAYzdlgpv4B7HlA0RrZ0PbT5FfBlTix2ygATw4EWkjBUdujUlKUEuiRMfC7gQb1tBb_X_jk8qHx0aPih5c624ZI2mUZ8lIBZOgv1fV3EpI7ckLWINCeIqP_eu1G1schBSym6Fp8WccfifxpDJFEVXOZJSKEpvEuzNGgeUV49yyubEtQJhV7Xw6_mJ7lvVDnKkj9ejjo09qq5YegCPE8NKDFQXIOBpqZJnKE_0CJfjw6D9cg_DAyuCgA9z3U6MJ2lqz3SPAqd11hKPSRiNYjD66-YgVRpRkA4LHkCqAAXZnInCv-M5XC_Y4wrFBV7EMUusFTURgJYAiqL2w
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '765'
+      Content-type:
+      - application/json
+      User-Agent:
+      - python-requests/2.28.1
+    method: POST
+    uri: https://172.17.0.2:8443/auth/admin/realms/myrealm/identity-provider/instances
+  response:
+    body:
+      string: ''
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      Date:
+      - Wed, 14 Dec 2022 09:38:13 GMT
+      Location:
+      - https://172.17.0.2:8443/auth/admin/realms/myrealm/identity-provider/instances/saml666
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{"addReadTokenRoleOnCreate": "", "alias": "oidc666", "authenticateByDefault":
+      false, "config": {"authorizationUrl": "https:/my_host.com/my_authorization_url",
+      "backchannelSupported": "", "clientId": "_dc_", "clientSecret": "2211212", "disableUserInfo":
+      "", "hideOnLoginPage": "", "loginHint": "", "tokenUrl": "https:/my_host.com/token",
+      "uiLocales": "", "useJwksUrl": "true", "validateSignature": ""}, "enabled":
+      true, "firstBrokerLoginFlowAlias": "first broker login", "linkOnly": "", "postBrokerLoginFlowAlias":
+      "", "providerId": "oidc", "storeToken": "", "trustEmail": ""}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJGdVU0Y1dPM2oyTXN6ZnZzTlE2a0NBOHlCNkhBQXM0TGxQdGx3V1YxQ1NFIn0.eyJleHAiOjE2NzEwMTA3NTIsImlhdCI6MTY3MTAxMDY5MiwianRpIjoiMTc2ODI5MjQtMDFkNy00NWM3LTk4NWMtMDM5NjI0YzAxZGRiIiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiNzcwODkzYzAtMDU3MS00YzhiLTkwMWItYTVlMTBkMmMyOTQyIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6ImRjZGJhYjU2LTdiZjMtNDkxYy04OTI4LWM4MDY1MmM4NTJiNyIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.IG_N_EqKgAYzdlgpv4B7HlA0RrZ0PbT5FfBlTix2ygATw4EWkjBUdujUlKUEuiRMfC7gQb1tBb_X_jk8qHx0aPih5c624ZI2mUZ8lIBZOgv1fV3EpI7ckLWINCeIqP_eu1G1schBSym6Fp8WccfifxpDJFEVXOZJSKEpvEuzNGgeUV49yyubEtQJhV7Xw6_mJ7lvVDnKkj9ejjo09qq5YegCPE8NKDFQXIOBpqZJnKE_0CJfjw6D9cg_DAyuCgA9z3U6MJ2lqz3SPAqd11hKPSRiNYjD66-YgVRpRkA4LHkCqAAXZnInCv-M5XC_Y4wrFBV7EMUusFTURgJYAiqL2w
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '575'
+      Content-type:
+      - application/json
+      User-Agent:
+      - python-requests/2.28.1
+    method: POST
+    uri: https://172.17.0.2:8443/auth/admin/realms/myrealm/identity-provider/instances
+  response:
+    body:
+      string: ''
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      Date:
+      - Wed, 14 Dec 2022 09:38:13 GMT
+      Location:
+      - https://172.17.0.2:8443/auth/admin/realms/myrealm/identity-provider/instances/oidc666
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJGdVU0Y1dPM2oyTXN6ZnZzTlE2a0NBOHlCNkhBQXM0TGxQdGx3V1YxQ1NFIn0.eyJleHAiOjE2NzEwMTA3NTIsImlhdCI6MTY3MTAxMDY5MiwianRpIjoiMTc2ODI5MjQtMDFkNy00NWM3LTk4NWMtMDM5NjI0YzAxZGRiIiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiNzcwODkzYzAtMDU3MS00YzhiLTkwMWItYTVlMTBkMmMyOTQyIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6ImRjZGJhYjU2LTdiZjMtNDkxYy04OTI4LWM4MDY1MmM4NTJiNyIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.IG_N_EqKgAYzdlgpv4B7HlA0RrZ0PbT5FfBlTix2ygATw4EWkjBUdujUlKUEuiRMfC7gQb1tBb_X_jk8qHx0aPih5c624ZI2mUZ8lIBZOgv1fV3EpI7ckLWINCeIqP_eu1G1schBSym6Fp8WccfifxpDJFEVXOZJSKEpvEuzNGgeUV49yyubEtQJhV7Xw6_mJ7lvVDnKkj9ejjo09qq5YegCPE8NKDFQXIOBpqZJnKE_0CJfjw6D9cg_DAyuCgA9z3U6MJ2lqz3SPAqd11hKPSRiNYjD66-YgVRpRkA4LHkCqAAXZnInCv-M5XC_Y4wrFBV7EMUusFTURgJYAiqL2w
+      Connection:
+      - keep-alive
+      Content-type:
+      - application/json
+      User-Agent:
+      - python-requests/2.28.1
+    method: GET
+    uri: https://172.17.0.2:8443/auth/admin/realms/myrealm/identity-provider/instances
+  response:
+    body:
+      string: '[{"alias":"saml666","internalId":"31dd3e31-8720-4e45-9ba6-d31fd06cc263","providerId":"saml","enabled":true,"updateProfileFirstLoginMode":"on","trustEmail":false,"storeToken":false,"addReadTokenRoleOnCreate":false,"authenticateByDefault":false,"linkOnly":false,"firstBrokerLoginFlowAlias":"first
+        broker login","config":{"samlXmlKeyNameTranformer":"KEY_ID","singleSignOnServiceUrl":"https://my_saml.com:9490","nameIDPolicyFormat":"urn:oasis:names:tc:SAML:2.0:nameid-format:persistent","signatureAlgorithm":"RSA_SHA256","useJwksUrl":"true"}},{"alias":"oidc666","internalId":"44d3f186-8670-43e3-8b15-96e173353893","providerId":"oidc","enabled":true,"updateProfileFirstLoginMode":"on","trustEmail":false,"storeToken":false,"addReadTokenRoleOnCreate":false,"authenticateByDefault":false,"linkOnly":false,"firstBrokerLoginFlowAlias":"first
+        broker login","config":{"clientSecret":"**********","clientId":"_dc_","tokenUrl":"https:/my_host.com/token","authorizationUrl":"https:/my_host.com/my_authorization_url","useJwksUrl":"true"}}]'
+    headers:
+      Cache-Control:
+      - no-cache
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1024'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 14 Dec 2022 09:38:13 GMT
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJGdVU0Y1dPM2oyTXN6ZnZzTlE2a0NBOHlCNkhBQXM0TGxQdGx3V1YxQ1NFIn0.eyJleHAiOjE2NzEwMTA3NTIsImlhdCI6MTY3MTAxMDY5MiwianRpIjoiMTc2ODI5MjQtMDFkNy00NWM3LTk4NWMtMDM5NjI0YzAxZGRiIiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiNzcwODkzYzAtMDU3MS00YzhiLTkwMWItYTVlMTBkMmMyOTQyIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6ImRjZGJhYjU2LTdiZjMtNDkxYy04OTI4LWM4MDY1MmM4NTJiNyIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.IG_N_EqKgAYzdlgpv4B7HlA0RrZ0PbT5FfBlTix2ygATw4EWkjBUdujUlKUEuiRMfC7gQb1tBb_X_jk8qHx0aPih5c624ZI2mUZ8lIBZOgv1fV3EpI7ckLWINCeIqP_eu1G1schBSym6Fp8WccfifxpDJFEVXOZJSKEpvEuzNGgeUV49yyubEtQJhV7Xw6_mJ7lvVDnKkj9ejjo09qq5YegCPE8NKDFQXIOBpqZJnKE_0CJfjw6D9cg_DAyuCgA9z3U6MJ2lqz3SPAqd11hKPSRiNYjD66-YgVRpRkA4LHkCqAAXZnInCv-M5XC_Y4wrFBV7EMUusFTURgJYAiqL2w
+      Connection:
+      - keep-alive
+      Content-type:
+      - application/json
+      User-Agent:
+      - python-requests/2.28.1
+    method: GET
+    uri: https://172.17.0.2:8443/auth/admin/realms/myrealm/identity-provider/instances
+  response:
+    body:
+      string: '[{"alias":"saml666","internalId":"31dd3e31-8720-4e45-9ba6-d31fd06cc263","providerId":"saml","enabled":true,"updateProfileFirstLoginMode":"on","trustEmail":false,"storeToken":false,"addReadTokenRoleOnCreate":false,"authenticateByDefault":false,"linkOnly":false,"firstBrokerLoginFlowAlias":"first
+        broker login","config":{"samlXmlKeyNameTranformer":"KEY_ID","singleSignOnServiceUrl":"https://my_saml.com:9490","nameIDPolicyFormat":"urn:oasis:names:tc:SAML:2.0:nameid-format:persistent","signatureAlgorithm":"RSA_SHA256","useJwksUrl":"true"}},{"alias":"oidc666","internalId":"44d3f186-8670-43e3-8b15-96e173353893","providerId":"oidc","enabled":true,"updateProfileFirstLoginMode":"on","trustEmail":false,"storeToken":false,"addReadTokenRoleOnCreate":false,"authenticateByDefault":false,"linkOnly":false,"firstBrokerLoginFlowAlias":"first
+        broker login","config":{"clientSecret":"**********","clientId":"_dc_","tokenUrl":"https:/my_host.com/token","authorizationUrl":"https:/my_host.com/my_authorization_url","useJwksUrl":"true"}}]'
+    headers:
+      Cache-Control:
+      - no-cache
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1024'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 14 Dec 2022 09:38:13 GMT
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"addReadTokenRoleOnCreate": "", "alias": "saml666", "authenticateByDefault":
+      false, "config": {"backchannelSupported": "", "forceAuthn": "", "hideOnLoginPage":
+      "", "nameIDPolicyFormat": "urn:oasis:names:tc:SAML:2.0:nameid-format:persistent",
+      "postBindingAuthnRequest": "", "postBindingLogout": "", "postBindingResponse":
+      "", "samlXmlKeyNameTranformer": "KEY_ID", "signatureAlgorithm": "RSA_SHA256",
+      "singleSignOnServiceUrl": "https://my_saml.com:9490", "useJwksUrl": "true",
+      "validateSignature": "", "wantAssertionsEncrypted": "", "wantAssertionsSigned":
+      "", "wantAuthnRequestsSigned": ""}, "enabled": true, "firstBrokerLoginFlowAlias":
+      "first broker login", "linkOnly": "", "postBrokerLoginFlowAlias": "", "providerId":
+      "saml", "storeToken": "", "trustEmail": ""}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJhbVFrMkFhVmhQWHVWZWtEb0ZpNm9OMmp3YzljbDhhTjVGaVJXUlBFZ2EwIn0.eyJleHAiOjE2NzEwMTI3MTEsImlhdCI6MTY3MTAxMjY1MSwianRpIjoiNDZjZWIyOWUtMzE5YS00N2ZjLTg4YTctZTU1OGRkOTFmNzE2IiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiZDQ0YTM0ZTEtOWVkMy00MGQzLTk4MDQtMzNlY2FiN2RkYWU2IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6IjJmZjZiYjQ1LWFmNzctNDU5OS05ZWZhLWQ0YWYyYjVjNmQzYiIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.ZRrHfdPAlJhNWLMwP4ke4TDw7jKVwQ_L0ke9mEtRkqbSyml1mKYd7LmKbhmByTjAEh637JWIagOmnSd85LKDXstG8WUhKImFfbyfXJgLvSISfQX02vmhkGUZsD4ZCo896B37rwqJYU9N-kBBRKZ6TgeEBH78bezGwGHeymnld6pr3Yxk-MCERCID1wKYcDnSXb2IVAw6XrRwDlHwVYFf6hGaeoGCwBAZt2l58CAsYnrwM6ZuzOhQCdfIqhPwldJGWsJr43pRNWtKYqvjUhDzOb9rl5FTGbMz33aflO4QpYMmEp3JwNqi2LtsSreM_Y5EPFvBKQ0wOgjQdqTUN4KUPg
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '765'
+      Content-type:
+      - application/json
+      User-Agent:
+      - python-requests/2.28.1
+    method: POST
+    uri: https://172.17.0.2:8443/auth/admin/realms/myrealm/identity-provider/instances
+  response:
+    body:
+      string: ''
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      Date:
+      - Wed, 14 Dec 2022 10:10:51 GMT
+      Location:
+      - https://172.17.0.2:8443/auth/admin/realms/myrealm/identity-provider/instances/saml666
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{"addReadTokenRoleOnCreate": "", "alias": "oidc666", "authenticateByDefault":
+      false, "config": {"authorizationUrl": "https:/my_host.com/my_authorization_url",
+      "backchannelSupported": "", "clientId": "_dc_", "clientSecret": "2211212", "disableUserInfo":
+      "", "hideOnLoginPage": "", "loginHint": "", "tokenUrl": "https:/my_host.com/token",
+      "uiLocales": "", "useJwksUrl": "true", "validateSignature": ""}, "enabled":
+      true, "firstBrokerLoginFlowAlias": "first broker login", "linkOnly": "", "postBrokerLoginFlowAlias":
+      "", "providerId": "oidc", "storeToken": "", "trustEmail": ""}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJhbVFrMkFhVmhQWHVWZWtEb0ZpNm9OMmp3YzljbDhhTjVGaVJXUlBFZ2EwIn0.eyJleHAiOjE2NzEwMTI3MTEsImlhdCI6MTY3MTAxMjY1MSwianRpIjoiNDZjZWIyOWUtMzE5YS00N2ZjLTg4YTctZTU1OGRkOTFmNzE2IiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiZDQ0YTM0ZTEtOWVkMy00MGQzLTk4MDQtMzNlY2FiN2RkYWU2IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6IjJmZjZiYjQ1LWFmNzctNDU5OS05ZWZhLWQ0YWYyYjVjNmQzYiIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.ZRrHfdPAlJhNWLMwP4ke4TDw7jKVwQ_L0ke9mEtRkqbSyml1mKYd7LmKbhmByTjAEh637JWIagOmnSd85LKDXstG8WUhKImFfbyfXJgLvSISfQX02vmhkGUZsD4ZCo896B37rwqJYU9N-kBBRKZ6TgeEBH78bezGwGHeymnld6pr3Yxk-MCERCID1wKYcDnSXb2IVAw6XrRwDlHwVYFf6hGaeoGCwBAZt2l58CAsYnrwM6ZuzOhQCdfIqhPwldJGWsJr43pRNWtKYqvjUhDzOb9rl5FTGbMz33aflO4QpYMmEp3JwNqi2LtsSreM_Y5EPFvBKQ0wOgjQdqTUN4KUPg
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '575'
+      Content-type:
+      - application/json
+      User-Agent:
+      - python-requests/2.28.1
+    method: POST
+    uri: https://172.17.0.2:8443/auth/admin/realms/myrealm/identity-provider/instances
+  response:
+    body:
+      string: ''
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      Date:
+      - Wed, 14 Dec 2022 10:10:51 GMT
+      Location:
+      - https://172.17.0.2:8443/auth/admin/realms/myrealm/identity-provider/instances/oidc666
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJhbVFrMkFhVmhQWHVWZWtEb0ZpNm9OMmp3YzljbDhhTjVGaVJXUlBFZ2EwIn0.eyJleHAiOjE2NzEwMTI3MTEsImlhdCI6MTY3MTAxMjY1MSwianRpIjoiNDZjZWIyOWUtMzE5YS00N2ZjLTg4YTctZTU1OGRkOTFmNzE2IiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiZDQ0YTM0ZTEtOWVkMy00MGQzLTk4MDQtMzNlY2FiN2RkYWU2IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6IjJmZjZiYjQ1LWFmNzctNDU5OS05ZWZhLWQ0YWYyYjVjNmQzYiIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.ZRrHfdPAlJhNWLMwP4ke4TDw7jKVwQ_L0ke9mEtRkqbSyml1mKYd7LmKbhmByTjAEh637JWIagOmnSd85LKDXstG8WUhKImFfbyfXJgLvSISfQX02vmhkGUZsD4ZCo896B37rwqJYU9N-kBBRKZ6TgeEBH78bezGwGHeymnld6pr3Yxk-MCERCID1wKYcDnSXb2IVAw6XrRwDlHwVYFf6hGaeoGCwBAZt2l58CAsYnrwM6ZuzOhQCdfIqhPwldJGWsJr43pRNWtKYqvjUhDzOb9rl5FTGbMz33aflO4QpYMmEp3JwNqi2LtsSreM_Y5EPFvBKQ0wOgjQdqTUN4KUPg
+      Connection:
+      - keep-alive
+      Content-type:
+      - application/json
+      User-Agent:
+      - python-requests/2.28.1
+    method: GET
+    uri: https://172.17.0.2:8443/auth/admin/realms/myrealm/identity-provider/instances
+  response:
+    body:
+      string: '[{"alias":"saml666","internalId":"8b3b8e3f-8d29-422b-af54-a4fabb1cd97a","providerId":"saml","enabled":true,"updateProfileFirstLoginMode":"on","trustEmail":false,"storeToken":false,"addReadTokenRoleOnCreate":false,"authenticateByDefault":false,"linkOnly":false,"firstBrokerLoginFlowAlias":"first
+        broker login","config":{"samlXmlKeyNameTranformer":"KEY_ID","singleSignOnServiceUrl":"https://my_saml.com:9490","nameIDPolicyFormat":"urn:oasis:names:tc:SAML:2.0:nameid-format:persistent","signatureAlgorithm":"RSA_SHA256","useJwksUrl":"true"}},{"alias":"oidc666","internalId":"23f0ac0c-9522-486c-8caa-265b40bfa342","providerId":"oidc","enabled":true,"updateProfileFirstLoginMode":"on","trustEmail":false,"storeToken":false,"addReadTokenRoleOnCreate":false,"authenticateByDefault":false,"linkOnly":false,"firstBrokerLoginFlowAlias":"first
+        broker login","config":{"clientSecret":"**********","clientId":"_dc_","tokenUrl":"https:/my_host.com/token","authorizationUrl":"https:/my_host.com/my_authorization_url","useJwksUrl":"true"}}]'
+    headers:
+      Cache-Control:
+      - no-cache
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1024'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 14 Dec 2022 10:10:51 GMT
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJhbVFrMkFhVmhQWHVWZWtEb0ZpNm9OMmp3YzljbDhhTjVGaVJXUlBFZ2EwIn0.eyJleHAiOjE2NzEwMTI3MTEsImlhdCI6MTY3MTAxMjY1MSwianRpIjoiNDZjZWIyOWUtMzE5YS00N2ZjLTg4YTctZTU1OGRkOTFmNzE2IiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiZDQ0YTM0ZTEtOWVkMy00MGQzLTk4MDQtMzNlY2FiN2RkYWU2IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6IjJmZjZiYjQ1LWFmNzctNDU5OS05ZWZhLWQ0YWYyYjVjNmQzYiIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.ZRrHfdPAlJhNWLMwP4ke4TDw7jKVwQ_L0ke9mEtRkqbSyml1mKYd7LmKbhmByTjAEh637JWIagOmnSd85LKDXstG8WUhKImFfbyfXJgLvSISfQX02vmhkGUZsD4ZCo896B37rwqJYU9N-kBBRKZ6TgeEBH78bezGwGHeymnld6pr3Yxk-MCERCID1wKYcDnSXb2IVAw6XrRwDlHwVYFf6hGaeoGCwBAZt2l58CAsYnrwM6ZuzOhQCdfIqhPwldJGWsJr43pRNWtKYqvjUhDzOb9rl5FTGbMz33aflO4QpYMmEp3JwNqi2LtsSreM_Y5EPFvBKQ0wOgjQdqTUN4KUPg
+      Connection:
+      - keep-alive
+      Content-type:
+      - application/json
+      User-Agent:
+      - python-requests/2.28.1
+    method: GET
+    uri: https://172.17.0.2:8443/auth/admin/realms/myrealm/identity-provider/instances
+  response:
+    body:
+      string: '[{"alias":"saml666","internalId":"8b3b8e3f-8d29-422b-af54-a4fabb1cd97a","providerId":"saml","enabled":true,"updateProfileFirstLoginMode":"on","trustEmail":false,"storeToken":false,"addReadTokenRoleOnCreate":false,"authenticateByDefault":false,"linkOnly":false,"firstBrokerLoginFlowAlias":"first
+        broker login","config":{"samlXmlKeyNameTranformer":"KEY_ID","singleSignOnServiceUrl":"https://my_saml.com:9490","nameIDPolicyFormat":"urn:oasis:names:tc:SAML:2.0:nameid-format:persistent","signatureAlgorithm":"RSA_SHA256","useJwksUrl":"true"}},{"alias":"oidc666","internalId":"23f0ac0c-9522-486c-8caa-265b40bfa342","providerId":"oidc","enabled":true,"updateProfileFirstLoginMode":"on","trustEmail":false,"storeToken":false,"addReadTokenRoleOnCreate":false,"authenticateByDefault":false,"linkOnly":false,"firstBrokerLoginFlowAlias":"first
+        broker login","config":{"clientSecret":"**********","clientId":"_dc_","tokenUrl":"https:/my_host.com/token","authorizationUrl":"https:/my_host.com/my_authorization_url","useJwksUrl":"true"}}]'
+    headers:
+      Cache-Control:
+      - no-cache
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1024'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 14 Dec 2022 10:10:52 GMT
+    status:
+      code: 200
+      message: OK
+version: 1

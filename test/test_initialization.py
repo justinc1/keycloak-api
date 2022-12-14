@@ -1,3 +1,4 @@
+import os
 import unittest, time, json
 from kcapi import OpenID, Keycloak
 from .testbed import KcBaseTestCase
@@ -24,6 +25,7 @@ def test_kc_crud(that, kc):
     that.assertTrue(clients.create(payload).isOk(), 'Client should be created')
     clients = clients.findFirstByKV('clientId', 'test-client')
     that.assertTrue(len(clients) > 0, 'We should get a client back')
+
 
 class Testing_OpenID(KcBaseTestCase):
     def test_oidc_ctor(self): 
@@ -152,7 +154,18 @@ class Testing_OpenID(KcBaseTestCase):
         state = groups.create({"name":"delete_this_group"}).isOk()
         self.assertTrue(state)
 
-        time.sleep(65)
+        # See https://vcrpy.readthedocs.io/en/latest/usage.html#record-modes
+        # "all" - we need 60 sec delay
+        # "none" - delay is not needed
+        # "once" and "new_episodes" - delay is needed only if new cassette will be recorded.
+        # Only "none" is always sage to skip.
+        # TODO - test refresh token timeout/renew.
+        # At that point we can try to reconfigure refresh token timeout to smaller value -
+        # 10 sec maybe. Is there config option?
+        # Than we can also set access token timeout to smaller value (2 sec?).
+        vcrpy_record_mode = self._get_vcr_kwargs()["record_mode"]
+        if vcrpy_record_mode not in ["none"]:
+            time.sleep(65)
 
         _kc = Keycloak.instantiate_with_raw_json(url=self.testbed.ENDPOINT, json_string=str_token)
         group_using_expired_token = _kc.build('groups', self.realm)

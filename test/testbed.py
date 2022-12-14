@@ -2,6 +2,7 @@ from kcapi import OpenID, Keycloak
 import os
 import json
 import unittest
+from vcr_unittest import VCRTestCase
 
 def readFromJSON(filename):
     with open(filename) as json_file:
@@ -17,7 +18,8 @@ class TestBed:
 
         self.groupName = 'DC'
         self.roleNames = ['level-1', 'level-2', 'level-3'] 
-        
+
+        # TODO this is not intercepted by vcrpy.
         token = OpenID.createAdminClient(self.USER, self.PASSWORD, url=self.ENDPOINT).getToken()
         self.kc = Keycloak(token, self.ENDPOINT)
         self.master_realm = self.kc.admin()
@@ -83,12 +85,26 @@ class TestBed:
         return self.master_realm
 
     
-class KcBaseTestCase(unittest.TestCase):
+class KcBaseTestCase(VCRTestCase):
     @classmethod
     def setUpClass(cls):
+        super().setUpClass()
         cls.testbed = TestBed()
 
     @classmethod
     def tearDownClass(cls):
         cls.testbed.goodBye()
+        super().tearDownClass()
         return True
+
+    def _get_vcr_kwargs(self):
+        kwargs = super()._get_vcr_kwargs()
+        # https://vcrpy.readthedocs.io/en/latest/usage.html#record-modes
+        # "once" or "new_episodes" makes sense - which is better?
+        # "new_episodes" is more auto-magic, use it.
+        # BUT - authentiaction is in setUp(), is not recorded, so each time a diffrent access token is send,
+        # and VCR is not used.
+        # We use "none".
+        vcrpy_record_mode = os.environ.get("VCRPY_RECORD_MODE", "none")
+        kwargs['record_mode'] = vcrpy_record_mode
+        return kwargs

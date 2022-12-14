@@ -1,0 +1,86 @@
+interactions:
+- request:
+    body: '{"realm": "myrealm"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJGdVU0Y1dPM2oyTXN6ZnZzTlE2a0NBOHlCNkhBQXM0TGxQdGx3V1YxQ1NFIn0.eyJleHAiOjE2NzEwMTA2NzgsImlhdCI6MTY3MTAxMDYxOCwianRpIjoiZjY1ODhkMzktMjcyYS00Nzg5LWI0NmQtM2MzMDc1ZjcyMmFkIiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiNzcwODkzYzAtMDU3MS00YzhiLTkwMWItYTVlMTBkMmMyOTQyIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6ImNiOWZhZDE4LWNiYTktNDEyZC05Yjg2LTQ1YjUwY2JmZWYyNCIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.CSZA5_rqRghdSnLp23QwRipMWQ9XMKrYNcEoYFlCmo4WLNLjl08FltL4zcdpILIby63cES2mrkSuneAIrONE2W957D3D6biCg9klIBOs9-iqt-6Voz7ev8wXSGfmNMJnTi3bfA5DXUEFiGBaH5a58WWIpFLqoQpc4WA9yo_YPgqLMlIch-pAf3LNp-rJZRWqWilfAjYSfO7-veOAPKUR00Jf3JsB_0ENvULKR9EVkxylP9GJhWx8tVEjfLxJt_zaIuX2Qa5fgV_uJhQKUyza1Rn8OSFkoaYAb6mI_r6JyxCEtP5YnnzwyCePc-kvLhFxQlTdNhDtNHRhZelnxeSUzw
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '20'
+      Content-type:
+      - application/json
+      User-Agent:
+      - python-requests/2.28.1
+    method: POST
+    uri: https://172.17.0.2:8443/auth/admin/realms/myrealm/clear-realm-cache
+  response:
+    body:
+      string: ''
+    headers:
+      Date:
+      - Wed, 14 Dec 2022 09:36:59 GMT
+    status:
+      code: 204
+      message: No Content
+- request:
+    body: '{"realm": "myrealm"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJhbVFrMkFhVmhQWHVWZWtEb0ZpNm9OMmp3YzljbDhhTjVGaVJXUlBFZ2EwIn0.eyJleHAiOjE2NzEwMTI2MzIsImlhdCI6MTY3MTAxMjU3MiwianRpIjoiMDdiNWU3NzktYjk0Ni00Y2Q5LTk0YjgtYzViMGE4Y2MxMTQ0IiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiZDQ0YTM0ZTEtOWVkMy00MGQzLTk4MDQtMzNlY2FiN2RkYWU2IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6ImY2NmM5ZjNmLWE1MDQtNGY2MS05NTMxLThiMjAyZWNlODE2YSIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.kKdEdUK9sxXz4l7Cm5jJ8j2IGGwFQ9WkCjxugDcnOvlqmYgzn7DvLLUa4ZBw8oenjkZdXRgLawA7Kotgo_tR193eqAY7iYU1G-76fNK5M5_Q0zq0J2j5zWUCuZczGLpcnjbmjHDdxIGP2m4m9h63YqZVW7TgQS1o4IEwv3ZiYzG4dqY-JjzV93KGN4t1OZ1zSQl4vXCdbg_h555dRXaZBavxqGurOywqXW3VxWTt_PYRklQkSvytRlHSF8OmVr6j4vbtW03iWo-1eriW-VADqgEwZS3zlKY6YhfMb77XXTZtiLwpNm56O_zsPAhQnJspJgk5y_Z42pBCuLOce_cI0g
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '20'
+      Content-type:
+      - application/json
+      User-Agent:
+      - python-requests/2.28.1
+    method: POST
+    uri: https://172.17.0.2:8443/auth/admin/realms/myrealm/clear-realm-cache
+  response:
+    body:
+      string: ''
+    headers:
+      Date:
+      - Wed, 14 Dec 2022 10:09:33 GMT
+    status:
+      code: 204
+      message: No Content
+- request:
+    body: '{"realm": "myrealm"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJhbVFrMkFhVmhQWHVWZWtEb0ZpNm9OMmp3YzljbDhhTjVGaVJXUlBFZ2EwIn0.eyJleHAiOjE2NzEwMTI3ODEsImlhdCI6MTY3MTAxMjcyMSwianRpIjoiMjI3MDllMjAtYjdkMy00ODRhLWJkOGItM2U1ZmVkMmI2NTRhIiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiZDQ0YTM0ZTEtOWVkMy00MGQzLTk4MDQtMzNlY2FiN2RkYWU2IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6IjRlMmUzN2ViLTgyYzYtNDk2NC04ODgzLWFjMDJjZjRmZTE5OSIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.KelhSUi9fb3rCOiDAIIyVLBXW-G5KJOJMLgAvL9boLr9pX8-re0NjOEX4upPAdOU23onDCgsBEXxEe9nai0zV1SDYt-NkIy8kpL0ojWTqBm81Vzbqrq-eDc3ZuCZjy096KXgAEj7_sRdGO-yC5fl1403qp2a-438GGFX0khtjFhYqwGjEzbihPUzgUNG7vao7mx75jIVfVQ294WiMUYWazkO_rM6aqixMJOnR7cV079V6S1N66x1jlfiXMZdVoxspsyXJN6W8Rpc3WJE9JY2oCfIkyRnPGJMOo1wLpwqyr75CC7Wu0HrIr63WGKJc597p6CaLLRORPBg9GeGzS9eWA
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '20'
+      Content-type:
+      - application/json
+      User-Agent:
+      - python-requests/2.28.1
+    method: POST
+    uri: https://172.17.0.2:8443/auth/admin/realms/myrealm/clear-realm-cache
+  response:
+    body:
+      string: ''
+    headers:
+      Date:
+      - Wed, 14 Dec 2022 10:12:01 GMT
+    status:
+      code: 204
+      message: No Content
+version: 1

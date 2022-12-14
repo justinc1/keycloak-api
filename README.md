@@ -60,6 +60,12 @@ export KC_USER=admin
 export KC_PASSWORD=admin_password
 export KC_REALM=myrealm  # do not use master realm, it cannot be removed
 
+# unittests are faster with prerecorded http requests
+# See https://vcrpy.readthedocs.io/en/latest/usage.html#record-modes.
+# export VCRPY_RECORD_MODE=none  # this is default
+# To re-recored VCR cassettes:
+# export VCRPY_RECORD_MODE=all
+
 python -m unittest
 ```
 
