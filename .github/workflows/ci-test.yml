@@ -2,32 +2,33 @@ name: CI tests
 on:
   - push
 jobs:
-  # unittest using VCR data
-  unittest_vcr:
-    runs-on: ubuntu-22.04
-    container: python:3.10
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - run: pip install -r requirements-dev.txt
-      # install dependencies from setup.py
-      - run: pip install .
-      - name: Wait on keycloak to be up
-        run: curl -k --connect-timeout 60 --retry 60 --retry-delay 1 --retry-connrefused --retry-max-time 60 https://keycloak:8443 -v
-      - run: python -m unittest
-    env:
-      KEYCLOAK_API_CA_BUNDLE:
-      KC_ENDPOINT: https://keycloak:8443/
-      KC_USER: admin
-      KC_PASSWORD: admin
-      KC_REALM: ci-test-realm
-      VCRPY_RECORD_MODE: none
-    services:
-      keycloak:
-        image: quay.io/keycloak/keycloak:9.0.3
-        env:
-          KEYCLOAK_USER: admin
-          KEYCLOAK_PASSWORD: admin
+#  # unittest using VCR data
+#  # VCR cassettes were recorded with IP 172.17.0.2 - this does not  work
+#  unittest_vcr:
+#    runs-on: ubuntu-22.04
+#    container: python:3.10
+#    steps:
+#      - name: Checkout
+#        uses: actions/checkout@v3
+#      - run: pip install -r requirements-dev.txt
+#      # install dependencies from setup.py
+#      - run: pip install .
+#      - name: Wait on keycloak to be up
+#        run: curl -k --connect-timeout 60 --retry 60 --retry-delay 1 --retry-connrefused --retry-max-time 60 https://keycloak:8443 -v
+#      - run: python -m unittest
+#    env:
+#      KEYCLOAK_API_CA_BUNDLE:
+#      KC_ENDPOINT: https://keycloak:8443/
+#      KC_USER: admin
+#      KC_PASSWORD: admin
+#      KC_REALM: ci-test-realm
+#      VCRPY_RECORD_MODE: none
+#    services:
+#      keycloak:
+#        image: quay.io/keycloak/keycloak:9.0.3
+#        env:
+#          KEYCLOAK_USER: admin
+#          KEYCLOAK_PASSWORD: admin
 
   # unittest using real keycloak
   unittest:
@@ -78,7 +79,6 @@ jobs:
   build_whl:
     if: github.ref_type == 'tag'
     needs:
-      - unittest_vcr
       - unittest
       - test-import
     runs-on: ubuntu-22.04
