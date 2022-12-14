@@ -1,5 +1,5 @@
 import unittest, time
-from .testbed import TestBed 
+from .testbed import TestBed, KcBaseTestCase
 
 ADMIN_USER = "admin"
 ADMIN_PSW  = "admin1234"
@@ -9,7 +9,7 @@ ENDPOINT = 'https://sso-cvaldezr-stage.apps.sandbox-m2.ll9k.p1.openshiftapps.com
 
 TEST_REALM = "TESTING"
 
-class Testing_Roles_And_Groups_API(unittest.TestCase):
+class Testing_Roles_And_Groups_API(KcBaseTestCase):
   
     def testing_roles_creation(self):
         role = {"name": "magic"}
@@ -101,7 +101,6 @@ class Testing_Roles_And_Groups_API(unittest.TestCase):
     def tearDownClass(self):
         if self.master_realm.exist(TEST_REALM): 
             self.master_realm.remove(TEST_REALM)
-            return True
         return True
 
 if __name__ == '__main__':

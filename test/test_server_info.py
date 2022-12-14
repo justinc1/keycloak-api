@@ -1,9 +1,9 @@
 ﻿import unittest
 
-from .testbed import TestBed
+from .testbed import KcBaseTestCase
 
 
-class TestServerInfo(unittest.TestCase):
+class TestServerInfo(KcBaseTestCase):
     def test_serverinfo_api(self):
         kc = self.testbed.getKeycloak()
         serverinfo_api = kc.build_serverinfo()
@@ -35,11 +35,11 @@ class TestServerInfo(unittest.TestCase):
 
 
     @classmethod
-    def setUpClass(self):
-        self.testbed = TestBed()
+    def setUpClass(cls):
+        super().setUpClass()
         # self.testbed.createRealms()
         # self.testbed.createUsers()
-        self.REALM = self.testbed.REALM
+        cls.REALM = cls.testbed.REALM
 
     @classmethod
     def tearDownClass(self):

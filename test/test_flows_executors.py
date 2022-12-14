@@ -1,6 +1,6 @@
 import unittest, time
 from kcapi.ie import AuthenticationFlowsImporter
-from .testbed import TestBed
+from .testbed import TestBed, KcBaseTestCase
 import json
 
 
@@ -33,7 +33,7 @@ def isConsistent(assertEqual, execs, flows):
         assertEqual(flows[index]['requirement'], execs[index]['requirement'])
 
 
-class TestingAuthenticationFlowsAPI(unittest.TestCase):
+class TestingAuthenticationFlowsAPI(KcBaseTestCase):
     def test_flow_api_instantiation(self):
         flows = self.authenticationFlow.all()
         self.assertTrue(len(flows) > 0)
@@ -284,11 +284,11 @@ class TestingAuthenticationFlowsAPI(unittest.TestCase):
 
 
     @classmethod
-    def setUpClass(self):
-        self.testbed = TestBed()
-        self.testbed.deleteRealms()
-        self.testbed.createRealms()
-        self.authenticationFlow = self.testbed.getKeycloak().build('authentication', self.testbed.REALM)
+    def setUpClass(cls):
+        super().setUpClass()
+        cls.testbed.deleteRealms()
+        cls.testbed.createRealms()
+        cls.authenticationFlow = cls.testbed.getKeycloak().build('authentication', cls.testbed.REALM)
 
         basic_flow = {
             "alias": "test_number_0",
@@ -346,13 +346,8 @@ class TestingAuthenticationFlowsAPI(unittest.TestCase):
             "builtIn": False
         }
 
-        self.flows = [basic_flow, client_flow, basic_flow_2, flow_3, flow_4, flow_5, flow_6]
-        create_testing_flows(self.flows, self.authenticationFlow)
-
-    @classmethod
-    def tearDownClass(self):
-        self.testbed.goodBye()
-        return True
+        cls.flows = [basic_flow, client_flow, basic_flow_2, flow_3, flow_4, flow_5, flow_6]
+        create_testing_flows(cls.flows, cls.authenticationFlow)
 
 
 if __name__ == '__main__':

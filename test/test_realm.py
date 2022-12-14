@@ -1,5 +1,5 @@
 import unittest, time
-from .testbed import TestBed
+from .testbed import KcBaseTestCase
 import json
 
 
@@ -11,7 +11,7 @@ def load_sample(file_name):
     return payload
 
 
-class TestingRealmAPI(unittest.TestCase):
+class TestingRealmAPI(KcBaseTestCase):
 
     def testing_realm_api_methods(self):
         realms = self.testbed.getKeycloak().build('realms', self.REALM)
@@ -47,14 +47,12 @@ class TestingRealmAPI(unittest.TestCase):
 
 
     @classmethod
-    def setUpClass(self):
-        self.testbed = TestBed()
-        self.testbed.createRealms()
-        self.testbed.createUsers()
-        self.testbed.createClients()
-
-
-        self.REALM = self.testbed.REALM
+    def setUpClass(cls):
+        super().setUpClass()
+        cls.testbed.createRealms()
+        cls.testbed.createUsers()
+        cls.testbed.createClients()
+        cls.REALM = cls.testbed.REALM
 
     @classmethod
     def tearDownClass(self):

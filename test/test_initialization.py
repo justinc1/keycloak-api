@@ -1,6 +1,6 @@
 import unittest, time, json
 from kcapi import OpenID, Keycloak
-from .testbed import TestBed 
+from .testbed import KcBaseTestCase
 
 WRONG_URL =  'https://sso-wrong-cvaldezr-stage.apps.sandbox-m2.ll9k.p1.openshiftapps.com'
 
@@ -25,7 +25,7 @@ def test_kc_crud(that, kc):
     clients = clients.findFirstByKV('clientId', 'test-client')
     that.assertTrue(len(clients) > 0, 'We should get a client back')
 
-class Testing_OpenID(unittest.TestCase):
+class Testing_OpenID(KcBaseTestCase):
     def test_oidc_ctor(self): 
         try:
             OpenID({"client_id":"admin-cli"}, WRONG_URL)
@@ -164,20 +164,16 @@ class Testing_OpenID(unittest.TestCase):
 
 
     @classmethod
-    def setUpClass(self):
-        self.testbed = TestBed()
-        self.testbed.createRealms()
-        self.kc = self.testbed.getKeycloak()
-        self.realm = self.testbed.REALM 
-        self.master_realm = self.testbed.getAdminRealm()
-        self.ENDPOINT = self.testbed.ENDPOINT
-        self.USER = self.testbed.USER
-        self.PASSWORD = self.testbed.PASSWORD
+    def setUpClass(cls):
+        super().setUpClass()
+        cls.testbed.createRealms()
+        cls.kc = cls.testbed.getKeycloak()
+        cls.realm = cls.testbed.REALM
+        cls.master_realm = cls.testbed.getAdminRealm()
+        cls.ENDPOINT = cls.testbed.ENDPOINT
+        cls.USER = cls.testbed.USER
+        cls.PASSWORD = cls.testbed.PASSWORD
 
-    @classmethod
-    def tearDownClass(self):
-        self.testbed.goodBye()
-        return True
 
 if __name__ == '__main__':
     unittest.main()

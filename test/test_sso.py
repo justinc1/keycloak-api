@@ -1,16 +1,16 @@
 import unittest, time
 from kcapi import OpenID, Keycloak
-from .testbed import TestBed 
+from .testbed import TestBed, KcBaseTestCase
 
 ADMIN_USER = "admin"
 ADMIN_PSW  = "admin1234"
 REALM = "test_heroes_test"
 ENDPOINT = 'https://sso-cvaldezr-stage.apps.sandbox-m2.ll9k.p1.openshiftapps.com'
 
-
 TEST_REALM = "TESTING"
 
-class Testing_SSO_API(unittest.TestCase):
+
+class Testing_SSO_API(KcBaseTestCase):
     def testing_CRUD_api(self):
         realm = self.master_realm
 
@@ -139,7 +139,6 @@ class Testing_SSO_API(unittest.TestCase):
         self.testbed.goodBye()
         if self.master_realm.exist(TEST_REALM): 
             self.master_realm.remove(TEST_REALM)
-            return True
         return True
 
 if __name__ == '__main__':
