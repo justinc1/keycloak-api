@@ -1,6 +1,7 @@
 from kcapi import OpenID, Keycloak
 import os
 import json
+import unittest
 
 def readFromJSON(filename):
     with open(filename) as json_file:
@@ -82,3 +83,12 @@ class TestBed:
         return self.master_realm
 
     
+class KcBaseTestCase(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.testbed = TestBed()
+
+    @classmethod
+    def tearDownClass(cls):
+        cls.testbed.goodBye()
+        return True
