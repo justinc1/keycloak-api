@@ -219,7 +219,11 @@ class TestingAuthenticationFlowsAPI(KcBaseTestCase):
         publisher = AuthenticationFlowsImporter(self.authenticationFlow)
 
         clients_flow = {
-            "alias": "clients"
+            "alias": "clients",
+            "builtIn": True,
+            "description": "Base authentication for clients",
+            "providerId": "client-flow",
+            "topLevel": True,
         }
 
         executors = load_sample('./test/payloads/executors/executor_1.json')
@@ -231,7 +235,11 @@ class TestingAuthenticationFlowsAPI(KcBaseTestCase):
         self.assertEqual(execs[3]['requirement'], 'REQUIRED')
 
         reset_credentials_flow = {
-            "alias": "reset credentials"
+            "alias": "reset credentials",
+            "builtIn": True,
+            "description": "Reset credentials for a user if they forgot their password or something",
+            "providerId": "basic-flow",
+            "topLevel": True,
         }
 
         reset_credentials_flow_payload = load_sample('./test/payloads/executors/executor_2.json')
@@ -244,7 +252,11 @@ class TestingAuthenticationFlowsAPI(KcBaseTestCase):
         publisher = AuthenticationFlowsImporter(self.authenticationFlow)
 
         clients_flow = {
-            "alias": "registration"
+            "alias": "registration",
+            "builtIn": True,
+            "description": "registration flow",
+            "providerId": "basic-flow",
+            "topLevel": True,
         }
 
         executors = load_sample('./test/payloads/executors/executor_3.json')
