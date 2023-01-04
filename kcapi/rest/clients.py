@@ -1,4 +1,4 @@
-from copy import copy
+from copy import deepcopy
 
 from .crud import KeycloakCRUD
 
@@ -8,7 +8,9 @@ class Role():
         self.value = role
 
         # Note: Composites() kc param must be top-level API URL
-        kc_top_level = copy(kc)
+        # deepcopy is needed, otherwise we end with corrupted parent client_api (the shallow
+        # copied URLs would get patched to be suitable for client role)
+        kc_top_level = deepcopy(kc)
         for rest_method in kc_top_level.targets.targets:
             custom_url = kc_top_level.targets.targets[rest_method].copy()
             assert custom_url.resources[-1] == 'clients'
@@ -73,7 +75,12 @@ class Clients(KeycloakCRUD):
 
     def get_roles(self, client_query):
         roles = self.roles(client_query).findAll().resp().json()
-        return list(map(lambda role: Role(self, role), roles))
+
+        assert str(self.targets.targets["read"]).endswith("/clients")
+        ret = [Role(self, role) for role in roles]
+        assert str(self.targets.targets["read"]).endswith("/clients")
+
+        return ret
 
     def roles(self, client_query):
         client_id = super().findFirst(client_query)['id']

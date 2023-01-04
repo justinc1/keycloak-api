@@ -105,7 +105,11 @@ class TestClients(KcBaseTestCase):
         # ----
 
         # check initial state
+        assert str(clients_api.targets.targets["read"]).endswith("/clients")
+        # is ok
         new_role_a = clients_api.get_roles(client_query)[0]
+        # URL is corrupted
+        assert str(clients_api.targets.targets["read"]).endswith("/clients")
 
         self.assertEqual("new-role", new_role_a.value["name"])
         self.assertEqual("here should go a description.", new_role_a.value["description"])
@@ -115,7 +119,6 @@ class TestClients(KcBaseTestCase):
         new_data = copy(new_role_a.value)
         new_data.update({"description": "here should go a description. NEW"})
         client_roles_api.update(new_role_a.value["id"], new_data).isOk()
-        return
 
         # check updated state
         new_role_b = clients_api.get_roles(client_query)[0]
