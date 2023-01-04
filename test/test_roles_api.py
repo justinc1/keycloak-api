@@ -10,6 +10,7 @@ ENDPOINT = 'https://sso-cvaldezr-stage.apps.sandbox-m2.ll9k.p1.openshiftapps.com
 TEST_REALM = "TESTING"
 
 class Testing_Roles_And_Groups_API(KcBaseTestCase):
+    vcr_enabled = False
   
     def testing_roles_creation(self):
         role = {"name": "magic"}
@@ -36,7 +37,10 @@ class Testing_Roles_And_Groups_API(KcBaseTestCase):
 
 
     def testing_roles_removal(self):
+        role = {"name": "magic"}
         roles = self.kc.build("roles", self.realm)
+        state = roles.create(role).isOk()
+        self.assertTrue(state)
 
         self.assertTrue(roles.removeFirstByKV("name", "magic"))
         ret = roles.findFirstByKV('name', 'magic')
@@ -85,23 +89,23 @@ class Testing_Roles_And_Groups_API(KcBaseTestCase):
         self.assertTrue(fail, "We raise an role not found error.")
         self.assertEqual(error, "One or more roles from the provided list: ['do-not-exist-1'] do not exist.")
 
-    @classmethod
-    def setUpClass(self):
-        self.testbed = TestBed(REALM, ADMIN_USER, ADMIN_PSW, ENDPOINT)
-        self.testbed.deleteRealms()
-        self.testbed.createRealms()
+    def setUp(self):
+        super().setUp()
+        # self.testbed = TestBed(REALM, ADMIN_USER, ADMIN_PSW, ENDPOINT)
+        # self.testbed.deleteRealms()
+        # self.testbed.createRealms()
         self.testbed.createGroups()
         self.kc = self.testbed.getKeycloak()
-        self.realm = self.testbed.REALM 
+        self.realm = self.testbed.REALM
         self.master_realm = self.testbed.getAdminRealm()
         self.roleNames = self.testbed.roleNames
         self.groupName = self.testbed.groupName
         
-    @classmethod
-    def tearDownClass(self):
-        if self.master_realm.exist(TEST_REALM): 
+    def tearDown(self):
+        if self.master_realm.exist(TEST_REALM):
             self.master_realm.remove(TEST_REALM)
-        return True
+        super().tearDown()
+
 
 if __name__ == '__main__':
     unittest.main()

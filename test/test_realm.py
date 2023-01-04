@@ -45,22 +45,5 @@ class TestingRealmAPI(KcBaseTestCase):
         self.assertTrue(creation_state, 'This realm should be created')
 
 
-
-    @classmethod
-    def setUpClass(cls):
-        super().setUpClass()
-        cls.testbed.createRealms()
-        cls.testbed.createUsers()
-        cls.testbed.createClients()
-        cls.REALM = cls.testbed.REALM
-
-    @classmethod
-    def tearDownClass(self):
-        self.testbed.goodBye()
-        admin = self.testbed.getAdminRealm()
-        realm_cfg = load_sample('./test/payloads/complex_realms.json')
-        admin.removeFirstByKV("realm", realm_cfg["realm"], custom_key="realm")
-
-
 if __name__ == '__main__':
     unittest.main()

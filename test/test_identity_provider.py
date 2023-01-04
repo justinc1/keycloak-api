@@ -29,14 +29,11 @@ class TestingUserAPI(KcBaseTestCase):
         self.assertEqual(saml_ip['alias'], saml['alias'], 'SAML alias should match')
         self.assertEqual(oidc_ip['alias'], oid['alias'], 'SAML alias should match')
 
-    @classmethod
-    def setUpClass(cls):
-        super().setUpClass()
-        cls.testbed.createRealms()
-        cls.testbed.createUsers()
-        cls.testbed.createClients()
-        cls.REALM = cls.testbed.REALM
-        cls.kc = cls.testbed.getKeycloak()
+    def setUp(self):
+        super().setUp(create_all=False)
+        self.testbed.createRealms()
+        self.REALM = self.testbed.REALM
+        self.kc = self.testbed.getKeycloak()
 
 
 if __name__ == '__main__':

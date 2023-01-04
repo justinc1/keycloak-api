@@ -1010,4 +1010,808 @@ interactions:
     status:
       code: 200
       message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.28.1
+    method: GET
+    uri: https://172.17.0.2:8443/auth/realms/master/.well-known/openid-configuration
+  response:
+    body:
+      string: '{"issuer":"https://172.17.0.2:8443/auth/realms/master","authorization_endpoint":"https://172.17.0.2:8443/auth/realms/master/protocol/openid-connect/auth","token_endpoint":"https://172.17.0.2:8443/auth/realms/master/protocol/openid-connect/token","token_introspection_endpoint":"https://172.17.0.2:8443/auth/realms/master/protocol/openid-connect/token/introspect","userinfo_endpoint":"https://172.17.0.2:8443/auth/realms/master/protocol/openid-connect/userinfo","end_session_endpoint":"https://172.17.0.2:8443/auth/realms/master/protocol/openid-connect/logout","jwks_uri":"https://172.17.0.2:8443/auth/realms/master/protocol/openid-connect/certs","check_session_iframe":"https://172.17.0.2:8443/auth/realms/master/protocol/openid-connect/login-status-iframe.html","grant_types_supported":["authorization_code","implicit","refresh_token","password","client_credentials"],"response_types_supported":["code","none","id_token","token","id_token
+        token","code id_token","code token","code id_token token"],"subject_types_supported":["public","pairwise"],"id_token_signing_alg_values_supported":["PS384","ES384","RS384","HS256","HS512","ES256","RS256","HS384","ES512","PS256","PS512","RS512"],"id_token_encryption_alg_values_supported":["RSA-OAEP","RSA1_5"],"id_token_encryption_enc_values_supported":["A128GCM","A128CBC-HS256"],"userinfo_signing_alg_values_supported":["PS384","ES384","RS384","HS256","HS512","ES256","RS256","HS384","ES512","PS256","PS512","RS512","none"],"request_object_signing_alg_values_supported":["PS384","ES384","RS384","HS256","HS512","ES256","RS256","HS384","ES512","PS256","PS512","RS512","none"],"response_modes_supported":["query","fragment","form_post"],"registration_endpoint":"https://172.17.0.2:8443/auth/realms/master/clients-registrations/openid-connect","token_endpoint_auth_methods_supported":["private_key_jwt","client_secret_basic","client_secret_post","tls_client_auth","client_secret_jwt"],"token_endpoint_auth_signing_alg_values_supported":["PS384","ES384","RS384","HS256","HS512","ES256","RS256","HS384","ES512","PS256","PS512","RS512"],"claims_supported":["aud","sub","iss","auth_time","name","given_name","family_name","preferred_username","email","acr"],"claim_types_supported":["normal"],"claims_parameter_supported":false,"scopes_supported":["openid","address","email","microprofile-jwt","offline_access","phone","profile","roles","web-origins"],"request_parameter_supported":true,"request_uri_parameter_supported":true,"code_challenge_methods_supported":["plain","S256"],"tls_client_certificate_bound_access_tokens":true,"introspection_endpoint":"https://172.17.0.2:8443/auth/realms/master/protocol/openid-connect/token/introspect"}'
+    headers:
+      Cache-Control:
+      - no-cache, must-revalidate, no-transform, no-store
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '2674'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 04 Jan 2023 14:14:19 GMT
+    status:
+      code: 200
+      message: OK
+- request:
+    body: client_id=admin-cli&grant_type=password&realm=master&username=admin&password=admin
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '82'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      User-Agent:
+      - python-requests/2.28.1
+    method: POST
+    uri: https://172.17.0.2:8443/auth/realms/master/protocol/openid-connect/token
+  response:
+    body:
+      string: '{"access_token":"eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI3ODJMdThPZGg5RkpnM1JrZHliLVpYQUZlWjRCT0NBZEUxeGF4dnE0YTBvIn0.eyJleHAiOjE2NzI4NDE3MTksImlhdCI6MTY3Mjg0MTY1OSwianRpIjoiZWMwMDYzZmYtZTNhOC00ZGU5LWFiNjgtZjVhYTJjNWQ1YTMzIiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiMTA3NzllNjctMGU0Ni00YTYwLThkNGYtNTM2MGFhODdmYmE5IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6IjMxMTFlY2JlLTc3MjAtNGU0MC05OGFjLTAzNmFkYWFlMDg1YSIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.r0UbLH8AjLsypmgjq1zN133XzL5tpuCxb5HkHcfU3Vwz6bsPRgfwcjICKl4Njfrc3S25toH7lx0y8PSmfSy803nT4GPavK7PZOvIpbIE4cgCAblDY-6rCeLg8n0-H1A5atct3qGo_UUgAYJPJa7K6rfIbdR5-kvCqHwSKEdaBGmMRrem7VET_7aDF5PEc-9M0VUsA8zadswIgJBZZOROqMwC_GJLWf6qMozIE68l9XqLQP1yZOl0-5F8wgSSCXsOITDVC3oi3-es9ndfqDgG7-PfdDcoCKWVpeV1a_xe-g3tF9iMZdGx9P7Qu1rQWYkX6fPbh63j_gOcSGdzWpcGPw","expires_in":60,"refresh_expires_in":1800,"refresh_token":"eyJhbGciOiJIUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI4NTdjZWZlOS02YTY3LTRjZjEtYjFkYy05MmY5Y2NiZTM0OWEifQ.eyJleHAiOjE2NzI4NDM0NTksImlhdCI6MTY3Mjg0MTY1OSwianRpIjoiM2QxODA3MzktZTAxNy00ZTM3LWIzMTctMDMyNzA5MTQ1OWVhIiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwiYXVkIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiMTA3NzllNjctMGU0Ni00YTYwLThkNGYtNTM2MGFhODdmYmE5IiwidHlwIjoiUmVmcmVzaCIsImF6cCI6ImFkbWluLWNsaSIsInNlc3Npb25fc3RhdGUiOiIzMTExZWNiZS03NzIwLTRlNDAtOThhYy0wMzZhZGFhZTA4NWEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUifQ.D07pPDuvCCJzU9szbyZ1g_IH0Qg6nzlETZG4KqDIbKs","token_type":"bearer","not-before-policy":0,"session_state":"3111ecbe-7720-4e40-98ac-036adaae085a","scope":"email
+        profile"}'
+    headers:
+      Cache-Control:
+      - no-store
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1726'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 04 Jan 2023 14:14:19 GMT
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - KEYCLOAK_LOCALE=; Version=1; Comment=Expiring cookie; Expires=Thu, 01-Jan-1970
+        00:00:10 GMT; Max-Age=0; Path=/auth/realms/master/; HttpOnly
+      - KC_RESTART=; Version=1; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Max-Age=0;
+        Path=/auth/realms/master/; HttpOnly
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI3ODJMdThPZGg5RkpnM1JrZHliLVpYQUZlWjRCT0NBZEUxeGF4dnE0YTBvIn0.eyJleHAiOjE2NzI4NDE3MTksImlhdCI6MTY3Mjg0MTY1OSwianRpIjoiZWMwMDYzZmYtZTNhOC00ZGU5LWFiNjgtZjVhYTJjNWQ1YTMzIiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiMTA3NzllNjctMGU0Ni00YTYwLThkNGYtNTM2MGFhODdmYmE5IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6IjMxMTFlY2JlLTc3MjAtNGU0MC05OGFjLTAzNmFkYWFlMDg1YSIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.r0UbLH8AjLsypmgjq1zN133XzL5tpuCxb5HkHcfU3Vwz6bsPRgfwcjICKl4Njfrc3S25toH7lx0y8PSmfSy803nT4GPavK7PZOvIpbIE4cgCAblDY-6rCeLg8n0-H1A5atct3qGo_UUgAYJPJa7K6rfIbdR5-kvCqHwSKEdaBGmMRrem7VET_7aDF5PEc-9M0VUsA8zadswIgJBZZOROqMwC_GJLWf6qMozIE68l9XqLQP1yZOl0-5F8wgSSCXsOITDVC3oi3-es9ndfqDgG7-PfdDcoCKWVpeV1a_xe-g3tF9iMZdGx9P7Qu1rQWYkX6fPbh63j_gOcSGdzWpcGPw
+      Connection:
+      - keep-alive
+      Content-type:
+      - application/json
+      User-Agent:
+      - python-requests/2.28.1
+    method: GET
+    uri: https://172.17.0.2:8443/auth/admin/realms
+  response:
+    body:
+      string: '[{"id":"master","realm":"master","displayName":"Keycloak","displayNameHtml":"<div
+        class=\"kc-logo-text\"><span>Keycloak</span></div>","notBefore":0,"revokeRefreshToken":false,"refreshTokenMaxReuse":0,"accessTokenLifespan":60,"accessTokenLifespanForImplicitFlow":900,"ssoSessionIdleTimeout":1800,"ssoSessionMaxLifespan":36000,"ssoSessionIdleTimeoutRememberMe":0,"ssoSessionMaxLifespanRememberMe":0,"offlineSessionIdleTimeout":2592000,"offlineSessionMaxLifespanEnabled":false,"offlineSessionMaxLifespan":5184000,"accessCodeLifespan":60,"accessCodeLifespanUserAction":300,"accessCodeLifespanLogin":1800,"actionTokenGeneratedByAdminLifespan":43200,"actionTokenGeneratedByUserLifespan":300,"enabled":true,"sslRequired":"external","registrationAllowed":false,"registrationEmailAsUsername":false,"rememberMe":false,"verifyEmail":false,"loginWithEmailAllowed":true,"duplicateEmailsAllowed":false,"resetPasswordAllowed":false,"editUsernameAllowed":false,"bruteForceProtected":false,"permanentLockout":false,"maxFailureWaitSeconds":900,"minimumQuickLoginWaitSeconds":60,"waitIncrementSeconds":60,"quickLoginCheckMilliSeconds":1000,"maxDeltaTimeSeconds":43200,"failureFactor":30,"defaultRoles":["uma_authorization","offline_access"],"requiredCredentials":["password"],"otpPolicyType":"totp","otpPolicyAlgorithm":"HmacSHA1","otpPolicyInitialCounter":0,"otpPolicyDigits":6,"otpPolicyLookAheadWindow":1,"otpPolicyPeriod":30,"otpSupportedApplications":["FreeOTP","Google
+        Authenticator"],"webAuthnPolicyRpEntityName":"keycloak","webAuthnPolicySignatureAlgorithms":["ES256"],"webAuthnPolicyRpId":"","webAuthnPolicyAttestationConveyancePreference":"not
+        specified","webAuthnPolicyAuthenticatorAttachment":"not specified","webAuthnPolicyRequireResidentKey":"not
+        specified","webAuthnPolicyUserVerificationRequirement":"not specified","webAuthnPolicyCreateTimeout":0,"webAuthnPolicyAvoidSameAuthenticatorRegister":false,"webAuthnPolicyAcceptableAaguids":[],"webAuthnPolicyPasswordlessRpEntityName":"keycloak","webAuthnPolicyPasswordlessSignatureAlgorithms":["ES256"],"webAuthnPolicyPasswordlessRpId":"","webAuthnPolicyPasswordlessAttestationConveyancePreference":"not
+        specified","webAuthnPolicyPasswordlessAuthenticatorAttachment":"not specified","webAuthnPolicyPasswordlessRequireResidentKey":"not
+        specified","webAuthnPolicyPasswordlessUserVerificationRequirement":"not specified","webAuthnPolicyPasswordlessCreateTimeout":0,"webAuthnPolicyPasswordlessAvoidSameAuthenticatorRegister":false,"webAuthnPolicyPasswordlessAcceptableAaguids":[],"browserSecurityHeaders":{"contentSecurityPolicyReportOnly":"","xContentTypeOptions":"nosniff","xRobotsTag":"none","xFrameOptions":"SAMEORIGIN","xXSSProtection":"1;
+        mode=block","contentSecurityPolicy":"frame-src ''self''; frame-ancestors ''self'';
+        object-src ''none'';","strictTransportSecurity":"max-age=31536000; includeSubDomains"},"smtpServer":{},"eventsEnabled":false,"eventsListeners":["jboss-logging"],"enabledEventTypes":[],"adminEventsEnabled":false,"adminEventsDetailsEnabled":false,"internationalizationEnabled":false,"supportedLocales":[],"browserFlow":"browser","registrationFlow":"registration","directGrantFlow":"direct
+        grant","resetCredentialsFlow":"reset credentials","clientAuthenticationFlow":"clients","dockerAuthenticationFlow":"docker
+        auth","attributes":{},"userManagedAccessAllowed":false}]'
+    headers:
+      Cache-Control:
+      - no-cache
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '3325'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 04 Jan 2023 14:14:19 GMT
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"enabled": "true", "id": "myrealm", "realm": "myrealm"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI3ODJMdThPZGg5RkpnM1JrZHliLVpYQUZlWjRCT0NBZEUxeGF4dnE0YTBvIn0.eyJleHAiOjE2NzI4NDE3MTksImlhdCI6MTY3Mjg0MTY1OSwianRpIjoiZWMwMDYzZmYtZTNhOC00ZGU5LWFiNjgtZjVhYTJjNWQ1YTMzIiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiMTA3NzllNjctMGU0Ni00YTYwLThkNGYtNTM2MGFhODdmYmE5IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6IjMxMTFlY2JlLTc3MjAtNGU0MC05OGFjLTAzNmFkYWFlMDg1YSIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.r0UbLH8AjLsypmgjq1zN133XzL5tpuCxb5HkHcfU3Vwz6bsPRgfwcjICKl4Njfrc3S25toH7lx0y8PSmfSy803nT4GPavK7PZOvIpbIE4cgCAblDY-6rCeLg8n0-H1A5atct3qGo_UUgAYJPJa7K6rfIbdR5-kvCqHwSKEdaBGmMRrem7VET_7aDF5PEc-9M0VUsA8zadswIgJBZZOROqMwC_GJLWf6qMozIE68l9XqLQP1yZOl0-5F8wgSSCXsOITDVC3oi3-es9ndfqDgG7-PfdDcoCKWVpeV1a_xe-g3tF9iMZdGx9P7Qu1rQWYkX6fPbh63j_gOcSGdzWpcGPw
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '56'
+      Content-type:
+      - application/json
+      User-Agent:
+      - python-requests/2.28.1
+    method: POST
+    uri: https://172.17.0.2:8443/auth/admin/realms
+  response:
+    body:
+      string: ''
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      Date:
+      - Wed, 04 Jan 2023 14:14:19 GMT
+      Location:
+      - https://172.17.0.2:8443/auth/admin/realms/myrealm
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{"alias": "test_number_0", "providerId": "basic-flow", "description": "my_new_basic_flow",
+      "topLevel": true, "builtIn": false}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI3ODJMdThPZGg5RkpnM1JrZHliLVpYQUZlWjRCT0NBZEUxeGF4dnE0YTBvIn0.eyJleHAiOjE2NzI4NDE3MTksImlhdCI6MTY3Mjg0MTY1OSwianRpIjoiZWMwMDYzZmYtZTNhOC00ZGU5LWFiNjgtZjVhYTJjNWQ1YTMzIiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiMTA3NzllNjctMGU0Ni00YTYwLThkNGYtNTM2MGFhODdmYmE5IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6IjMxMTFlY2JlLTc3MjAtNGU0MC05OGFjLTAzNmFkYWFlMDg1YSIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.r0UbLH8AjLsypmgjq1zN133XzL5tpuCxb5HkHcfU3Vwz6bsPRgfwcjICKl4Njfrc3S25toH7lx0y8PSmfSy803nT4GPavK7PZOvIpbIE4cgCAblDY-6rCeLg8n0-H1A5atct3qGo_UUgAYJPJa7K6rfIbdR5-kvCqHwSKEdaBGmMRrem7VET_7aDF5PEc-9M0VUsA8zadswIgJBZZOROqMwC_GJLWf6qMozIE68l9XqLQP1yZOl0-5F8wgSSCXsOITDVC3oi3-es9ndfqDgG7-PfdDcoCKWVpeV1a_xe-g3tF9iMZdGx9P7Qu1rQWYkX6fPbh63j_gOcSGdzWpcGPw
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '126'
+      Content-type:
+      - application/json
+      User-Agent:
+      - python-requests/2.28.1
+    method: POST
+    uri: https://172.17.0.2:8443/auth/admin/realms/myrealm/authentication/flows
+  response:
+    body:
+      string: ''
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      Date:
+      - Wed, 04 Jan 2023 14:14:19 GMT
+      Location:
+      - https://172.17.0.2:8443/auth/admin/realms/myrealm/authentication/flows/894b02c1-23f9-4331-9f90-b59a89fc8b37
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{"alias": "test_number_1", "providerId": "client-flow", "description":
+      "my_new_client_flow", "topLevel": true, "builtIn": false}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI3ODJMdThPZGg5RkpnM1JrZHliLVpYQUZlWjRCT0NBZEUxeGF4dnE0YTBvIn0.eyJleHAiOjE2NzI4NDE3MTksImlhdCI6MTY3Mjg0MTY1OSwianRpIjoiZWMwMDYzZmYtZTNhOC00ZGU5LWFiNjgtZjVhYTJjNWQ1YTMzIiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiMTA3NzllNjctMGU0Ni00YTYwLThkNGYtNTM2MGFhODdmYmE5IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6IjMxMTFlY2JlLTc3MjAtNGU0MC05OGFjLTAzNmFkYWFlMDg1YSIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.r0UbLH8AjLsypmgjq1zN133XzL5tpuCxb5HkHcfU3Vwz6bsPRgfwcjICKl4Njfrc3S25toH7lx0y8PSmfSy803nT4GPavK7PZOvIpbIE4cgCAblDY-6rCeLg8n0-H1A5atct3qGo_UUgAYJPJa7K6rfIbdR5-kvCqHwSKEdaBGmMRrem7VET_7aDF5PEc-9M0VUsA8zadswIgJBZZOROqMwC_GJLWf6qMozIE68l9XqLQP1yZOl0-5F8wgSSCXsOITDVC3oi3-es9ndfqDgG7-PfdDcoCKWVpeV1a_xe-g3tF9iMZdGx9P7Qu1rQWYkX6fPbh63j_gOcSGdzWpcGPw
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '128'
+      Content-type:
+      - application/json
+      User-Agent:
+      - python-requests/2.28.1
+    method: POST
+    uri: https://172.17.0.2:8443/auth/admin/realms/myrealm/authentication/flows
+  response:
+    body:
+      string: ''
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      Date:
+      - Wed, 04 Jan 2023 14:14:19 GMT
+      Location:
+      - https://172.17.0.2:8443/auth/admin/realms/myrealm/authentication/flows/f0a5b867-1736-46ab-8193-a203c259fe6a
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{"alias": "test_number_2", "providerId": "basic-flow", "description": "my_new_basic_flow",
+      "topLevel": true, "builtIn": false}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI3ODJMdThPZGg5RkpnM1JrZHliLVpYQUZlWjRCT0NBZEUxeGF4dnE0YTBvIn0.eyJleHAiOjE2NzI4NDE3MTksImlhdCI6MTY3Mjg0MTY1OSwianRpIjoiZWMwMDYzZmYtZTNhOC00ZGU5LWFiNjgtZjVhYTJjNWQ1YTMzIiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiMTA3NzllNjctMGU0Ni00YTYwLThkNGYtNTM2MGFhODdmYmE5IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6IjMxMTFlY2JlLTc3MjAtNGU0MC05OGFjLTAzNmFkYWFlMDg1YSIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.r0UbLH8AjLsypmgjq1zN133XzL5tpuCxb5HkHcfU3Vwz6bsPRgfwcjICKl4Njfrc3S25toH7lx0y8PSmfSy803nT4GPavK7PZOvIpbIE4cgCAblDY-6rCeLg8n0-H1A5atct3qGo_UUgAYJPJa7K6rfIbdR5-kvCqHwSKEdaBGmMRrem7VET_7aDF5PEc-9M0VUsA8zadswIgJBZZOROqMwC_GJLWf6qMozIE68l9XqLQP1yZOl0-5F8wgSSCXsOITDVC3oi3-es9ndfqDgG7-PfdDcoCKWVpeV1a_xe-g3tF9iMZdGx9P7Qu1rQWYkX6fPbh63j_gOcSGdzWpcGPw
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '126'
+      Content-type:
+      - application/json
+      User-Agent:
+      - python-requests/2.28.1
+    method: POST
+    uri: https://172.17.0.2:8443/auth/admin/realms/myrealm/authentication/flows
+  response:
+    body:
+      string: ''
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      Date:
+      - Wed, 04 Jan 2023 14:14:19 GMT
+      Location:
+      - https://172.17.0.2:8443/auth/admin/realms/myrealm/authentication/flows/7c4408be-989d-4a20-9f12-56676febeb42
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{"alias": "test_number_3", "providerId": "basic-flow", "description": "my_new_basic_flow",
+      "topLevel": true, "builtIn": false}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI3ODJMdThPZGg5RkpnM1JrZHliLVpYQUZlWjRCT0NBZEUxeGF4dnE0YTBvIn0.eyJleHAiOjE2NzI4NDE3MTksImlhdCI6MTY3Mjg0MTY1OSwianRpIjoiZWMwMDYzZmYtZTNhOC00ZGU5LWFiNjgtZjVhYTJjNWQ1YTMzIiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiMTA3NzllNjctMGU0Ni00YTYwLThkNGYtNTM2MGFhODdmYmE5IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6IjMxMTFlY2JlLTc3MjAtNGU0MC05OGFjLTAzNmFkYWFlMDg1YSIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.r0UbLH8AjLsypmgjq1zN133XzL5tpuCxb5HkHcfU3Vwz6bsPRgfwcjICKl4Njfrc3S25toH7lx0y8PSmfSy803nT4GPavK7PZOvIpbIE4cgCAblDY-6rCeLg8n0-H1A5atct3qGo_UUgAYJPJa7K6rfIbdR5-kvCqHwSKEdaBGmMRrem7VET_7aDF5PEc-9M0VUsA8zadswIgJBZZOROqMwC_GJLWf6qMozIE68l9XqLQP1yZOl0-5F8wgSSCXsOITDVC3oi3-es9ndfqDgG7-PfdDcoCKWVpeV1a_xe-g3tF9iMZdGx9P7Qu1rQWYkX6fPbh63j_gOcSGdzWpcGPw
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '126'
+      Content-type:
+      - application/json
+      User-Agent:
+      - python-requests/2.28.1
+    method: POST
+    uri: https://172.17.0.2:8443/auth/admin/realms/myrealm/authentication/flows
+  response:
+    body:
+      string: ''
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      Date:
+      - Wed, 04 Jan 2023 14:14:19 GMT
+      Location:
+      - https://172.17.0.2:8443/auth/admin/realms/myrealm/authentication/flows/771fd0b0-ad49-4f1c-b709-661f3ca23160
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{"alias": "test_number_4", "providerId": "basic-flow", "description": "my_new_basic_flow",
+      "topLevel": true, "builtIn": false}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI3ODJMdThPZGg5RkpnM1JrZHliLVpYQUZlWjRCT0NBZEUxeGF4dnE0YTBvIn0.eyJleHAiOjE2NzI4NDE3MTksImlhdCI6MTY3Mjg0MTY1OSwianRpIjoiZWMwMDYzZmYtZTNhOC00ZGU5LWFiNjgtZjVhYTJjNWQ1YTMzIiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiMTA3NzllNjctMGU0Ni00YTYwLThkNGYtNTM2MGFhODdmYmE5IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6IjMxMTFlY2JlLTc3MjAtNGU0MC05OGFjLTAzNmFkYWFlMDg1YSIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.r0UbLH8AjLsypmgjq1zN133XzL5tpuCxb5HkHcfU3Vwz6bsPRgfwcjICKl4Njfrc3S25toH7lx0y8PSmfSy803nT4GPavK7PZOvIpbIE4cgCAblDY-6rCeLg8n0-H1A5atct3qGo_UUgAYJPJa7K6rfIbdR5-kvCqHwSKEdaBGmMRrem7VET_7aDF5PEc-9M0VUsA8zadswIgJBZZOROqMwC_GJLWf6qMozIE68l9XqLQP1yZOl0-5F8wgSSCXsOITDVC3oi3-es9ndfqDgG7-PfdDcoCKWVpeV1a_xe-g3tF9iMZdGx9P7Qu1rQWYkX6fPbh63j_gOcSGdzWpcGPw
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '126'
+      Content-type:
+      - application/json
+      User-Agent:
+      - python-requests/2.28.1
+    method: POST
+    uri: https://172.17.0.2:8443/auth/admin/realms/myrealm/authentication/flows
+  response:
+    body:
+      string: ''
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      Date:
+      - Wed, 04 Jan 2023 14:14:19 GMT
+      Location:
+      - https://172.17.0.2:8443/auth/admin/realms/myrealm/authentication/flows/fa69d05a-e02e-4d0b-8b21-d6e8a84c14e0
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{"alias": "test_number_5", "providerId": "basic-flow", "description": "my_new_basic_flow",
+      "topLevel": true, "builtIn": false}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI3ODJMdThPZGg5RkpnM1JrZHliLVpYQUZlWjRCT0NBZEUxeGF4dnE0YTBvIn0.eyJleHAiOjE2NzI4NDE3MTksImlhdCI6MTY3Mjg0MTY1OSwianRpIjoiZWMwMDYzZmYtZTNhOC00ZGU5LWFiNjgtZjVhYTJjNWQ1YTMzIiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiMTA3NzllNjctMGU0Ni00YTYwLThkNGYtNTM2MGFhODdmYmE5IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6IjMxMTFlY2JlLTc3MjAtNGU0MC05OGFjLTAzNmFkYWFlMDg1YSIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.r0UbLH8AjLsypmgjq1zN133XzL5tpuCxb5HkHcfU3Vwz6bsPRgfwcjICKl4Njfrc3S25toH7lx0y8PSmfSy803nT4GPavK7PZOvIpbIE4cgCAblDY-6rCeLg8n0-H1A5atct3qGo_UUgAYJPJa7K6rfIbdR5-kvCqHwSKEdaBGmMRrem7VET_7aDF5PEc-9M0VUsA8zadswIgJBZZOROqMwC_GJLWf6qMozIE68l9XqLQP1yZOl0-5F8wgSSCXsOITDVC3oi3-es9ndfqDgG7-PfdDcoCKWVpeV1a_xe-g3tF9iMZdGx9P7Qu1rQWYkX6fPbh63j_gOcSGdzWpcGPw
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '126'
+      Content-type:
+      - application/json
+      User-Agent:
+      - python-requests/2.28.1
+    method: POST
+    uri: https://172.17.0.2:8443/auth/admin/realms/myrealm/authentication/flows
+  response:
+    body:
+      string: ''
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      Date:
+      - Wed, 04 Jan 2023 14:14:19 GMT
+      Location:
+      - https://172.17.0.2:8443/auth/admin/realms/myrealm/authentication/flows/09dc86fa-f4e5-4bfd-9394-61582bf1618b
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{"alias": "test_number_6", "providerId": "basic-flow", "description": "my_new_basic_flow",
+      "topLevel": true, "builtIn": false}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI3ODJMdThPZGg5RkpnM1JrZHliLVpYQUZlWjRCT0NBZEUxeGF4dnE0YTBvIn0.eyJleHAiOjE2NzI4NDE3MTksImlhdCI6MTY3Mjg0MTY1OSwianRpIjoiZWMwMDYzZmYtZTNhOC00ZGU5LWFiNjgtZjVhYTJjNWQ1YTMzIiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiMTA3NzllNjctMGU0Ni00YTYwLThkNGYtNTM2MGFhODdmYmE5IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6IjMxMTFlY2JlLTc3MjAtNGU0MC05OGFjLTAzNmFkYWFlMDg1YSIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.r0UbLH8AjLsypmgjq1zN133XzL5tpuCxb5HkHcfU3Vwz6bsPRgfwcjICKl4Njfrc3S25toH7lx0y8PSmfSy803nT4GPavK7PZOvIpbIE4cgCAblDY-6rCeLg8n0-H1A5atct3qGo_UUgAYJPJa7K6rfIbdR5-kvCqHwSKEdaBGmMRrem7VET_7aDF5PEc-9M0VUsA8zadswIgJBZZOROqMwC_GJLWf6qMozIE68l9XqLQP1yZOl0-5F8wgSSCXsOITDVC3oi3-es9ndfqDgG7-PfdDcoCKWVpeV1a_xe-g3tF9iMZdGx9P7Qu1rQWYkX6fPbh63j_gOcSGdzWpcGPw
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '126'
+      Content-type:
+      - application/json
+      User-Agent:
+      - python-requests/2.28.1
+    method: POST
+    uri: https://172.17.0.2:8443/auth/admin/realms/myrealm/authentication/flows
+  response:
+    body:
+      string: ''
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      Date:
+      - Wed, 04 Jan 2023 14:14:19 GMT
+      Location:
+      - https://172.17.0.2:8443/auth/admin/realms/myrealm/authentication/flows/045a1207-ed17-4aa2-9729-d5c39b7155eb
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{"alias": "_test_registration_", "type": "basic-flow", "description": "empty-description",
+      "provider": "registration-page-form"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI3ODJMdThPZGg5RkpnM1JrZHliLVpYQUZlWjRCT0NBZEUxeGF4dnE0YTBvIn0.eyJleHAiOjE2NzI4NDE3MTksImlhdCI6MTY3Mjg0MTY1OSwianRpIjoiZWMwMDYzZmYtZTNhOC00ZGU5LWFiNjgtZjVhYTJjNWQ1YTMzIiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiMTA3NzllNjctMGU0Ni00YTYwLThkNGYtNTM2MGFhODdmYmE5IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6IjMxMTFlY2JlLTc3MjAtNGU0MC05OGFjLTAzNmFkYWFlMDg1YSIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.r0UbLH8AjLsypmgjq1zN133XzL5tpuCxb5HkHcfU3Vwz6bsPRgfwcjICKl4Njfrc3S25toH7lx0y8PSmfSy803nT4GPavK7PZOvIpbIE4cgCAblDY-6rCeLg8n0-H1A5atct3qGo_UUgAYJPJa7K6rfIbdR5-kvCqHwSKEdaBGmMRrem7VET_7aDF5PEc-9M0VUsA8zadswIgJBZZOROqMwC_GJLWf6qMozIE68l9XqLQP1yZOl0-5F8wgSSCXsOITDVC3oi3-es9ndfqDgG7-PfdDcoCKWVpeV1a_xe-g3tF9iMZdGx9P7Qu1rQWYkX6fPbh63j_gOcSGdzWpcGPw
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '128'
+      Content-type:
+      - application/json
+      User-Agent:
+      - python-requests/2.28.1
+    method: POST
+    uri: https://172.17.0.2:8443/auth/admin/realms/myrealm/authentication/flows/test_number_4/executions/flow
+  response:
+    body:
+      string: ''
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      Date:
+      - Wed, 04 Jan 2023 14:14:19 GMT
+      Location:
+      - https://172.17.0.2:8443/auth/admin/realms/myrealm/authentication/flows/74ad13a1-dd12-4892-be95-c4d5469a0e29
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI3ODJMdThPZGg5RkpnM1JrZHliLVpYQUZlWjRCT0NBZEUxeGF4dnE0YTBvIn0.eyJleHAiOjE2NzI4NDE3MTksImlhdCI6MTY3Mjg0MTY1OSwianRpIjoiZWMwMDYzZmYtZTNhOC00ZGU5LWFiNjgtZjVhYTJjNWQ1YTMzIiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiMTA3NzllNjctMGU0Ni00YTYwLThkNGYtNTM2MGFhODdmYmE5IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6IjMxMTFlY2JlLTc3MjAtNGU0MC05OGFjLTAzNmFkYWFlMDg1YSIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.r0UbLH8AjLsypmgjq1zN133XzL5tpuCxb5HkHcfU3Vwz6bsPRgfwcjICKl4Njfrc3S25toH7lx0y8PSmfSy803nT4GPavK7PZOvIpbIE4cgCAblDY-6rCeLg8n0-H1A5atct3qGo_UUgAYJPJa7K6rfIbdR5-kvCqHwSKEdaBGmMRrem7VET_7aDF5PEc-9M0VUsA8zadswIgJBZZOROqMwC_GJLWf6qMozIE68l9XqLQP1yZOl0-5F8wgSSCXsOITDVC3oi3-es9ndfqDgG7-PfdDcoCKWVpeV1a_xe-g3tF9iMZdGx9P7Qu1rQWYkX6fPbh63j_gOcSGdzWpcGPw
+      Connection:
+      - keep-alive
+      Content-type:
+      - application/json
+      User-Agent:
+      - python-requests/2.28.1
+    method: GET
+    uri: https://172.17.0.2:8443/auth/admin/realms/myrealm/authentication/flows/test_number_4/executions
+  response:
+    body:
+      string: '[{"id":"d003e1f4-22a1-409e-9b64-55ef5e75b36d","requirement":"DISABLED","displayName":"_test_registration_","requirementChoices":["REQUIRED","ALTERNATIVE","DISABLED","CONDITIONAL"],"configurable":false,"authenticationFlow":true,"flowId":"74ad13a1-dd12-4892-be95-c4d5469a0e29","level":0,"index":0}]'
+    headers:
+      Cache-Control:
+      - no-cache
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '296'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 04 Jan 2023 14:14:19 GMT
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"id": "d003e1f4-22a1-409e-9b64-55ef5e75b36d", "requirement": "REQUIRED",
+      "displayName": "_test_registration_", "requirementChoices": ["REQUIRED", "ALTERNATIVE",
+      "DISABLED", "CONDITIONAL"], "configurable": false, "authenticationFlow": true,
+      "flowId": "74ad13a1-dd12-4892-be95-c4d5469a0e29", "level": 0, "index": 0}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI3ODJMdThPZGg5RkpnM1JrZHliLVpYQUZlWjRCT0NBZEUxeGF4dnE0YTBvIn0.eyJleHAiOjE2NzI4NDE3MTksImlhdCI6MTY3Mjg0MTY1OSwianRpIjoiZWMwMDYzZmYtZTNhOC00ZGU5LWFiNjgtZjVhYTJjNWQ1YTMzIiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiMTA3NzllNjctMGU0Ni00YTYwLThkNGYtNTM2MGFhODdmYmE5IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6IjMxMTFlY2JlLTc3MjAtNGU0MC05OGFjLTAzNmFkYWFlMDg1YSIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.r0UbLH8AjLsypmgjq1zN133XzL5tpuCxb5HkHcfU3Vwz6bsPRgfwcjICKl4Njfrc3S25toH7lx0y8PSmfSy803nT4GPavK7PZOvIpbIE4cgCAblDY-6rCeLg8n0-H1A5atct3qGo_UUgAYJPJa7K6rfIbdR5-kvCqHwSKEdaBGmMRrem7VET_7aDF5PEc-9M0VUsA8zadswIgJBZZOROqMwC_GJLWf6qMozIE68l9XqLQP1yZOl0-5F8wgSSCXsOITDVC3oi3-es9ndfqDgG7-PfdDcoCKWVpeV1a_xe-g3tF9iMZdGx9P7Qu1rQWYkX6fPbh63j_gOcSGdzWpcGPw
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '314'
+      Content-type:
+      - application/json
+      User-Agent:
+      - python-requests/2.28.1
+    method: PUT
+    uri: https://172.17.0.2:8443/auth/admin/realms/myrealm/authentication/flows/test_number_4/executions
+  response:
+    body:
+      string: ''
+    headers:
+      Date:
+      - Wed, 04 Jan 2023 14:14:19 GMT
+    status:
+      code: 204
+      message: No Content
+- request:
+    body: '{"provider": "basic-auth"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI3ODJMdThPZGg5RkpnM1JrZHliLVpYQUZlWjRCT0NBZEUxeGF4dnE0YTBvIn0.eyJleHAiOjE2NzI4NDE3MTksImlhdCI6MTY3Mjg0MTY1OSwianRpIjoiZWMwMDYzZmYtZTNhOC00ZGU5LWFiNjgtZjVhYTJjNWQ1YTMzIiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiMTA3NzllNjctMGU0Ni00YTYwLThkNGYtNTM2MGFhODdmYmE5IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6IjMxMTFlY2JlLTc3MjAtNGU0MC05OGFjLTAzNmFkYWFlMDg1YSIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.r0UbLH8AjLsypmgjq1zN133XzL5tpuCxb5HkHcfU3Vwz6bsPRgfwcjICKl4Njfrc3S25toH7lx0y8PSmfSy803nT4GPavK7PZOvIpbIE4cgCAblDY-6rCeLg8n0-H1A5atct3qGo_UUgAYJPJa7K6rfIbdR5-kvCqHwSKEdaBGmMRrem7VET_7aDF5PEc-9M0VUsA8zadswIgJBZZOROqMwC_GJLWf6qMozIE68l9XqLQP1yZOl0-5F8wgSSCXsOITDVC3oi3-es9ndfqDgG7-PfdDcoCKWVpeV1a_xe-g3tF9iMZdGx9P7Qu1rQWYkX6fPbh63j_gOcSGdzWpcGPw
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '26'
+      Content-type:
+      - application/json
+      User-Agent:
+      - python-requests/2.28.1
+    method: POST
+    uri: https://172.17.0.2:8443/auth/admin/realms/myrealm/authentication/flows/_test_registration_/executions/execution
+  response:
+    body:
+      string: ''
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      Date:
+      - Wed, 04 Jan 2023 14:14:19 GMT
+      Location:
+      - https://172.17.0.2:8443/auth/admin/realms/myrealm/authentication/executions/3efd0c34-f18b-434b-9cfd-89c1144783c3
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI3ODJMdThPZGg5RkpnM1JrZHliLVpYQUZlWjRCT0NBZEUxeGF4dnE0YTBvIn0.eyJleHAiOjE2NzI4NDE3MTksImlhdCI6MTY3Mjg0MTY1OSwianRpIjoiZWMwMDYzZmYtZTNhOC00ZGU5LWFiNjgtZjVhYTJjNWQ1YTMzIiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiMTA3NzllNjctMGU0Ni00YTYwLThkNGYtNTM2MGFhODdmYmE5IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6IjMxMTFlY2JlLTc3MjAtNGU0MC05OGFjLTAzNmFkYWFlMDg1YSIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.r0UbLH8AjLsypmgjq1zN133XzL5tpuCxb5HkHcfU3Vwz6bsPRgfwcjICKl4Njfrc3S25toH7lx0y8PSmfSy803nT4GPavK7PZOvIpbIE4cgCAblDY-6rCeLg8n0-H1A5atct3qGo_UUgAYJPJa7K6rfIbdR5-kvCqHwSKEdaBGmMRrem7VET_7aDF5PEc-9M0VUsA8zadswIgJBZZOROqMwC_GJLWf6qMozIE68l9XqLQP1yZOl0-5F8wgSSCXsOITDVC3oi3-es9ndfqDgG7-PfdDcoCKWVpeV1a_xe-g3tF9iMZdGx9P7Qu1rQWYkX6fPbh63j_gOcSGdzWpcGPw
+      Connection:
+      - keep-alive
+      Content-type:
+      - application/json
+      User-Agent:
+      - python-requests/2.28.1
+    method: GET
+    uri: https://172.17.0.2:8443/auth/admin/realms/myrealm/authentication/flows/test_number_4/executions
+  response:
+    body:
+      string: '[{"id":"d003e1f4-22a1-409e-9b64-55ef5e75b36d","requirement":"REQUIRED","displayName":"_test_registration_","requirementChoices":["REQUIRED","ALTERNATIVE","DISABLED","CONDITIONAL"],"configurable":false,"authenticationFlow":true,"flowId":"74ad13a1-dd12-4892-be95-c4d5469a0e29","level":0,"index":0},{"id":"3efd0c34-f18b-434b-9cfd-89c1144783c3","requirement":"DISABLED","displayName":"Basic
+        Auth Challenge","requirementChoices":["REQUIRED","ALTERNATIVE","DISABLED"],"configurable":false,"providerId":"basic-auth","level":1,"index":0}]'
+    headers:
+      Cache-Control:
+      - no-cache
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '530'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 04 Jan 2023 14:14:19 GMT
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"id": "3efd0c34-f18b-434b-9cfd-89c1144783c3", "requirement": "DISABLED",
+      "displayName": "Basic Auth Challenge", "requirementChoices": ["REQUIRED", "ALTERNATIVE",
+      "DISABLED"], "configurable": false, "providerId": "basic-auth", "level": 1,
+      "index": 0}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI3ODJMdThPZGg5RkpnM1JrZHliLVpYQUZlWjRCT0NBZEUxeGF4dnE0YTBvIn0.eyJleHAiOjE2NzI4NDE3MTksImlhdCI6MTY3Mjg0MTY1OSwianRpIjoiZWMwMDYzZmYtZTNhOC00ZGU5LWFiNjgtZjVhYTJjNWQ1YTMzIiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiMTA3NzllNjctMGU0Ni00YTYwLThkNGYtNTM2MGFhODdmYmE5IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6IjMxMTFlY2JlLTc3MjAtNGU0MC05OGFjLTAzNmFkYWFlMDg1YSIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.r0UbLH8AjLsypmgjq1zN133XzL5tpuCxb5HkHcfU3Vwz6bsPRgfwcjICKl4Njfrc3S25toH7lx0y8PSmfSy803nT4GPavK7PZOvIpbIE4cgCAblDY-6rCeLg8n0-H1A5atct3qGo_UUgAYJPJa7K6rfIbdR5-kvCqHwSKEdaBGmMRrem7VET_7aDF5PEc-9M0VUsA8zadswIgJBZZOROqMwC_GJLWf6qMozIE68l9XqLQP1yZOl0-5F8wgSSCXsOITDVC3oi3-es9ndfqDgG7-PfdDcoCKWVpeV1a_xe-g3tF9iMZdGx9P7Qu1rQWYkX6fPbh63j_gOcSGdzWpcGPw
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '250'
+      Content-type:
+      - application/json
+      User-Agent:
+      - python-requests/2.28.1
+    method: PUT
+    uri: https://172.17.0.2:8443/auth/admin/realms/myrealm/authentication/flows/test_number_4/executions
+  response:
+    body:
+      string: ''
+    headers:
+      Date:
+      - Wed, 04 Jan 2023 14:14:19 GMT
+    status:
+      code: 204
+      message: No Content
+- request:
+    body: '{"provider": "direct-grant-auth-x509-username"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI3ODJMdThPZGg5RkpnM1JrZHliLVpYQUZlWjRCT0NBZEUxeGF4dnE0YTBvIn0.eyJleHAiOjE2NzI4NDE3MTksImlhdCI6MTY3Mjg0MTY1OSwianRpIjoiZWMwMDYzZmYtZTNhOC00ZGU5LWFiNjgtZjVhYTJjNWQ1YTMzIiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiMTA3NzllNjctMGU0Ni00YTYwLThkNGYtNTM2MGFhODdmYmE5IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6IjMxMTFlY2JlLTc3MjAtNGU0MC05OGFjLTAzNmFkYWFlMDg1YSIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.r0UbLH8AjLsypmgjq1zN133XzL5tpuCxb5HkHcfU3Vwz6bsPRgfwcjICKl4Njfrc3S25toH7lx0y8PSmfSy803nT4GPavK7PZOvIpbIE4cgCAblDY-6rCeLg8n0-H1A5atct3qGo_UUgAYJPJa7K6rfIbdR5-kvCqHwSKEdaBGmMRrem7VET_7aDF5PEc-9M0VUsA8zadswIgJBZZOROqMwC_GJLWf6qMozIE68l9XqLQP1yZOl0-5F8wgSSCXsOITDVC3oi3-es9ndfqDgG7-PfdDcoCKWVpeV1a_xe-g3tF9iMZdGx9P7Qu1rQWYkX6fPbh63j_gOcSGdzWpcGPw
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '47'
+      Content-type:
+      - application/json
+      User-Agent:
+      - python-requests/2.28.1
+    method: POST
+    uri: https://172.17.0.2:8443/auth/admin/realms/myrealm/authentication/flows/_test_registration_/executions/execution
+  response:
+    body:
+      string: ''
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      Date:
+      - Wed, 04 Jan 2023 14:14:19 GMT
+      Location:
+      - https://172.17.0.2:8443/auth/admin/realms/myrealm/authentication/executions/3385a8fb-77b7-4224-98fd-ea1c61e2e9c0
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI3ODJMdThPZGg5RkpnM1JrZHliLVpYQUZlWjRCT0NBZEUxeGF4dnE0YTBvIn0.eyJleHAiOjE2NzI4NDE3MTksImlhdCI6MTY3Mjg0MTY1OSwianRpIjoiZWMwMDYzZmYtZTNhOC00ZGU5LWFiNjgtZjVhYTJjNWQ1YTMzIiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiMTA3NzllNjctMGU0Ni00YTYwLThkNGYtNTM2MGFhODdmYmE5IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6IjMxMTFlY2JlLTc3MjAtNGU0MC05OGFjLTAzNmFkYWFlMDg1YSIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.r0UbLH8AjLsypmgjq1zN133XzL5tpuCxb5HkHcfU3Vwz6bsPRgfwcjICKl4Njfrc3S25toH7lx0y8PSmfSy803nT4GPavK7PZOvIpbIE4cgCAblDY-6rCeLg8n0-H1A5atct3qGo_UUgAYJPJa7K6rfIbdR5-kvCqHwSKEdaBGmMRrem7VET_7aDF5PEc-9M0VUsA8zadswIgJBZZOROqMwC_GJLWf6qMozIE68l9XqLQP1yZOl0-5F8wgSSCXsOITDVC3oi3-es9ndfqDgG7-PfdDcoCKWVpeV1a_xe-g3tF9iMZdGx9P7Qu1rQWYkX6fPbh63j_gOcSGdzWpcGPw
+      Connection:
+      - keep-alive
+      Content-type:
+      - application/json
+      User-Agent:
+      - python-requests/2.28.1
+    method: GET
+    uri: https://172.17.0.2:8443/auth/admin/realms/myrealm/authentication/flows/test_number_4/executions
+  response:
+    body:
+      string: '[{"id":"d003e1f4-22a1-409e-9b64-55ef5e75b36d","requirement":"REQUIRED","displayName":"_test_registration_","requirementChoices":["REQUIRED","ALTERNATIVE","DISABLED","CONDITIONAL"],"configurable":false,"authenticationFlow":true,"flowId":"74ad13a1-dd12-4892-be95-c4d5469a0e29","level":0,"index":0},{"id":"3efd0c34-f18b-434b-9cfd-89c1144783c3","requirement":"DISABLED","displayName":"Basic
+        Auth Challenge","requirementChoices":["REQUIRED","ALTERNATIVE","DISABLED"],"configurable":false,"providerId":"basic-auth","level":1,"index":0},{"id":"3385a8fb-77b7-4224-98fd-ea1c61e2e9c0","requirement":"REQUIRED","displayName":"X509/Validate
+        Username","requirementChoices":["REQUIRED"],"configurable":true,"providerId":"direct-grant-auth-x509-username","level":1,"index":1}]'
+    headers:
+      Cache-Control:
+      - no-cache
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '761'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 04 Jan 2023 14:14:19 GMT
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"id": "3385a8fb-77b7-4224-98fd-ea1c61e2e9c0", "requirement": "DISABLED",
+      "displayName": "X509/Validate Username", "requirementChoices": ["REQUIRED"],
+      "configurable": true, "providerId": "direct-grant-auth-x509-username", "level":
+      1, "index": 1}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI3ODJMdThPZGg5RkpnM1JrZHliLVpYQUZlWjRCT0NBZEUxeGF4dnE0YTBvIn0.eyJleHAiOjE2NzI4NDE3MTksImlhdCI6MTY3Mjg0MTY1OSwianRpIjoiZWMwMDYzZmYtZTNhOC00ZGU5LWFiNjgtZjVhYTJjNWQ1YTMzIiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiMTA3NzllNjctMGU0Ni00YTYwLThkNGYtNTM2MGFhODdmYmE5IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6IjMxMTFlY2JlLTc3MjAtNGU0MC05OGFjLTAzNmFkYWFlMDg1YSIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.r0UbLH8AjLsypmgjq1zN133XzL5tpuCxb5HkHcfU3Vwz6bsPRgfwcjICKl4Njfrc3S25toH7lx0y8PSmfSy803nT4GPavK7PZOvIpbIE4cgCAblDY-6rCeLg8n0-H1A5atct3qGo_UUgAYJPJa7K6rfIbdR5-kvCqHwSKEdaBGmMRrem7VET_7aDF5PEc-9M0VUsA8zadswIgJBZZOROqMwC_GJLWf6qMozIE68l9XqLQP1yZOl0-5F8wgSSCXsOITDVC3oi3-es9ndfqDgG7-PfdDcoCKWVpeV1a_xe-g3tF9iMZdGx9P7Qu1rQWYkX6fPbh63j_gOcSGdzWpcGPw
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '245'
+      Content-type:
+      - application/json
+      User-Agent:
+      - python-requests/2.28.1
+    method: PUT
+    uri: https://172.17.0.2:8443/auth/admin/realms/myrealm/authentication/flows/test_number_4/executions
+  response:
+    body:
+      string: ''
+    headers:
+      Date:
+      - Wed, 04 Jan 2023 14:14:19 GMT
+    status:
+      code: 204
+      message: No Content
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI3ODJMdThPZGg5RkpnM1JrZHliLVpYQUZlWjRCT0NBZEUxeGF4dnE0YTBvIn0.eyJleHAiOjE2NzI4NDE3MTksImlhdCI6MTY3Mjg0MTY1OSwianRpIjoiZWMwMDYzZmYtZTNhOC00ZGU5LWFiNjgtZjVhYTJjNWQ1YTMzIiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiMTA3NzllNjctMGU0Ni00YTYwLThkNGYtNTM2MGFhODdmYmE5IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6IjMxMTFlY2JlLTc3MjAtNGU0MC05OGFjLTAzNmFkYWFlMDg1YSIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.r0UbLH8AjLsypmgjq1zN133XzL5tpuCxb5HkHcfU3Vwz6bsPRgfwcjICKl4Njfrc3S25toH7lx0y8PSmfSy803nT4GPavK7PZOvIpbIE4cgCAblDY-6rCeLg8n0-H1A5atct3qGo_UUgAYJPJa7K6rfIbdR5-kvCqHwSKEdaBGmMRrem7VET_7aDF5PEc-9M0VUsA8zadswIgJBZZOROqMwC_GJLWf6qMozIE68l9XqLQP1yZOl0-5F8wgSSCXsOITDVC3oi3-es9ndfqDgG7-PfdDcoCKWVpeV1a_xe-g3tF9iMZdGx9P7Qu1rQWYkX6fPbh63j_gOcSGdzWpcGPw
+      Connection:
+      - keep-alive
+      Content-type:
+      - application/json
+      User-Agent:
+      - python-requests/2.28.1
+    method: GET
+    uri: https://172.17.0.2:8443/auth/admin/realms/myrealm/authentication/flows/test_number_4/executions
+  response:
+    body:
+      string: '[{"id":"d003e1f4-22a1-409e-9b64-55ef5e75b36d","requirement":"REQUIRED","displayName":"_test_registration_","requirementChoices":["REQUIRED","ALTERNATIVE","DISABLED","CONDITIONAL"],"configurable":false,"authenticationFlow":true,"flowId":"74ad13a1-dd12-4892-be95-c4d5469a0e29","level":0,"index":0},{"id":"3efd0c34-f18b-434b-9cfd-89c1144783c3","requirement":"DISABLED","displayName":"Basic
+        Auth Challenge","requirementChoices":["REQUIRED","ALTERNATIVE","DISABLED"],"configurable":false,"providerId":"basic-auth","level":1,"index":0},{"id":"3385a8fb-77b7-4224-98fd-ea1c61e2e9c0","requirement":"DISABLED","displayName":"X509/Validate
+        Username","requirementChoices":["REQUIRED"],"configurable":true,"providerId":"direct-grant-auth-x509-username","level":1,"index":1}]'
+    headers:
+      Cache-Control:
+      - no-cache
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '761'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 04 Jan 2023 14:14:19 GMT
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI3ODJMdThPZGg5RkpnM1JrZHliLVpYQUZlWjRCT0NBZEUxeGF4dnE0YTBvIn0.eyJleHAiOjE2NzI4NDE3MTksImlhdCI6MTY3Mjg0MTY1OSwianRpIjoiZWMwMDYzZmYtZTNhOC00ZGU5LWFiNjgtZjVhYTJjNWQ1YTMzIiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiMTA3NzllNjctMGU0Ni00YTYwLThkNGYtNTM2MGFhODdmYmE5IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6IjMxMTFlY2JlLTc3MjAtNGU0MC05OGFjLTAzNmFkYWFlMDg1YSIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.r0UbLH8AjLsypmgjq1zN133XzL5tpuCxb5HkHcfU3Vwz6bsPRgfwcjICKl4Njfrc3S25toH7lx0y8PSmfSy803nT4GPavK7PZOvIpbIE4cgCAblDY-6rCeLg8n0-H1A5atct3qGo_UUgAYJPJa7K6rfIbdR5-kvCqHwSKEdaBGmMRrem7VET_7aDF5PEc-9M0VUsA8zadswIgJBZZOROqMwC_GJLWf6qMozIE68l9XqLQP1yZOl0-5F8wgSSCXsOITDVC3oi3-es9ndfqDgG7-PfdDcoCKWVpeV1a_xe-g3tF9iMZdGx9P7Qu1rQWYkX6fPbh63j_gOcSGdzWpcGPw
+      Connection:
+      - keep-alive
+      Content-type:
+      - application/json
+      User-Agent:
+      - python-requests/2.28.1
+    method: GET
+    uri: https://172.17.0.2:8443/auth/admin/realms/myrealm
+  response:
+    body:
+      string: '{"id":"myrealm","realm":"myrealm","notBefore":0,"revokeRefreshToken":false,"refreshTokenMaxReuse":0,"accessTokenLifespan":300,"accessTokenLifespanForImplicitFlow":900,"ssoSessionIdleTimeout":1800,"ssoSessionMaxLifespan":36000,"ssoSessionIdleTimeoutRememberMe":0,"ssoSessionMaxLifespanRememberMe":0,"offlineSessionIdleTimeout":2592000,"offlineSessionMaxLifespanEnabled":false,"offlineSessionMaxLifespan":5184000,"accessCodeLifespan":60,"accessCodeLifespanUserAction":300,"accessCodeLifespanLogin":1800,"actionTokenGeneratedByAdminLifespan":43200,"actionTokenGeneratedByUserLifespan":300,"enabled":true,"sslRequired":"external","registrationAllowed":false,"registrationEmailAsUsername":false,"rememberMe":false,"verifyEmail":false,"loginWithEmailAllowed":true,"duplicateEmailsAllowed":false,"resetPasswordAllowed":false,"editUsernameAllowed":false,"bruteForceProtected":false,"permanentLockout":false,"maxFailureWaitSeconds":900,"minimumQuickLoginWaitSeconds":60,"waitIncrementSeconds":60,"quickLoginCheckMilliSeconds":1000,"maxDeltaTimeSeconds":43200,"failureFactor":30,"defaultRoles":["offline_access","uma_authorization"],"requiredCredentials":["password"],"otpPolicyType":"totp","otpPolicyAlgorithm":"HmacSHA1","otpPolicyInitialCounter":0,"otpPolicyDigits":6,"otpPolicyLookAheadWindow":1,"otpPolicyPeriod":30,"otpSupportedApplications":["FreeOTP","Google
+        Authenticator"],"webAuthnPolicyRpEntityName":"keycloak","webAuthnPolicySignatureAlgorithms":["ES256"],"webAuthnPolicyRpId":"","webAuthnPolicyAttestationConveyancePreference":"not
+        specified","webAuthnPolicyAuthenticatorAttachment":"not specified","webAuthnPolicyRequireResidentKey":"not
+        specified","webAuthnPolicyUserVerificationRequirement":"not specified","webAuthnPolicyCreateTimeout":0,"webAuthnPolicyAvoidSameAuthenticatorRegister":false,"webAuthnPolicyAcceptableAaguids":[],"webAuthnPolicyPasswordlessRpEntityName":"keycloak","webAuthnPolicyPasswordlessSignatureAlgorithms":["ES256"],"webAuthnPolicyPasswordlessRpId":"","webAuthnPolicyPasswordlessAttestationConveyancePreference":"not
+        specified","webAuthnPolicyPasswordlessAuthenticatorAttachment":"not specified","webAuthnPolicyPasswordlessRequireResidentKey":"not
+        specified","webAuthnPolicyPasswordlessUserVerificationRequirement":"not specified","webAuthnPolicyPasswordlessCreateTimeout":0,"webAuthnPolicyPasswordlessAvoidSameAuthenticatorRegister":false,"webAuthnPolicyPasswordlessAcceptableAaguids":[],"browserSecurityHeaders":{"contentSecurityPolicyReportOnly":"","xContentTypeOptions":"nosniff","xRobotsTag":"none","xFrameOptions":"SAMEORIGIN","contentSecurityPolicy":"frame-src
+        ''self''; frame-ancestors ''self''; object-src ''none'';","xXSSProtection":"1;
+        mode=block","strictTransportSecurity":"max-age=31536000; includeSubDomains"},"smtpServer":{},"eventsEnabled":false,"eventsListeners":["jboss-logging"],"enabledEventTypes":[],"adminEventsEnabled":false,"adminEventsDetailsEnabled":false,"internationalizationEnabled":false,"supportedLocales":[],"browserFlow":"browser","registrationFlow":"registration","directGrantFlow":"direct
+        grant","resetCredentialsFlow":"reset credentials","clientAuthenticationFlow":"clients","dockerAuthenticationFlow":"docker
+        auth","attributes":{},"userManagedAccessAllowed":false}'
+    headers:
+      Cache-Control:
+      - no-cache
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '3225'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 04 Jan 2023 14:14:19 GMT
+    status:
+      code: 200
+      message: OK
+- request:
+    body: 'null'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI3ODJMdThPZGg5RkpnM1JrZHliLVpYQUZlWjRCT0NBZEUxeGF4dnE0YTBvIn0.eyJleHAiOjE2NzI4NDE3MTksImlhdCI6MTY3Mjg0MTY1OSwianRpIjoiZWMwMDYzZmYtZTNhOC00ZGU5LWFiNjgtZjVhYTJjNWQ1YTMzIiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiMTA3NzllNjctMGU0Ni00YTYwLThkNGYtNTM2MGFhODdmYmE5IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6IjMxMTFlY2JlLTc3MjAtNGU0MC05OGFjLTAzNmFkYWFlMDg1YSIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.r0UbLH8AjLsypmgjq1zN133XzL5tpuCxb5HkHcfU3Vwz6bsPRgfwcjICKl4Njfrc3S25toH7lx0y8PSmfSy803nT4GPavK7PZOvIpbIE4cgCAblDY-6rCeLg8n0-H1A5atct3qGo_UUgAYJPJa7K6rfIbdR5-kvCqHwSKEdaBGmMRrem7VET_7aDF5PEc-9M0VUsA8zadswIgJBZZOROqMwC_GJLWf6qMozIE68l9XqLQP1yZOl0-5F8wgSSCXsOITDVC3oi3-es9ndfqDgG7-PfdDcoCKWVpeV1a_xe-g3tF9iMZdGx9P7Qu1rQWYkX6fPbh63j_gOcSGdzWpcGPw
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '4'
+      Content-type:
+      - application/json
+      User-Agent:
+      - python-requests/2.28.1
+    method: DELETE
+    uri: https://172.17.0.2:8443/auth/admin/realms/myrealm
+  response:
+    body:
+      string: ''
+    headers:
+      Date:
+      - Wed, 04 Jan 2023 14:14:19 GMT
+    status:
+      code: 204
+      message: No Content
 version: 1

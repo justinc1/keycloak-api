@@ -33,18 +33,6 @@ class Testing_User_API(KcBaseTestCase):
         token = oid_client.getToken()
         self.assertNotEqual(token, None)
 
-    @classmethod
-    def setUpClass(cls):
-        super().setUpClass()
-        cls.testbed.createRealms()
-        cls.testbed.createUsers()
-        cls.testbed.createClients()
-        cls.REALM = cls.testbed.REALM
-
-    @classmethod
-    def tearDownClass(self):
-        self.testbed.goodBye()
-
 
 if __name__ == '__main__':
     unittest.main()

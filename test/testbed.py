@@ -77,10 +77,11 @@ class TestBed:
         for usr in test_users: 
             users.create(usr).isOk()
 
-    def goodBye(self): 
-        state = self.master_realm.remove(self.realm).ok()
-        if not state:
-            raise Exception("Cannot delete the realm -> " + self.realm )
+    def goodBye(self):
+        if self.master_realm.exist(self.realm):
+            state = self.master_realm.remove(self.realm).ok()
+            if not state:
+                raise Exception("Cannot delete the realm -> " + self.realm )
 
     def getKeycloak(self):
         return self.kc
@@ -89,16 +90,21 @@ class TestBed:
 
 
 class KcBaseTestCase(VCRTestCase):
-    @classmethod
-    def setUpClass(cls):
-        super().setUpClass()
-        cls.testbed = TestBed()
+    # see https://github.com/agriffis/vcrpy-unittest/blob/master/vcr_unittest/testcase.py#L19
+    # Try self.vcr_enabled=False to disable tests
 
-    @classmethod
-    def tearDownClass(cls):
-        cls.testbed.goodBye()
-        super().tearDownClass()
-        return True
+    def setUp(self, *, create_all=True):
+        super().setUp()
+        self.testbed = TestBed()
+        if create_all:
+            self.testbed.createRealms()
+            self.testbed.createUsers()
+            self.testbed.createClients()
+            self.REALM = self.testbed.REALM
+
+    def tearDown(self):
+        self.testbed.goodBye()
+        super().tearDown()
 
     def _get_vcr_kwargs(self):
         kwargs = super()._get_vcr_kwargs()

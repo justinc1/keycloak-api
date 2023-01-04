@@ -26,7 +26,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 04 Jan 2023 14:24:11 GMT
+      - Wed, 04 Jan 2023 12:56:30 GMT
     status:
       code: 200
       message: OK
@@ -49,7 +49,7 @@ interactions:
     uri: https://172.17.0.2:8443/auth/realms/master/protocol/openid-connect/token
   response:
     body:
-      string: '{"access_token":"eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI3ODJMdThPZGg5RkpnM1JrZHliLVpYQUZlWjRCT0NBZEUxeGF4dnE0YTBvIn0.eyJleHAiOjE2NzI4NDIzMTEsImlhdCI6MTY3Mjg0MjI1MSwianRpIjoiZjc5YWQ2ZDItMmQzOC00ZTk0LThmOGMtNjBkNzRlYzRkOGU4IiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiMTA3NzllNjctMGU0Ni00YTYwLThkNGYtNTM2MGFhODdmYmE5IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6IjhkMjZiMjNhLTMxNzMtNGJkNS04MmMzLTJmM2E5NjJkMmMyZSIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.oZFFSAREM6Nw3VcCYHE5-3r4FkHFxCy041Tao2dWscR6FG6ROvdh_Wdd7OcjIV-c7ep3lUCKoLTgLo0pxIFlTz-g9ZS5iPvlSMhb8K9cqMEX3gKscmHF-0ZJ4ew1eoMXjhfPN_cF2bGCmdOwmUuu2Q9RtVLPVx7i33dz-dPggs-Ck0_V5ZlI1j5z2j0RJAKKb1gsbuUxpF0MgSxHrVzjV7Be4ZuE2lKAsUuSXoA0I6ZLfVfnqzvjOF6RVU_YnGKzI2FJOS1ZFxm0_qZfaYrYF8s1cg0zsJ3JPawq2n4Mmbphip_Y2NWAe3-uKwThjKoderjcxEjTeJToBC7oGWJkgw","expires_in":60,"refresh_expires_in":1800,"refresh_token":"eyJhbGciOiJIUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI4NTdjZWZlOS02YTY3LTRjZjEtYjFkYy05MmY5Y2NiZTM0OWEifQ.eyJleHAiOjE2NzI4NDQwNTEsImlhdCI6MTY3Mjg0MjI1MSwianRpIjoiMjJhYWVjYmYtNTdmMS00ZWI2LTk2NzgtYjU2ZjQ2ODNmZjMyIiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwiYXVkIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiMTA3NzllNjctMGU0Ni00YTYwLThkNGYtNTM2MGFhODdmYmE5IiwidHlwIjoiUmVmcmVzaCIsImF6cCI6ImFkbWluLWNsaSIsInNlc3Npb25fc3RhdGUiOiI4ZDI2YjIzYS0zMTczLTRiZDUtODJjMy0yZjNhOTYyZDJjMmUiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUifQ.UMTFzK3EMeQbLM3yZIAMLSHaYEW6XIooJ43lyvv8W-Q","token_type":"bearer","not-before-policy":0,"session_state":"8d26b23a-3173-4bd5-82c3-2f3a962d2c2e","scope":"email
+      string: '{"access_token":"eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ4RGRTUEdDczRqU1NXbDZqU19FeWlRUVNvQ2U5UmJPR0RlMm1xaXB4d2swIn0.eyJleHAiOjE2NzI4MzcwNTAsImlhdCI6MTY3MjgzNjk5MCwianRpIjoiYThjZWNkM2QtNDdhYy00OGNkLTg1MjYtMTVkZGNiYzNlMjNjIiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiZjI1ZGE2YjMtZGY0MC00Yzg2LWEyNTctNTAyNzZlOGI1NTRjIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6ImYzOTY1NDdhLWRmODItNDFhOC05YzMxLWVjZDJhMWVhZWE4OSIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.RIrH3WTdWzXUmi9hXnrGY0nG2zENvAQw9hE2p0UPRi9yiszSRcn7Z-D6aHrvs73iGaeIR56abBhze_51Cq22WeLN9-mMBvVdcpvHLcmOPwyil1o3mJ_5dLP0mf6-T5v6mRI4tg9-eCP_Rpq9C8notwlylEq5nx-e-2CHPJgwcbFdHZ7XcCrCHPg1sWue7Vgeu8ecvdyTHzPs85cLVNMRSXJw_sv4JR3vtBQMm3iKljrIAEpV86DLJ_hlzaVwbtu3DqYl6aR1qlTOLr1uH-XLsXZj6L5X898yJmUDKOIpbbTNzTn8GxIjD_VabgSeFjCzWGtT6wFO_lr58DSTj7sJYA","expires_in":60,"refresh_expires_in":1800,"refresh_token":"eyJhbGciOiJIUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI0NGI3N2I2My1mOTk0LTRjZTUtOGVkMy03ZWRiN2M2YzRiZTAifQ.eyJleHAiOjE2NzI4Mzg3OTAsImlhdCI6MTY3MjgzNjk5MCwianRpIjoiNGJiODQ5N2YtZmFkMi00YTc4LWEyOGItZTkyOTEzODFhMDlhIiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwiYXVkIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiZjI1ZGE2YjMtZGY0MC00Yzg2LWEyNTctNTAyNzZlOGI1NTRjIiwidHlwIjoiUmVmcmVzaCIsImF6cCI6ImFkbWluLWNsaSIsInNlc3Npb25fc3RhdGUiOiJmMzk2NTQ3YS1kZjgyLTQxYTgtOWMzMS1lY2QyYTFlYWVhODkiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUifQ.7V7m056Szu7MH7FO3268tMdRcqpRXaO2MvJ4v5LqYy4","token_type":"bearer","not-before-policy":0,"session_state":"f396547a-df82-41a8-9c31-ecd2a1eaea89","scope":"email
         profile"}'
     headers:
       Cache-Control:
@@ -61,7 +61,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 04 Jan 2023 14:24:11 GMT
+      - Wed, 04 Jan 2023 12:56:30 GMT
       Pragma:
       - no-cache
       Set-Cookie:
@@ -80,7 +80,7 @@ interactions:
       Accept-Encoding:
       - gzip, deflate
       Authorization:
-      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI3ODJMdThPZGg5RkpnM1JrZHliLVpYQUZlWjRCT0NBZEUxeGF4dnE0YTBvIn0.eyJleHAiOjE2NzI4NDIzMTEsImlhdCI6MTY3Mjg0MjI1MSwianRpIjoiZjc5YWQ2ZDItMmQzOC00ZTk0LThmOGMtNjBkNzRlYzRkOGU4IiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiMTA3NzllNjctMGU0Ni00YTYwLThkNGYtNTM2MGFhODdmYmE5IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6IjhkMjZiMjNhLTMxNzMtNGJkNS04MmMzLTJmM2E5NjJkMmMyZSIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.oZFFSAREM6Nw3VcCYHE5-3r4FkHFxCy041Tao2dWscR6FG6ROvdh_Wdd7OcjIV-c7ep3lUCKoLTgLo0pxIFlTz-g9ZS5iPvlSMhb8K9cqMEX3gKscmHF-0ZJ4ew1eoMXjhfPN_cF2bGCmdOwmUuu2Q9RtVLPVx7i33dz-dPggs-Ck0_V5ZlI1j5z2j0RJAKKb1gsbuUxpF0MgSxHrVzjV7Be4ZuE2lKAsUuSXoA0I6ZLfVfnqzvjOF6RVU_YnGKzI2FJOS1ZFxm0_qZfaYrYF8s1cg0zsJ3JPawq2n4Mmbphip_Y2NWAe3-uKwThjKoderjcxEjTeJToBC7oGWJkgw
+      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ4RGRTUEdDczRqU1NXbDZqU19FeWlRUVNvQ2U5UmJPR0RlMm1xaXB4d2swIn0.eyJleHAiOjE2NzI4MzcwNTAsImlhdCI6MTY3MjgzNjk5MCwianRpIjoiYThjZWNkM2QtNDdhYy00OGNkLTg1MjYtMTVkZGNiYzNlMjNjIiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiZjI1ZGE2YjMtZGY0MC00Yzg2LWEyNTctNTAyNzZlOGI1NTRjIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6ImYzOTY1NDdhLWRmODItNDFhOC05YzMxLWVjZDJhMWVhZWE4OSIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.RIrH3WTdWzXUmi9hXnrGY0nG2zENvAQw9hE2p0UPRi9yiszSRcn7Z-D6aHrvs73iGaeIR56abBhze_51Cq22WeLN9-mMBvVdcpvHLcmOPwyil1o3mJ_5dLP0mf6-T5v6mRI4tg9-eCP_Rpq9C8notwlylEq5nx-e-2CHPJgwcbFdHZ7XcCrCHPg1sWue7Vgeu8ecvdyTHzPs85cLVNMRSXJw_sv4JR3vtBQMm3iKljrIAEpV86DLJ_hlzaVwbtu3DqYl6aR1qlTOLr1uH-XLsXZj6L5X898yJmUDKOIpbbTNzTn8GxIjD_VabgSeFjCzWGtT6wFO_lr58DSTj7sJYA
       Connection:
       - keep-alive
       Content-Length:
@@ -100,7 +100,7 @@ interactions:
       Content-Length:
       - '0'
       Date:
-      - Wed, 04 Jan 2023 14:24:11 GMT
+      - Wed, 04 Jan 2023 12:56:30 GMT
       Location:
       - https://172.17.0.2:8443/auth/admin/realms/myrealm
     status:
@@ -115,7 +115,7 @@ interactions:
       Accept-Encoding:
       - gzip, deflate
       Authorization:
-      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI3ODJMdThPZGg5RkpnM1JrZHliLVpYQUZlWjRCT0NBZEUxeGF4dnE0YTBvIn0.eyJleHAiOjE2NzI4NDIzMTEsImlhdCI6MTY3Mjg0MjI1MSwianRpIjoiZjc5YWQ2ZDItMmQzOC00ZTk0LThmOGMtNjBkNzRlYzRkOGU4IiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiMTA3NzllNjctMGU0Ni00YTYwLThkNGYtNTM2MGFhODdmYmE5IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6IjhkMjZiMjNhLTMxNzMtNGJkNS04MmMzLTJmM2E5NjJkMmMyZSIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.oZFFSAREM6Nw3VcCYHE5-3r4FkHFxCy041Tao2dWscR6FG6ROvdh_Wdd7OcjIV-c7ep3lUCKoLTgLo0pxIFlTz-g9ZS5iPvlSMhb8K9cqMEX3gKscmHF-0ZJ4ew1eoMXjhfPN_cF2bGCmdOwmUuu2Q9RtVLPVx7i33dz-dPggs-Ck0_V5ZlI1j5z2j0RJAKKb1gsbuUxpF0MgSxHrVzjV7Be4ZuE2lKAsUuSXoA0I6ZLfVfnqzvjOF6RVU_YnGKzI2FJOS1ZFxm0_qZfaYrYF8s1cg0zsJ3JPawq2n4Mmbphip_Y2NWAe3-uKwThjKoderjcxEjTeJToBC7oGWJkgw
+      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ4RGRTUEdDczRqU1NXbDZqU19FeWlRUVNvQ2U5UmJPR0RlMm1xaXB4d2swIn0.eyJleHAiOjE2NzI4MzcwNTAsImlhdCI6MTY3MjgzNjk5MCwianRpIjoiYThjZWNkM2QtNDdhYy00OGNkLTg1MjYtMTVkZGNiYzNlMjNjIiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiZjI1ZGE2YjMtZGY0MC00Yzg2LWEyNTctNTAyNzZlOGI1NTRjIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6ImYzOTY1NDdhLWRmODItNDFhOC05YzMxLWVjZDJhMWVhZWE4OSIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.RIrH3WTdWzXUmi9hXnrGY0nG2zENvAQw9hE2p0UPRi9yiszSRcn7Z-D6aHrvs73iGaeIR56abBhze_51Cq22WeLN9-mMBvVdcpvHLcmOPwyil1o3mJ_5dLP0mf6-T5v6mRI4tg9-eCP_Rpq9C8notwlylEq5nx-e-2CHPJgwcbFdHZ7XcCrCHPg1sWue7Vgeu8ecvdyTHzPs85cLVNMRSXJw_sv4JR3vtBQMm3iKljrIAEpV86DLJ_hlzaVwbtu3DqYl6aR1qlTOLr1uH-XLsXZj6L5X898yJmUDKOIpbbTNzTn8GxIjD_VabgSeFjCzWGtT6wFO_lr58DSTj7sJYA
       Connection:
       - keep-alive
       Content-Length:
@@ -135,9 +135,9 @@ interactions:
       Content-Length:
       - '0'
       Date:
-      - Wed, 04 Jan 2023 14:24:11 GMT
+      - Wed, 04 Jan 2023 12:56:30 GMT
       Location:
-      - https://172.17.0.2:8443/auth/admin/realms/myrealm/users/7085d959-518e-4767-8eba-66785e09f5ee
+      - https://172.17.0.2:8443/auth/admin/realms/myrealm/users/2313f864-ebdc-4522-b02e-4d258dacecb0
     status:
       code: 201
       message: Created
@@ -150,7 +150,7 @@ interactions:
       Accept-Encoding:
       - gzip, deflate
       Authorization:
-      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI3ODJMdThPZGg5RkpnM1JrZHliLVpYQUZlWjRCT0NBZEUxeGF4dnE0YTBvIn0.eyJleHAiOjE2NzI4NDIzMTEsImlhdCI6MTY3Mjg0MjI1MSwianRpIjoiZjc5YWQ2ZDItMmQzOC00ZTk0LThmOGMtNjBkNzRlYzRkOGU4IiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiMTA3NzllNjctMGU0Ni00YTYwLThkNGYtNTM2MGFhODdmYmE5IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6IjhkMjZiMjNhLTMxNzMtNGJkNS04MmMzLTJmM2E5NjJkMmMyZSIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.oZFFSAREM6Nw3VcCYHE5-3r4FkHFxCy041Tao2dWscR6FG6ROvdh_Wdd7OcjIV-c7ep3lUCKoLTgLo0pxIFlTz-g9ZS5iPvlSMhb8K9cqMEX3gKscmHF-0ZJ4ew1eoMXjhfPN_cF2bGCmdOwmUuu2Q9RtVLPVx7i33dz-dPggs-Ck0_V5ZlI1j5z2j0RJAKKb1gsbuUxpF0MgSxHrVzjV7Be4ZuE2lKAsUuSXoA0I6ZLfVfnqzvjOF6RVU_YnGKzI2FJOS1ZFxm0_qZfaYrYF8s1cg0zsJ3JPawq2n4Mmbphip_Y2NWAe3-uKwThjKoderjcxEjTeJToBC7oGWJkgw
+      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ4RGRTUEdDczRqU1NXbDZqU19FeWlRUVNvQ2U5UmJPR0RlMm1xaXB4d2swIn0.eyJleHAiOjE2NzI4MzcwNTAsImlhdCI6MTY3MjgzNjk5MCwianRpIjoiYThjZWNkM2QtNDdhYy00OGNkLTg1MjYtMTVkZGNiYzNlMjNjIiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiZjI1ZGE2YjMtZGY0MC00Yzg2LWEyNTctNTAyNzZlOGI1NTRjIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6ImYzOTY1NDdhLWRmODItNDFhOC05YzMxLWVjZDJhMWVhZWE4OSIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.RIrH3WTdWzXUmi9hXnrGY0nG2zENvAQw9hE2p0UPRi9yiszSRcn7Z-D6aHrvs73iGaeIR56abBhze_51Cq22WeLN9-mMBvVdcpvHLcmOPwyil1o3mJ_5dLP0mf6-T5v6mRI4tg9-eCP_Rpq9C8notwlylEq5nx-e-2CHPJgwcbFdHZ7XcCrCHPg1sWue7Vgeu8ecvdyTHzPs85cLVNMRSXJw_sv4JR3vtBQMm3iKljrIAEpV86DLJ_hlzaVwbtu3DqYl6aR1qlTOLr1uH-XLsXZj6L5X898yJmUDKOIpbbTNzTn8GxIjD_VabgSeFjCzWGtT6wFO_lr58DSTj7sJYA
       Connection:
       - keep-alive
       Content-Length:
@@ -170,9 +170,9 @@ interactions:
       Content-Length:
       - '0'
       Date:
-      - Wed, 04 Jan 2023 14:24:11 GMT
+      - Wed, 04 Jan 2023 12:56:30 GMT
       Location:
-      - https://172.17.0.2:8443/auth/admin/realms/myrealm/users/5bef9ef5-62a8-4792-95c7-2fd017e67e3a
+      - https://172.17.0.2:8443/auth/admin/realms/myrealm/users/4bb5f157-30a4-48a3-9e8a-3c0131a57ecf
     status:
       code: 201
       message: Created
@@ -185,7 +185,7 @@ interactions:
       Accept-Encoding:
       - gzip, deflate
       Authorization:
-      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI3ODJMdThPZGg5RkpnM1JrZHliLVpYQUZlWjRCT0NBZEUxeGF4dnE0YTBvIn0.eyJleHAiOjE2NzI4NDIzMTEsImlhdCI6MTY3Mjg0MjI1MSwianRpIjoiZjc5YWQ2ZDItMmQzOC00ZTk0LThmOGMtNjBkNzRlYzRkOGU4IiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiMTA3NzllNjctMGU0Ni00YTYwLThkNGYtNTM2MGFhODdmYmE5IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6IjhkMjZiMjNhLTMxNzMtNGJkNS04MmMzLTJmM2E5NjJkMmMyZSIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.oZFFSAREM6Nw3VcCYHE5-3r4FkHFxCy041Tao2dWscR6FG6ROvdh_Wdd7OcjIV-c7ep3lUCKoLTgLo0pxIFlTz-g9ZS5iPvlSMhb8K9cqMEX3gKscmHF-0ZJ4ew1eoMXjhfPN_cF2bGCmdOwmUuu2Q9RtVLPVx7i33dz-dPggs-Ck0_V5ZlI1j5z2j0RJAKKb1gsbuUxpF0MgSxHrVzjV7Be4ZuE2lKAsUuSXoA0I6ZLfVfnqzvjOF6RVU_YnGKzI2FJOS1ZFxm0_qZfaYrYF8s1cg0zsJ3JPawq2n4Mmbphip_Y2NWAe3-uKwThjKoderjcxEjTeJToBC7oGWJkgw
+      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ4RGRTUEdDczRqU1NXbDZqU19FeWlRUVNvQ2U5UmJPR0RlMm1xaXB4d2swIn0.eyJleHAiOjE2NzI4MzcwNTAsImlhdCI6MTY3MjgzNjk5MCwianRpIjoiYThjZWNkM2QtNDdhYy00OGNkLTg1MjYtMTVkZGNiYzNlMjNjIiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiZjI1ZGE2YjMtZGY0MC00Yzg2LWEyNTctNTAyNzZlOGI1NTRjIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6ImYzOTY1NDdhLWRmODItNDFhOC05YzMxLWVjZDJhMWVhZWE4OSIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.RIrH3WTdWzXUmi9hXnrGY0nG2zENvAQw9hE2p0UPRi9yiszSRcn7Z-D6aHrvs73iGaeIR56abBhze_51Cq22WeLN9-mMBvVdcpvHLcmOPwyil1o3mJ_5dLP0mf6-T5v6mRI4tg9-eCP_Rpq9C8notwlylEq5nx-e-2CHPJgwcbFdHZ7XcCrCHPg1sWue7Vgeu8ecvdyTHzPs85cLVNMRSXJw_sv4JR3vtBQMm3iKljrIAEpV86DLJ_hlzaVwbtu3DqYl6aR1qlTOLr1uH-XLsXZj6L5X898yJmUDKOIpbbTNzTn8GxIjD_VabgSeFjCzWGtT6wFO_lr58DSTj7sJYA
       Connection:
       - keep-alive
       Content-Length:
@@ -205,9 +205,9 @@ interactions:
       Content-Length:
       - '0'
       Date:
-      - Wed, 04 Jan 2023 14:24:11 GMT
+      - Wed, 04 Jan 2023 12:56:30 GMT
       Location:
-      - https://172.17.0.2:8443/auth/admin/realms/myrealm/users/0715a0cd-d6d9-40cb-935c-342c7428407e
+      - https://172.17.0.2:8443/auth/admin/realms/myrealm/users/c444400e-7f1b-49a9-bbf6-9ef5d7f65ef7
     status:
       code: 201
       message: Created
@@ -220,7 +220,7 @@ interactions:
       Accept-Encoding:
       - gzip, deflate
       Authorization:
-      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI3ODJMdThPZGg5RkpnM1JrZHliLVpYQUZlWjRCT0NBZEUxeGF4dnE0YTBvIn0.eyJleHAiOjE2NzI4NDIzMTEsImlhdCI6MTY3Mjg0MjI1MSwianRpIjoiZjc5YWQ2ZDItMmQzOC00ZTk0LThmOGMtNjBkNzRlYzRkOGU4IiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiMTA3NzllNjctMGU0Ni00YTYwLThkNGYtNTM2MGFhODdmYmE5IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6IjhkMjZiMjNhLTMxNzMtNGJkNS04MmMzLTJmM2E5NjJkMmMyZSIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.oZFFSAREM6Nw3VcCYHE5-3r4FkHFxCy041Tao2dWscR6FG6ROvdh_Wdd7OcjIV-c7ep3lUCKoLTgLo0pxIFlTz-g9ZS5iPvlSMhb8K9cqMEX3gKscmHF-0ZJ4ew1eoMXjhfPN_cF2bGCmdOwmUuu2Q9RtVLPVx7i33dz-dPggs-Ck0_V5ZlI1j5z2j0RJAKKb1gsbuUxpF0MgSxHrVzjV7Be4ZuE2lKAsUuSXoA0I6ZLfVfnqzvjOF6RVU_YnGKzI2FJOS1ZFxm0_qZfaYrYF8s1cg0zsJ3JPawq2n4Mmbphip_Y2NWAe3-uKwThjKoderjcxEjTeJToBC7oGWJkgw
+      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ4RGRTUEdDczRqU1NXbDZqU19FeWlRUVNvQ2U5UmJPR0RlMm1xaXB4d2swIn0.eyJleHAiOjE2NzI4MzcwNTAsImlhdCI6MTY3MjgzNjk5MCwianRpIjoiYThjZWNkM2QtNDdhYy00OGNkLTg1MjYtMTVkZGNiYzNlMjNjIiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiZjI1ZGE2YjMtZGY0MC00Yzg2LWEyNTctNTAyNzZlOGI1NTRjIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6ImYzOTY1NDdhLWRmODItNDFhOC05YzMxLWVjZDJhMWVhZWE4OSIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.RIrH3WTdWzXUmi9hXnrGY0nG2zENvAQw9hE2p0UPRi9yiszSRcn7Z-D6aHrvs73iGaeIR56abBhze_51Cq22WeLN9-mMBvVdcpvHLcmOPwyil1o3mJ_5dLP0mf6-T5v6mRI4tg9-eCP_Rpq9C8notwlylEq5nx-e-2CHPJgwcbFdHZ7XcCrCHPg1sWue7Vgeu8ecvdyTHzPs85cLVNMRSXJw_sv4JR3vtBQMm3iKljrIAEpV86DLJ_hlzaVwbtu3DqYl6aR1qlTOLr1uH-XLsXZj6L5X898yJmUDKOIpbbTNzTn8GxIjD_VabgSeFjCzWGtT6wFO_lr58DSTj7sJYA
       Connection:
       - keep-alive
       Content-Length:
@@ -240,9 +240,9 @@ interactions:
       Content-Length:
       - '0'
       Date:
-      - Wed, 04 Jan 2023 14:24:11 GMT
+      - Wed, 04 Jan 2023 12:56:30 GMT
       Location:
-      - https://172.17.0.2:8443/auth/admin/realms/myrealm/clients/04d1d91c-73ba-4038-8d43-436273914eb0
+      - https://172.17.0.2:8443/auth/admin/realms/myrealm/clients/ab268463-a883-4293-9516-97ab3cd12163
     status:
       code: 201
       message: Created
@@ -254,41 +254,7 @@ interactions:
       Accept-Encoding:
       - gzip, deflate
       Authorization:
-      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI3ODJMdThPZGg5RkpnM1JrZHliLVpYQUZlWjRCT0NBZEUxeGF4dnE0YTBvIn0.eyJleHAiOjE2NzI4NDIzMTEsImlhdCI6MTY3Mjg0MjI1MSwianRpIjoiZjc5YWQ2ZDItMmQzOC00ZTk0LThmOGMtNjBkNzRlYzRkOGU4IiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiMTA3NzllNjctMGU0Ni00YTYwLThkNGYtNTM2MGFhODdmYmE5IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6IjhkMjZiMjNhLTMxNzMtNGJkNS04MmMzLTJmM2E5NjJkMmMyZSIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.oZFFSAREM6Nw3VcCYHE5-3r4FkHFxCy041Tao2dWscR6FG6ROvdh_Wdd7OcjIV-c7ep3lUCKoLTgLo0pxIFlTz-g9ZS5iPvlSMhb8K9cqMEX3gKscmHF-0ZJ4ew1eoMXjhfPN_cF2bGCmdOwmUuu2Q9RtVLPVx7i33dz-dPggs-Ck0_V5ZlI1j5z2j0RJAKKb1gsbuUxpF0MgSxHrVzjV7Be4ZuE2lKAsUuSXoA0I6ZLfVfnqzvjOF6RVU_YnGKzI2FJOS1ZFxm0_qZfaYrYF8s1cg0zsJ3JPawq2n4Mmbphip_Y2NWAe3-uKwThjKoderjcxEjTeJToBC7oGWJkgw
-      Connection:
-      - keep-alive
-      Content-type:
-      - application/json
-      User-Agent:
-      - python-requests/2.28.1
-    method: GET
-    uri: https://172.17.0.2:8443/auth/admin/realms/myrealm/users
-  response:
-    body:
-      string: '[{"id":"0715a0cd-d6d9-40cb-935c-342c7428407e","createdTimestamp":1672842251307,"username":"aquaman","enabled":true,"totp":false,"emailVerified":false,"firstName":"AAA%","lastName":"Corrupt","disableableCredentialTypes":[],"requiredActions":[],"notBefore":0,"access":{"manageGroupMembership":true,"view":true,"mapRoles":true,"impersonate":true,"manage":true}},{"id":"7085d959-518e-4767-8eba-66785e09f5ee","createdTimestamp":1672842251239,"username":"batman","enabled":true,"totp":false,"emailVerified":false,"firstName":"Bruce","lastName":"Wayne","disableableCredentialTypes":[],"requiredActions":[],"notBefore":0,"access":{"manageGroupMembership":true,"view":true,"mapRoles":true,"impersonate":true,"manage":true}},{"id":"5bef9ef5-62a8-4792-95c7-2fd017e67e3a","createdTimestamp":1672842251279,"username":"superman","enabled":true,"totp":false,"emailVerified":false,"firstName":"Clark","lastName":"Kent","disableableCredentialTypes":[],"requiredActions":[],"notBefore":0,"access":{"manageGroupMembership":true,"view":true,"mapRoles":true,"impersonate":true,"manage":true}}]'
-    headers:
-      Cache-Control:
-      - no-cache
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '1072'
-      Content-Type:
-      - application/json
-      Date:
-      - Wed, 04 Jan 2023 14:24:11 GMT
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Authorization:
-      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI3ODJMdThPZGg5RkpnM1JrZHliLVpYQUZlWjRCT0NBZEUxeGF4dnE0YTBvIn0.eyJleHAiOjE2NzI4NDIzMTEsImlhdCI6MTY3Mjg0MjI1MSwianRpIjoiZjc5YWQ2ZDItMmQzOC00ZTk0LThmOGMtNjBkNzRlYzRkOGU4IiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiMTA3NzllNjctMGU0Ni00YTYwLThkNGYtNTM2MGFhODdmYmE5IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6IjhkMjZiMjNhLTMxNzMtNGJkNS04MmMzLTJmM2E5NjJkMmMyZSIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.oZFFSAREM6Nw3VcCYHE5-3r4FkHFxCy041Tao2dWscR6FG6ROvdh_Wdd7OcjIV-c7ep3lUCKoLTgLo0pxIFlTz-g9ZS5iPvlSMhb8K9cqMEX3gKscmHF-0ZJ4ew1eoMXjhfPN_cF2bGCmdOwmUuu2Q9RtVLPVx7i33dz-dPggs-Ck0_V5ZlI1j5z2j0RJAKKb1gsbuUxpF0MgSxHrVzjV7Be4ZuE2lKAsUuSXoA0I6ZLfVfnqzvjOF6RVU_YnGKzI2FJOS1ZFxm0_qZfaYrYF8s1cg0zsJ3JPawq2n4Mmbphip_Y2NWAe3-uKwThjKoderjcxEjTeJToBC7oGWJkgw
+      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ4RGRTUEdDczRqU1NXbDZqU19FeWlRUVNvQ2U5UmJPR0RlMm1xaXB4d2swIn0.eyJleHAiOjE2NzI4MzcwNTAsImlhdCI6MTY3MjgzNjk5MCwianRpIjoiYThjZWNkM2QtNDdhYy00OGNkLTg1MjYtMTVkZGNiYzNlMjNjIiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiZjI1ZGE2YjMtZGY0MC00Yzg2LWEyNTctNTAyNzZlOGI1NTRjIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6ImYzOTY1NDdhLWRmODItNDFhOC05YzMxLWVjZDJhMWVhZWE4OSIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.RIrH3WTdWzXUmi9hXnrGY0nG2zENvAQw9hE2p0UPRi9yiszSRcn7Z-D6aHrvs73iGaeIR56abBhze_51Cq22WeLN9-mMBvVdcpvHLcmOPwyil1o3mJ_5dLP0mf6-T5v6mRI4tg9-eCP_Rpq9C8notwlylEq5nx-e-2CHPJgwcbFdHZ7XcCrCHPg1sWue7Vgeu8ecvdyTHzPs85cLVNMRSXJw_sv4JR3vtBQMm3iKljrIAEpV86DLJ_hlzaVwbtu3DqYl6aR1qlTOLr1uH-XLsXZj6L5X898yJmUDKOIpbbTNzTn8GxIjD_VabgSeFjCzWGtT6wFO_lr58DSTj7sJYA
       Connection:
       - keep-alive
       Content-type:
@@ -319,7 +285,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 04 Jan 2023 14:24:11 GMT
+      - Wed, 04 Jan 2023 12:56:30 GMT
     status:
       code: 200
       message: OK
@@ -331,7 +297,7 @@ interactions:
       Accept-Encoding:
       - gzip, deflate
       Authorization:
-      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI3ODJMdThPZGg5RkpnM1JrZHliLVpYQUZlWjRCT0NBZEUxeGF4dnE0YTBvIn0.eyJleHAiOjE2NzI4NDIzMTEsImlhdCI6MTY3Mjg0MjI1MSwianRpIjoiZjc5YWQ2ZDItMmQzOC00ZTk0LThmOGMtNjBkNzRlYzRkOGU4IiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiMTA3NzllNjctMGU0Ni00YTYwLThkNGYtNTM2MGFhODdmYmE5IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6IjhkMjZiMjNhLTMxNzMtNGJkNS04MmMzLTJmM2E5NjJkMmMyZSIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.oZFFSAREM6Nw3VcCYHE5-3r4FkHFxCy041Tao2dWscR6FG6ROvdh_Wdd7OcjIV-c7ep3lUCKoLTgLo0pxIFlTz-g9ZS5iPvlSMhb8K9cqMEX3gKscmHF-0ZJ4ew1eoMXjhfPN_cF2bGCmdOwmUuu2Q9RtVLPVx7i33dz-dPggs-Ck0_V5ZlI1j5z2j0RJAKKb1gsbuUxpF0MgSxHrVzjV7Be4ZuE2lKAsUuSXoA0I6ZLfVfnqzvjOF6RVU_YnGKzI2FJOS1ZFxm0_qZfaYrYF8s1cg0zsJ3JPawq2n4Mmbphip_Y2NWAe3-uKwThjKoderjcxEjTeJToBC7oGWJkgw
+      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ4RGRTUEdDczRqU1NXbDZqU19FeWlRUVNvQ2U5UmJPR0RlMm1xaXB4d2swIn0.eyJleHAiOjE2NzI4MzcwNTAsImlhdCI6MTY3MjgzNjk5MCwianRpIjoiYThjZWNkM2QtNDdhYy00OGNkLTg1MjYtMTVkZGNiYzNlMjNjIiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiZjI1ZGE2YjMtZGY0MC00Yzg2LWEyNTctNTAyNzZlOGI1NTRjIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6ImYzOTY1NDdhLWRmODItNDFhOC05YzMxLWVjZDJhMWVhZWE4OSIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.RIrH3WTdWzXUmi9hXnrGY0nG2zENvAQw9hE2p0UPRi9yiszSRcn7Z-D6aHrvs73iGaeIR56abBhze_51Cq22WeLN9-mMBvVdcpvHLcmOPwyil1o3mJ_5dLP0mf6-T5v6mRI4tg9-eCP_Rpq9C8notwlylEq5nx-e-2CHPJgwcbFdHZ7XcCrCHPg1sWue7Vgeu8ecvdyTHzPs85cLVNMRSXJw_sv4JR3vtBQMm3iKljrIAEpV86DLJ_hlzaVwbtu3DqYl6aR1qlTOLr1uH-XLsXZj6L5X898yJmUDKOIpbbTNzTn8GxIjD_VabgSeFjCzWGtT6wFO_lr58DSTj7sJYA
       Connection:
       - keep-alive
       Content-Length:
@@ -347,7 +313,7 @@ interactions:
       string: ''
     headers:
       Date:
-      - Wed, 04 Jan 2023 14:24:11 GMT
+      - Wed, 04 Jan 2023 12:56:30 GMT
     status:
       code: 204
       message: No Content

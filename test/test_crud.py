@@ -80,7 +80,7 @@ class SlowFile:
         return self.content[self.ii: self.ii+1]
 
 
-class Testing_User_API(KcBaseTestCase):
+class Testing_slow_crud(KcBaseTestCase):
 
     def testing_crud_API(self):
         token = self.testbed.token
@@ -136,26 +136,21 @@ class Testing_User_API(KcBaseTestCase):
         user_present = users.findFirstByKV('firstName', 'pepe')
         self.assertFalse(user_present)
 
-    @classmethod
-    def setUpClass(cls):
-        super().setUpClass()
+    def setUp(self):
+        super().setUp()
 
-        cls.testbed.createRealms()
-        cls.testbed.createUsers()
-        cls.REALM = cls.testbed.REALM
+        self.USER_ENDPOINT = RestURL(self.testbed.ENDPOINT)
+        self.USER_ENDPOINT.addResources(['auth', 'admin', 'realms', self.REALM, 'users'])
 
-        cls.USER_ENDPOINT = RestURL(cls.testbed.ENDPOINT)
-        cls.USER_ENDPOINT.addResources(['auth', 'admin', 'realms', cls.REALM, 'users'])
-
-        cls.USER_DATA = {"enabled":True,"attributes":{},"username":"pepe","emailVerified":"", "firstName": 'pepe'}
+        self.USER_DATA = {"enabled":True,"attributes":{},"username":"pepe","emailVerified":"", "firstName": 'pepe'}
 
 
 class TestKeycloakCRUD_part2(KcBaseTestCase):
-    @classmethod
-    def setUpClass(cls):
-        super().setUpClass()
-        cls.testbed.createRealms()
-        cls.testbed.createUsers()
+    def setUp(self):
+        super().setUp(create_all=False)
+        self.REALM = self.testbed.REALM
+        self.testbed.createRealms()
+        self.testbed.createUsers()
 
     def test_get_one_ok(self):
         users_api = self.testbed.kc.build("users", self.testbed.REALM)

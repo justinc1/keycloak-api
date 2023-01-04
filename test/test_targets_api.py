@@ -17,7 +17,7 @@ def exist(that, res, name):
     return ret['id']
 
 
-class Testing_User_API(unittest.TestCase):
+class Testing_targets(unittest.TestCase):
 
     
     def testing_targets_class(self):
@@ -91,11 +91,6 @@ class Testing_User_API(unittest.TestCase):
         self.assertEqual('https://hello.com/bye', str(target.url('delete')))
         self.assertEqual('https://hello.com/bye', str(target.url('update')))
 
-
-
-
-
-        
             
 if __name__ == '__main__':
     unittest.main()

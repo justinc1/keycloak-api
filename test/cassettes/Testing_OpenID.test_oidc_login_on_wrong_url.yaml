@@ -176,4 +176,478 @@ interactions:
     status:
       code: 503
       message: Service Unavailable
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.28.1
+    method: GET
+    uri: https://172.17.0.2:8443/auth/realms/master/.well-known/openid-configuration
+  response:
+    body:
+      string: '{"issuer":"https://172.17.0.2:8443/auth/realms/master","authorization_endpoint":"https://172.17.0.2:8443/auth/realms/master/protocol/openid-connect/auth","token_endpoint":"https://172.17.0.2:8443/auth/realms/master/protocol/openid-connect/token","token_introspection_endpoint":"https://172.17.0.2:8443/auth/realms/master/protocol/openid-connect/token/introspect","userinfo_endpoint":"https://172.17.0.2:8443/auth/realms/master/protocol/openid-connect/userinfo","end_session_endpoint":"https://172.17.0.2:8443/auth/realms/master/protocol/openid-connect/logout","jwks_uri":"https://172.17.0.2:8443/auth/realms/master/protocol/openid-connect/certs","check_session_iframe":"https://172.17.0.2:8443/auth/realms/master/protocol/openid-connect/login-status-iframe.html","grant_types_supported":["authorization_code","implicit","refresh_token","password","client_credentials"],"response_types_supported":["code","none","id_token","token","id_token
+        token","code id_token","code token","code id_token token"],"subject_types_supported":["public","pairwise"],"id_token_signing_alg_values_supported":["PS384","ES384","RS384","HS256","HS512","ES256","RS256","HS384","ES512","PS256","PS512","RS512"],"id_token_encryption_alg_values_supported":["RSA-OAEP","RSA1_5"],"id_token_encryption_enc_values_supported":["A128GCM","A128CBC-HS256"],"userinfo_signing_alg_values_supported":["PS384","ES384","RS384","HS256","HS512","ES256","RS256","HS384","ES512","PS256","PS512","RS512","none"],"request_object_signing_alg_values_supported":["PS384","ES384","RS384","HS256","HS512","ES256","RS256","HS384","ES512","PS256","PS512","RS512","none"],"response_modes_supported":["query","fragment","form_post"],"registration_endpoint":"https://172.17.0.2:8443/auth/realms/master/clients-registrations/openid-connect","token_endpoint_auth_methods_supported":["private_key_jwt","client_secret_basic","client_secret_post","tls_client_auth","client_secret_jwt"],"token_endpoint_auth_signing_alg_values_supported":["PS384","ES384","RS384","HS256","HS512","ES256","RS256","HS384","ES512","PS256","PS512","RS512"],"claims_supported":["aud","sub","iss","auth_time","name","given_name","family_name","preferred_username","email","acr"],"claim_types_supported":["normal"],"claims_parameter_supported":false,"scopes_supported":["openid","address","email","microprofile-jwt","offline_access","phone","profile","roles","web-origins"],"request_parameter_supported":true,"request_uri_parameter_supported":true,"code_challenge_methods_supported":["plain","S256"],"tls_client_certificate_bound_access_tokens":true,"introspection_endpoint":"https://172.17.0.2:8443/auth/realms/master/protocol/openid-connect/token/introspect"}'
+    headers:
+      Cache-Control:
+      - no-cache, must-revalidate, no-transform, no-store
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '2674'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 04 Jan 2023 13:49:27 GMT
+    status:
+      code: 200
+      message: OK
+- request:
+    body: client_id=admin-cli&grant_type=password&realm=master&username=admin&password=admin
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '82'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      User-Agent:
+      - python-requests/2.28.1
+    method: POST
+    uri: https://172.17.0.2:8443/auth/realms/master/protocol/openid-connect/token
+  response:
+    body:
+      string: '{"access_token":"eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI3ODJMdThPZGg5RkpnM1JrZHliLVpYQUZlWjRCT0NBZEUxeGF4dnE0YTBvIn0.eyJleHAiOjE2NzI4NDAyMjcsImlhdCI6MTY3Mjg0MDE2NywianRpIjoiZjYyNzQ4ZWMtZjQ3YS00Yjg3LWJjZGMtMzFmYmU4YjQwZDMxIiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiMTA3NzllNjctMGU0Ni00YTYwLThkNGYtNTM2MGFhODdmYmE5IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6IjIyNWEyMGVkLWI2YTktNDVlYS1iZmJmLWM1ZTMzOGYzZTM2OCIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.B25aW0GisUUyhe1WVSI269kWugmOTwuH6pqvTunZ6Ky1x28akZT6xcnvq7kns6ctHJvalcpY-6NWFlYYViRRdZKRPTvh7fDOjCOCLnXmgiupttXJvmIWfnrzpQFGPRtKErFV02nMkYMjIkZXGxRa5XNInEsohUjvYiYHI5Ta6Fkxxfi1wX_vhI-uNu_iimd6vHMIykWm3vdNeJaxLBvLaMHEgfmwYo01Ui4LAy0EhCeqYOqIKgC-H1ljKHIfxWI7i2rfSFXDYj9C3NKvVkzJLXcBe8sHofXfFKLPKMkn282ZMDLQyUXUQruzXrWTlOrNpnZbU65VLu9mxIm2qffwPw","expires_in":60,"refresh_expires_in":1800,"refresh_token":"eyJhbGciOiJIUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI4NTdjZWZlOS02YTY3LTRjZjEtYjFkYy05MmY5Y2NiZTM0OWEifQ.eyJleHAiOjE2NzI4NDE5NjcsImlhdCI6MTY3Mjg0MDE2NywianRpIjoiNTA0ZjllOGMtNjBmMi00YzAxLTljMmEtNDU5MjJlMTZjOTI0IiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwiYXVkIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiMTA3NzllNjctMGU0Ni00YTYwLThkNGYtNTM2MGFhODdmYmE5IiwidHlwIjoiUmVmcmVzaCIsImF6cCI6ImFkbWluLWNsaSIsInNlc3Npb25fc3RhdGUiOiIyMjVhMjBlZC1iNmE5LTQ1ZWEtYmZiZi1jNWUzMzhmM2UzNjgiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUifQ.eLMTpoivF4nZDESxFPHrYbzPcWgv6Xo2B_Q2UXJYuuo","token_type":"bearer","not-before-policy":0,"session_state":"225a20ed-b6a9-45ea-bfbf-c5e338f3e368","scope":"email
+        profile"}'
+    headers:
+      Cache-Control:
+      - no-store
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1726'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 04 Jan 2023 13:49:27 GMT
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - KEYCLOAK_LOCALE=; Version=1; Comment=Expiring cookie; Expires=Thu, 01-Jan-1970
+        00:00:10 GMT; Max-Age=0; Path=/auth/realms/master/; HttpOnly
+      - KC_RESTART=; Version=1; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Max-Age=0;
+        Path=/auth/realms/master/; HttpOnly
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"enabled": "true", "id": "myrealm", "realm": "myrealm"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI3ODJMdThPZGg5RkpnM1JrZHliLVpYQUZlWjRCT0NBZEUxeGF4dnE0YTBvIn0.eyJleHAiOjE2NzI4NDAyMjcsImlhdCI6MTY3Mjg0MDE2NywianRpIjoiZjYyNzQ4ZWMtZjQ3YS00Yjg3LWJjZGMtMzFmYmU4YjQwZDMxIiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiMTA3NzllNjctMGU0Ni00YTYwLThkNGYtNTM2MGFhODdmYmE5IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6IjIyNWEyMGVkLWI2YTktNDVlYS1iZmJmLWM1ZTMzOGYzZTM2OCIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.B25aW0GisUUyhe1WVSI269kWugmOTwuH6pqvTunZ6Ky1x28akZT6xcnvq7kns6ctHJvalcpY-6NWFlYYViRRdZKRPTvh7fDOjCOCLnXmgiupttXJvmIWfnrzpQFGPRtKErFV02nMkYMjIkZXGxRa5XNInEsohUjvYiYHI5Ta6Fkxxfi1wX_vhI-uNu_iimd6vHMIykWm3vdNeJaxLBvLaMHEgfmwYo01Ui4LAy0EhCeqYOqIKgC-H1ljKHIfxWI7i2rfSFXDYj9C3NKvVkzJLXcBe8sHofXfFKLPKMkn282ZMDLQyUXUQruzXrWTlOrNpnZbU65VLu9mxIm2qffwPw
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '56'
+      Content-type:
+      - application/json
+      User-Agent:
+      - python-requests/2.28.1
+    method: POST
+    uri: https://172.17.0.2:8443/auth/admin/realms
+  response:
+    body:
+      string: ''
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      Date:
+      - Wed, 04 Jan 2023 13:49:27 GMT
+      Location:
+      - https://172.17.0.2:8443/auth/admin/realms/myrealm
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.28.1
+    method: GET
+    uri: https://sso-wrong-cvaldezr-stage.apps.sandbox-m2.ll9k.p1.openshiftapps.com/auth/realms/master/.well-known/openid-configuration
+  response:
+    body:
+      string: "<html>\r\n  <head>\r\n    <meta name=\"viewport\" content=\"width=device-width,
+        initial-scale=1\">\r\n\r\n    <style type=\"text/css\">\r\n      body {\r\n
+        \       font-family: \"Helvetica Neue\", Helvetica, Arial, sans-serif;\r\n
+        \       line-height: 1.66666667;\r\n        font-size: 16px;\r\n        color:
+        #333;\r\n        background-color: #fff;\r\n        margin: 2em 1em;\r\n      }\r\n
+        \     h1 {\r\n        font-size: 28px;\r\n        font-weight: 400;\r\n      }\r\n
+        \     p {\r\n        margin: 0 0 10px;\r\n      }\r\n      .alert.alert-info
+        {\r\n        background-color: #F0F0F0;\r\n        margin-top: 30px;\r\n        padding:
+        30px;\r\n      }\r\n      .alert p {\r\n        padding-left: 35px;\r\n      }\r\n
+        \     ul {\r\n        padding-left: 51px;\r\n        position: relative;\r\n
+        \     }\r\n      li {\r\n        font-size: 14px;\r\n        margin-bottom:
+        1em;\r\n      }\r\n      p.info {\r\n        position: relative;\r\n        font-size:
+        20px;\r\n      }\r\n      p.info:before, p.info:after {\r\n        content:
+        \"\";\r\n        left: 0;\r\n        position: absolute;\r\n        top: 0;\r\n
+        \     }\r\n      p.info:before {\r\n        background: #0066CC;\r\n        border-radius:
+        16px;\r\n        color: #fff;\r\n        content: \"i\";\r\n        font:
+        bold 16px/24px serif;\r\n        height: 24px;\r\n        left: 0px;\r\n        text-align:
+        center;\r\n        top: 4px;\r\n        width: 24px;\r\n      }\r\n\r\n      @media
+        (min-width: 768px) {\r\n        body {\r\n          margin: 6em;\r\n        }\r\n
+        \     }\r\n    </style>\r\n  </head>\r\n  <body>\r\n    <div>\r\n      <h1>Application
+        is not available</h1>\r\n      <p>The application is currently not serving
+        requests at this endpoint. It may not have been started or is still starting.</p>\r\n\r\n
+        \     <div class=\"alert alert-info\">\r\n        <p class=\"info\">\r\n          Possible
+        reasons you are seeing this page:\r\n        </p>\r\n        <ul>\r\n          <li>\r\n
+        \           <strong>The host doesn't exist.</strong>\r\n            Make sure
+        the hostname was typed correctly and that a route matching this hostname exists.\r\n
+        \         </li>\r\n          <li>\r\n            <strong>The host exists,
+        but doesn't have a matching path.</strong>\r\n            Check if the URL
+        path was typed correctly and that the route was created using the desired
+        path.\r\n          </li>\r\n          <li>\r\n            <strong>Route and
+        path matches, but all pods are down.</strong>\r\n            Make sure that
+        the resources exposed by this route (pods, services, deployment configs, etc)
+        have at least one pod running.\r\n          </li>\r\n        </ul>\r\n      </div>\r\n
+        \   </div>\r\n  </body>\r\n</html>\r\n"
+    headers:
+      cache-control:
+      - private, max-age=0, no-cache, no-store
+      content-type:
+      - text/html
+      pragma:
+      - no-cache
+    status:
+      code: 503
+      message: Service Unavailable
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI3ODJMdThPZGg5RkpnM1JrZHliLVpYQUZlWjRCT0NBZEUxeGF4dnE0YTBvIn0.eyJleHAiOjE2NzI4NDAyMjcsImlhdCI6MTY3Mjg0MDE2NywianRpIjoiZjYyNzQ4ZWMtZjQ3YS00Yjg3LWJjZGMtMzFmYmU4YjQwZDMxIiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiMTA3NzllNjctMGU0Ni00YTYwLThkNGYtNTM2MGFhODdmYmE5IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6IjIyNWEyMGVkLWI2YTktNDVlYS1iZmJmLWM1ZTMzOGYzZTM2OCIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.B25aW0GisUUyhe1WVSI269kWugmOTwuH6pqvTunZ6Ky1x28akZT6xcnvq7kns6ctHJvalcpY-6NWFlYYViRRdZKRPTvh7fDOjCOCLnXmgiupttXJvmIWfnrzpQFGPRtKErFV02nMkYMjIkZXGxRa5XNInEsohUjvYiYHI5Ta6Fkxxfi1wX_vhI-uNu_iimd6vHMIykWm3vdNeJaxLBvLaMHEgfmwYo01Ui4LAy0EhCeqYOqIKgC-H1ljKHIfxWI7i2rfSFXDYj9C3NKvVkzJLXcBe8sHofXfFKLPKMkn282ZMDLQyUXUQruzXrWTlOrNpnZbU65VLu9mxIm2qffwPw
+      Connection:
+      - keep-alive
+      Content-type:
+      - application/json
+      User-Agent:
+      - python-requests/2.28.1
+    method: GET
+    uri: https://172.17.0.2:8443/auth/admin/realms/myrealm
+  response:
+    body:
+      string: '{"id":"myrealm","realm":"myrealm","notBefore":0,"revokeRefreshToken":false,"refreshTokenMaxReuse":0,"accessTokenLifespan":300,"accessTokenLifespanForImplicitFlow":900,"ssoSessionIdleTimeout":1800,"ssoSessionMaxLifespan":36000,"ssoSessionIdleTimeoutRememberMe":0,"ssoSessionMaxLifespanRememberMe":0,"offlineSessionIdleTimeout":2592000,"offlineSessionMaxLifespanEnabled":false,"offlineSessionMaxLifespan":5184000,"accessCodeLifespan":60,"accessCodeLifespanUserAction":300,"accessCodeLifespanLogin":1800,"actionTokenGeneratedByAdminLifespan":43200,"actionTokenGeneratedByUserLifespan":300,"enabled":true,"sslRequired":"external","registrationAllowed":false,"registrationEmailAsUsername":false,"rememberMe":false,"verifyEmail":false,"loginWithEmailAllowed":true,"duplicateEmailsAllowed":false,"resetPasswordAllowed":false,"editUsernameAllowed":false,"bruteForceProtected":false,"permanentLockout":false,"maxFailureWaitSeconds":900,"minimumQuickLoginWaitSeconds":60,"waitIncrementSeconds":60,"quickLoginCheckMilliSeconds":1000,"maxDeltaTimeSeconds":43200,"failureFactor":30,"defaultRoles":["uma_authorization","offline_access"],"requiredCredentials":["password"],"otpPolicyType":"totp","otpPolicyAlgorithm":"HmacSHA1","otpPolicyInitialCounter":0,"otpPolicyDigits":6,"otpPolicyLookAheadWindow":1,"otpPolicyPeriod":30,"otpSupportedApplications":["FreeOTP","Google
+        Authenticator"],"webAuthnPolicyRpEntityName":"keycloak","webAuthnPolicySignatureAlgorithms":["ES256"],"webAuthnPolicyRpId":"","webAuthnPolicyAttestationConveyancePreference":"not
+        specified","webAuthnPolicyAuthenticatorAttachment":"not specified","webAuthnPolicyRequireResidentKey":"not
+        specified","webAuthnPolicyUserVerificationRequirement":"not specified","webAuthnPolicyCreateTimeout":0,"webAuthnPolicyAvoidSameAuthenticatorRegister":false,"webAuthnPolicyAcceptableAaguids":[],"webAuthnPolicyPasswordlessRpEntityName":"keycloak","webAuthnPolicyPasswordlessSignatureAlgorithms":["ES256"],"webAuthnPolicyPasswordlessRpId":"","webAuthnPolicyPasswordlessAttestationConveyancePreference":"not
+        specified","webAuthnPolicyPasswordlessAuthenticatorAttachment":"not specified","webAuthnPolicyPasswordlessRequireResidentKey":"not
+        specified","webAuthnPolicyPasswordlessUserVerificationRequirement":"not specified","webAuthnPolicyPasswordlessCreateTimeout":0,"webAuthnPolicyPasswordlessAvoidSameAuthenticatorRegister":false,"webAuthnPolicyPasswordlessAcceptableAaguids":[],"browserSecurityHeaders":{"contentSecurityPolicyReportOnly":"","xContentTypeOptions":"nosniff","xRobotsTag":"none","xFrameOptions":"SAMEORIGIN","contentSecurityPolicy":"frame-src
+        ''self''; frame-ancestors ''self''; object-src ''none'';","xXSSProtection":"1;
+        mode=block","strictTransportSecurity":"max-age=31536000; includeSubDomains"},"smtpServer":{},"eventsEnabled":false,"eventsListeners":["jboss-logging"],"enabledEventTypes":[],"adminEventsEnabled":false,"adminEventsDetailsEnabled":false,"internationalizationEnabled":false,"supportedLocales":[],"browserFlow":"browser","registrationFlow":"registration","directGrantFlow":"direct
+        grant","resetCredentialsFlow":"reset credentials","clientAuthenticationFlow":"clients","dockerAuthenticationFlow":"docker
+        auth","attributes":{},"userManagedAccessAllowed":false}'
+    headers:
+      Cache-Control:
+      - no-cache
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '3225'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 04 Jan 2023 13:49:27 GMT
+    status:
+      code: 200
+      message: OK
+- request:
+    body: 'null'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI3ODJMdThPZGg5RkpnM1JrZHliLVpYQUZlWjRCT0NBZEUxeGF4dnE0YTBvIn0.eyJleHAiOjE2NzI4NDAyMjcsImlhdCI6MTY3Mjg0MDE2NywianRpIjoiZjYyNzQ4ZWMtZjQ3YS00Yjg3LWJjZGMtMzFmYmU4YjQwZDMxIiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiMTA3NzllNjctMGU0Ni00YTYwLThkNGYtNTM2MGFhODdmYmE5IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6IjIyNWEyMGVkLWI2YTktNDVlYS1iZmJmLWM1ZTMzOGYzZTM2OCIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.B25aW0GisUUyhe1WVSI269kWugmOTwuH6pqvTunZ6Ky1x28akZT6xcnvq7kns6ctHJvalcpY-6NWFlYYViRRdZKRPTvh7fDOjCOCLnXmgiupttXJvmIWfnrzpQFGPRtKErFV02nMkYMjIkZXGxRa5XNInEsohUjvYiYHI5Ta6Fkxxfi1wX_vhI-uNu_iimd6vHMIykWm3vdNeJaxLBvLaMHEgfmwYo01Ui4LAy0EhCeqYOqIKgC-H1ljKHIfxWI7i2rfSFXDYj9C3NKvVkzJLXcBe8sHofXfFKLPKMkn282ZMDLQyUXUQruzXrWTlOrNpnZbU65VLu9mxIm2qffwPw
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '4'
+      Content-type:
+      - application/json
+      User-Agent:
+      - python-requests/2.28.1
+    method: DELETE
+    uri: https://172.17.0.2:8443/auth/admin/realms/myrealm
+  response:
+    body:
+      string: ''
+    headers:
+      Date:
+      - Wed, 04 Jan 2023 13:49:27 GMT
+    status:
+      code: 204
+      message: No Content
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.28.1
+    method: GET
+    uri: https://172.17.0.2:8443/auth/realms/master/.well-known/openid-configuration
+  response:
+    body:
+      string: '{"issuer":"https://172.17.0.2:8443/auth/realms/master","authorization_endpoint":"https://172.17.0.2:8443/auth/realms/master/protocol/openid-connect/auth","token_endpoint":"https://172.17.0.2:8443/auth/realms/master/protocol/openid-connect/token","token_introspection_endpoint":"https://172.17.0.2:8443/auth/realms/master/protocol/openid-connect/token/introspect","userinfo_endpoint":"https://172.17.0.2:8443/auth/realms/master/protocol/openid-connect/userinfo","end_session_endpoint":"https://172.17.0.2:8443/auth/realms/master/protocol/openid-connect/logout","jwks_uri":"https://172.17.0.2:8443/auth/realms/master/protocol/openid-connect/certs","check_session_iframe":"https://172.17.0.2:8443/auth/realms/master/protocol/openid-connect/login-status-iframe.html","grant_types_supported":["authorization_code","implicit","refresh_token","password","client_credentials"],"response_types_supported":["code","none","id_token","token","id_token
+        token","code id_token","code token","code id_token token"],"subject_types_supported":["public","pairwise"],"id_token_signing_alg_values_supported":["PS384","ES384","RS384","HS256","HS512","ES256","RS256","HS384","ES512","PS256","PS512","RS512"],"id_token_encryption_alg_values_supported":["RSA-OAEP","RSA1_5"],"id_token_encryption_enc_values_supported":["A128GCM","A128CBC-HS256"],"userinfo_signing_alg_values_supported":["PS384","ES384","RS384","HS256","HS512","ES256","RS256","HS384","ES512","PS256","PS512","RS512","none"],"request_object_signing_alg_values_supported":["PS384","ES384","RS384","HS256","HS512","ES256","RS256","HS384","ES512","PS256","PS512","RS512","none"],"response_modes_supported":["query","fragment","form_post"],"registration_endpoint":"https://172.17.0.2:8443/auth/realms/master/clients-registrations/openid-connect","token_endpoint_auth_methods_supported":["private_key_jwt","client_secret_basic","client_secret_post","tls_client_auth","client_secret_jwt"],"token_endpoint_auth_signing_alg_values_supported":["PS384","ES384","RS384","HS256","HS512","ES256","RS256","HS384","ES512","PS256","PS512","RS512"],"claims_supported":["aud","sub","iss","auth_time","name","given_name","family_name","preferred_username","email","acr"],"claim_types_supported":["normal"],"claims_parameter_supported":false,"scopes_supported":["openid","address","email","microprofile-jwt","offline_access","phone","profile","roles","web-origins"],"request_parameter_supported":true,"request_uri_parameter_supported":true,"code_challenge_methods_supported":["plain","S256"],"tls_client_certificate_bound_access_tokens":true,"introspection_endpoint":"https://172.17.0.2:8443/auth/realms/master/protocol/openid-connect/token/introspect"}'
+    headers:
+      Cache-Control:
+      - no-cache, must-revalidate, no-transform, no-store
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '2674'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 04 Jan 2023 13:54:58 GMT
+    status:
+      code: 200
+      message: OK
+- request:
+    body: client_id=admin-cli&grant_type=password&realm=master&username=admin&password=admin
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '82'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      User-Agent:
+      - python-requests/2.28.1
+    method: POST
+    uri: https://172.17.0.2:8443/auth/realms/master/protocol/openid-connect/token
+  response:
+    body:
+      string: '{"access_token":"eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI3ODJMdThPZGg5RkpnM1JrZHliLVpYQUZlWjRCT0NBZEUxeGF4dnE0YTBvIn0.eyJleHAiOjE2NzI4NDA1NTgsImlhdCI6MTY3Mjg0MDQ5OCwianRpIjoiOGQ3OTA3NWEtYjQxMy00OGJiLTllNTUtY2I1ZTExZDlkYTQ4IiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiMTA3NzllNjctMGU0Ni00YTYwLThkNGYtNTM2MGFhODdmYmE5IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6ImQwOWMzNWJkLTRkZjctNGYyMS05MmRkLTM5MDFmMzg0OWI0ZCIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.O9cEwNk-s_fMOMECZuVwax9xny44W11oHDGb-_vJw1asURy5geZSRKF0M1QIA-E6_G-Y7qJrxBslDgxd2PK1TY4L8Qa28fucuvZl7AelFjTD7PsLITDAHcjhJldgab0mrq6e9A_xPc9q9oPJ1gPXLBJ13K0jxRsA8nYq3ZgjPPt4xa_M9CqoV7Qgogm4CbkHQzqlHfOFxaX5dM1hw9cPT9ajASvUm0LGpv57RgDLKxxKBKyuGSH33bgFnyCKpmQxHWdH18CL_6ZYBEozgOEDQR0dPXb6w5OsnFPIxroS-h1_lacvqxKcozlQFPAolFDrdyo2Dp4H1U8TnABGWMx9dg","expires_in":60,"refresh_expires_in":1800,"refresh_token":"eyJhbGciOiJIUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI4NTdjZWZlOS02YTY3LTRjZjEtYjFkYy05MmY5Y2NiZTM0OWEifQ.eyJleHAiOjE2NzI4NDIyOTgsImlhdCI6MTY3Mjg0MDQ5OCwianRpIjoiYzExYTBkM2MtNTY0MC00OWU4LWI3NDMtYmJiOTgzMzZlMzk1IiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwiYXVkIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiMTA3NzllNjctMGU0Ni00YTYwLThkNGYtNTM2MGFhODdmYmE5IiwidHlwIjoiUmVmcmVzaCIsImF6cCI6ImFkbWluLWNsaSIsInNlc3Npb25fc3RhdGUiOiJkMDljMzViZC00ZGY3LTRmMjEtOTJkZC0zOTAxZjM4NDliNGQiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUifQ.ZWUtkGPTD2pSI9ureKEfy8DfF6goQeEC9ddYxlfFtxQ","token_type":"bearer","not-before-policy":0,"session_state":"d09c35bd-4df7-4f21-92dd-3901f3849b4d","scope":"email
+        profile"}'
+    headers:
+      Cache-Control:
+      - no-store
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1726'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 04 Jan 2023 13:54:58 GMT
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - KEYCLOAK_LOCALE=; Version=1; Comment=Expiring cookie; Expires=Thu, 01-Jan-1970
+        00:00:10 GMT; Max-Age=0; Path=/auth/realms/master/; HttpOnly
+      - KC_RESTART=; Version=1; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Max-Age=0;
+        Path=/auth/realms/master/; HttpOnly
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"enabled": "true", "id": "myrealm", "realm": "myrealm"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI3ODJMdThPZGg5RkpnM1JrZHliLVpYQUZlWjRCT0NBZEUxeGF4dnE0YTBvIn0.eyJleHAiOjE2NzI4NDA1NTgsImlhdCI6MTY3Mjg0MDQ5OCwianRpIjoiOGQ3OTA3NWEtYjQxMy00OGJiLTllNTUtY2I1ZTExZDlkYTQ4IiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiMTA3NzllNjctMGU0Ni00YTYwLThkNGYtNTM2MGFhODdmYmE5IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6ImQwOWMzNWJkLTRkZjctNGYyMS05MmRkLTM5MDFmMzg0OWI0ZCIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.O9cEwNk-s_fMOMECZuVwax9xny44W11oHDGb-_vJw1asURy5geZSRKF0M1QIA-E6_G-Y7qJrxBslDgxd2PK1TY4L8Qa28fucuvZl7AelFjTD7PsLITDAHcjhJldgab0mrq6e9A_xPc9q9oPJ1gPXLBJ13K0jxRsA8nYq3ZgjPPt4xa_M9CqoV7Qgogm4CbkHQzqlHfOFxaX5dM1hw9cPT9ajASvUm0LGpv57RgDLKxxKBKyuGSH33bgFnyCKpmQxHWdH18CL_6ZYBEozgOEDQR0dPXb6w5OsnFPIxroS-h1_lacvqxKcozlQFPAolFDrdyo2Dp4H1U8TnABGWMx9dg
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '56'
+      Content-type:
+      - application/json
+      User-Agent:
+      - python-requests/2.28.1
+    method: POST
+    uri: https://172.17.0.2:8443/auth/admin/realms
+  response:
+    body:
+      string: ''
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      Date:
+      - Wed, 04 Jan 2023 13:54:58 GMT
+      Location:
+      - https://172.17.0.2:8443/auth/admin/realms/myrealm
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.28.1
+    method: GET
+    uri: https://sso-wrong-cvaldezr-stage.apps.sandbox-m2.ll9k.p1.openshiftapps.com/auth/realms/master/.well-known/openid-configuration
+  response:
+    body:
+      string: "<html>\r\n  <head>\r\n    <meta name=\"viewport\" content=\"width=device-width,
+        initial-scale=1\">\r\n\r\n    <style type=\"text/css\">\r\n      body {\r\n
+        \       font-family: \"Helvetica Neue\", Helvetica, Arial, sans-serif;\r\n
+        \       line-height: 1.66666667;\r\n        font-size: 16px;\r\n        color:
+        #333;\r\n        background-color: #fff;\r\n        margin: 2em 1em;\r\n      }\r\n
+        \     h1 {\r\n        font-size: 28px;\r\n        font-weight: 400;\r\n      }\r\n
+        \     p {\r\n        margin: 0 0 10px;\r\n      }\r\n      .alert.alert-info
+        {\r\n        background-color: #F0F0F0;\r\n        margin-top: 30px;\r\n        padding:
+        30px;\r\n      }\r\n      .alert p {\r\n        padding-left: 35px;\r\n      }\r\n
+        \     ul {\r\n        padding-left: 51px;\r\n        position: relative;\r\n
+        \     }\r\n      li {\r\n        font-size: 14px;\r\n        margin-bottom:
+        1em;\r\n      }\r\n      p.info {\r\n        position: relative;\r\n        font-size:
+        20px;\r\n      }\r\n      p.info:before, p.info:after {\r\n        content:
+        \"\";\r\n        left: 0;\r\n        position: absolute;\r\n        top: 0;\r\n
+        \     }\r\n      p.info:before {\r\n        background: #0066CC;\r\n        border-radius:
+        16px;\r\n        color: #fff;\r\n        content: \"i\";\r\n        font:
+        bold 16px/24px serif;\r\n        height: 24px;\r\n        left: 0px;\r\n        text-align:
+        center;\r\n        top: 4px;\r\n        width: 24px;\r\n      }\r\n\r\n      @media
+        (min-width: 768px) {\r\n        body {\r\n          margin: 6em;\r\n        }\r\n
+        \     }\r\n    </style>\r\n  </head>\r\n  <body>\r\n    <div>\r\n      <h1>Application
+        is not available</h1>\r\n      <p>The application is currently not serving
+        requests at this endpoint. It may not have been started or is still starting.</p>\r\n\r\n
+        \     <div class=\"alert alert-info\">\r\n        <p class=\"info\">\r\n          Possible
+        reasons you are seeing this page:\r\n        </p>\r\n        <ul>\r\n          <li>\r\n
+        \           <strong>The host doesn't exist.</strong>\r\n            Make sure
+        the hostname was typed correctly and that a route matching this hostname exists.\r\n
+        \         </li>\r\n          <li>\r\n            <strong>The host exists,
+        but doesn't have a matching path.</strong>\r\n            Check if the URL
+        path was typed correctly and that the route was created using the desired
+        path.\r\n          </li>\r\n          <li>\r\n            <strong>Route and
+        path matches, but all pods are down.</strong>\r\n            Make sure that
+        the resources exposed by this route (pods, services, deployment configs, etc)
+        have at least one pod running.\r\n          </li>\r\n        </ul>\r\n      </div>\r\n
+        \   </div>\r\n  </body>\r\n</html>\r\n"
+    headers:
+      cache-control:
+      - private, max-age=0, no-cache, no-store
+      content-type:
+      - text/html
+      pragma:
+      - no-cache
+    status:
+      code: 503
+      message: Service Unavailable
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI3ODJMdThPZGg5RkpnM1JrZHliLVpYQUZlWjRCT0NBZEUxeGF4dnE0YTBvIn0.eyJleHAiOjE2NzI4NDA1NTgsImlhdCI6MTY3Mjg0MDQ5OCwianRpIjoiOGQ3OTA3NWEtYjQxMy00OGJiLTllNTUtY2I1ZTExZDlkYTQ4IiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiMTA3NzllNjctMGU0Ni00YTYwLThkNGYtNTM2MGFhODdmYmE5IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6ImQwOWMzNWJkLTRkZjctNGYyMS05MmRkLTM5MDFmMzg0OWI0ZCIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.O9cEwNk-s_fMOMECZuVwax9xny44W11oHDGb-_vJw1asURy5geZSRKF0M1QIA-E6_G-Y7qJrxBslDgxd2PK1TY4L8Qa28fucuvZl7AelFjTD7PsLITDAHcjhJldgab0mrq6e9A_xPc9q9oPJ1gPXLBJ13K0jxRsA8nYq3ZgjPPt4xa_M9CqoV7Qgogm4CbkHQzqlHfOFxaX5dM1hw9cPT9ajASvUm0LGpv57RgDLKxxKBKyuGSH33bgFnyCKpmQxHWdH18CL_6ZYBEozgOEDQR0dPXb6w5OsnFPIxroS-h1_lacvqxKcozlQFPAolFDrdyo2Dp4H1U8TnABGWMx9dg
+      Connection:
+      - keep-alive
+      Content-type:
+      - application/json
+      User-Agent:
+      - python-requests/2.28.1
+    method: GET
+    uri: https://172.17.0.2:8443/auth/admin/realms/myrealm
+  response:
+    body:
+      string: '{"id":"myrealm","realm":"myrealm","notBefore":0,"revokeRefreshToken":false,"refreshTokenMaxReuse":0,"accessTokenLifespan":300,"accessTokenLifespanForImplicitFlow":900,"ssoSessionIdleTimeout":1800,"ssoSessionMaxLifespan":36000,"ssoSessionIdleTimeoutRememberMe":0,"ssoSessionMaxLifespanRememberMe":0,"offlineSessionIdleTimeout":2592000,"offlineSessionMaxLifespanEnabled":false,"offlineSessionMaxLifespan":5184000,"accessCodeLifespan":60,"accessCodeLifespanUserAction":300,"accessCodeLifespanLogin":1800,"actionTokenGeneratedByAdminLifespan":43200,"actionTokenGeneratedByUserLifespan":300,"enabled":true,"sslRequired":"external","registrationAllowed":false,"registrationEmailAsUsername":false,"rememberMe":false,"verifyEmail":false,"loginWithEmailAllowed":true,"duplicateEmailsAllowed":false,"resetPasswordAllowed":false,"editUsernameAllowed":false,"bruteForceProtected":false,"permanentLockout":false,"maxFailureWaitSeconds":900,"minimumQuickLoginWaitSeconds":60,"waitIncrementSeconds":60,"quickLoginCheckMilliSeconds":1000,"maxDeltaTimeSeconds":43200,"failureFactor":30,"defaultRoles":["uma_authorization","offline_access"],"requiredCredentials":["password"],"otpPolicyType":"totp","otpPolicyAlgorithm":"HmacSHA1","otpPolicyInitialCounter":0,"otpPolicyDigits":6,"otpPolicyLookAheadWindow":1,"otpPolicyPeriod":30,"otpSupportedApplications":["FreeOTP","Google
+        Authenticator"],"webAuthnPolicyRpEntityName":"keycloak","webAuthnPolicySignatureAlgorithms":["ES256"],"webAuthnPolicyRpId":"","webAuthnPolicyAttestationConveyancePreference":"not
+        specified","webAuthnPolicyAuthenticatorAttachment":"not specified","webAuthnPolicyRequireResidentKey":"not
+        specified","webAuthnPolicyUserVerificationRequirement":"not specified","webAuthnPolicyCreateTimeout":0,"webAuthnPolicyAvoidSameAuthenticatorRegister":false,"webAuthnPolicyAcceptableAaguids":[],"webAuthnPolicyPasswordlessRpEntityName":"keycloak","webAuthnPolicyPasswordlessSignatureAlgorithms":["ES256"],"webAuthnPolicyPasswordlessRpId":"","webAuthnPolicyPasswordlessAttestationConveyancePreference":"not
+        specified","webAuthnPolicyPasswordlessAuthenticatorAttachment":"not specified","webAuthnPolicyPasswordlessRequireResidentKey":"not
+        specified","webAuthnPolicyPasswordlessUserVerificationRequirement":"not specified","webAuthnPolicyPasswordlessCreateTimeout":0,"webAuthnPolicyPasswordlessAvoidSameAuthenticatorRegister":false,"webAuthnPolicyPasswordlessAcceptableAaguids":[],"browserSecurityHeaders":{"contentSecurityPolicyReportOnly":"","xContentTypeOptions":"nosniff","xRobotsTag":"none","xFrameOptions":"SAMEORIGIN","contentSecurityPolicy":"frame-src
+        ''self''; frame-ancestors ''self''; object-src ''none'';","xXSSProtection":"1;
+        mode=block","strictTransportSecurity":"max-age=31536000; includeSubDomains"},"smtpServer":{},"eventsEnabled":false,"eventsListeners":["jboss-logging"],"enabledEventTypes":[],"adminEventsEnabled":false,"adminEventsDetailsEnabled":false,"internationalizationEnabled":false,"supportedLocales":[],"browserFlow":"browser","registrationFlow":"registration","directGrantFlow":"direct
+        grant","resetCredentialsFlow":"reset credentials","clientAuthenticationFlow":"clients","dockerAuthenticationFlow":"docker
+        auth","attributes":{},"userManagedAccessAllowed":false}'
+    headers:
+      Cache-Control:
+      - no-cache
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '3225'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 04 Jan 2023 13:54:58 GMT
+    status:
+      code: 200
+      message: OK
+- request:
+    body: 'null'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI3ODJMdThPZGg5RkpnM1JrZHliLVpYQUZlWjRCT0NBZEUxeGF4dnE0YTBvIn0.eyJleHAiOjE2NzI4NDA1NTgsImlhdCI6MTY3Mjg0MDQ5OCwianRpIjoiOGQ3OTA3NWEtYjQxMy00OGJiLTllNTUtY2I1ZTExZDlkYTQ4IiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiMTA3NzllNjctMGU0Ni00YTYwLThkNGYtNTM2MGFhODdmYmE5IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6ImQwOWMzNWJkLTRkZjctNGYyMS05MmRkLTM5MDFmMzg0OWI0ZCIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.O9cEwNk-s_fMOMECZuVwax9xny44W11oHDGb-_vJw1asURy5geZSRKF0M1QIA-E6_G-Y7qJrxBslDgxd2PK1TY4L8Qa28fucuvZl7AelFjTD7PsLITDAHcjhJldgab0mrq6e9A_xPc9q9oPJ1gPXLBJ13K0jxRsA8nYq3ZgjPPt4xa_M9CqoV7Qgogm4CbkHQzqlHfOFxaX5dM1hw9cPT9ajASvUm0LGpv57RgDLKxxKBKyuGSH33bgFnyCKpmQxHWdH18CL_6ZYBEozgOEDQR0dPXb6w5OsnFPIxroS-h1_lacvqxKcozlQFPAolFDrdyo2Dp4H1U8TnABGWMx9dg
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '4'
+      Content-type:
+      - application/json
+      User-Agent:
+      - python-requests/2.28.1
+    method: DELETE
+    uri: https://172.17.0.2:8443/auth/admin/realms/myrealm
+  response:
+    body:
+      string: ''
+    headers:
+      Date:
+      - Wed, 04 Jan 2023 13:54:58 GMT
+    status:
+      code: 204
+      message: No Content
 version: 1

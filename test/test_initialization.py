@@ -52,21 +52,6 @@ class Testing_OpenID(KcBaseTestCase):
         
         self.assertRaises(Exception, lambda: oid_client.getToken()) 
 
-    def test_oidc_login_on_wrong_password(self):
-        oid_client = OpenID({
-            "client_id": "admin-cli",
-            "username": "6OPtWY33", 
-            "password":"I6gglTeDLlmmpLYoAAUMcFQqNOMjw5dA", 
-            "grant_type":"password",
-            "realm" : "master"
-            }, self.ENDPOINT)
-
-        try:
-            oid_client.getToken()
-        except Exception as E:
-            self.assertEqual("Unauthorized" in str(E), True)
-
-
     def test_oidc_login(self):
         oid_client = OpenID({
             "client_id": "admin-cli",
@@ -176,16 +161,44 @@ class Testing_OpenID(KcBaseTestCase):
         self.assertTrue(state_after_delay)
 
 
-    @classmethod
-    def setUpClass(cls):
-        super().setUpClass()
-        cls.testbed.createRealms()
-        cls.kc = cls.testbed.getKeycloak()
-        cls.realm = cls.testbed.REALM
-        cls.master_realm = cls.testbed.getAdminRealm()
-        cls.ENDPOINT = cls.testbed.ENDPOINT
-        cls.USER = cls.testbed.USER
-        cls.PASSWORD = cls.testbed.PASSWORD
+    def setUp(self):
+        super().setUp(create_all=False)
+        self.testbed.createRealms()
+        self.kc = self.testbed.getKeycloak()
+        self.realm = self.testbed.REALM
+        self.master_realm = self.testbed.getAdminRealm()
+        self.ENDPOINT = self.testbed.ENDPOINT
+        self.USER = self.testbed.USER
+        self.PASSWORD = self.testbed.PASSWORD
+
+class Testing_OpenID_2(KcBaseTestCase):
+    vcr_enabled = False
+    def setUp(self):
+        super().setUp(create_all=False)
+        # self.testbed.createRealms()
+        # self.kc = self.testbed.getKeycloak()
+        # self.realm = self.testbed.REALM
+        # self.master_realm = self.testbed.getAdminRealm()
+        self.ENDPOINT = self.testbed.ENDPOINT
+        # self.USER = self.testbed.USER
+        # self.PASSWORD = self.testbed.PASSWORD
+
+    def tearDown(self):
+        pass
+
+    def test_oidc_login_on_wrong_password(self):
+        oid_client = OpenID({
+            "client_id": "admin-cli",
+            "username": "6OPtWY33",
+            "password":"I6gglTeDLlmmpLYoAAUMcFQqNOMjw5dA",
+            "grant_type":"password",
+            "realm" : "master"
+            }, self.ENDPOINT)
+
+        try:
+            oid_client.getToken()
+        except Exception as E:
+            self.assertEqual("Unauthorized" in str(E), True)
 
 
 if __name__ == '__main__':

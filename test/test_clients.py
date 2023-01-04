@@ -146,15 +146,24 @@ class TestClients(KcBaseTestCase):
 
         self.assertEqual(client_roles_api.findFirstByKV('name', client_role_name), [], 'It should return the posted client')
 
-    @classmethod
-    def setUpClass(cls):
-        super().setUpClass()
-        cls.testbed.createRealms()
-        cls.testbed.createUsers()
-        cls.testbed.createClients()
-        cls.REALM = cls.testbed.REALM
+    # TODO - likely all tests should use only setUp/tearDown
+    #  - each test has clean environment
+    #  - VCR than can really work
+    # @classmethod
+    # def setUpClass(cls):
+    #     pass
 
-    @classmethod
-    def tearDownClass(self):
+    # @classmethod
+    # def tearDownClass(cls):
+    #     pass
+
+    def setUp(self):
+        super().setUp(create_all=False)
+        self.testbed.createRealms()
+        # not needed
+        # cls.testbed.createUsers()
+        # cls.testbed.createClients()
+        self.REALM = self.testbed.REALM
+
+    def tearDown(self):
         self.testbed.goodBye()
-        return 1
