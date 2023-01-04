@@ -59,14 +59,6 @@ class Composites:
         return self.get()
 
 
-def hack_rest_roles_remove_endpoint(that, kc):
-    custom_delete = that.targets.targets['delete'].copy()
-    custom_delete.replaceResource('clients', 'roles-by-id')
-    kc.targets.targets['delete'] = custom_delete
-
-    return kc
-
-
 def new_child(kc, query, child_resource):
     client_id = kc.findFirst(query)['id']
     return KeycloakCRUD.get_child(kc, client_id, child_resource)
@@ -85,7 +77,17 @@ class Clients(KeycloakCRUD):
 
     def roles(self, client_query):
         client_id = super().findFirst(client_query)['id']
-        child = KeycloakCRUD.get_child(self, client_id, 'roles')
-        client_role_api = hack_rest_roles_remove_endpoint(self, child)
+        client_roles_api = KeycloakCRUD.get_child(self, client_id, 'roles')
+        client_roles_api = self.__hack_rest_roles_remove_and_update_endpoint(client_roles_api)
+        return client_roles_api
 
-        return client_role_api
+    def __hack_rest_roles_remove_and_update_endpoint(self, client_roles_api):
+        custom_delete = self.targets.targets['delete'].copy()
+        custom_delete.replaceResource('clients', 'roles-by-id')
+        client_roles_api.targets.targets['delete'] = custom_delete
+
+        custom_update = self.targets.targets['update'].copy()
+        custom_update.replaceResource('clients', 'roles-by-id')
+        client_roles_api.targets.targets['update'] = custom_update
+
+        return client_roles_api

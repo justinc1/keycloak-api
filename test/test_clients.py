@@ -1,5 +1,6 @@
 import unittest
 import json
+from copy import copy
 
 from .testbed import KcBaseTestCase
 
@@ -105,11 +106,16 @@ class TestClients(KcBaseTestCase):
 
         # check initial state
         new_role_a = clients_api.get_roles(client_query)[0]
+
         self.assertEqual("new-role", new_role_a.value["name"])
         self.assertEqual("here should go a description.", new_role_a.value["description"])
 
         # update role
-        client_roles_api.update(new_role_a.value["id"], {"description": "here should go a description. NEW"}).isOk()
+        # We need to send full payload.
+        new_data = copy(new_role_a.value)
+        new_data.update({"description": "here should go a description. NEW"})
+        client_roles_api.update(new_role_a.value["id"], new_data).isOk()
+        return
 
         # check updated state
         new_role_b = clients_api.get_roles(client_query)[0]
