@@ -80,6 +80,42 @@ class TestClients(KcBaseTestCase):
         self.assertEqual(empty_composites_role, [],
                          "We should have a empty roles")
 
+    def test_client_roles_update(self):
+        client_payload = load_sample('./test/payloads/client.json')
+        clients_api = self.testbed.getKeycloak().build('clients', self.REALM)
+
+        # initial cleanup
+        ret = clients_api.removeFirstByKV('clientId', client_payload['clientId'])
+        ret = clients_api.findFirstByKV('clientId', client_payload['clientId'])
+        self.assertEqual(ret, [], 'Client should not exist before')
+        # create empty client
+        svc_state = clients_api.create(client_payload).isOk()
+        self.assertTrue(svc_state, 'The service should return a 200.')
+
+        ret = clients_api.findFirstByKV('clientId', client_payload['clientId'])
+        self.assertNotEqual(ret, [], 'It should return the posted client')
+
+        # create role
+        client_query = {'key': 'clientId', 'value': client_payload['clientId']}
+        client_roles_api = clients_api.roles(client_query)
+        svc_roles_state = client_roles_api.create(
+            {"name": "new-role", "description": "here should go a description."}).isOk()
+        self.assertTrue(svc_roles_state, 'The client_roles service should return a 200.')
+        # ----
+
+        # check initial state
+        new_role_a = clients_api.get_roles(client_query)[0]
+        self.assertEqual("new-role", new_role_a.value["name"])
+        self.assertEqual("here should go a description.", new_role_a.value["description"])
+
+        # update role
+        client_roles_api.update(new_role_a.value["id"], {"description": "here should go a description. NEW"}).isOk()
+
+        # check updated state
+        new_role_b = clients_api.get_roles(client_query)[0]
+        self.assertEqual("new-role", new_role_b.value["name"])
+        self.assertEqual("here should go a description. NEW", new_role_b.value["description"])
+
     def test_client_roles_removal(self):
         client_payload = load_sample('./test/payloads/client.json')
         client_payload['clientId'] = 'test_client_roles_removal'
