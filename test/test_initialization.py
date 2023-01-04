@@ -111,7 +111,6 @@ class Testing_OpenID(KcBaseTestCase):
         json_kc = Keycloak.instantiate_with_raw_json(json_string=str(token_str), url=self.ENDPOINT, client_id='security-admin-console')
         test_kc(self, json_kc)
 
-
     def testing_token_refresh_mechanism_triggering_manual_refresh(self):
         token = OpenID.createAdminClient(self.USER, self.PASSWORD, url=self.ENDPOINT).getToken()
 
@@ -129,8 +128,9 @@ class Testing_OpenID(KcBaseTestCase):
             test_kc(self, kc_refreshed)
 
         aa.token.refresh()
-        aa.removeFirstByKV('realm', 'deleteme-5')
+        aa.removeFirstByKV('realm', 'deleteme_5', custom_key='realm')
 
+    # @unittest.skip
     def testing_token_refresh_mechanism_with_timeout(self):
         str_token = str(self.kc.token)
         kc = Keycloak.instantiate_with_raw_json(url=self.testbed.ENDPOINT, json_string=str_token)

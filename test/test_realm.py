@@ -44,6 +44,11 @@ class TestingRealmAPI(KcBaseTestCase):
         creation_state = admin.create(realm_cfg).isOk()
         self.assertTrue(creation_state, 'This realm should be created')
 
+    def tearDown(self):
+        realm = "4pl_1234"  # from ./test/payloads/complex_realms.json
+        if self.testbed.master_realm.exist(realm):
+            state = self.testbed.master_realm.remove(realm).ok()
+        super().tearDown()
 
 if __name__ == '__main__':
     unittest.main()

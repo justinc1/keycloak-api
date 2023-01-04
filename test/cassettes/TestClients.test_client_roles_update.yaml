@@ -26,7 +26,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 04 Jan 2023 14:31:02 GMT
+      - Wed, 04 Jan 2023 15:03:33 GMT
     status:
       code: 200
       message: OK
@@ -49,8 +49,8 @@ interactions:
     uri: https://172.17.0.2:8443/auth/realms/master/protocol/openid-connect/token
   response:
     body:
-      string: '{"access_token":"eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI3ODJMdThPZGg5RkpnM1JrZHliLVpYQUZlWjRCT0NBZEUxeGF4dnE0YTBvIn0.eyJleHAiOjE2NzI4NDI3MjIsImlhdCI6MTY3Mjg0MjY2MiwianRpIjoiNmE5ZjU2ZGQtMDJhNC00MTU1LTk0NDgtZWE0Y2UyNzg3MjNiIiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiMTA3NzllNjctMGU0Ni00YTYwLThkNGYtNTM2MGFhODdmYmE5IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6IjhlZjhkYjNlLWVjODAtNDljZC1hNGE2LThkMDQzMzRhOTkyOCIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.m7PWg5oNDRoUi0682GhMrS-1rCo5HalLFln6svat_gpcn3cfa5sRlU5LHqXIwFKTUQMZGkp8NXpg0sYRodyjcbMIIBYgrUEJKkxqHDi7JbKQLeBeU66LpUM3Zi_MP6pdGGx7d4hj7n7Hqpm71RKaLPPEW91ma-u_rGUzGs9fHlfdqo0Rmm4WbhhSoyVXkRc7TuSfHFw4UteYJ-d8c8_kZ_DSp55d7NMRAQJIBCBlWV9sBMdkjn0vTcDn-yHNsYqkIk6M4BHYxQwH7qyv-KBsnzYFRr3MOxY8Fe5Qa-45ivI5WHGTJMTn1-gRaqKq5YZ0UXrIL_8PiZxLeEaqjixh0Q","expires_in":60,"refresh_expires_in":1800,"refresh_token":"eyJhbGciOiJIUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI4NTdjZWZlOS02YTY3LTRjZjEtYjFkYy05MmY5Y2NiZTM0OWEifQ.eyJleHAiOjE2NzI4NDQ0NjIsImlhdCI6MTY3Mjg0MjY2MiwianRpIjoiMDhkYjcyMzAtZGEzMi00N2IzLTg4NmUtN2EzZGYzNjRlYWIwIiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwiYXVkIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiMTA3NzllNjctMGU0Ni00YTYwLThkNGYtNTM2MGFhODdmYmE5IiwidHlwIjoiUmVmcmVzaCIsImF6cCI6ImFkbWluLWNsaSIsInNlc3Npb25fc3RhdGUiOiI4ZWY4ZGIzZS1lYzgwLTQ5Y2QtYTRhNi04ZDA0MzM0YTk5MjgiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUifQ.TyRPhAf-DvYkVv_jSNrTeOoCmTBv8a6yXRyx5oLCl4A","token_type":"bearer","not-before-policy":0,"session_state":"8ef8db3e-ec80-49cd-a4a6-8d04334a9928","scope":"email
-        profile"}'
+      string: '{"access_token":"eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI2NnQ3dE90c21RLWpCdWplZU5xNUlJbUlja1pwQVdtR0g5VGhsWS1JSWtFIn0.eyJleHAiOjE2NzI4NDQ2NzMsImlhdCI6MTY3Mjg0NDYxMywianRpIjoiMGMzYTk2OWMtYWI1My00MGFmLThlNjMtYjI3ZTgzNzY5YjRkIiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiNDRkYTAzNTUtYjQwNi00N2NkLTgwOWMtNmYwYTBhYWUyN2FlIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6ImNjYjU0ZWFiLTFlZmMtNGMzYi1hZTIxLTY0M2IxZmVhZmZhNSIsImFjciI6IjEiLCJzY29wZSI6InByb2ZpbGUgZW1haWwiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.YJ3u_zaBTXPbl_ZV7ogCcY30Ow5Zw-zQESX_H-J80QqUyn9UuhSeNtZG4MoNJEmUj2B4FRarwBo3eR58hhxOIqJ05C94AYfR0UmeeBXNS2wn-xkZ3jRFkwR8Dk901G4dgm8szp7oS2nzWzktE0j9VpAQqIVObV8Mz-rSUfHruUSuPulDPJk-vmqbE6TCZb6jtDcv_jjp1bfvAqb30X_2JJMT3foDUMdq7sOEC65fBf3cyWB-7g_tjfuPD49gnBRC-jVnKLmlzH6XF8V1Xq1OiiHICHTdaPTU5hAq19AElp3DSXkrss51-QzzdnomOqiupdwwmNL7boCjhCOdJklprw","expires_in":60,"refresh_expires_in":1800,"refresh_token":"eyJhbGciOiJIUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI0NTUwMWU3Zi05M2ZjLTRjZjAtYWM1ZC05ZWE3MzlmODg0YmYifQ.eyJleHAiOjE2NzI4NDY0MTMsImlhdCI6MTY3Mjg0NDYxMywianRpIjoiZDU2ODNlZDAtOGFiYy00ZmI5LWE4ZGUtOWY4MmU0Yjc4Mjc0IiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwiYXVkIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiNDRkYTAzNTUtYjQwNi00N2NkLTgwOWMtNmYwYTBhYWUyN2FlIiwidHlwIjoiUmVmcmVzaCIsImF6cCI6ImFkbWluLWNsaSIsInNlc3Npb25fc3RhdGUiOiJjY2I1NGVhYi0xZWZjLTRjM2ItYWUyMS02NDNiMWZlYWZmYTUiLCJzY29wZSI6InByb2ZpbGUgZW1haWwifQ.I2rTCApyjYElWfreTBal41qBQEIqOp5fJeuOv9SjY9A","token_type":"bearer","not-before-policy":0,"session_state":"ccb54eab-1efc-4c3b-ae21-643b1feaffa5","scope":"profile
+        email"}'
     headers:
       Cache-Control:
       - no-store
@@ -61,7 +61,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 04 Jan 2023 14:31:02 GMT
+      - Wed, 04 Jan 2023 15:03:33 GMT
       Pragma:
       - no-cache
       Set-Cookie:
@@ -80,7 +80,7 @@ interactions:
       Accept-Encoding:
       - gzip, deflate
       Authorization:
-      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI3ODJMdThPZGg5RkpnM1JrZHliLVpYQUZlWjRCT0NBZEUxeGF4dnE0YTBvIn0.eyJleHAiOjE2NzI4NDI3MjIsImlhdCI6MTY3Mjg0MjY2MiwianRpIjoiNmE5ZjU2ZGQtMDJhNC00MTU1LTk0NDgtZWE0Y2UyNzg3MjNiIiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiMTA3NzllNjctMGU0Ni00YTYwLThkNGYtNTM2MGFhODdmYmE5IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6IjhlZjhkYjNlLWVjODAtNDljZC1hNGE2LThkMDQzMzRhOTkyOCIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.m7PWg5oNDRoUi0682GhMrS-1rCo5HalLFln6svat_gpcn3cfa5sRlU5LHqXIwFKTUQMZGkp8NXpg0sYRodyjcbMIIBYgrUEJKkxqHDi7JbKQLeBeU66LpUM3Zi_MP6pdGGx7d4hj7n7Hqpm71RKaLPPEW91ma-u_rGUzGs9fHlfdqo0Rmm4WbhhSoyVXkRc7TuSfHFw4UteYJ-d8c8_kZ_DSp55d7NMRAQJIBCBlWV9sBMdkjn0vTcDn-yHNsYqkIk6M4BHYxQwH7qyv-KBsnzYFRr3MOxY8Fe5Qa-45ivI5WHGTJMTn1-gRaqKq5YZ0UXrIL_8PiZxLeEaqjixh0Q
+      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI2NnQ3dE90c21RLWpCdWplZU5xNUlJbUlja1pwQVdtR0g5VGhsWS1JSWtFIn0.eyJleHAiOjE2NzI4NDQ2NzMsImlhdCI6MTY3Mjg0NDYxMywianRpIjoiMGMzYTk2OWMtYWI1My00MGFmLThlNjMtYjI3ZTgzNzY5YjRkIiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiNDRkYTAzNTUtYjQwNi00N2NkLTgwOWMtNmYwYTBhYWUyN2FlIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6ImNjYjU0ZWFiLTFlZmMtNGMzYi1hZTIxLTY0M2IxZmVhZmZhNSIsImFjciI6IjEiLCJzY29wZSI6InByb2ZpbGUgZW1haWwiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.YJ3u_zaBTXPbl_ZV7ogCcY30Ow5Zw-zQESX_H-J80QqUyn9UuhSeNtZG4MoNJEmUj2B4FRarwBo3eR58hhxOIqJ05C94AYfR0UmeeBXNS2wn-xkZ3jRFkwR8Dk901G4dgm8szp7oS2nzWzktE0j9VpAQqIVObV8Mz-rSUfHruUSuPulDPJk-vmqbE6TCZb6jtDcv_jjp1bfvAqb30X_2JJMT3foDUMdq7sOEC65fBf3cyWB-7g_tjfuPD49gnBRC-jVnKLmlzH6XF8V1Xq1OiiHICHTdaPTU5hAq19AElp3DSXkrss51-QzzdnomOqiupdwwmNL7boCjhCOdJklprw
       Connection:
       - keep-alive
       Content-Length:
@@ -100,7 +100,7 @@ interactions:
       Content-Length:
       - '0'
       Date:
-      - Wed, 04 Jan 2023 14:31:03 GMT
+      - Wed, 04 Jan 2023 15:03:33 GMT
       Location:
       - https://172.17.0.2:8443/auth/admin/realms/myrealm
     status:
@@ -114,7 +114,7 @@ interactions:
       Accept-Encoding:
       - gzip, deflate
       Authorization:
-      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI3ODJMdThPZGg5RkpnM1JrZHliLVpYQUZlWjRCT0NBZEUxeGF4dnE0YTBvIn0.eyJleHAiOjE2NzI4NDI3MjIsImlhdCI6MTY3Mjg0MjY2MiwianRpIjoiNmE5ZjU2ZGQtMDJhNC00MTU1LTk0NDgtZWE0Y2UyNzg3MjNiIiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiMTA3NzllNjctMGU0Ni00YTYwLThkNGYtNTM2MGFhODdmYmE5IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6IjhlZjhkYjNlLWVjODAtNDljZC1hNGE2LThkMDQzMzRhOTkyOCIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.m7PWg5oNDRoUi0682GhMrS-1rCo5HalLFln6svat_gpcn3cfa5sRlU5LHqXIwFKTUQMZGkp8NXpg0sYRodyjcbMIIBYgrUEJKkxqHDi7JbKQLeBeU66LpUM3Zi_MP6pdGGx7d4hj7n7Hqpm71RKaLPPEW91ma-u_rGUzGs9fHlfdqo0Rmm4WbhhSoyVXkRc7TuSfHFw4UteYJ-d8c8_kZ_DSp55d7NMRAQJIBCBlWV9sBMdkjn0vTcDn-yHNsYqkIk6M4BHYxQwH7qyv-KBsnzYFRr3MOxY8Fe5Qa-45ivI5WHGTJMTn1-gRaqKq5YZ0UXrIL_8PiZxLeEaqjixh0Q
+      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI2NnQ3dE90c21RLWpCdWplZU5xNUlJbUlja1pwQVdtR0g5VGhsWS1JSWtFIn0.eyJleHAiOjE2NzI4NDQ2NzMsImlhdCI6MTY3Mjg0NDYxMywianRpIjoiMGMzYTk2OWMtYWI1My00MGFmLThlNjMtYjI3ZTgzNzY5YjRkIiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiNDRkYTAzNTUtYjQwNi00N2NkLTgwOWMtNmYwYTBhYWUyN2FlIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6ImNjYjU0ZWFiLTFlZmMtNGMzYi1hZTIxLTY0M2IxZmVhZmZhNSIsImFjciI6IjEiLCJzY29wZSI6InByb2ZpbGUgZW1haWwiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.YJ3u_zaBTXPbl_ZV7ogCcY30Ow5Zw-zQESX_H-J80QqUyn9UuhSeNtZG4MoNJEmUj2B4FRarwBo3eR58hhxOIqJ05C94AYfR0UmeeBXNS2wn-xkZ3jRFkwR8Dk901G4dgm8szp7oS2nzWzktE0j9VpAQqIVObV8Mz-rSUfHruUSuPulDPJk-vmqbE6TCZb6jtDcv_jjp1bfvAqb30X_2JJMT3foDUMdq7sOEC65fBf3cyWB-7g_tjfuPD49gnBRC-jVnKLmlzH6XF8V1Xq1OiiHICHTdaPTU5hAq19AElp3DSXkrss51-QzzdnomOqiupdwwmNL7boCjhCOdJklprw
       Connection:
       - keep-alive
       Content-type:
@@ -125,8 +125,8 @@ interactions:
     uri: https://172.17.0.2:8443/auth/admin/realms/myrealm/clients
   response:
     body:
-      string: '[{"id":"09682e0a-a142-473b-bf6b-6d78a0de96f0","clientId":"account","name":"${client_account}","rootUrl":"${authBaseUrl}","baseUrl":"/realms/myrealm/account/","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","defaultRoles":["manage-account","view-profile"],"redirectUris":["/realms/myrealm/account/*"],"webOrigins":[],"notBefore":0,"bearerOnly":false,"consentRequired":false,"standardFlowEnabled":true,"implicitFlowEnabled":false,"directAccessGrantsEnabled":false,"serviceAccountsEnabled":false,"publicClient":false,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}},{"id":"6eddd3ac-2a73-406b-b087-2877ce8ae7dc","clientId":"account-console","name":"${client_account-console}","rootUrl":"${authBaseUrl}","baseUrl":"/realms/myrealm/account/","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","redirectUris":["/realms/myrealm/account/*"],"webOrigins":[],"notBefore":0,"bearerOnly":false,"consentRequired":false,"standardFlowEnabled":true,"implicitFlowEnabled":false,"directAccessGrantsEnabled":false,"serviceAccountsEnabled":false,"publicClient":true,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{"pkce.code.challenge.method":"S256"},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"protocolMappers":[{"id":"6180df3a-70a8-43e0-b147-784e098df0c6","name":"audience
-        resolve","protocol":"openid-connect","protocolMapper":"oidc-audience-resolve-mapper","consentRequired":false,"config":{}}],"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}},{"id":"661b9f23-ee18-4566-846a-33fd2d7b301f","clientId":"admin-cli","name":"${client_admin-cli}","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","redirectUris":[],"webOrigins":[],"notBefore":0,"bearerOnly":false,"consentRequired":false,"standardFlowEnabled":false,"implicitFlowEnabled":false,"directAccessGrantsEnabled":true,"serviceAccountsEnabled":false,"publicClient":true,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}},{"id":"a0bdb713-da14-43fc-aeed-86eb8fd7b175","clientId":"broker","name":"${client_broker}","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","redirectUris":[],"webOrigins":[],"notBefore":0,"bearerOnly":false,"consentRequired":false,"standardFlowEnabled":true,"implicitFlowEnabled":false,"directAccessGrantsEnabled":false,"serviceAccountsEnabled":false,"publicClient":false,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}},{"id":"b851ed2d-730a-44e7-8bd0-b5516bc89d9e","clientId":"realm-management","name":"${client_realm-management}","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","redirectUris":[],"webOrigins":[],"notBefore":0,"bearerOnly":true,"consentRequired":false,"standardFlowEnabled":true,"implicitFlowEnabled":false,"directAccessGrantsEnabled":false,"serviceAccountsEnabled":false,"publicClient":false,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}},{"id":"ff5f46af-de7a-41b1-8792-dfed9fc36af8","clientId":"security-admin-console","name":"${client_security-admin-console}","rootUrl":"${authAdminUrl}","baseUrl":"/admin/myrealm/console/","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","redirectUris":["/admin/myrealm/console/*"],"webOrigins":["+"],"notBefore":0,"bearerOnly":false,"consentRequired":false,"standardFlowEnabled":true,"implicitFlowEnabled":false,"directAccessGrantsEnabled":false,"serviceAccountsEnabled":false,"publicClient":true,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{"pkce.code.challenge.method":"S256"},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"protocolMappers":[{"id":"271447f7-42c5-4464-b758-92dd818ab60c","name":"locale","protocol":"openid-connect","protocolMapper":"oidc-usermodel-attribute-mapper","consentRequired":false,"config":{"userinfo.token.claim":"true","user.attribute":"locale","id.token.claim":"true","access.token.claim":"true","claim.name":"locale","jsonType.label":"String"}}],"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}}]'
+      string: '[{"id":"57645f92-800d-498a-8d91-ffa8528ba19c","clientId":"account","name":"${client_account}","rootUrl":"${authBaseUrl}","baseUrl":"/realms/myrealm/account/","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","defaultRoles":["view-profile","manage-account"],"redirectUris":["/realms/myrealm/account/*"],"webOrigins":[],"notBefore":0,"bearerOnly":false,"consentRequired":false,"standardFlowEnabled":true,"implicitFlowEnabled":false,"directAccessGrantsEnabled":false,"serviceAccountsEnabled":false,"publicClient":false,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}},{"id":"60080b55-6e28-45d1-8ab1-07075407c197","clientId":"account-console","name":"${client_account-console}","rootUrl":"${authBaseUrl}","baseUrl":"/realms/myrealm/account/","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","redirectUris":["/realms/myrealm/account/*"],"webOrigins":[],"notBefore":0,"bearerOnly":false,"consentRequired":false,"standardFlowEnabled":true,"implicitFlowEnabled":false,"directAccessGrantsEnabled":false,"serviceAccountsEnabled":false,"publicClient":true,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{"pkce.code.challenge.method":"S256"},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"protocolMappers":[{"id":"70cf9dfe-043d-4623-86cf-923061f0331b","name":"audience
+        resolve","protocol":"openid-connect","protocolMapper":"oidc-audience-resolve-mapper","consentRequired":false,"config":{}}],"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}},{"id":"44202890-8ff9-4628-b6ef-e899401bebf0","clientId":"admin-cli","name":"${client_admin-cli}","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","redirectUris":[],"webOrigins":[],"notBefore":0,"bearerOnly":false,"consentRequired":false,"standardFlowEnabled":false,"implicitFlowEnabled":false,"directAccessGrantsEnabled":true,"serviceAccountsEnabled":false,"publicClient":true,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}},{"id":"f8e7f9df-4a30-49fe-99ed-0eebdab6b93a","clientId":"broker","name":"${client_broker}","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","redirectUris":[],"webOrigins":[],"notBefore":0,"bearerOnly":false,"consentRequired":false,"standardFlowEnabled":true,"implicitFlowEnabled":false,"directAccessGrantsEnabled":false,"serviceAccountsEnabled":false,"publicClient":false,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}},{"id":"26ceeb00-4d3f-4a6e-a6bc-85a0d828c2d0","clientId":"realm-management","name":"${client_realm-management}","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","redirectUris":[],"webOrigins":[],"notBefore":0,"bearerOnly":true,"consentRequired":false,"standardFlowEnabled":true,"implicitFlowEnabled":false,"directAccessGrantsEnabled":false,"serviceAccountsEnabled":false,"publicClient":false,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}},{"id":"ce60619a-b292-4075-8804-042963262d98","clientId":"security-admin-console","name":"${client_security-admin-console}","rootUrl":"${authAdminUrl}","baseUrl":"/admin/myrealm/console/","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","redirectUris":["/admin/myrealm/console/*"],"webOrigins":["+"],"notBefore":0,"bearerOnly":false,"consentRequired":false,"standardFlowEnabled":true,"implicitFlowEnabled":false,"directAccessGrantsEnabled":false,"serviceAccountsEnabled":false,"publicClient":true,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{"pkce.code.challenge.method":"S256"},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"protocolMappers":[{"id":"75dbb5f9-8208-4af5-9de7-8d2baf75fb4d","name":"locale","protocol":"openid-connect","protocolMapper":"oidc-usermodel-attribute-mapper","consentRequired":false,"config":{"userinfo.token.claim":"true","user.attribute":"locale","id.token.claim":"true","access.token.claim":"true","claim.name":"locale","jsonType.label":"String"}}],"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}}]'
     headers:
       Cache-Control:
       - no-cache
@@ -137,7 +137,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 04 Jan 2023 14:31:03 GMT
+      - Wed, 04 Jan 2023 15:03:33 GMT
     status:
       code: 200
       message: OK
@@ -149,7 +149,7 @@ interactions:
       Accept-Encoding:
       - gzip, deflate
       Authorization:
-      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI3ODJMdThPZGg5RkpnM1JrZHliLVpYQUZlWjRCT0NBZEUxeGF4dnE0YTBvIn0.eyJleHAiOjE2NzI4NDI3MjIsImlhdCI6MTY3Mjg0MjY2MiwianRpIjoiNmE5ZjU2ZGQtMDJhNC00MTU1LTk0NDgtZWE0Y2UyNzg3MjNiIiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiMTA3NzllNjctMGU0Ni00YTYwLThkNGYtNTM2MGFhODdmYmE5IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6IjhlZjhkYjNlLWVjODAtNDljZC1hNGE2LThkMDQzMzRhOTkyOCIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.m7PWg5oNDRoUi0682GhMrS-1rCo5HalLFln6svat_gpcn3cfa5sRlU5LHqXIwFKTUQMZGkp8NXpg0sYRodyjcbMIIBYgrUEJKkxqHDi7JbKQLeBeU66LpUM3Zi_MP6pdGGx7d4hj7n7Hqpm71RKaLPPEW91ma-u_rGUzGs9fHlfdqo0Rmm4WbhhSoyVXkRc7TuSfHFw4UteYJ-d8c8_kZ_DSp55d7NMRAQJIBCBlWV9sBMdkjn0vTcDn-yHNsYqkIk6M4BHYxQwH7qyv-KBsnzYFRr3MOxY8Fe5Qa-45ivI5WHGTJMTn1-gRaqKq5YZ0UXrIL_8PiZxLeEaqjixh0Q
+      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI2NnQ3dE90c21RLWpCdWplZU5xNUlJbUlja1pwQVdtR0g5VGhsWS1JSWtFIn0.eyJleHAiOjE2NzI4NDQ2NzMsImlhdCI6MTY3Mjg0NDYxMywianRpIjoiMGMzYTk2OWMtYWI1My00MGFmLThlNjMtYjI3ZTgzNzY5YjRkIiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiNDRkYTAzNTUtYjQwNi00N2NkLTgwOWMtNmYwYTBhYWUyN2FlIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6ImNjYjU0ZWFiLTFlZmMtNGMzYi1hZTIxLTY0M2IxZmVhZmZhNSIsImFjciI6IjEiLCJzY29wZSI6InByb2ZpbGUgZW1haWwiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.YJ3u_zaBTXPbl_ZV7ogCcY30Ow5Zw-zQESX_H-J80QqUyn9UuhSeNtZG4MoNJEmUj2B4FRarwBo3eR58hhxOIqJ05C94AYfR0UmeeBXNS2wn-xkZ3jRFkwR8Dk901G4dgm8szp7oS2nzWzktE0j9VpAQqIVObV8Mz-rSUfHruUSuPulDPJk-vmqbE6TCZb6jtDcv_jjp1bfvAqb30X_2JJMT3foDUMdq7sOEC65fBf3cyWB-7g_tjfuPD49gnBRC-jVnKLmlzH6XF8V1Xq1OiiHICHTdaPTU5hAq19AElp3DSXkrss51-QzzdnomOqiupdwwmNL7boCjhCOdJklprw
       Connection:
       - keep-alive
       Content-type:
@@ -160,8 +160,8 @@ interactions:
     uri: https://172.17.0.2:8443/auth/admin/realms/myrealm/clients
   response:
     body:
-      string: '[{"id":"09682e0a-a142-473b-bf6b-6d78a0de96f0","clientId":"account","name":"${client_account}","rootUrl":"${authBaseUrl}","baseUrl":"/realms/myrealm/account/","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","defaultRoles":["manage-account","view-profile"],"redirectUris":["/realms/myrealm/account/*"],"webOrigins":[],"notBefore":0,"bearerOnly":false,"consentRequired":false,"standardFlowEnabled":true,"implicitFlowEnabled":false,"directAccessGrantsEnabled":false,"serviceAccountsEnabled":false,"publicClient":false,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}},{"id":"6eddd3ac-2a73-406b-b087-2877ce8ae7dc","clientId":"account-console","name":"${client_account-console}","rootUrl":"${authBaseUrl}","baseUrl":"/realms/myrealm/account/","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","redirectUris":["/realms/myrealm/account/*"],"webOrigins":[],"notBefore":0,"bearerOnly":false,"consentRequired":false,"standardFlowEnabled":true,"implicitFlowEnabled":false,"directAccessGrantsEnabled":false,"serviceAccountsEnabled":false,"publicClient":true,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{"pkce.code.challenge.method":"S256"},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"protocolMappers":[{"id":"6180df3a-70a8-43e0-b147-784e098df0c6","name":"audience
-        resolve","protocol":"openid-connect","protocolMapper":"oidc-audience-resolve-mapper","consentRequired":false,"config":{}}],"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}},{"id":"661b9f23-ee18-4566-846a-33fd2d7b301f","clientId":"admin-cli","name":"${client_admin-cli}","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","redirectUris":[],"webOrigins":[],"notBefore":0,"bearerOnly":false,"consentRequired":false,"standardFlowEnabled":false,"implicitFlowEnabled":false,"directAccessGrantsEnabled":true,"serviceAccountsEnabled":false,"publicClient":true,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}},{"id":"a0bdb713-da14-43fc-aeed-86eb8fd7b175","clientId":"broker","name":"${client_broker}","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","redirectUris":[],"webOrigins":[],"notBefore":0,"bearerOnly":false,"consentRequired":false,"standardFlowEnabled":true,"implicitFlowEnabled":false,"directAccessGrantsEnabled":false,"serviceAccountsEnabled":false,"publicClient":false,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}},{"id":"b851ed2d-730a-44e7-8bd0-b5516bc89d9e","clientId":"realm-management","name":"${client_realm-management}","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","redirectUris":[],"webOrigins":[],"notBefore":0,"bearerOnly":true,"consentRequired":false,"standardFlowEnabled":true,"implicitFlowEnabled":false,"directAccessGrantsEnabled":false,"serviceAccountsEnabled":false,"publicClient":false,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}},{"id":"ff5f46af-de7a-41b1-8792-dfed9fc36af8","clientId":"security-admin-console","name":"${client_security-admin-console}","rootUrl":"${authAdminUrl}","baseUrl":"/admin/myrealm/console/","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","redirectUris":["/admin/myrealm/console/*"],"webOrigins":["+"],"notBefore":0,"bearerOnly":false,"consentRequired":false,"standardFlowEnabled":true,"implicitFlowEnabled":false,"directAccessGrantsEnabled":false,"serviceAccountsEnabled":false,"publicClient":true,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{"pkce.code.challenge.method":"S256"},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"protocolMappers":[{"id":"271447f7-42c5-4464-b758-92dd818ab60c","name":"locale","protocol":"openid-connect","protocolMapper":"oidc-usermodel-attribute-mapper","consentRequired":false,"config":{"userinfo.token.claim":"true","user.attribute":"locale","id.token.claim":"true","access.token.claim":"true","claim.name":"locale","jsonType.label":"String"}}],"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}}]'
+      string: '[{"id":"57645f92-800d-498a-8d91-ffa8528ba19c","clientId":"account","name":"${client_account}","rootUrl":"${authBaseUrl}","baseUrl":"/realms/myrealm/account/","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","defaultRoles":["view-profile","manage-account"],"redirectUris":["/realms/myrealm/account/*"],"webOrigins":[],"notBefore":0,"bearerOnly":false,"consentRequired":false,"standardFlowEnabled":true,"implicitFlowEnabled":false,"directAccessGrantsEnabled":false,"serviceAccountsEnabled":false,"publicClient":false,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}},{"id":"60080b55-6e28-45d1-8ab1-07075407c197","clientId":"account-console","name":"${client_account-console}","rootUrl":"${authBaseUrl}","baseUrl":"/realms/myrealm/account/","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","redirectUris":["/realms/myrealm/account/*"],"webOrigins":[],"notBefore":0,"bearerOnly":false,"consentRequired":false,"standardFlowEnabled":true,"implicitFlowEnabled":false,"directAccessGrantsEnabled":false,"serviceAccountsEnabled":false,"publicClient":true,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{"pkce.code.challenge.method":"S256"},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"protocolMappers":[{"id":"70cf9dfe-043d-4623-86cf-923061f0331b","name":"audience
+        resolve","protocol":"openid-connect","protocolMapper":"oidc-audience-resolve-mapper","consentRequired":false,"config":{}}],"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}},{"id":"44202890-8ff9-4628-b6ef-e899401bebf0","clientId":"admin-cli","name":"${client_admin-cli}","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","redirectUris":[],"webOrigins":[],"notBefore":0,"bearerOnly":false,"consentRequired":false,"standardFlowEnabled":false,"implicitFlowEnabled":false,"directAccessGrantsEnabled":true,"serviceAccountsEnabled":false,"publicClient":true,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}},{"id":"f8e7f9df-4a30-49fe-99ed-0eebdab6b93a","clientId":"broker","name":"${client_broker}","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","redirectUris":[],"webOrigins":[],"notBefore":0,"bearerOnly":false,"consentRequired":false,"standardFlowEnabled":true,"implicitFlowEnabled":false,"directAccessGrantsEnabled":false,"serviceAccountsEnabled":false,"publicClient":false,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}},{"id":"26ceeb00-4d3f-4a6e-a6bc-85a0d828c2d0","clientId":"realm-management","name":"${client_realm-management}","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","redirectUris":[],"webOrigins":[],"notBefore":0,"bearerOnly":true,"consentRequired":false,"standardFlowEnabled":true,"implicitFlowEnabled":false,"directAccessGrantsEnabled":false,"serviceAccountsEnabled":false,"publicClient":false,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}},{"id":"ce60619a-b292-4075-8804-042963262d98","clientId":"security-admin-console","name":"${client_security-admin-console}","rootUrl":"${authAdminUrl}","baseUrl":"/admin/myrealm/console/","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","redirectUris":["/admin/myrealm/console/*"],"webOrigins":["+"],"notBefore":0,"bearerOnly":false,"consentRequired":false,"standardFlowEnabled":true,"implicitFlowEnabled":false,"directAccessGrantsEnabled":false,"serviceAccountsEnabled":false,"publicClient":true,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{"pkce.code.challenge.method":"S256"},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"protocolMappers":[{"id":"75dbb5f9-8208-4af5-9de7-8d2baf75fb4d","name":"locale","protocol":"openid-connect","protocolMapper":"oidc-usermodel-attribute-mapper","consentRequired":false,"config":{"userinfo.token.claim":"true","user.attribute":"locale","id.token.claim":"true","access.token.claim":"true","claim.name":"locale","jsonType.label":"String"}}],"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}}]'
     headers:
       Cache-Control:
       - no-cache
@@ -172,7 +172,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 04 Jan 2023 14:31:03 GMT
+      - Wed, 04 Jan 2023 15:03:34 GMT
     status:
       code: 200
       message: OK
@@ -196,7 +196,7 @@ interactions:
       Accept-Encoding:
       - gzip, deflate
       Authorization:
-      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI3ODJMdThPZGg5RkpnM1JrZHliLVpYQUZlWjRCT0NBZEUxeGF4dnE0YTBvIn0.eyJleHAiOjE2NzI4NDI3MjIsImlhdCI6MTY3Mjg0MjY2MiwianRpIjoiNmE5ZjU2ZGQtMDJhNC00MTU1LTk0NDgtZWE0Y2UyNzg3MjNiIiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiMTA3NzllNjctMGU0Ni00YTYwLThkNGYtNTM2MGFhODdmYmE5IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6IjhlZjhkYjNlLWVjODAtNDljZC1hNGE2LThkMDQzMzRhOTkyOCIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.m7PWg5oNDRoUi0682GhMrS-1rCo5HalLFln6svat_gpcn3cfa5sRlU5LHqXIwFKTUQMZGkp8NXpg0sYRodyjcbMIIBYgrUEJKkxqHDi7JbKQLeBeU66LpUM3Zi_MP6pdGGx7d4hj7n7Hqpm71RKaLPPEW91ma-u_rGUzGs9fHlfdqo0Rmm4WbhhSoyVXkRc7TuSfHFw4UteYJ-d8c8_kZ_DSp55d7NMRAQJIBCBlWV9sBMdkjn0vTcDn-yHNsYqkIk6M4BHYxQwH7qyv-KBsnzYFRr3MOxY8Fe5Qa-45ivI5WHGTJMTn1-gRaqKq5YZ0UXrIL_8PiZxLeEaqjixh0Q
+      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI2NnQ3dE90c21RLWpCdWplZU5xNUlJbUlja1pwQVdtR0g5VGhsWS1JSWtFIn0.eyJleHAiOjE2NzI4NDQ2NzMsImlhdCI6MTY3Mjg0NDYxMywianRpIjoiMGMzYTk2OWMtYWI1My00MGFmLThlNjMtYjI3ZTgzNzY5YjRkIiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiNDRkYTAzNTUtYjQwNi00N2NkLTgwOWMtNmYwYTBhYWUyN2FlIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6ImNjYjU0ZWFiLTFlZmMtNGMzYi1hZTIxLTY0M2IxZmVhZmZhNSIsImFjciI6IjEiLCJzY29wZSI6InByb2ZpbGUgZW1haWwiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.YJ3u_zaBTXPbl_ZV7ogCcY30Ow5Zw-zQESX_H-J80QqUyn9UuhSeNtZG4MoNJEmUj2B4FRarwBo3eR58hhxOIqJ05C94AYfR0UmeeBXNS2wn-xkZ3jRFkwR8Dk901G4dgm8szp7oS2nzWzktE0j9VpAQqIVObV8Mz-rSUfHruUSuPulDPJk-vmqbE6TCZb6jtDcv_jjp1bfvAqb30X_2JJMT3foDUMdq7sOEC65fBf3cyWB-7g_tjfuPD49gnBRC-jVnKLmlzH6XF8V1Xq1OiiHICHTdaPTU5hAq19AElp3DSXkrss51-QzzdnomOqiupdwwmNL7boCjhCOdJklprw
       Connection:
       - keep-alive
       Content-Length:
@@ -216,9 +216,9 @@ interactions:
       Content-Length:
       - '0'
       Date:
-      - Wed, 04 Jan 2023 14:31:03 GMT
+      - Wed, 04 Jan 2023 15:03:34 GMT
       Location:
-      - https://172.17.0.2:8443/auth/admin/realms/myrealm/clients/c3ee2cad-7a4e-415a-8eb4-c3d31ee0b0e6
+      - https://172.17.0.2:8443/auth/admin/realms/myrealm/clients/62d20961-bee5-488e-a633-84782b0432a1
     status:
       code: 201
       message: Created
@@ -230,7 +230,7 @@ interactions:
       Accept-Encoding:
       - gzip, deflate
       Authorization:
-      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI3ODJMdThPZGg5RkpnM1JrZHliLVpYQUZlWjRCT0NBZEUxeGF4dnE0YTBvIn0.eyJleHAiOjE2NzI4NDI3MjIsImlhdCI6MTY3Mjg0MjY2MiwianRpIjoiNmE5ZjU2ZGQtMDJhNC00MTU1LTk0NDgtZWE0Y2UyNzg3MjNiIiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiMTA3NzllNjctMGU0Ni00YTYwLThkNGYtNTM2MGFhODdmYmE5IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6IjhlZjhkYjNlLWVjODAtNDljZC1hNGE2LThkMDQzMzRhOTkyOCIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.m7PWg5oNDRoUi0682GhMrS-1rCo5HalLFln6svat_gpcn3cfa5sRlU5LHqXIwFKTUQMZGkp8NXpg0sYRodyjcbMIIBYgrUEJKkxqHDi7JbKQLeBeU66LpUM3Zi_MP6pdGGx7d4hj7n7Hqpm71RKaLPPEW91ma-u_rGUzGs9fHlfdqo0Rmm4WbhhSoyVXkRc7TuSfHFw4UteYJ-d8c8_kZ_DSp55d7NMRAQJIBCBlWV9sBMdkjn0vTcDn-yHNsYqkIk6M4BHYxQwH7qyv-KBsnzYFRr3MOxY8Fe5Qa-45ivI5WHGTJMTn1-gRaqKq5YZ0UXrIL_8PiZxLeEaqjixh0Q
+      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI2NnQ3dE90c21RLWpCdWplZU5xNUlJbUlja1pwQVdtR0g5VGhsWS1JSWtFIn0.eyJleHAiOjE2NzI4NDQ2NzMsImlhdCI6MTY3Mjg0NDYxMywianRpIjoiMGMzYTk2OWMtYWI1My00MGFmLThlNjMtYjI3ZTgzNzY5YjRkIiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiNDRkYTAzNTUtYjQwNi00N2NkLTgwOWMtNmYwYTBhYWUyN2FlIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6ImNjYjU0ZWFiLTFlZmMtNGMzYi1hZTIxLTY0M2IxZmVhZmZhNSIsImFjciI6IjEiLCJzY29wZSI6InByb2ZpbGUgZW1haWwiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.YJ3u_zaBTXPbl_ZV7ogCcY30Ow5Zw-zQESX_H-J80QqUyn9UuhSeNtZG4MoNJEmUj2B4FRarwBo3eR58hhxOIqJ05C94AYfR0UmeeBXNS2wn-xkZ3jRFkwR8Dk901G4dgm8szp7oS2nzWzktE0j9VpAQqIVObV8Mz-rSUfHruUSuPulDPJk-vmqbE6TCZb6jtDcv_jjp1bfvAqb30X_2JJMT3foDUMdq7sOEC65fBf3cyWB-7g_tjfuPD49gnBRC-jVnKLmlzH6XF8V1Xq1OiiHICHTdaPTU5hAq19AElp3DSXkrss51-QzzdnomOqiupdwwmNL7boCjhCOdJklprw
       Connection:
       - keep-alive
       Content-type:
@@ -241,8 +241,8 @@ interactions:
     uri: https://172.17.0.2:8443/auth/admin/realms/myrealm/clients
   response:
     body:
-      string: '[{"id":"09682e0a-a142-473b-bf6b-6d78a0de96f0","clientId":"account","name":"${client_account}","rootUrl":"${authBaseUrl}","baseUrl":"/realms/myrealm/account/","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","defaultRoles":["manage-account","view-profile"],"redirectUris":["/realms/myrealm/account/*"],"webOrigins":[],"notBefore":0,"bearerOnly":false,"consentRequired":false,"standardFlowEnabled":true,"implicitFlowEnabled":false,"directAccessGrantsEnabled":false,"serviceAccountsEnabled":false,"publicClient":false,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}},{"id":"6eddd3ac-2a73-406b-b087-2877ce8ae7dc","clientId":"account-console","name":"${client_account-console}","rootUrl":"${authBaseUrl}","baseUrl":"/realms/myrealm/account/","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","redirectUris":["/realms/myrealm/account/*"],"webOrigins":[],"notBefore":0,"bearerOnly":false,"consentRequired":false,"standardFlowEnabled":true,"implicitFlowEnabled":false,"directAccessGrantsEnabled":false,"serviceAccountsEnabled":false,"publicClient":true,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{"pkce.code.challenge.method":"S256"},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"protocolMappers":[{"id":"6180df3a-70a8-43e0-b147-784e098df0c6","name":"audience
-        resolve","protocol":"openid-connect","protocolMapper":"oidc-audience-resolve-mapper","consentRequired":false,"config":{}}],"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}},{"id":"661b9f23-ee18-4566-846a-33fd2d7b301f","clientId":"admin-cli","name":"${client_admin-cli}","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","redirectUris":[],"webOrigins":[],"notBefore":0,"bearerOnly":false,"consentRequired":false,"standardFlowEnabled":false,"implicitFlowEnabled":false,"directAccessGrantsEnabled":true,"serviceAccountsEnabled":false,"publicClient":true,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}},{"id":"a0bdb713-da14-43fc-aeed-86eb8fd7b175","clientId":"broker","name":"${client_broker}","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","redirectUris":[],"webOrigins":[],"notBefore":0,"bearerOnly":false,"consentRequired":false,"standardFlowEnabled":true,"implicitFlowEnabled":false,"directAccessGrantsEnabled":false,"serviceAccountsEnabled":false,"publicClient":false,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}},{"id":"c3ee2cad-7a4e-415a-8eb4-c3d31ee0b0e6","clientId":"my_client_12346289371","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","redirectUris":[],"webOrigins":[],"notBefore":0,"bearerOnly":false,"consentRequired":false,"standardFlowEnabled":true,"implicitFlowEnabled":false,"directAccessGrantsEnabled":true,"serviceAccountsEnabled":false,"publicClient":true,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":true,"nodeReRegistrationTimeout":-1,"protocolMappers":[{"id":"037ab742-2aa5-441b-8771-427f9094f971","name":"realm.roles","protocol":"openid-connect","protocolMapper":"oidc-usermodel-realm-role-mapper","consentRequired":false,"config":{"id.token.claim":"true","access.token.claim":"true","claim.name":"roles","multivalued":"true","userinfo.token.claim":"true"}}],"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access"],"access":{"view":true,"configure":true,"manage":true}},{"id":"b851ed2d-730a-44e7-8bd0-b5516bc89d9e","clientId":"realm-management","name":"${client_realm-management}","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","redirectUris":[],"webOrigins":[],"notBefore":0,"bearerOnly":true,"consentRequired":false,"standardFlowEnabled":true,"implicitFlowEnabled":false,"directAccessGrantsEnabled":false,"serviceAccountsEnabled":false,"publicClient":false,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}},{"id":"ff5f46af-de7a-41b1-8792-dfed9fc36af8","clientId":"security-admin-console","name":"${client_security-admin-console}","rootUrl":"${authAdminUrl}","baseUrl":"/admin/myrealm/console/","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","redirectUris":["/admin/myrealm/console/*"],"webOrigins":["+"],"notBefore":0,"bearerOnly":false,"consentRequired":false,"standardFlowEnabled":true,"implicitFlowEnabled":false,"directAccessGrantsEnabled":false,"serviceAccountsEnabled":false,"publicClient":true,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{"pkce.code.challenge.method":"S256"},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"protocolMappers":[{"id":"271447f7-42c5-4464-b758-92dd818ab60c","name":"locale","protocol":"openid-connect","protocolMapper":"oidc-usermodel-attribute-mapper","consentRequired":false,"config":{"userinfo.token.claim":"true","user.attribute":"locale","id.token.claim":"true","access.token.claim":"true","claim.name":"locale","jsonType.label":"String"}}],"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}}]'
+      string: '[{"id":"57645f92-800d-498a-8d91-ffa8528ba19c","clientId":"account","name":"${client_account}","rootUrl":"${authBaseUrl}","baseUrl":"/realms/myrealm/account/","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","defaultRoles":["view-profile","manage-account"],"redirectUris":["/realms/myrealm/account/*"],"webOrigins":[],"notBefore":0,"bearerOnly":false,"consentRequired":false,"standardFlowEnabled":true,"implicitFlowEnabled":false,"directAccessGrantsEnabled":false,"serviceAccountsEnabled":false,"publicClient":false,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}},{"id":"60080b55-6e28-45d1-8ab1-07075407c197","clientId":"account-console","name":"${client_account-console}","rootUrl":"${authBaseUrl}","baseUrl":"/realms/myrealm/account/","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","redirectUris":["/realms/myrealm/account/*"],"webOrigins":[],"notBefore":0,"bearerOnly":false,"consentRequired":false,"standardFlowEnabled":true,"implicitFlowEnabled":false,"directAccessGrantsEnabled":false,"serviceAccountsEnabled":false,"publicClient":true,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{"pkce.code.challenge.method":"S256"},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"protocolMappers":[{"id":"70cf9dfe-043d-4623-86cf-923061f0331b","name":"audience
+        resolve","protocol":"openid-connect","protocolMapper":"oidc-audience-resolve-mapper","consentRequired":false,"config":{}}],"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}},{"id":"44202890-8ff9-4628-b6ef-e899401bebf0","clientId":"admin-cli","name":"${client_admin-cli}","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","redirectUris":[],"webOrigins":[],"notBefore":0,"bearerOnly":false,"consentRequired":false,"standardFlowEnabled":false,"implicitFlowEnabled":false,"directAccessGrantsEnabled":true,"serviceAccountsEnabled":false,"publicClient":true,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}},{"id":"f8e7f9df-4a30-49fe-99ed-0eebdab6b93a","clientId":"broker","name":"${client_broker}","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","redirectUris":[],"webOrigins":[],"notBefore":0,"bearerOnly":false,"consentRequired":false,"standardFlowEnabled":true,"implicitFlowEnabled":false,"directAccessGrantsEnabled":false,"serviceAccountsEnabled":false,"publicClient":false,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}},{"id":"62d20961-bee5-488e-a633-84782b0432a1","clientId":"my_client_12346289371","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","redirectUris":[],"webOrigins":[],"notBefore":0,"bearerOnly":false,"consentRequired":false,"standardFlowEnabled":true,"implicitFlowEnabled":false,"directAccessGrantsEnabled":true,"serviceAccountsEnabled":false,"publicClient":true,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":true,"nodeReRegistrationTimeout":-1,"protocolMappers":[{"id":"b71a859e-d656-49ea-89ec-399c7999a87a","name":"realm.roles","protocol":"openid-connect","protocolMapper":"oidc-usermodel-realm-role-mapper","consentRequired":false,"config":{"id.token.claim":"true","access.token.claim":"true","claim.name":"roles","multivalued":"true","userinfo.token.claim":"true"}}],"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access"],"access":{"view":true,"configure":true,"manage":true}},{"id":"26ceeb00-4d3f-4a6e-a6bc-85a0d828c2d0","clientId":"realm-management","name":"${client_realm-management}","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","redirectUris":[],"webOrigins":[],"notBefore":0,"bearerOnly":true,"consentRequired":false,"standardFlowEnabled":true,"implicitFlowEnabled":false,"directAccessGrantsEnabled":false,"serviceAccountsEnabled":false,"publicClient":false,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}},{"id":"ce60619a-b292-4075-8804-042963262d98","clientId":"security-admin-console","name":"${client_security-admin-console}","rootUrl":"${authAdminUrl}","baseUrl":"/admin/myrealm/console/","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","redirectUris":["/admin/myrealm/console/*"],"webOrigins":["+"],"notBefore":0,"bearerOnly":false,"consentRequired":false,"standardFlowEnabled":true,"implicitFlowEnabled":false,"directAccessGrantsEnabled":false,"serviceAccountsEnabled":false,"publicClient":true,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{"pkce.code.challenge.method":"S256"},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"protocolMappers":[{"id":"75dbb5f9-8208-4af5-9de7-8d2baf75fb4d","name":"locale","protocol":"openid-connect","protocolMapper":"oidc-usermodel-attribute-mapper","consentRequired":false,"config":{"userinfo.token.claim":"true","user.attribute":"locale","id.token.claim":"true","access.token.claim":"true","claim.name":"locale","jsonType.label":"String"}}],"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}}]'
     headers:
       Cache-Control:
       - no-cache
@@ -253,7 +253,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 04 Jan 2023 14:31:03 GMT
+      - Wed, 04 Jan 2023 15:03:34 GMT
     status:
       code: 200
       message: OK
@@ -265,7 +265,7 @@ interactions:
       Accept-Encoding:
       - gzip, deflate
       Authorization:
-      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI3ODJMdThPZGg5RkpnM1JrZHliLVpYQUZlWjRCT0NBZEUxeGF4dnE0YTBvIn0.eyJleHAiOjE2NzI4NDI3MjIsImlhdCI6MTY3Mjg0MjY2MiwianRpIjoiNmE5ZjU2ZGQtMDJhNC00MTU1LTk0NDgtZWE0Y2UyNzg3MjNiIiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiMTA3NzllNjctMGU0Ni00YTYwLThkNGYtNTM2MGFhODdmYmE5IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6IjhlZjhkYjNlLWVjODAtNDljZC1hNGE2LThkMDQzMzRhOTkyOCIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.m7PWg5oNDRoUi0682GhMrS-1rCo5HalLFln6svat_gpcn3cfa5sRlU5LHqXIwFKTUQMZGkp8NXpg0sYRodyjcbMIIBYgrUEJKkxqHDi7JbKQLeBeU66LpUM3Zi_MP6pdGGx7d4hj7n7Hqpm71RKaLPPEW91ma-u_rGUzGs9fHlfdqo0Rmm4WbhhSoyVXkRc7TuSfHFw4UteYJ-d8c8_kZ_DSp55d7NMRAQJIBCBlWV9sBMdkjn0vTcDn-yHNsYqkIk6M4BHYxQwH7qyv-KBsnzYFRr3MOxY8Fe5Qa-45ivI5WHGTJMTn1-gRaqKq5YZ0UXrIL_8PiZxLeEaqjixh0Q
+      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI2NnQ3dE90c21RLWpCdWplZU5xNUlJbUlja1pwQVdtR0g5VGhsWS1JSWtFIn0.eyJleHAiOjE2NzI4NDQ2NzMsImlhdCI6MTY3Mjg0NDYxMywianRpIjoiMGMzYTk2OWMtYWI1My00MGFmLThlNjMtYjI3ZTgzNzY5YjRkIiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiNDRkYTAzNTUtYjQwNi00N2NkLTgwOWMtNmYwYTBhYWUyN2FlIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6ImNjYjU0ZWFiLTFlZmMtNGMzYi1hZTIxLTY0M2IxZmVhZmZhNSIsImFjciI6IjEiLCJzY29wZSI6InByb2ZpbGUgZW1haWwiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.YJ3u_zaBTXPbl_ZV7ogCcY30Ow5Zw-zQESX_H-J80QqUyn9UuhSeNtZG4MoNJEmUj2B4FRarwBo3eR58hhxOIqJ05C94AYfR0UmeeBXNS2wn-xkZ3jRFkwR8Dk901G4dgm8szp7oS2nzWzktE0j9VpAQqIVObV8Mz-rSUfHruUSuPulDPJk-vmqbE6TCZb6jtDcv_jjp1bfvAqb30X_2JJMT3foDUMdq7sOEC65fBf3cyWB-7g_tjfuPD49gnBRC-jVnKLmlzH6XF8V1Xq1OiiHICHTdaPTU5hAq19AElp3DSXkrss51-QzzdnomOqiupdwwmNL7boCjhCOdJklprw
       Connection:
       - keep-alive
       Content-type:
@@ -276,8 +276,8 @@ interactions:
     uri: https://172.17.0.2:8443/auth/admin/realms/myrealm/clients
   response:
     body:
-      string: '[{"id":"09682e0a-a142-473b-bf6b-6d78a0de96f0","clientId":"account","name":"${client_account}","rootUrl":"${authBaseUrl}","baseUrl":"/realms/myrealm/account/","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","defaultRoles":["manage-account","view-profile"],"redirectUris":["/realms/myrealm/account/*"],"webOrigins":[],"notBefore":0,"bearerOnly":false,"consentRequired":false,"standardFlowEnabled":true,"implicitFlowEnabled":false,"directAccessGrantsEnabled":false,"serviceAccountsEnabled":false,"publicClient":false,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}},{"id":"6eddd3ac-2a73-406b-b087-2877ce8ae7dc","clientId":"account-console","name":"${client_account-console}","rootUrl":"${authBaseUrl}","baseUrl":"/realms/myrealm/account/","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","redirectUris":["/realms/myrealm/account/*"],"webOrigins":[],"notBefore":0,"bearerOnly":false,"consentRequired":false,"standardFlowEnabled":true,"implicitFlowEnabled":false,"directAccessGrantsEnabled":false,"serviceAccountsEnabled":false,"publicClient":true,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{"pkce.code.challenge.method":"S256"},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"protocolMappers":[{"id":"6180df3a-70a8-43e0-b147-784e098df0c6","name":"audience
-        resolve","protocol":"openid-connect","protocolMapper":"oidc-audience-resolve-mapper","consentRequired":false,"config":{}}],"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}},{"id":"661b9f23-ee18-4566-846a-33fd2d7b301f","clientId":"admin-cli","name":"${client_admin-cli}","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","redirectUris":[],"webOrigins":[],"notBefore":0,"bearerOnly":false,"consentRequired":false,"standardFlowEnabled":false,"implicitFlowEnabled":false,"directAccessGrantsEnabled":true,"serviceAccountsEnabled":false,"publicClient":true,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}},{"id":"a0bdb713-da14-43fc-aeed-86eb8fd7b175","clientId":"broker","name":"${client_broker}","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","redirectUris":[],"webOrigins":[],"notBefore":0,"bearerOnly":false,"consentRequired":false,"standardFlowEnabled":true,"implicitFlowEnabled":false,"directAccessGrantsEnabled":false,"serviceAccountsEnabled":false,"publicClient":false,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}},{"id":"c3ee2cad-7a4e-415a-8eb4-c3d31ee0b0e6","clientId":"my_client_12346289371","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","redirectUris":[],"webOrigins":[],"notBefore":0,"bearerOnly":false,"consentRequired":false,"standardFlowEnabled":true,"implicitFlowEnabled":false,"directAccessGrantsEnabled":true,"serviceAccountsEnabled":false,"publicClient":true,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":true,"nodeReRegistrationTimeout":-1,"protocolMappers":[{"id":"037ab742-2aa5-441b-8771-427f9094f971","name":"realm.roles","protocol":"openid-connect","protocolMapper":"oidc-usermodel-realm-role-mapper","consentRequired":false,"config":{"id.token.claim":"true","access.token.claim":"true","claim.name":"roles","multivalued":"true","userinfo.token.claim":"true"}}],"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access"],"access":{"view":true,"configure":true,"manage":true}},{"id":"b851ed2d-730a-44e7-8bd0-b5516bc89d9e","clientId":"realm-management","name":"${client_realm-management}","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","redirectUris":[],"webOrigins":[],"notBefore":0,"bearerOnly":true,"consentRequired":false,"standardFlowEnabled":true,"implicitFlowEnabled":false,"directAccessGrantsEnabled":false,"serviceAccountsEnabled":false,"publicClient":false,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}},{"id":"ff5f46af-de7a-41b1-8792-dfed9fc36af8","clientId":"security-admin-console","name":"${client_security-admin-console}","rootUrl":"${authAdminUrl}","baseUrl":"/admin/myrealm/console/","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","redirectUris":["/admin/myrealm/console/*"],"webOrigins":["+"],"notBefore":0,"bearerOnly":false,"consentRequired":false,"standardFlowEnabled":true,"implicitFlowEnabled":false,"directAccessGrantsEnabled":false,"serviceAccountsEnabled":false,"publicClient":true,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{"pkce.code.challenge.method":"S256"},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"protocolMappers":[{"id":"271447f7-42c5-4464-b758-92dd818ab60c","name":"locale","protocol":"openid-connect","protocolMapper":"oidc-usermodel-attribute-mapper","consentRequired":false,"config":{"userinfo.token.claim":"true","user.attribute":"locale","id.token.claim":"true","access.token.claim":"true","claim.name":"locale","jsonType.label":"String"}}],"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}}]'
+      string: '[{"id":"57645f92-800d-498a-8d91-ffa8528ba19c","clientId":"account","name":"${client_account}","rootUrl":"${authBaseUrl}","baseUrl":"/realms/myrealm/account/","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","defaultRoles":["view-profile","manage-account"],"redirectUris":["/realms/myrealm/account/*"],"webOrigins":[],"notBefore":0,"bearerOnly":false,"consentRequired":false,"standardFlowEnabled":true,"implicitFlowEnabled":false,"directAccessGrantsEnabled":false,"serviceAccountsEnabled":false,"publicClient":false,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}},{"id":"60080b55-6e28-45d1-8ab1-07075407c197","clientId":"account-console","name":"${client_account-console}","rootUrl":"${authBaseUrl}","baseUrl":"/realms/myrealm/account/","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","redirectUris":["/realms/myrealm/account/*"],"webOrigins":[],"notBefore":0,"bearerOnly":false,"consentRequired":false,"standardFlowEnabled":true,"implicitFlowEnabled":false,"directAccessGrantsEnabled":false,"serviceAccountsEnabled":false,"publicClient":true,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{"pkce.code.challenge.method":"S256"},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"protocolMappers":[{"id":"70cf9dfe-043d-4623-86cf-923061f0331b","name":"audience
+        resolve","protocol":"openid-connect","protocolMapper":"oidc-audience-resolve-mapper","consentRequired":false,"config":{}}],"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}},{"id":"44202890-8ff9-4628-b6ef-e899401bebf0","clientId":"admin-cli","name":"${client_admin-cli}","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","redirectUris":[],"webOrigins":[],"notBefore":0,"bearerOnly":false,"consentRequired":false,"standardFlowEnabled":false,"implicitFlowEnabled":false,"directAccessGrantsEnabled":true,"serviceAccountsEnabled":false,"publicClient":true,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}},{"id":"f8e7f9df-4a30-49fe-99ed-0eebdab6b93a","clientId":"broker","name":"${client_broker}","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","redirectUris":[],"webOrigins":[],"notBefore":0,"bearerOnly":false,"consentRequired":false,"standardFlowEnabled":true,"implicitFlowEnabled":false,"directAccessGrantsEnabled":false,"serviceAccountsEnabled":false,"publicClient":false,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}},{"id":"62d20961-bee5-488e-a633-84782b0432a1","clientId":"my_client_12346289371","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","redirectUris":[],"webOrigins":[],"notBefore":0,"bearerOnly":false,"consentRequired":false,"standardFlowEnabled":true,"implicitFlowEnabled":false,"directAccessGrantsEnabled":true,"serviceAccountsEnabled":false,"publicClient":true,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":true,"nodeReRegistrationTimeout":-1,"protocolMappers":[{"id":"b71a859e-d656-49ea-89ec-399c7999a87a","name":"realm.roles","protocol":"openid-connect","protocolMapper":"oidc-usermodel-realm-role-mapper","consentRequired":false,"config":{"id.token.claim":"true","access.token.claim":"true","claim.name":"roles","multivalued":"true","userinfo.token.claim":"true"}}],"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access"],"access":{"view":true,"configure":true,"manage":true}},{"id":"26ceeb00-4d3f-4a6e-a6bc-85a0d828c2d0","clientId":"realm-management","name":"${client_realm-management}","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","redirectUris":[],"webOrigins":[],"notBefore":0,"bearerOnly":true,"consentRequired":false,"standardFlowEnabled":true,"implicitFlowEnabled":false,"directAccessGrantsEnabled":false,"serviceAccountsEnabled":false,"publicClient":false,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}},{"id":"ce60619a-b292-4075-8804-042963262d98","clientId":"security-admin-console","name":"${client_security-admin-console}","rootUrl":"${authAdminUrl}","baseUrl":"/admin/myrealm/console/","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","redirectUris":["/admin/myrealm/console/*"],"webOrigins":["+"],"notBefore":0,"bearerOnly":false,"consentRequired":false,"standardFlowEnabled":true,"implicitFlowEnabled":false,"directAccessGrantsEnabled":false,"serviceAccountsEnabled":false,"publicClient":true,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{"pkce.code.challenge.method":"S256"},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"protocolMappers":[{"id":"75dbb5f9-8208-4af5-9de7-8d2baf75fb4d","name":"locale","protocol":"openid-connect","protocolMapper":"oidc-usermodel-attribute-mapper","consentRequired":false,"config":{"userinfo.token.claim":"true","user.attribute":"locale","id.token.claim":"true","access.token.claim":"true","claim.name":"locale","jsonType.label":"String"}}],"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}}]'
     headers:
       Cache-Control:
       - no-cache
@@ -288,7 +288,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 04 Jan 2023 14:31:03 GMT
+      - Wed, 04 Jan 2023 15:03:34 GMT
     status:
       code: 200
       message: OK
@@ -300,7 +300,7 @@ interactions:
       Accept-Encoding:
       - gzip, deflate
       Authorization:
-      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI3ODJMdThPZGg5RkpnM1JrZHliLVpYQUZlWjRCT0NBZEUxeGF4dnE0YTBvIn0.eyJleHAiOjE2NzI4NDI3MjIsImlhdCI6MTY3Mjg0MjY2MiwianRpIjoiNmE5ZjU2ZGQtMDJhNC00MTU1LTk0NDgtZWE0Y2UyNzg3MjNiIiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiMTA3NzllNjctMGU0Ni00YTYwLThkNGYtNTM2MGFhODdmYmE5IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6IjhlZjhkYjNlLWVjODAtNDljZC1hNGE2LThkMDQzMzRhOTkyOCIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.m7PWg5oNDRoUi0682GhMrS-1rCo5HalLFln6svat_gpcn3cfa5sRlU5LHqXIwFKTUQMZGkp8NXpg0sYRodyjcbMIIBYgrUEJKkxqHDi7JbKQLeBeU66LpUM3Zi_MP6pdGGx7d4hj7n7Hqpm71RKaLPPEW91ma-u_rGUzGs9fHlfdqo0Rmm4WbhhSoyVXkRc7TuSfHFw4UteYJ-d8c8_kZ_DSp55d7NMRAQJIBCBlWV9sBMdkjn0vTcDn-yHNsYqkIk6M4BHYxQwH7qyv-KBsnzYFRr3MOxY8Fe5Qa-45ivI5WHGTJMTn1-gRaqKq5YZ0UXrIL_8PiZxLeEaqjixh0Q
+      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI2NnQ3dE90c21RLWpCdWplZU5xNUlJbUlja1pwQVdtR0g5VGhsWS1JSWtFIn0.eyJleHAiOjE2NzI4NDQ2NzMsImlhdCI6MTY3Mjg0NDYxMywianRpIjoiMGMzYTk2OWMtYWI1My00MGFmLThlNjMtYjI3ZTgzNzY5YjRkIiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiNDRkYTAzNTUtYjQwNi00N2NkLTgwOWMtNmYwYTBhYWUyN2FlIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6ImNjYjU0ZWFiLTFlZmMtNGMzYi1hZTIxLTY0M2IxZmVhZmZhNSIsImFjciI6IjEiLCJzY29wZSI6InByb2ZpbGUgZW1haWwiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.YJ3u_zaBTXPbl_ZV7ogCcY30Ow5Zw-zQESX_H-J80QqUyn9UuhSeNtZG4MoNJEmUj2B4FRarwBo3eR58hhxOIqJ05C94AYfR0UmeeBXNS2wn-xkZ3jRFkwR8Dk901G4dgm8szp7oS2nzWzktE0j9VpAQqIVObV8Mz-rSUfHruUSuPulDPJk-vmqbE6TCZb6jtDcv_jjp1bfvAqb30X_2JJMT3foDUMdq7sOEC65fBf3cyWB-7g_tjfuPD49gnBRC-jVnKLmlzH6XF8V1Xq1OiiHICHTdaPTU5hAq19AElp3DSXkrss51-QzzdnomOqiupdwwmNL7boCjhCOdJklprw
       Connection:
       - keep-alive
       Content-Length:
@@ -310,7 +310,7 @@ interactions:
       User-Agent:
       - python-requests/2.28.1
     method: POST
-    uri: https://172.17.0.2:8443/auth/admin/realms/myrealm/clients/c3ee2cad-7a4e-415a-8eb4-c3d31ee0b0e6/roles
+    uri: https://172.17.0.2:8443/auth/admin/realms/myrealm/clients/62d20961-bee5-488e-a633-84782b0432a1/roles
   response:
     body:
       string: ''
@@ -320,9 +320,9 @@ interactions:
       Content-Length:
       - '0'
       Date:
-      - Wed, 04 Jan 2023 14:31:03 GMT
+      - Wed, 04 Jan 2023 15:03:34 GMT
       Location:
-      - https://172.17.0.2:8443/auth/admin/realms/myrealm/clients/c3ee2cad-7a4e-415a-8eb4-c3d31ee0b0e6/roles/new-role
+      - https://172.17.0.2:8443/auth/admin/realms/myrealm/clients/62d20961-bee5-488e-a633-84782b0432a1/roles/new-role
     status:
       code: 201
       message: Created
@@ -334,7 +334,7 @@ interactions:
       Accept-Encoding:
       - gzip, deflate
       Authorization:
-      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI3ODJMdThPZGg5RkpnM1JrZHliLVpYQUZlWjRCT0NBZEUxeGF4dnE0YTBvIn0.eyJleHAiOjE2NzI4NDI3MjIsImlhdCI6MTY3Mjg0MjY2MiwianRpIjoiNmE5ZjU2ZGQtMDJhNC00MTU1LTk0NDgtZWE0Y2UyNzg3MjNiIiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiMTA3NzllNjctMGU0Ni00YTYwLThkNGYtNTM2MGFhODdmYmE5IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6IjhlZjhkYjNlLWVjODAtNDljZC1hNGE2LThkMDQzMzRhOTkyOCIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.m7PWg5oNDRoUi0682GhMrS-1rCo5HalLFln6svat_gpcn3cfa5sRlU5LHqXIwFKTUQMZGkp8NXpg0sYRodyjcbMIIBYgrUEJKkxqHDi7JbKQLeBeU66LpUM3Zi_MP6pdGGx7d4hj7n7Hqpm71RKaLPPEW91ma-u_rGUzGs9fHlfdqo0Rmm4WbhhSoyVXkRc7TuSfHFw4UteYJ-d8c8_kZ_DSp55d7NMRAQJIBCBlWV9sBMdkjn0vTcDn-yHNsYqkIk6M4BHYxQwH7qyv-KBsnzYFRr3MOxY8Fe5Qa-45ivI5WHGTJMTn1-gRaqKq5YZ0UXrIL_8PiZxLeEaqjixh0Q
+      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI2NnQ3dE90c21RLWpCdWplZU5xNUlJbUlja1pwQVdtR0g5VGhsWS1JSWtFIn0.eyJleHAiOjE2NzI4NDQ2NzMsImlhdCI6MTY3Mjg0NDYxMywianRpIjoiMGMzYTk2OWMtYWI1My00MGFmLThlNjMtYjI3ZTgzNzY5YjRkIiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiNDRkYTAzNTUtYjQwNi00N2NkLTgwOWMtNmYwYTBhYWUyN2FlIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6ImNjYjU0ZWFiLTFlZmMtNGMzYi1hZTIxLTY0M2IxZmVhZmZhNSIsImFjciI6IjEiLCJzY29wZSI6InByb2ZpbGUgZW1haWwiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.YJ3u_zaBTXPbl_ZV7ogCcY30Ow5Zw-zQESX_H-J80QqUyn9UuhSeNtZG4MoNJEmUj2B4FRarwBo3eR58hhxOIqJ05C94AYfR0UmeeBXNS2wn-xkZ3jRFkwR8Dk901G4dgm8szp7oS2nzWzktE0j9VpAQqIVObV8Mz-rSUfHruUSuPulDPJk-vmqbE6TCZb6jtDcv_jjp1bfvAqb30X_2JJMT3foDUMdq7sOEC65fBf3cyWB-7g_tjfuPD49gnBRC-jVnKLmlzH6XF8V1Xq1OiiHICHTdaPTU5hAq19AElp3DSXkrss51-QzzdnomOqiupdwwmNL7boCjhCOdJklprw
       Connection:
       - keep-alive
       Content-type:
@@ -345,8 +345,8 @@ interactions:
     uri: https://172.17.0.2:8443/auth/admin/realms/myrealm/clients
   response:
     body:
-      string: '[{"id":"09682e0a-a142-473b-bf6b-6d78a0de96f0","clientId":"account","name":"${client_account}","rootUrl":"${authBaseUrl}","baseUrl":"/realms/myrealm/account/","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","defaultRoles":["manage-account","view-profile"],"redirectUris":["/realms/myrealm/account/*"],"webOrigins":[],"notBefore":0,"bearerOnly":false,"consentRequired":false,"standardFlowEnabled":true,"implicitFlowEnabled":false,"directAccessGrantsEnabled":false,"serviceAccountsEnabled":false,"publicClient":false,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}},{"id":"6eddd3ac-2a73-406b-b087-2877ce8ae7dc","clientId":"account-console","name":"${client_account-console}","rootUrl":"${authBaseUrl}","baseUrl":"/realms/myrealm/account/","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","redirectUris":["/realms/myrealm/account/*"],"webOrigins":[],"notBefore":0,"bearerOnly":false,"consentRequired":false,"standardFlowEnabled":true,"implicitFlowEnabled":false,"directAccessGrantsEnabled":false,"serviceAccountsEnabled":false,"publicClient":true,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{"pkce.code.challenge.method":"S256"},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"protocolMappers":[{"id":"6180df3a-70a8-43e0-b147-784e098df0c6","name":"audience
-        resolve","protocol":"openid-connect","protocolMapper":"oidc-audience-resolve-mapper","consentRequired":false,"config":{}}],"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}},{"id":"661b9f23-ee18-4566-846a-33fd2d7b301f","clientId":"admin-cli","name":"${client_admin-cli}","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","redirectUris":[],"webOrigins":[],"notBefore":0,"bearerOnly":false,"consentRequired":false,"standardFlowEnabled":false,"implicitFlowEnabled":false,"directAccessGrantsEnabled":true,"serviceAccountsEnabled":false,"publicClient":true,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}},{"id":"a0bdb713-da14-43fc-aeed-86eb8fd7b175","clientId":"broker","name":"${client_broker}","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","redirectUris":[],"webOrigins":[],"notBefore":0,"bearerOnly":false,"consentRequired":false,"standardFlowEnabled":true,"implicitFlowEnabled":false,"directAccessGrantsEnabled":false,"serviceAccountsEnabled":false,"publicClient":false,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}},{"id":"c3ee2cad-7a4e-415a-8eb4-c3d31ee0b0e6","clientId":"my_client_12346289371","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","redirectUris":[],"webOrigins":[],"notBefore":0,"bearerOnly":false,"consentRequired":false,"standardFlowEnabled":true,"implicitFlowEnabled":false,"directAccessGrantsEnabled":true,"serviceAccountsEnabled":false,"publicClient":true,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":true,"nodeReRegistrationTimeout":-1,"protocolMappers":[{"id":"037ab742-2aa5-441b-8771-427f9094f971","name":"realm.roles","protocol":"openid-connect","protocolMapper":"oidc-usermodel-realm-role-mapper","consentRequired":false,"config":{"id.token.claim":"true","access.token.claim":"true","claim.name":"roles","multivalued":"true","userinfo.token.claim":"true"}}],"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access"],"access":{"view":true,"configure":true,"manage":true}},{"id":"b851ed2d-730a-44e7-8bd0-b5516bc89d9e","clientId":"realm-management","name":"${client_realm-management}","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","redirectUris":[],"webOrigins":[],"notBefore":0,"bearerOnly":true,"consentRequired":false,"standardFlowEnabled":true,"implicitFlowEnabled":false,"directAccessGrantsEnabled":false,"serviceAccountsEnabled":false,"publicClient":false,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}},{"id":"ff5f46af-de7a-41b1-8792-dfed9fc36af8","clientId":"security-admin-console","name":"${client_security-admin-console}","rootUrl":"${authAdminUrl}","baseUrl":"/admin/myrealm/console/","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","redirectUris":["/admin/myrealm/console/*"],"webOrigins":["+"],"notBefore":0,"bearerOnly":false,"consentRequired":false,"standardFlowEnabled":true,"implicitFlowEnabled":false,"directAccessGrantsEnabled":false,"serviceAccountsEnabled":false,"publicClient":true,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{"pkce.code.challenge.method":"S256"},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"protocolMappers":[{"id":"271447f7-42c5-4464-b758-92dd818ab60c","name":"locale","protocol":"openid-connect","protocolMapper":"oidc-usermodel-attribute-mapper","consentRequired":false,"config":{"userinfo.token.claim":"true","user.attribute":"locale","id.token.claim":"true","access.token.claim":"true","claim.name":"locale","jsonType.label":"String"}}],"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}}]'
+      string: '[{"id":"57645f92-800d-498a-8d91-ffa8528ba19c","clientId":"account","name":"${client_account}","rootUrl":"${authBaseUrl}","baseUrl":"/realms/myrealm/account/","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","defaultRoles":["view-profile","manage-account"],"redirectUris":["/realms/myrealm/account/*"],"webOrigins":[],"notBefore":0,"bearerOnly":false,"consentRequired":false,"standardFlowEnabled":true,"implicitFlowEnabled":false,"directAccessGrantsEnabled":false,"serviceAccountsEnabled":false,"publicClient":false,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}},{"id":"60080b55-6e28-45d1-8ab1-07075407c197","clientId":"account-console","name":"${client_account-console}","rootUrl":"${authBaseUrl}","baseUrl":"/realms/myrealm/account/","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","redirectUris":["/realms/myrealm/account/*"],"webOrigins":[],"notBefore":0,"bearerOnly":false,"consentRequired":false,"standardFlowEnabled":true,"implicitFlowEnabled":false,"directAccessGrantsEnabled":false,"serviceAccountsEnabled":false,"publicClient":true,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{"pkce.code.challenge.method":"S256"},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"protocolMappers":[{"id":"70cf9dfe-043d-4623-86cf-923061f0331b","name":"audience
+        resolve","protocol":"openid-connect","protocolMapper":"oidc-audience-resolve-mapper","consentRequired":false,"config":{}}],"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}},{"id":"44202890-8ff9-4628-b6ef-e899401bebf0","clientId":"admin-cli","name":"${client_admin-cli}","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","redirectUris":[],"webOrigins":[],"notBefore":0,"bearerOnly":false,"consentRequired":false,"standardFlowEnabled":false,"implicitFlowEnabled":false,"directAccessGrantsEnabled":true,"serviceAccountsEnabled":false,"publicClient":true,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}},{"id":"f8e7f9df-4a30-49fe-99ed-0eebdab6b93a","clientId":"broker","name":"${client_broker}","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","redirectUris":[],"webOrigins":[],"notBefore":0,"bearerOnly":false,"consentRequired":false,"standardFlowEnabled":true,"implicitFlowEnabled":false,"directAccessGrantsEnabled":false,"serviceAccountsEnabled":false,"publicClient":false,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}},{"id":"62d20961-bee5-488e-a633-84782b0432a1","clientId":"my_client_12346289371","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","redirectUris":[],"webOrigins":[],"notBefore":0,"bearerOnly":false,"consentRequired":false,"standardFlowEnabled":true,"implicitFlowEnabled":false,"directAccessGrantsEnabled":true,"serviceAccountsEnabled":false,"publicClient":true,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":true,"nodeReRegistrationTimeout":-1,"protocolMappers":[{"id":"b71a859e-d656-49ea-89ec-399c7999a87a","name":"realm.roles","protocol":"openid-connect","protocolMapper":"oidc-usermodel-realm-role-mapper","consentRequired":false,"config":{"id.token.claim":"true","access.token.claim":"true","claim.name":"roles","multivalued":"true","userinfo.token.claim":"true"}}],"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access"],"access":{"view":true,"configure":true,"manage":true}},{"id":"26ceeb00-4d3f-4a6e-a6bc-85a0d828c2d0","clientId":"realm-management","name":"${client_realm-management}","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","redirectUris":[],"webOrigins":[],"notBefore":0,"bearerOnly":true,"consentRequired":false,"standardFlowEnabled":true,"implicitFlowEnabled":false,"directAccessGrantsEnabled":false,"serviceAccountsEnabled":false,"publicClient":false,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}},{"id":"ce60619a-b292-4075-8804-042963262d98","clientId":"security-admin-console","name":"${client_security-admin-console}","rootUrl":"${authAdminUrl}","baseUrl":"/admin/myrealm/console/","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","redirectUris":["/admin/myrealm/console/*"],"webOrigins":["+"],"notBefore":0,"bearerOnly":false,"consentRequired":false,"standardFlowEnabled":true,"implicitFlowEnabled":false,"directAccessGrantsEnabled":false,"serviceAccountsEnabled":false,"publicClient":true,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{"pkce.code.challenge.method":"S256"},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"protocolMappers":[{"id":"75dbb5f9-8208-4af5-9de7-8d2baf75fb4d","name":"locale","protocol":"openid-connect","protocolMapper":"oidc-usermodel-attribute-mapper","consentRequired":false,"config":{"userinfo.token.claim":"true","user.attribute":"locale","id.token.claim":"true","access.token.claim":"true","claim.name":"locale","jsonType.label":"String"}}],"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}}]'
     headers:
       Cache-Control:
       - no-cache
@@ -357,7 +357,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 04 Jan 2023 14:31:03 GMT
+      - Wed, 04 Jan 2023 15:03:34 GMT
     status:
       code: 200
       message: OK
@@ -369,7 +369,7 @@ interactions:
       Accept-Encoding:
       - gzip, deflate
       Authorization:
-      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI3ODJMdThPZGg5RkpnM1JrZHliLVpYQUZlWjRCT0NBZEUxeGF4dnE0YTBvIn0.eyJleHAiOjE2NzI4NDI3MjIsImlhdCI6MTY3Mjg0MjY2MiwianRpIjoiNmE5ZjU2ZGQtMDJhNC00MTU1LTk0NDgtZWE0Y2UyNzg3MjNiIiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiMTA3NzllNjctMGU0Ni00YTYwLThkNGYtNTM2MGFhODdmYmE5IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6IjhlZjhkYjNlLWVjODAtNDljZC1hNGE2LThkMDQzMzRhOTkyOCIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.m7PWg5oNDRoUi0682GhMrS-1rCo5HalLFln6svat_gpcn3cfa5sRlU5LHqXIwFKTUQMZGkp8NXpg0sYRodyjcbMIIBYgrUEJKkxqHDi7JbKQLeBeU66LpUM3Zi_MP6pdGGx7d4hj7n7Hqpm71RKaLPPEW91ma-u_rGUzGs9fHlfdqo0Rmm4WbhhSoyVXkRc7TuSfHFw4UteYJ-d8c8_kZ_DSp55d7NMRAQJIBCBlWV9sBMdkjn0vTcDn-yHNsYqkIk6M4BHYxQwH7qyv-KBsnzYFRr3MOxY8Fe5Qa-45ivI5WHGTJMTn1-gRaqKq5YZ0UXrIL_8PiZxLeEaqjixh0Q
+      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI2NnQ3dE90c21RLWpCdWplZU5xNUlJbUlja1pwQVdtR0g5VGhsWS1JSWtFIn0.eyJleHAiOjE2NzI4NDQ2NzMsImlhdCI6MTY3Mjg0NDYxMywianRpIjoiMGMzYTk2OWMtYWI1My00MGFmLThlNjMtYjI3ZTgzNzY5YjRkIiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiNDRkYTAzNTUtYjQwNi00N2NkLTgwOWMtNmYwYTBhYWUyN2FlIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6ImNjYjU0ZWFiLTFlZmMtNGMzYi1hZTIxLTY0M2IxZmVhZmZhNSIsImFjciI6IjEiLCJzY29wZSI6InByb2ZpbGUgZW1haWwiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.YJ3u_zaBTXPbl_ZV7ogCcY30Ow5Zw-zQESX_H-J80QqUyn9UuhSeNtZG4MoNJEmUj2B4FRarwBo3eR58hhxOIqJ05C94AYfR0UmeeBXNS2wn-xkZ3jRFkwR8Dk901G4dgm8szp7oS2nzWzktE0j9VpAQqIVObV8Mz-rSUfHruUSuPulDPJk-vmqbE6TCZb6jtDcv_jjp1bfvAqb30X_2JJMT3foDUMdq7sOEC65fBf3cyWB-7g_tjfuPD49gnBRC-jVnKLmlzH6XF8V1Xq1OiiHICHTdaPTU5hAq19AElp3DSXkrss51-QzzdnomOqiupdwwmNL7boCjhCOdJklprw
       Connection:
       - keep-alive
       Content-type:
@@ -377,11 +377,11 @@ interactions:
       User-Agent:
       - python-requests/2.28.1
     method: GET
-    uri: https://172.17.0.2:8443/auth/admin/realms/myrealm/clients/c3ee2cad-7a4e-415a-8eb4-c3d31ee0b0e6/roles
+    uri: https://172.17.0.2:8443/auth/admin/realms/myrealm/clients/62d20961-bee5-488e-a633-84782b0432a1/roles
   response:
     body:
-      string: '[{"id":"b6105781-ab7a-4760-a9fc-148e9a11f852","name":"new-role","description":"here
-        should go a description.","composite":false,"clientRole":true,"containerId":"c3ee2cad-7a4e-415a-8eb4-c3d31ee0b0e6"}]'
+      string: '[{"id":"2140623e-4d06-4790-bcac-85bc4496e198","name":"new-role","description":"here
+        should go a description.","composite":false,"clientRole":true,"containerId":"62d20961-bee5-488e-a633-84782b0432a1"}]'
     headers:
       Cache-Control:
       - no-cache
@@ -392,21 +392,21 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 04 Jan 2023 14:31:03 GMT
+      - Wed, 04 Jan 2023 15:03:34 GMT
     status:
       code: 200
       message: OK
 - request:
-    body: '{"id": "b6105781-ab7a-4760-a9fc-148e9a11f852", "name": "new-role", "description":
+    body: '{"id": "2140623e-4d06-4790-bcac-85bc4496e198", "name": "new-role", "description":
       "here should go a description. NEW", "composite": false, "clientRole": true,
-      "containerId": "c3ee2cad-7a4e-415a-8eb4-c3d31ee0b0e6"}'
+      "containerId": "62d20961-bee5-488e-a633-84782b0432a1"}'
     headers:
       Accept:
       - '*/*'
       Accept-Encoding:
       - gzip, deflate
       Authorization:
-      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI3ODJMdThPZGg5RkpnM1JrZHliLVpYQUZlWjRCT0NBZEUxeGF4dnE0YTBvIn0.eyJleHAiOjE2NzI4NDI3MjIsImlhdCI6MTY3Mjg0MjY2MiwianRpIjoiNmE5ZjU2ZGQtMDJhNC00MTU1LTk0NDgtZWE0Y2UyNzg3MjNiIiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiMTA3NzllNjctMGU0Ni00YTYwLThkNGYtNTM2MGFhODdmYmE5IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6IjhlZjhkYjNlLWVjODAtNDljZC1hNGE2LThkMDQzMzRhOTkyOCIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.m7PWg5oNDRoUi0682GhMrS-1rCo5HalLFln6svat_gpcn3cfa5sRlU5LHqXIwFKTUQMZGkp8NXpg0sYRodyjcbMIIBYgrUEJKkxqHDi7JbKQLeBeU66LpUM3Zi_MP6pdGGx7d4hj7n7Hqpm71RKaLPPEW91ma-u_rGUzGs9fHlfdqo0Rmm4WbhhSoyVXkRc7TuSfHFw4UteYJ-d8c8_kZ_DSp55d7NMRAQJIBCBlWV9sBMdkjn0vTcDn-yHNsYqkIk6M4BHYxQwH7qyv-KBsnzYFRr3MOxY8Fe5Qa-45ivI5WHGTJMTn1-gRaqKq5YZ0UXrIL_8PiZxLeEaqjixh0Q
+      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI2NnQ3dE90c21RLWpCdWplZU5xNUlJbUlja1pwQVdtR0g5VGhsWS1JSWtFIn0.eyJleHAiOjE2NzI4NDQ2NzMsImlhdCI6MTY3Mjg0NDYxMywianRpIjoiMGMzYTk2OWMtYWI1My00MGFmLThlNjMtYjI3ZTgzNzY5YjRkIiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiNDRkYTAzNTUtYjQwNi00N2NkLTgwOWMtNmYwYTBhYWUyN2FlIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6ImNjYjU0ZWFiLTFlZmMtNGMzYi1hZTIxLTY0M2IxZmVhZmZhNSIsImFjciI6IjEiLCJzY29wZSI6InByb2ZpbGUgZW1haWwiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.YJ3u_zaBTXPbl_ZV7ogCcY30Ow5Zw-zQESX_H-J80QqUyn9UuhSeNtZG4MoNJEmUj2B4FRarwBo3eR58hhxOIqJ05C94AYfR0UmeeBXNS2wn-xkZ3jRFkwR8Dk901G4dgm8szp7oS2nzWzktE0j9VpAQqIVObV8Mz-rSUfHruUSuPulDPJk-vmqbE6TCZb6jtDcv_jjp1bfvAqb30X_2JJMT3foDUMdq7sOEC65fBf3cyWB-7g_tjfuPD49gnBRC-jVnKLmlzH6XF8V1Xq1OiiHICHTdaPTU5hAq19AElp3DSXkrss51-QzzdnomOqiupdwwmNL7boCjhCOdJklprw
       Connection:
       - keep-alive
       Content-Length:
@@ -416,13 +416,13 @@ interactions:
       User-Agent:
       - python-requests/2.28.1
     method: PUT
-    uri: https://172.17.0.2:8443/auth/admin/realms/myrealm/roles-by-id/b6105781-ab7a-4760-a9fc-148e9a11f852
+    uri: https://172.17.0.2:8443/auth/admin/realms/myrealm/roles-by-id/2140623e-4d06-4790-bcac-85bc4496e198
   response:
     body:
       string: ''
     headers:
       Date:
-      - Wed, 04 Jan 2023 14:31:03 GMT
+      - Wed, 04 Jan 2023 15:03:34 GMT
     status:
       code: 204
       message: No Content
@@ -434,7 +434,7 @@ interactions:
       Accept-Encoding:
       - gzip, deflate
       Authorization:
-      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI3ODJMdThPZGg5RkpnM1JrZHliLVpYQUZlWjRCT0NBZEUxeGF4dnE0YTBvIn0.eyJleHAiOjE2NzI4NDI3MjIsImlhdCI6MTY3Mjg0MjY2MiwianRpIjoiNmE5ZjU2ZGQtMDJhNC00MTU1LTk0NDgtZWE0Y2UyNzg3MjNiIiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiMTA3NzllNjctMGU0Ni00YTYwLThkNGYtNTM2MGFhODdmYmE5IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6IjhlZjhkYjNlLWVjODAtNDljZC1hNGE2LThkMDQzMzRhOTkyOCIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.m7PWg5oNDRoUi0682GhMrS-1rCo5HalLFln6svat_gpcn3cfa5sRlU5LHqXIwFKTUQMZGkp8NXpg0sYRodyjcbMIIBYgrUEJKkxqHDi7JbKQLeBeU66LpUM3Zi_MP6pdGGx7d4hj7n7Hqpm71RKaLPPEW91ma-u_rGUzGs9fHlfdqo0Rmm4WbhhSoyVXkRc7TuSfHFw4UteYJ-d8c8_kZ_DSp55d7NMRAQJIBCBlWV9sBMdkjn0vTcDn-yHNsYqkIk6M4BHYxQwH7qyv-KBsnzYFRr3MOxY8Fe5Qa-45ivI5WHGTJMTn1-gRaqKq5YZ0UXrIL_8PiZxLeEaqjixh0Q
+      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI2NnQ3dE90c21RLWpCdWplZU5xNUlJbUlja1pwQVdtR0g5VGhsWS1JSWtFIn0.eyJleHAiOjE2NzI4NDQ2NzMsImlhdCI6MTY3Mjg0NDYxMywianRpIjoiMGMzYTk2OWMtYWI1My00MGFmLThlNjMtYjI3ZTgzNzY5YjRkIiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiNDRkYTAzNTUtYjQwNi00N2NkLTgwOWMtNmYwYTBhYWUyN2FlIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6ImNjYjU0ZWFiLTFlZmMtNGMzYi1hZTIxLTY0M2IxZmVhZmZhNSIsImFjciI6IjEiLCJzY29wZSI6InByb2ZpbGUgZW1haWwiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.YJ3u_zaBTXPbl_ZV7ogCcY30Ow5Zw-zQESX_H-J80QqUyn9UuhSeNtZG4MoNJEmUj2B4FRarwBo3eR58hhxOIqJ05C94AYfR0UmeeBXNS2wn-xkZ3jRFkwR8Dk901G4dgm8szp7oS2nzWzktE0j9VpAQqIVObV8Mz-rSUfHruUSuPulDPJk-vmqbE6TCZb6jtDcv_jjp1bfvAqb30X_2JJMT3foDUMdq7sOEC65fBf3cyWB-7g_tjfuPD49gnBRC-jVnKLmlzH6XF8V1Xq1OiiHICHTdaPTU5hAq19AElp3DSXkrss51-QzzdnomOqiupdwwmNL7boCjhCOdJklprw
       Connection:
       - keep-alive
       Content-type:
@@ -445,8 +445,8 @@ interactions:
     uri: https://172.17.0.2:8443/auth/admin/realms/myrealm/clients
   response:
     body:
-      string: '[{"id":"09682e0a-a142-473b-bf6b-6d78a0de96f0","clientId":"account","name":"${client_account}","rootUrl":"${authBaseUrl}","baseUrl":"/realms/myrealm/account/","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","defaultRoles":["manage-account","view-profile"],"redirectUris":["/realms/myrealm/account/*"],"webOrigins":[],"notBefore":0,"bearerOnly":false,"consentRequired":false,"standardFlowEnabled":true,"implicitFlowEnabled":false,"directAccessGrantsEnabled":false,"serviceAccountsEnabled":false,"publicClient":false,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}},{"id":"6eddd3ac-2a73-406b-b087-2877ce8ae7dc","clientId":"account-console","name":"${client_account-console}","rootUrl":"${authBaseUrl}","baseUrl":"/realms/myrealm/account/","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","redirectUris":["/realms/myrealm/account/*"],"webOrigins":[],"notBefore":0,"bearerOnly":false,"consentRequired":false,"standardFlowEnabled":true,"implicitFlowEnabled":false,"directAccessGrantsEnabled":false,"serviceAccountsEnabled":false,"publicClient":true,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{"pkce.code.challenge.method":"S256"},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"protocolMappers":[{"id":"6180df3a-70a8-43e0-b147-784e098df0c6","name":"audience
-        resolve","protocol":"openid-connect","protocolMapper":"oidc-audience-resolve-mapper","consentRequired":false,"config":{}}],"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}},{"id":"661b9f23-ee18-4566-846a-33fd2d7b301f","clientId":"admin-cli","name":"${client_admin-cli}","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","redirectUris":[],"webOrigins":[],"notBefore":0,"bearerOnly":false,"consentRequired":false,"standardFlowEnabled":false,"implicitFlowEnabled":false,"directAccessGrantsEnabled":true,"serviceAccountsEnabled":false,"publicClient":true,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}},{"id":"a0bdb713-da14-43fc-aeed-86eb8fd7b175","clientId":"broker","name":"${client_broker}","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","redirectUris":[],"webOrigins":[],"notBefore":0,"bearerOnly":false,"consentRequired":false,"standardFlowEnabled":true,"implicitFlowEnabled":false,"directAccessGrantsEnabled":false,"serviceAccountsEnabled":false,"publicClient":false,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}},{"id":"c3ee2cad-7a4e-415a-8eb4-c3d31ee0b0e6","clientId":"my_client_12346289371","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","redirectUris":[],"webOrigins":[],"notBefore":0,"bearerOnly":false,"consentRequired":false,"standardFlowEnabled":true,"implicitFlowEnabled":false,"directAccessGrantsEnabled":true,"serviceAccountsEnabled":false,"publicClient":true,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":true,"nodeReRegistrationTimeout":-1,"protocolMappers":[{"id":"037ab742-2aa5-441b-8771-427f9094f971","name":"realm.roles","protocol":"openid-connect","protocolMapper":"oidc-usermodel-realm-role-mapper","consentRequired":false,"config":{"id.token.claim":"true","access.token.claim":"true","claim.name":"roles","multivalued":"true","userinfo.token.claim":"true"}}],"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access"],"access":{"view":true,"configure":true,"manage":true}},{"id":"b851ed2d-730a-44e7-8bd0-b5516bc89d9e","clientId":"realm-management","name":"${client_realm-management}","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","redirectUris":[],"webOrigins":[],"notBefore":0,"bearerOnly":true,"consentRequired":false,"standardFlowEnabled":true,"implicitFlowEnabled":false,"directAccessGrantsEnabled":false,"serviceAccountsEnabled":false,"publicClient":false,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}},{"id":"ff5f46af-de7a-41b1-8792-dfed9fc36af8","clientId":"security-admin-console","name":"${client_security-admin-console}","rootUrl":"${authAdminUrl}","baseUrl":"/admin/myrealm/console/","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","redirectUris":["/admin/myrealm/console/*"],"webOrigins":["+"],"notBefore":0,"bearerOnly":false,"consentRequired":false,"standardFlowEnabled":true,"implicitFlowEnabled":false,"directAccessGrantsEnabled":false,"serviceAccountsEnabled":false,"publicClient":true,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{"pkce.code.challenge.method":"S256"},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"protocolMappers":[{"id":"271447f7-42c5-4464-b758-92dd818ab60c","name":"locale","protocol":"openid-connect","protocolMapper":"oidc-usermodel-attribute-mapper","consentRequired":false,"config":{"userinfo.token.claim":"true","user.attribute":"locale","id.token.claim":"true","access.token.claim":"true","claim.name":"locale","jsonType.label":"String"}}],"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}}]'
+      string: '[{"id":"57645f92-800d-498a-8d91-ffa8528ba19c","clientId":"account","name":"${client_account}","rootUrl":"${authBaseUrl}","baseUrl":"/realms/myrealm/account/","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","defaultRoles":["view-profile","manage-account"],"redirectUris":["/realms/myrealm/account/*"],"webOrigins":[],"notBefore":0,"bearerOnly":false,"consentRequired":false,"standardFlowEnabled":true,"implicitFlowEnabled":false,"directAccessGrantsEnabled":false,"serviceAccountsEnabled":false,"publicClient":false,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}},{"id":"60080b55-6e28-45d1-8ab1-07075407c197","clientId":"account-console","name":"${client_account-console}","rootUrl":"${authBaseUrl}","baseUrl":"/realms/myrealm/account/","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","redirectUris":["/realms/myrealm/account/*"],"webOrigins":[],"notBefore":0,"bearerOnly":false,"consentRequired":false,"standardFlowEnabled":true,"implicitFlowEnabled":false,"directAccessGrantsEnabled":false,"serviceAccountsEnabled":false,"publicClient":true,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{"pkce.code.challenge.method":"S256"},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"protocolMappers":[{"id":"70cf9dfe-043d-4623-86cf-923061f0331b","name":"audience
+        resolve","protocol":"openid-connect","protocolMapper":"oidc-audience-resolve-mapper","consentRequired":false,"config":{}}],"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}},{"id":"44202890-8ff9-4628-b6ef-e899401bebf0","clientId":"admin-cli","name":"${client_admin-cli}","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","redirectUris":[],"webOrigins":[],"notBefore":0,"bearerOnly":false,"consentRequired":false,"standardFlowEnabled":false,"implicitFlowEnabled":false,"directAccessGrantsEnabled":true,"serviceAccountsEnabled":false,"publicClient":true,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}},{"id":"f8e7f9df-4a30-49fe-99ed-0eebdab6b93a","clientId":"broker","name":"${client_broker}","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","redirectUris":[],"webOrigins":[],"notBefore":0,"bearerOnly":false,"consentRequired":false,"standardFlowEnabled":true,"implicitFlowEnabled":false,"directAccessGrantsEnabled":false,"serviceAccountsEnabled":false,"publicClient":false,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}},{"id":"62d20961-bee5-488e-a633-84782b0432a1","clientId":"my_client_12346289371","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","redirectUris":[],"webOrigins":[],"notBefore":0,"bearerOnly":false,"consentRequired":false,"standardFlowEnabled":true,"implicitFlowEnabled":false,"directAccessGrantsEnabled":true,"serviceAccountsEnabled":false,"publicClient":true,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":true,"nodeReRegistrationTimeout":-1,"protocolMappers":[{"id":"b71a859e-d656-49ea-89ec-399c7999a87a","name":"realm.roles","protocol":"openid-connect","protocolMapper":"oidc-usermodel-realm-role-mapper","consentRequired":false,"config":{"id.token.claim":"true","access.token.claim":"true","claim.name":"roles","multivalued":"true","userinfo.token.claim":"true"}}],"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access"],"access":{"view":true,"configure":true,"manage":true}},{"id":"26ceeb00-4d3f-4a6e-a6bc-85a0d828c2d0","clientId":"realm-management","name":"${client_realm-management}","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","redirectUris":[],"webOrigins":[],"notBefore":0,"bearerOnly":true,"consentRequired":false,"standardFlowEnabled":true,"implicitFlowEnabled":false,"directAccessGrantsEnabled":false,"serviceAccountsEnabled":false,"publicClient":false,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}},{"id":"ce60619a-b292-4075-8804-042963262d98","clientId":"security-admin-console","name":"${client_security-admin-console}","rootUrl":"${authAdminUrl}","baseUrl":"/admin/myrealm/console/","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","redirectUris":["/admin/myrealm/console/*"],"webOrigins":["+"],"notBefore":0,"bearerOnly":false,"consentRequired":false,"standardFlowEnabled":true,"implicitFlowEnabled":false,"directAccessGrantsEnabled":false,"serviceAccountsEnabled":false,"publicClient":true,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{"pkce.code.challenge.method":"S256"},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"protocolMappers":[{"id":"75dbb5f9-8208-4af5-9de7-8d2baf75fb4d","name":"locale","protocol":"openid-connect","protocolMapper":"oidc-usermodel-attribute-mapper","consentRequired":false,"config":{"userinfo.token.claim":"true","user.attribute":"locale","id.token.claim":"true","access.token.claim":"true","claim.name":"locale","jsonType.label":"String"}}],"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}}]'
     headers:
       Cache-Control:
       - no-cache
@@ -457,7 +457,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 04 Jan 2023 14:31:03 GMT
+      - Wed, 04 Jan 2023 15:03:34 GMT
     status:
       code: 200
       message: OK
@@ -469,7 +469,7 @@ interactions:
       Accept-Encoding:
       - gzip, deflate
       Authorization:
-      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI3ODJMdThPZGg5RkpnM1JrZHliLVpYQUZlWjRCT0NBZEUxeGF4dnE0YTBvIn0.eyJleHAiOjE2NzI4NDI3MjIsImlhdCI6MTY3Mjg0MjY2MiwianRpIjoiNmE5ZjU2ZGQtMDJhNC00MTU1LTk0NDgtZWE0Y2UyNzg3MjNiIiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiMTA3NzllNjctMGU0Ni00YTYwLThkNGYtNTM2MGFhODdmYmE5IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6IjhlZjhkYjNlLWVjODAtNDljZC1hNGE2LThkMDQzMzRhOTkyOCIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.m7PWg5oNDRoUi0682GhMrS-1rCo5HalLFln6svat_gpcn3cfa5sRlU5LHqXIwFKTUQMZGkp8NXpg0sYRodyjcbMIIBYgrUEJKkxqHDi7JbKQLeBeU66LpUM3Zi_MP6pdGGx7d4hj7n7Hqpm71RKaLPPEW91ma-u_rGUzGs9fHlfdqo0Rmm4WbhhSoyVXkRc7TuSfHFw4UteYJ-d8c8_kZ_DSp55d7NMRAQJIBCBlWV9sBMdkjn0vTcDn-yHNsYqkIk6M4BHYxQwH7qyv-KBsnzYFRr3MOxY8Fe5Qa-45ivI5WHGTJMTn1-gRaqKq5YZ0UXrIL_8PiZxLeEaqjixh0Q
+      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI2NnQ3dE90c21RLWpCdWplZU5xNUlJbUlja1pwQVdtR0g5VGhsWS1JSWtFIn0.eyJleHAiOjE2NzI4NDQ2NzMsImlhdCI6MTY3Mjg0NDYxMywianRpIjoiMGMzYTk2OWMtYWI1My00MGFmLThlNjMtYjI3ZTgzNzY5YjRkIiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiNDRkYTAzNTUtYjQwNi00N2NkLTgwOWMtNmYwYTBhYWUyN2FlIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6ImNjYjU0ZWFiLTFlZmMtNGMzYi1hZTIxLTY0M2IxZmVhZmZhNSIsImFjciI6IjEiLCJzY29wZSI6InByb2ZpbGUgZW1haWwiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.YJ3u_zaBTXPbl_ZV7ogCcY30Ow5Zw-zQESX_H-J80QqUyn9UuhSeNtZG4MoNJEmUj2B4FRarwBo3eR58hhxOIqJ05C94AYfR0UmeeBXNS2wn-xkZ3jRFkwR8Dk901G4dgm8szp7oS2nzWzktE0j9VpAQqIVObV8Mz-rSUfHruUSuPulDPJk-vmqbE6TCZb6jtDcv_jjp1bfvAqb30X_2JJMT3foDUMdq7sOEC65fBf3cyWB-7g_tjfuPD49gnBRC-jVnKLmlzH6XF8V1Xq1OiiHICHTdaPTU5hAq19AElp3DSXkrss51-QzzdnomOqiupdwwmNL7boCjhCOdJklprw
       Connection:
       - keep-alive
       Content-type:
@@ -477,11 +477,11 @@ interactions:
       User-Agent:
       - python-requests/2.28.1
     method: GET
-    uri: https://172.17.0.2:8443/auth/admin/realms/myrealm/clients/c3ee2cad-7a4e-415a-8eb4-c3d31ee0b0e6/roles
+    uri: https://172.17.0.2:8443/auth/admin/realms/myrealm/clients/62d20961-bee5-488e-a633-84782b0432a1/roles
   response:
     body:
-      string: '[{"id":"b6105781-ab7a-4760-a9fc-148e9a11f852","name":"new-role","description":"here
-        should go a description. NEW","composite":false,"clientRole":true,"containerId":"c3ee2cad-7a4e-415a-8eb4-c3d31ee0b0e6"}]'
+      string: '[{"id":"2140623e-4d06-4790-bcac-85bc4496e198","name":"new-role","description":"here
+        should go a description. NEW","composite":false,"clientRole":true,"containerId":"62d20961-bee5-488e-a633-84782b0432a1"}]'
     headers:
       Cache-Control:
       - no-cache
@@ -492,7 +492,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 04 Jan 2023 14:31:03 GMT
+      - Wed, 04 Jan 2023 15:03:34 GMT
     status:
       code: 200
       message: OK
@@ -504,7 +504,7 @@ interactions:
       Accept-Encoding:
       - gzip, deflate
       Authorization:
-      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI3ODJMdThPZGg5RkpnM1JrZHliLVpYQUZlWjRCT0NBZEUxeGF4dnE0YTBvIn0.eyJleHAiOjE2NzI4NDI3MjIsImlhdCI6MTY3Mjg0MjY2MiwianRpIjoiNmE5ZjU2ZGQtMDJhNC00MTU1LTk0NDgtZWE0Y2UyNzg3MjNiIiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiMTA3NzllNjctMGU0Ni00YTYwLThkNGYtNTM2MGFhODdmYmE5IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6IjhlZjhkYjNlLWVjODAtNDljZC1hNGE2LThkMDQzMzRhOTkyOCIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.m7PWg5oNDRoUi0682GhMrS-1rCo5HalLFln6svat_gpcn3cfa5sRlU5LHqXIwFKTUQMZGkp8NXpg0sYRodyjcbMIIBYgrUEJKkxqHDi7JbKQLeBeU66LpUM3Zi_MP6pdGGx7d4hj7n7Hqpm71RKaLPPEW91ma-u_rGUzGs9fHlfdqo0Rmm4WbhhSoyVXkRc7TuSfHFw4UteYJ-d8c8_kZ_DSp55d7NMRAQJIBCBlWV9sBMdkjn0vTcDn-yHNsYqkIk6M4BHYxQwH7qyv-KBsnzYFRr3MOxY8Fe5Qa-45ivI5WHGTJMTn1-gRaqKq5YZ0UXrIL_8PiZxLeEaqjixh0Q
+      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI2NnQ3dE90c21RLWpCdWplZU5xNUlJbUlja1pwQVdtR0g5VGhsWS1JSWtFIn0.eyJleHAiOjE2NzI4NDQ2NzMsImlhdCI6MTY3Mjg0NDYxMywianRpIjoiMGMzYTk2OWMtYWI1My00MGFmLThlNjMtYjI3ZTgzNzY5YjRkIiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiNDRkYTAzNTUtYjQwNi00N2NkLTgwOWMtNmYwYTBhYWUyN2FlIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6ImNjYjU0ZWFiLTFlZmMtNGMzYi1hZTIxLTY0M2IxZmVhZmZhNSIsImFjciI6IjEiLCJzY29wZSI6InByb2ZpbGUgZW1haWwiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.YJ3u_zaBTXPbl_ZV7ogCcY30Ow5Zw-zQESX_H-J80QqUyn9UuhSeNtZG4MoNJEmUj2B4FRarwBo3eR58hhxOIqJ05C94AYfR0UmeeBXNS2wn-xkZ3jRFkwR8Dk901G4dgm8szp7oS2nzWzktE0j9VpAQqIVObV8Mz-rSUfHruUSuPulDPJk-vmqbE6TCZb6jtDcv_jjp1bfvAqb30X_2JJMT3foDUMdq7sOEC65fBf3cyWB-7g_tjfuPD49gnBRC-jVnKLmlzH6XF8V1Xq1OiiHICHTdaPTU5hAq19AElp3DSXkrss51-QzzdnomOqiupdwwmNL7boCjhCOdJklprw
       Connection:
       - keep-alive
       Content-type:
@@ -535,7 +535,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 04 Jan 2023 14:31:03 GMT
+      - Wed, 04 Jan 2023 15:03:34 GMT
     status:
       code: 200
       message: OK
@@ -547,7 +547,7 @@ interactions:
       Accept-Encoding:
       - gzip, deflate
       Authorization:
-      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI3ODJMdThPZGg5RkpnM1JrZHliLVpYQUZlWjRCT0NBZEUxeGF4dnE0YTBvIn0.eyJleHAiOjE2NzI4NDI3MjIsImlhdCI6MTY3Mjg0MjY2MiwianRpIjoiNmE5ZjU2ZGQtMDJhNC00MTU1LTk0NDgtZWE0Y2UyNzg3MjNiIiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiMTA3NzllNjctMGU0Ni00YTYwLThkNGYtNTM2MGFhODdmYmE5IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6IjhlZjhkYjNlLWVjODAtNDljZC1hNGE2LThkMDQzMzRhOTkyOCIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.m7PWg5oNDRoUi0682GhMrS-1rCo5HalLFln6svat_gpcn3cfa5sRlU5LHqXIwFKTUQMZGkp8NXpg0sYRodyjcbMIIBYgrUEJKkxqHDi7JbKQLeBeU66LpUM3Zi_MP6pdGGx7d4hj7n7Hqpm71RKaLPPEW91ma-u_rGUzGs9fHlfdqo0Rmm4WbhhSoyVXkRc7TuSfHFw4UteYJ-d8c8_kZ_DSp55d7NMRAQJIBCBlWV9sBMdkjn0vTcDn-yHNsYqkIk6M4BHYxQwH7qyv-KBsnzYFRr3MOxY8Fe5Qa-45ivI5WHGTJMTn1-gRaqKq5YZ0UXrIL_8PiZxLeEaqjixh0Q
+      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI2NnQ3dE90c21RLWpCdWplZU5xNUlJbUlja1pwQVdtR0g5VGhsWS1JSWtFIn0.eyJleHAiOjE2NzI4NDQ2NzMsImlhdCI6MTY3Mjg0NDYxMywianRpIjoiMGMzYTk2OWMtYWI1My00MGFmLThlNjMtYjI3ZTgzNzY5YjRkIiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiNDRkYTAzNTUtYjQwNi00N2NkLTgwOWMtNmYwYTBhYWUyN2FlIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6ImNjYjU0ZWFiLTFlZmMtNGMzYi1hZTIxLTY0M2IxZmVhZmZhNSIsImFjciI6IjEiLCJzY29wZSI6InByb2ZpbGUgZW1haWwiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.YJ3u_zaBTXPbl_ZV7ogCcY30Ow5Zw-zQESX_H-J80QqUyn9UuhSeNtZG4MoNJEmUj2B4FRarwBo3eR58hhxOIqJ05C94AYfR0UmeeBXNS2wn-xkZ3jRFkwR8Dk901G4dgm8szp7oS2nzWzktE0j9VpAQqIVObV8Mz-rSUfHruUSuPulDPJk-vmqbE6TCZb6jtDcv_jjp1bfvAqb30X_2JJMT3foDUMdq7sOEC65fBf3cyWB-7g_tjfuPD49gnBRC-jVnKLmlzH6XF8V1Xq1OiiHICHTdaPTU5hAq19AElp3DSXkrss51-QzzdnomOqiupdwwmNL7boCjhCOdJklprw
       Connection:
       - keep-alive
       Content-Length:
@@ -563,7 +563,575 @@ interactions:
       string: ''
     headers:
       Date:
-      - Wed, 04 Jan 2023 14:31:03 GMT
+      - Wed, 04 Jan 2023 15:03:34 GMT
+    status:
+      code: 204
+      message: No Content
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.28.1
+    method: GET
+    uri: https://172.17.0.2:8443/auth/realms/master/.well-known/openid-configuration
+  response:
+    body:
+      string: '{"issuer":"https://172.17.0.2:8443/auth/realms/master","authorization_endpoint":"https://172.17.0.2:8443/auth/realms/master/protocol/openid-connect/auth","token_endpoint":"https://172.17.0.2:8443/auth/realms/master/protocol/openid-connect/token","token_introspection_endpoint":"https://172.17.0.2:8443/auth/realms/master/protocol/openid-connect/token/introspect","userinfo_endpoint":"https://172.17.0.2:8443/auth/realms/master/protocol/openid-connect/userinfo","end_session_endpoint":"https://172.17.0.2:8443/auth/realms/master/protocol/openid-connect/logout","jwks_uri":"https://172.17.0.2:8443/auth/realms/master/protocol/openid-connect/certs","check_session_iframe":"https://172.17.0.2:8443/auth/realms/master/protocol/openid-connect/login-status-iframe.html","grant_types_supported":["authorization_code","implicit","refresh_token","password","client_credentials"],"response_types_supported":["code","none","id_token","token","id_token
+        token","code id_token","code token","code id_token token"],"subject_types_supported":["public","pairwise"],"id_token_signing_alg_values_supported":["PS384","ES384","RS384","HS256","HS512","ES256","RS256","HS384","ES512","PS256","PS512","RS512"],"id_token_encryption_alg_values_supported":["RSA-OAEP","RSA1_5"],"id_token_encryption_enc_values_supported":["A128GCM","A128CBC-HS256"],"userinfo_signing_alg_values_supported":["PS384","ES384","RS384","HS256","HS512","ES256","RS256","HS384","ES512","PS256","PS512","RS512","none"],"request_object_signing_alg_values_supported":["PS384","ES384","RS384","HS256","HS512","ES256","RS256","HS384","ES512","PS256","PS512","RS512","none"],"response_modes_supported":["query","fragment","form_post"],"registration_endpoint":"https://172.17.0.2:8443/auth/realms/master/clients-registrations/openid-connect","token_endpoint_auth_methods_supported":["private_key_jwt","client_secret_basic","client_secret_post","tls_client_auth","client_secret_jwt"],"token_endpoint_auth_signing_alg_values_supported":["PS384","ES384","RS384","HS256","HS512","ES256","RS256","HS384","ES512","PS256","PS512","RS512"],"claims_supported":["aud","sub","iss","auth_time","name","given_name","family_name","preferred_username","email","acr"],"claim_types_supported":["normal"],"claims_parameter_supported":false,"scopes_supported":["openid","address","email","microprofile-jwt","offline_access","phone","profile","roles","web-origins"],"request_parameter_supported":true,"request_uri_parameter_supported":true,"code_challenge_methods_supported":["plain","S256"],"tls_client_certificate_bound_access_tokens":true,"introspection_endpoint":"https://172.17.0.2:8443/auth/realms/master/protocol/openid-connect/token/introspect"}'
+    headers:
+      Cache-Control:
+      - no-cache, must-revalidate, no-transform, no-store
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '2674'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 04 Jan 2023 15:19:42 GMT
+    status:
+      code: 200
+      message: OK
+- request:
+    body: client_id=admin-cli&grant_type=password&realm=master&username=admin&password=admin
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '82'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      User-Agent:
+      - python-requests/2.28.1
+    method: POST
+    uri: https://172.17.0.2:8443/auth/realms/master/protocol/openid-connect/token
+  response:
+    body:
+      string: '{"access_token":"eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJKR1RiOE1LUUxOc2drZnFUOHZocGdZQzV0NkJ2RmN1d2tlcTAwOGpTLWZRIn0.eyJleHAiOjE2NzI4NDU2NDIsImlhdCI6MTY3Mjg0NTU4MiwianRpIjoiNDgwMTBkMjctY2FhZS00ZWUyLTkxOTQtNGUyYTY0ZGU1YWY5IiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiMmY0NmQ0N2YtZDZmMC00ZmIxLTgwYzEtZjFhNGJlMGZkOGM5IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6IjVhYmE1OWMxLWRmODEtNDIwMS1iNDZmLTIzNTQ3NGYyY2UzYiIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.XiXnLSX0rFAawLxkaj_tWKo8fnobe3t2pR4l59rDTO1BtB0AA9S9LIL6iEhOc6Mvfrten5d1VszdeOV6-p-G_V7u-uBBYGYitNTo_d6PkxeQToKKn_ltavl-VQFM6mbf63SzFw4iZxkk6hRxWHtlKe6oUh-Hlq1oIjmSqPC8lxmColBkDNhYnqXdfaie1bgJzqQIjeOT-gGPXnQTlQdcgZF80Jt4uxeDIbkt-zHkMqOZmGh6ELKyIKr8btKn5Q3z5Q2HJth9zxJvQ34PyX1rVGHGnX5jpbM_TFbRW4KvTpMFU1E5Vg0mjdgrwl9VzBITed_lLD3yenn8V9HlHIZnuQ","expires_in":60,"refresh_expires_in":1800,"refresh_token":"eyJhbGciOiJIUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICIyNTQxZTljYi0zYmNiLTQxNGUtOGY0MC1jYzAyNjE4NDU3M2YifQ.eyJleHAiOjE2NzI4NDczODIsImlhdCI6MTY3Mjg0NTU4MiwianRpIjoiY2RiMjc3YWYtMDBmMi00OTc2LTkwYjgtMDZlN2FhYmJjMzA2IiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwiYXVkIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiMmY0NmQ0N2YtZDZmMC00ZmIxLTgwYzEtZjFhNGJlMGZkOGM5IiwidHlwIjoiUmVmcmVzaCIsImF6cCI6ImFkbWluLWNsaSIsInNlc3Npb25fc3RhdGUiOiI1YWJhNTljMS1kZjgxLTQyMDEtYjQ2Zi0yMzU0NzRmMmNlM2IiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUifQ.O6_W18SEP2Kf9t5-LT9djjFpdVnbjlAvI0mCDEbMLv4","token_type":"bearer","not-before-policy":0,"session_state":"5aba59c1-df81-4201-b46f-235474f2ce3b","scope":"email
+        profile"}'
+    headers:
+      Cache-Control:
+      - no-store
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1726'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 04 Jan 2023 15:19:42 GMT
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - KEYCLOAK_LOCALE=; Version=1; Comment=Expiring cookie; Expires=Thu, 01-Jan-1970
+        00:00:10 GMT; Max-Age=0; Path=/auth/realms/master/; HttpOnly
+      - KC_RESTART=; Version=1; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Max-Age=0;
+        Path=/auth/realms/master/; HttpOnly
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"enabled": "true", "id": "myrealm", "realm": "myrealm"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJKR1RiOE1LUUxOc2drZnFUOHZocGdZQzV0NkJ2RmN1d2tlcTAwOGpTLWZRIn0.eyJleHAiOjE2NzI4NDU2NDIsImlhdCI6MTY3Mjg0NTU4MiwianRpIjoiNDgwMTBkMjctY2FhZS00ZWUyLTkxOTQtNGUyYTY0ZGU1YWY5IiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiMmY0NmQ0N2YtZDZmMC00ZmIxLTgwYzEtZjFhNGJlMGZkOGM5IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6IjVhYmE1OWMxLWRmODEtNDIwMS1iNDZmLTIzNTQ3NGYyY2UzYiIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.XiXnLSX0rFAawLxkaj_tWKo8fnobe3t2pR4l59rDTO1BtB0AA9S9LIL6iEhOc6Mvfrten5d1VszdeOV6-p-G_V7u-uBBYGYitNTo_d6PkxeQToKKn_ltavl-VQFM6mbf63SzFw4iZxkk6hRxWHtlKe6oUh-Hlq1oIjmSqPC8lxmColBkDNhYnqXdfaie1bgJzqQIjeOT-gGPXnQTlQdcgZF80Jt4uxeDIbkt-zHkMqOZmGh6ELKyIKr8btKn5Q3z5Q2HJth9zxJvQ34PyX1rVGHGnX5jpbM_TFbRW4KvTpMFU1E5Vg0mjdgrwl9VzBITed_lLD3yenn8V9HlHIZnuQ
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '56'
+      Content-type:
+      - application/json
+      User-Agent:
+      - python-requests/2.28.1
+    method: POST
+    uri: https://172.17.0.2:8443/auth/admin/realms
+  response:
+    body:
+      string: ''
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      Date:
+      - Wed, 04 Jan 2023 15:19:42 GMT
+      Location:
+      - https://172.17.0.2:8443/auth/admin/realms/myrealm
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJKR1RiOE1LUUxOc2drZnFUOHZocGdZQzV0NkJ2RmN1d2tlcTAwOGpTLWZRIn0.eyJleHAiOjE2NzI4NDU2NDIsImlhdCI6MTY3Mjg0NTU4MiwianRpIjoiNDgwMTBkMjctY2FhZS00ZWUyLTkxOTQtNGUyYTY0ZGU1YWY5IiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiMmY0NmQ0N2YtZDZmMC00ZmIxLTgwYzEtZjFhNGJlMGZkOGM5IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6IjVhYmE1OWMxLWRmODEtNDIwMS1iNDZmLTIzNTQ3NGYyY2UzYiIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.XiXnLSX0rFAawLxkaj_tWKo8fnobe3t2pR4l59rDTO1BtB0AA9S9LIL6iEhOc6Mvfrten5d1VszdeOV6-p-G_V7u-uBBYGYitNTo_d6PkxeQToKKn_ltavl-VQFM6mbf63SzFw4iZxkk6hRxWHtlKe6oUh-Hlq1oIjmSqPC8lxmColBkDNhYnqXdfaie1bgJzqQIjeOT-gGPXnQTlQdcgZF80Jt4uxeDIbkt-zHkMqOZmGh6ELKyIKr8btKn5Q3z5Q2HJth9zxJvQ34PyX1rVGHGnX5jpbM_TFbRW4KvTpMFU1E5Vg0mjdgrwl9VzBITed_lLD3yenn8V9HlHIZnuQ
+      Connection:
+      - keep-alive
+      Content-type:
+      - application/json
+      User-Agent:
+      - python-requests/2.28.1
+    method: GET
+    uri: https://172.17.0.2:8443/auth/admin/realms/myrealm/clients
+  response:
+    body:
+      string: '[{"id":"9332fcbf-111c-4efd-8eeb-0d55ec0b5ed0","clientId":"account","name":"${client_account}","rootUrl":"${authBaseUrl}","baseUrl":"/realms/myrealm/account/","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","defaultRoles":["view-profile","manage-account"],"redirectUris":["/realms/myrealm/account/*"],"webOrigins":[],"notBefore":0,"bearerOnly":false,"consentRequired":false,"standardFlowEnabled":true,"implicitFlowEnabled":false,"directAccessGrantsEnabled":false,"serviceAccountsEnabled":false,"publicClient":false,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}},{"id":"f9b66c6f-9cfd-4bb5-8944-df2c86da3966","clientId":"account-console","name":"${client_account-console}","rootUrl":"${authBaseUrl}","baseUrl":"/realms/myrealm/account/","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","redirectUris":["/realms/myrealm/account/*"],"webOrigins":[],"notBefore":0,"bearerOnly":false,"consentRequired":false,"standardFlowEnabled":true,"implicitFlowEnabled":false,"directAccessGrantsEnabled":false,"serviceAccountsEnabled":false,"publicClient":true,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{"pkce.code.challenge.method":"S256"},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"protocolMappers":[{"id":"be67f638-7ae5-44da-8e81-077f283bd9f8","name":"audience
+        resolve","protocol":"openid-connect","protocolMapper":"oidc-audience-resolve-mapper","consentRequired":false,"config":{}}],"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}},{"id":"a9eb1753-6add-4a5c-93fa-1d2ef0218ac5","clientId":"admin-cli","name":"${client_admin-cli}","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","redirectUris":[],"webOrigins":[],"notBefore":0,"bearerOnly":false,"consentRequired":false,"standardFlowEnabled":false,"implicitFlowEnabled":false,"directAccessGrantsEnabled":true,"serviceAccountsEnabled":false,"publicClient":true,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}},{"id":"2a42b9b8-6542-4b81-9d10-8e3620e06ac6","clientId":"broker","name":"${client_broker}","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","redirectUris":[],"webOrigins":[],"notBefore":0,"bearerOnly":false,"consentRequired":false,"standardFlowEnabled":true,"implicitFlowEnabled":false,"directAccessGrantsEnabled":false,"serviceAccountsEnabled":false,"publicClient":false,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}},{"id":"3e671d20-54c6-4c69-853c-263f6d6a1858","clientId":"realm-management","name":"${client_realm-management}","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","redirectUris":[],"webOrigins":[],"notBefore":0,"bearerOnly":true,"consentRequired":false,"standardFlowEnabled":true,"implicitFlowEnabled":false,"directAccessGrantsEnabled":false,"serviceAccountsEnabled":false,"publicClient":false,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}},{"id":"5419e9b9-3f3c-415d-ba1a-1f2b0d40e13e","clientId":"security-admin-console","name":"${client_security-admin-console}","rootUrl":"${authAdminUrl}","baseUrl":"/admin/myrealm/console/","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","redirectUris":["/admin/myrealm/console/*"],"webOrigins":["+"],"notBefore":0,"bearerOnly":false,"consentRequired":false,"standardFlowEnabled":true,"implicitFlowEnabled":false,"directAccessGrantsEnabled":false,"serviceAccountsEnabled":false,"publicClient":true,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{"pkce.code.challenge.method":"S256"},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"protocolMappers":[{"id":"b22870a3-53fe-45a0-9d35-869f4a8c1cbd","name":"locale","protocol":"openid-connect","protocolMapper":"oidc-usermodel-attribute-mapper","consentRequired":false,"config":{"userinfo.token.claim":"true","user.attribute":"locale","id.token.claim":"true","access.token.claim":"true","claim.name":"locale","jsonType.label":"String"}}],"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}}]'
+    headers:
+      Cache-Control:
+      - no-cache
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '5927'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 04 Jan 2023 15:19:42 GMT
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJKR1RiOE1LUUxOc2drZnFUOHZocGdZQzV0NkJ2RmN1d2tlcTAwOGpTLWZRIn0.eyJleHAiOjE2NzI4NDU2NDIsImlhdCI6MTY3Mjg0NTU4MiwianRpIjoiNDgwMTBkMjctY2FhZS00ZWUyLTkxOTQtNGUyYTY0ZGU1YWY5IiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiMmY0NmQ0N2YtZDZmMC00ZmIxLTgwYzEtZjFhNGJlMGZkOGM5IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6IjVhYmE1OWMxLWRmODEtNDIwMS1iNDZmLTIzNTQ3NGYyY2UzYiIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.XiXnLSX0rFAawLxkaj_tWKo8fnobe3t2pR4l59rDTO1BtB0AA9S9LIL6iEhOc6Mvfrten5d1VszdeOV6-p-G_V7u-uBBYGYitNTo_d6PkxeQToKKn_ltavl-VQFM6mbf63SzFw4iZxkk6hRxWHtlKe6oUh-Hlq1oIjmSqPC8lxmColBkDNhYnqXdfaie1bgJzqQIjeOT-gGPXnQTlQdcgZF80Jt4uxeDIbkt-zHkMqOZmGh6ELKyIKr8btKn5Q3z5Q2HJth9zxJvQ34PyX1rVGHGnX5jpbM_TFbRW4KvTpMFU1E5Vg0mjdgrwl9VzBITed_lLD3yenn8V9HlHIZnuQ
+      Connection:
+      - keep-alive
+      Content-type:
+      - application/json
+      User-Agent:
+      - python-requests/2.28.1
+    method: GET
+    uri: https://172.17.0.2:8443/auth/admin/realms/myrealm/clients
+  response:
+    body:
+      string: '[{"id":"9332fcbf-111c-4efd-8eeb-0d55ec0b5ed0","clientId":"account","name":"${client_account}","rootUrl":"${authBaseUrl}","baseUrl":"/realms/myrealm/account/","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","defaultRoles":["view-profile","manage-account"],"redirectUris":["/realms/myrealm/account/*"],"webOrigins":[],"notBefore":0,"bearerOnly":false,"consentRequired":false,"standardFlowEnabled":true,"implicitFlowEnabled":false,"directAccessGrantsEnabled":false,"serviceAccountsEnabled":false,"publicClient":false,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}},{"id":"f9b66c6f-9cfd-4bb5-8944-df2c86da3966","clientId":"account-console","name":"${client_account-console}","rootUrl":"${authBaseUrl}","baseUrl":"/realms/myrealm/account/","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","redirectUris":["/realms/myrealm/account/*"],"webOrigins":[],"notBefore":0,"bearerOnly":false,"consentRequired":false,"standardFlowEnabled":true,"implicitFlowEnabled":false,"directAccessGrantsEnabled":false,"serviceAccountsEnabled":false,"publicClient":true,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{"pkce.code.challenge.method":"S256"},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"protocolMappers":[{"id":"be67f638-7ae5-44da-8e81-077f283bd9f8","name":"audience
+        resolve","protocol":"openid-connect","protocolMapper":"oidc-audience-resolve-mapper","consentRequired":false,"config":{}}],"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}},{"id":"a9eb1753-6add-4a5c-93fa-1d2ef0218ac5","clientId":"admin-cli","name":"${client_admin-cli}","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","redirectUris":[],"webOrigins":[],"notBefore":0,"bearerOnly":false,"consentRequired":false,"standardFlowEnabled":false,"implicitFlowEnabled":false,"directAccessGrantsEnabled":true,"serviceAccountsEnabled":false,"publicClient":true,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}},{"id":"2a42b9b8-6542-4b81-9d10-8e3620e06ac6","clientId":"broker","name":"${client_broker}","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","redirectUris":[],"webOrigins":[],"notBefore":0,"bearerOnly":false,"consentRequired":false,"standardFlowEnabled":true,"implicitFlowEnabled":false,"directAccessGrantsEnabled":false,"serviceAccountsEnabled":false,"publicClient":false,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}},{"id":"3e671d20-54c6-4c69-853c-263f6d6a1858","clientId":"realm-management","name":"${client_realm-management}","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","redirectUris":[],"webOrigins":[],"notBefore":0,"bearerOnly":true,"consentRequired":false,"standardFlowEnabled":true,"implicitFlowEnabled":false,"directAccessGrantsEnabled":false,"serviceAccountsEnabled":false,"publicClient":false,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}},{"id":"5419e9b9-3f3c-415d-ba1a-1f2b0d40e13e","clientId":"security-admin-console","name":"${client_security-admin-console}","rootUrl":"${authAdminUrl}","baseUrl":"/admin/myrealm/console/","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","redirectUris":["/admin/myrealm/console/*"],"webOrigins":["+"],"notBefore":0,"bearerOnly":false,"consentRequired":false,"standardFlowEnabled":true,"implicitFlowEnabled":false,"directAccessGrantsEnabled":false,"serviceAccountsEnabled":false,"publicClient":true,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{"pkce.code.challenge.method":"S256"},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"protocolMappers":[{"id":"b22870a3-53fe-45a0-9d35-869f4a8c1cbd","name":"locale","protocol":"openid-connect","protocolMapper":"oidc-usermodel-attribute-mapper","consentRequired":false,"config":{"userinfo.token.claim":"true","user.attribute":"locale","id.token.claim":"true","access.token.claim":"true","claim.name":"locale","jsonType.label":"String"}}],"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}}]'
+    headers:
+      Cache-Control:
+      - no-cache
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '5927'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 04 Jan 2023 15:19:42 GMT
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"access": {"configure": true, "manage": true, "view": true}, "attributes":
+      {}, "authenticationFlowBindingOverrides": {}, "bearerOnly": false, "clientAuthenticatorType":
+      "client-secret", "clientId": "my_client_12346289371", "consentRequired": false,
+      "defaultClientScopes": ["web-origins", "role_list", "roles", "profile", "email"],
+      "directAccessGrantsEnabled": true, "enabled": true, "frontchannelLogout": false,
+      "fullScopeAllowed": true, "implicitFlowEnabled": false, "nodeReRegistrationTimeout":
+      -1, "notBefore": 0, "optionalClientScopes": ["address", "phone", "offline_access"],
+      "protocol": "openid-connect", "protocolMappers": [{"config": {"access.token.claim":
+      "true", "claim.name": "roles", "id.token.claim": "true", "multivalued": "true",
+      "userinfo.token.claim": "true"}, "consentRequired": false, "name": "realm.roles",
+      "protocol": "openid-connect", "protocolMapper": "oidc-usermodel-realm-role-mapper"}],
+      "publicClient": true, "redirectUris": [], "serviceAccountsEnabled": false, "standardFlowEnabled":
+      true, "surrogateAuthRequired": false, "webOrigins": []}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJKR1RiOE1LUUxOc2drZnFUOHZocGdZQzV0NkJ2RmN1d2tlcTAwOGpTLWZRIn0.eyJleHAiOjE2NzI4NDU2NDIsImlhdCI6MTY3Mjg0NTU4MiwianRpIjoiNDgwMTBkMjctY2FhZS00ZWUyLTkxOTQtNGUyYTY0ZGU1YWY5IiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiMmY0NmQ0N2YtZDZmMC00ZmIxLTgwYzEtZjFhNGJlMGZkOGM5IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6IjVhYmE1OWMxLWRmODEtNDIwMS1iNDZmLTIzNTQ3NGYyY2UzYiIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.XiXnLSX0rFAawLxkaj_tWKo8fnobe3t2pR4l59rDTO1BtB0AA9S9LIL6iEhOc6Mvfrten5d1VszdeOV6-p-G_V7u-uBBYGYitNTo_d6PkxeQToKKn_ltavl-VQFM6mbf63SzFw4iZxkk6hRxWHtlKe6oUh-Hlq1oIjmSqPC8lxmColBkDNhYnqXdfaie1bgJzqQIjeOT-gGPXnQTlQdcgZF80Jt4uxeDIbkt-zHkMqOZmGh6ELKyIKr8btKn5Q3z5Q2HJth9zxJvQ34PyX1rVGHGnX5jpbM_TFbRW4KvTpMFU1E5Vg0mjdgrwl9VzBITed_lLD3yenn8V9HlHIZnuQ
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1067'
+      Content-type:
+      - application/json
+      User-Agent:
+      - python-requests/2.28.1
+    method: POST
+    uri: https://172.17.0.2:8443/auth/admin/realms/myrealm/clients
+  response:
+    body:
+      string: ''
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      Date:
+      - Wed, 04 Jan 2023 15:19:42 GMT
+      Location:
+      - https://172.17.0.2:8443/auth/admin/realms/myrealm/clients/84753faa-85e9-4893-bf0f-ba95f35e928d
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJKR1RiOE1LUUxOc2drZnFUOHZocGdZQzV0NkJ2RmN1d2tlcTAwOGpTLWZRIn0.eyJleHAiOjE2NzI4NDU2NDIsImlhdCI6MTY3Mjg0NTU4MiwianRpIjoiNDgwMTBkMjctY2FhZS00ZWUyLTkxOTQtNGUyYTY0ZGU1YWY5IiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiMmY0NmQ0N2YtZDZmMC00ZmIxLTgwYzEtZjFhNGJlMGZkOGM5IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6IjVhYmE1OWMxLWRmODEtNDIwMS1iNDZmLTIzNTQ3NGYyY2UzYiIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.XiXnLSX0rFAawLxkaj_tWKo8fnobe3t2pR4l59rDTO1BtB0AA9S9LIL6iEhOc6Mvfrten5d1VszdeOV6-p-G_V7u-uBBYGYitNTo_d6PkxeQToKKn_ltavl-VQFM6mbf63SzFw4iZxkk6hRxWHtlKe6oUh-Hlq1oIjmSqPC8lxmColBkDNhYnqXdfaie1bgJzqQIjeOT-gGPXnQTlQdcgZF80Jt4uxeDIbkt-zHkMqOZmGh6ELKyIKr8btKn5Q3z5Q2HJth9zxJvQ34PyX1rVGHGnX5jpbM_TFbRW4KvTpMFU1E5Vg0mjdgrwl9VzBITed_lLD3yenn8V9HlHIZnuQ
+      Connection:
+      - keep-alive
+      Content-type:
+      - application/json
+      User-Agent:
+      - python-requests/2.28.1
+    method: GET
+    uri: https://172.17.0.2:8443/auth/admin/realms/myrealm/clients
+  response:
+    body:
+      string: '[{"id":"9332fcbf-111c-4efd-8eeb-0d55ec0b5ed0","clientId":"account","name":"${client_account}","rootUrl":"${authBaseUrl}","baseUrl":"/realms/myrealm/account/","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","defaultRoles":["view-profile","manage-account"],"redirectUris":["/realms/myrealm/account/*"],"webOrigins":[],"notBefore":0,"bearerOnly":false,"consentRequired":false,"standardFlowEnabled":true,"implicitFlowEnabled":false,"directAccessGrantsEnabled":false,"serviceAccountsEnabled":false,"publicClient":false,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}},{"id":"f9b66c6f-9cfd-4bb5-8944-df2c86da3966","clientId":"account-console","name":"${client_account-console}","rootUrl":"${authBaseUrl}","baseUrl":"/realms/myrealm/account/","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","redirectUris":["/realms/myrealm/account/*"],"webOrigins":[],"notBefore":0,"bearerOnly":false,"consentRequired":false,"standardFlowEnabled":true,"implicitFlowEnabled":false,"directAccessGrantsEnabled":false,"serviceAccountsEnabled":false,"publicClient":true,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{"pkce.code.challenge.method":"S256"},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"protocolMappers":[{"id":"be67f638-7ae5-44da-8e81-077f283bd9f8","name":"audience
+        resolve","protocol":"openid-connect","protocolMapper":"oidc-audience-resolve-mapper","consentRequired":false,"config":{}}],"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}},{"id":"a9eb1753-6add-4a5c-93fa-1d2ef0218ac5","clientId":"admin-cli","name":"${client_admin-cli}","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","redirectUris":[],"webOrigins":[],"notBefore":0,"bearerOnly":false,"consentRequired":false,"standardFlowEnabled":false,"implicitFlowEnabled":false,"directAccessGrantsEnabled":true,"serviceAccountsEnabled":false,"publicClient":true,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}},{"id":"2a42b9b8-6542-4b81-9d10-8e3620e06ac6","clientId":"broker","name":"${client_broker}","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","redirectUris":[],"webOrigins":[],"notBefore":0,"bearerOnly":false,"consentRequired":false,"standardFlowEnabled":true,"implicitFlowEnabled":false,"directAccessGrantsEnabled":false,"serviceAccountsEnabled":false,"publicClient":false,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}},{"id":"84753faa-85e9-4893-bf0f-ba95f35e928d","clientId":"my_client_12346289371","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","redirectUris":[],"webOrigins":[],"notBefore":0,"bearerOnly":false,"consentRequired":false,"standardFlowEnabled":true,"implicitFlowEnabled":false,"directAccessGrantsEnabled":true,"serviceAccountsEnabled":false,"publicClient":true,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":true,"nodeReRegistrationTimeout":-1,"protocolMappers":[{"id":"6b6c33ac-f439-454e-af0d-691aa8b21583","name":"realm.roles","protocol":"openid-connect","protocolMapper":"oidc-usermodel-realm-role-mapper","consentRequired":false,"config":{"id.token.claim":"true","access.token.claim":"true","claim.name":"roles","multivalued":"true","userinfo.token.claim":"true"}}],"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access"],"access":{"view":true,"configure":true,"manage":true}},{"id":"3e671d20-54c6-4c69-853c-263f6d6a1858","clientId":"realm-management","name":"${client_realm-management}","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","redirectUris":[],"webOrigins":[],"notBefore":0,"bearerOnly":true,"consentRequired":false,"standardFlowEnabled":true,"implicitFlowEnabled":false,"directAccessGrantsEnabled":false,"serviceAccountsEnabled":false,"publicClient":false,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}},{"id":"5419e9b9-3f3c-415d-ba1a-1f2b0d40e13e","clientId":"security-admin-console","name":"${client_security-admin-console}","rootUrl":"${authAdminUrl}","baseUrl":"/admin/myrealm/console/","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","redirectUris":["/admin/myrealm/console/*"],"webOrigins":["+"],"notBefore":0,"bearerOnly":false,"consentRequired":false,"standardFlowEnabled":true,"implicitFlowEnabled":false,"directAccessGrantsEnabled":false,"serviceAccountsEnabled":false,"publicClient":true,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{"pkce.code.challenge.method":"S256"},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"protocolMappers":[{"id":"b22870a3-53fe-45a0-9d35-869f4a8c1cbd","name":"locale","protocol":"openid-connect","protocolMapper":"oidc-usermodel-attribute-mapper","consentRequired":false,"config":{"userinfo.token.claim":"true","user.attribute":"locale","id.token.claim":"true","access.token.claim":"true","claim.name":"locale","jsonType.label":"String"}}],"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}}]'
+    headers:
+      Cache-Control:
+      - no-cache
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '7038'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 04 Jan 2023 15:19:42 GMT
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJKR1RiOE1LUUxOc2drZnFUOHZocGdZQzV0NkJ2RmN1d2tlcTAwOGpTLWZRIn0.eyJleHAiOjE2NzI4NDU2NDIsImlhdCI6MTY3Mjg0NTU4MiwianRpIjoiNDgwMTBkMjctY2FhZS00ZWUyLTkxOTQtNGUyYTY0ZGU1YWY5IiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiMmY0NmQ0N2YtZDZmMC00ZmIxLTgwYzEtZjFhNGJlMGZkOGM5IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6IjVhYmE1OWMxLWRmODEtNDIwMS1iNDZmLTIzNTQ3NGYyY2UzYiIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.XiXnLSX0rFAawLxkaj_tWKo8fnobe3t2pR4l59rDTO1BtB0AA9S9LIL6iEhOc6Mvfrten5d1VszdeOV6-p-G_V7u-uBBYGYitNTo_d6PkxeQToKKn_ltavl-VQFM6mbf63SzFw4iZxkk6hRxWHtlKe6oUh-Hlq1oIjmSqPC8lxmColBkDNhYnqXdfaie1bgJzqQIjeOT-gGPXnQTlQdcgZF80Jt4uxeDIbkt-zHkMqOZmGh6ELKyIKr8btKn5Q3z5Q2HJth9zxJvQ34PyX1rVGHGnX5jpbM_TFbRW4KvTpMFU1E5Vg0mjdgrwl9VzBITed_lLD3yenn8V9HlHIZnuQ
+      Connection:
+      - keep-alive
+      Content-type:
+      - application/json
+      User-Agent:
+      - python-requests/2.28.1
+    method: GET
+    uri: https://172.17.0.2:8443/auth/admin/realms/myrealm/clients
+  response:
+    body:
+      string: '[{"id":"9332fcbf-111c-4efd-8eeb-0d55ec0b5ed0","clientId":"account","name":"${client_account}","rootUrl":"${authBaseUrl}","baseUrl":"/realms/myrealm/account/","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","defaultRoles":["view-profile","manage-account"],"redirectUris":["/realms/myrealm/account/*"],"webOrigins":[],"notBefore":0,"bearerOnly":false,"consentRequired":false,"standardFlowEnabled":true,"implicitFlowEnabled":false,"directAccessGrantsEnabled":false,"serviceAccountsEnabled":false,"publicClient":false,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}},{"id":"f9b66c6f-9cfd-4bb5-8944-df2c86da3966","clientId":"account-console","name":"${client_account-console}","rootUrl":"${authBaseUrl}","baseUrl":"/realms/myrealm/account/","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","redirectUris":["/realms/myrealm/account/*"],"webOrigins":[],"notBefore":0,"bearerOnly":false,"consentRequired":false,"standardFlowEnabled":true,"implicitFlowEnabled":false,"directAccessGrantsEnabled":false,"serviceAccountsEnabled":false,"publicClient":true,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{"pkce.code.challenge.method":"S256"},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"protocolMappers":[{"id":"be67f638-7ae5-44da-8e81-077f283bd9f8","name":"audience
+        resolve","protocol":"openid-connect","protocolMapper":"oidc-audience-resolve-mapper","consentRequired":false,"config":{}}],"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}},{"id":"a9eb1753-6add-4a5c-93fa-1d2ef0218ac5","clientId":"admin-cli","name":"${client_admin-cli}","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","redirectUris":[],"webOrigins":[],"notBefore":0,"bearerOnly":false,"consentRequired":false,"standardFlowEnabled":false,"implicitFlowEnabled":false,"directAccessGrantsEnabled":true,"serviceAccountsEnabled":false,"publicClient":true,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}},{"id":"2a42b9b8-6542-4b81-9d10-8e3620e06ac6","clientId":"broker","name":"${client_broker}","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","redirectUris":[],"webOrigins":[],"notBefore":0,"bearerOnly":false,"consentRequired":false,"standardFlowEnabled":true,"implicitFlowEnabled":false,"directAccessGrantsEnabled":false,"serviceAccountsEnabled":false,"publicClient":false,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}},{"id":"84753faa-85e9-4893-bf0f-ba95f35e928d","clientId":"my_client_12346289371","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","redirectUris":[],"webOrigins":[],"notBefore":0,"bearerOnly":false,"consentRequired":false,"standardFlowEnabled":true,"implicitFlowEnabled":false,"directAccessGrantsEnabled":true,"serviceAccountsEnabled":false,"publicClient":true,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":true,"nodeReRegistrationTimeout":-1,"protocolMappers":[{"id":"6b6c33ac-f439-454e-af0d-691aa8b21583","name":"realm.roles","protocol":"openid-connect","protocolMapper":"oidc-usermodel-realm-role-mapper","consentRequired":false,"config":{"id.token.claim":"true","access.token.claim":"true","claim.name":"roles","multivalued":"true","userinfo.token.claim":"true"}}],"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access"],"access":{"view":true,"configure":true,"manage":true}},{"id":"3e671d20-54c6-4c69-853c-263f6d6a1858","clientId":"realm-management","name":"${client_realm-management}","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","redirectUris":[],"webOrigins":[],"notBefore":0,"bearerOnly":true,"consentRequired":false,"standardFlowEnabled":true,"implicitFlowEnabled":false,"directAccessGrantsEnabled":false,"serviceAccountsEnabled":false,"publicClient":false,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}},{"id":"5419e9b9-3f3c-415d-ba1a-1f2b0d40e13e","clientId":"security-admin-console","name":"${client_security-admin-console}","rootUrl":"${authAdminUrl}","baseUrl":"/admin/myrealm/console/","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","redirectUris":["/admin/myrealm/console/*"],"webOrigins":["+"],"notBefore":0,"bearerOnly":false,"consentRequired":false,"standardFlowEnabled":true,"implicitFlowEnabled":false,"directAccessGrantsEnabled":false,"serviceAccountsEnabled":false,"publicClient":true,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{"pkce.code.challenge.method":"S256"},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"protocolMappers":[{"id":"b22870a3-53fe-45a0-9d35-869f4a8c1cbd","name":"locale","protocol":"openid-connect","protocolMapper":"oidc-usermodel-attribute-mapper","consentRequired":false,"config":{"userinfo.token.claim":"true","user.attribute":"locale","id.token.claim":"true","access.token.claim":"true","claim.name":"locale","jsonType.label":"String"}}],"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}}]'
+    headers:
+      Cache-Control:
+      - no-cache
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '7038'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 04 Jan 2023 15:19:43 GMT
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"name": "new-role", "description": "here should go a description."}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJKR1RiOE1LUUxOc2drZnFUOHZocGdZQzV0NkJ2RmN1d2tlcTAwOGpTLWZRIn0.eyJleHAiOjE2NzI4NDU2NDIsImlhdCI6MTY3Mjg0NTU4MiwianRpIjoiNDgwMTBkMjctY2FhZS00ZWUyLTkxOTQtNGUyYTY0ZGU1YWY5IiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiMmY0NmQ0N2YtZDZmMC00ZmIxLTgwYzEtZjFhNGJlMGZkOGM5IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6IjVhYmE1OWMxLWRmODEtNDIwMS1iNDZmLTIzNTQ3NGYyY2UzYiIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.XiXnLSX0rFAawLxkaj_tWKo8fnobe3t2pR4l59rDTO1BtB0AA9S9LIL6iEhOc6Mvfrten5d1VszdeOV6-p-G_V7u-uBBYGYitNTo_d6PkxeQToKKn_ltavl-VQFM6mbf63SzFw4iZxkk6hRxWHtlKe6oUh-Hlq1oIjmSqPC8lxmColBkDNhYnqXdfaie1bgJzqQIjeOT-gGPXnQTlQdcgZF80Jt4uxeDIbkt-zHkMqOZmGh6ELKyIKr8btKn5Q3z5Q2HJth9zxJvQ34PyX1rVGHGnX5jpbM_TFbRW4KvTpMFU1E5Vg0mjdgrwl9VzBITed_lLD3yenn8V9HlHIZnuQ
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '68'
+      Content-type:
+      - application/json
+      User-Agent:
+      - python-requests/2.28.1
+    method: POST
+    uri: https://172.17.0.2:8443/auth/admin/realms/myrealm/clients/84753faa-85e9-4893-bf0f-ba95f35e928d/roles
+  response:
+    body:
+      string: ''
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      Date:
+      - Wed, 04 Jan 2023 15:19:43 GMT
+      Location:
+      - https://172.17.0.2:8443/auth/admin/realms/myrealm/clients/84753faa-85e9-4893-bf0f-ba95f35e928d/roles/new-role
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJKR1RiOE1LUUxOc2drZnFUOHZocGdZQzV0NkJ2RmN1d2tlcTAwOGpTLWZRIn0.eyJleHAiOjE2NzI4NDU2NDIsImlhdCI6MTY3Mjg0NTU4MiwianRpIjoiNDgwMTBkMjctY2FhZS00ZWUyLTkxOTQtNGUyYTY0ZGU1YWY5IiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiMmY0NmQ0N2YtZDZmMC00ZmIxLTgwYzEtZjFhNGJlMGZkOGM5IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6IjVhYmE1OWMxLWRmODEtNDIwMS1iNDZmLTIzNTQ3NGYyY2UzYiIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.XiXnLSX0rFAawLxkaj_tWKo8fnobe3t2pR4l59rDTO1BtB0AA9S9LIL6iEhOc6Mvfrten5d1VszdeOV6-p-G_V7u-uBBYGYitNTo_d6PkxeQToKKn_ltavl-VQFM6mbf63SzFw4iZxkk6hRxWHtlKe6oUh-Hlq1oIjmSqPC8lxmColBkDNhYnqXdfaie1bgJzqQIjeOT-gGPXnQTlQdcgZF80Jt4uxeDIbkt-zHkMqOZmGh6ELKyIKr8btKn5Q3z5Q2HJth9zxJvQ34PyX1rVGHGnX5jpbM_TFbRW4KvTpMFU1E5Vg0mjdgrwl9VzBITed_lLD3yenn8V9HlHIZnuQ
+      Connection:
+      - keep-alive
+      Content-type:
+      - application/json
+      User-Agent:
+      - python-requests/2.28.1
+    method: GET
+    uri: https://172.17.0.2:8443/auth/admin/realms/myrealm/clients
+  response:
+    body:
+      string: '[{"id":"9332fcbf-111c-4efd-8eeb-0d55ec0b5ed0","clientId":"account","name":"${client_account}","rootUrl":"${authBaseUrl}","baseUrl":"/realms/myrealm/account/","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","defaultRoles":["view-profile","manage-account"],"redirectUris":["/realms/myrealm/account/*"],"webOrigins":[],"notBefore":0,"bearerOnly":false,"consentRequired":false,"standardFlowEnabled":true,"implicitFlowEnabled":false,"directAccessGrantsEnabled":false,"serviceAccountsEnabled":false,"publicClient":false,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}},{"id":"f9b66c6f-9cfd-4bb5-8944-df2c86da3966","clientId":"account-console","name":"${client_account-console}","rootUrl":"${authBaseUrl}","baseUrl":"/realms/myrealm/account/","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","redirectUris":["/realms/myrealm/account/*"],"webOrigins":[],"notBefore":0,"bearerOnly":false,"consentRequired":false,"standardFlowEnabled":true,"implicitFlowEnabled":false,"directAccessGrantsEnabled":false,"serviceAccountsEnabled":false,"publicClient":true,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{"pkce.code.challenge.method":"S256"},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"protocolMappers":[{"id":"be67f638-7ae5-44da-8e81-077f283bd9f8","name":"audience
+        resolve","protocol":"openid-connect","protocolMapper":"oidc-audience-resolve-mapper","consentRequired":false,"config":{}}],"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}},{"id":"a9eb1753-6add-4a5c-93fa-1d2ef0218ac5","clientId":"admin-cli","name":"${client_admin-cli}","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","redirectUris":[],"webOrigins":[],"notBefore":0,"bearerOnly":false,"consentRequired":false,"standardFlowEnabled":false,"implicitFlowEnabled":false,"directAccessGrantsEnabled":true,"serviceAccountsEnabled":false,"publicClient":true,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}},{"id":"2a42b9b8-6542-4b81-9d10-8e3620e06ac6","clientId":"broker","name":"${client_broker}","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","redirectUris":[],"webOrigins":[],"notBefore":0,"bearerOnly":false,"consentRequired":false,"standardFlowEnabled":true,"implicitFlowEnabled":false,"directAccessGrantsEnabled":false,"serviceAccountsEnabled":false,"publicClient":false,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}},{"id":"84753faa-85e9-4893-bf0f-ba95f35e928d","clientId":"my_client_12346289371","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","redirectUris":[],"webOrigins":[],"notBefore":0,"bearerOnly":false,"consentRequired":false,"standardFlowEnabled":true,"implicitFlowEnabled":false,"directAccessGrantsEnabled":true,"serviceAccountsEnabled":false,"publicClient":true,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":true,"nodeReRegistrationTimeout":-1,"protocolMappers":[{"id":"6b6c33ac-f439-454e-af0d-691aa8b21583","name":"realm.roles","protocol":"openid-connect","protocolMapper":"oidc-usermodel-realm-role-mapper","consentRequired":false,"config":{"id.token.claim":"true","access.token.claim":"true","claim.name":"roles","multivalued":"true","userinfo.token.claim":"true"}}],"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access"],"access":{"view":true,"configure":true,"manage":true}},{"id":"3e671d20-54c6-4c69-853c-263f6d6a1858","clientId":"realm-management","name":"${client_realm-management}","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","redirectUris":[],"webOrigins":[],"notBefore":0,"bearerOnly":true,"consentRequired":false,"standardFlowEnabled":true,"implicitFlowEnabled":false,"directAccessGrantsEnabled":false,"serviceAccountsEnabled":false,"publicClient":false,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}},{"id":"5419e9b9-3f3c-415d-ba1a-1f2b0d40e13e","clientId":"security-admin-console","name":"${client_security-admin-console}","rootUrl":"${authAdminUrl}","baseUrl":"/admin/myrealm/console/","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","redirectUris":["/admin/myrealm/console/*"],"webOrigins":["+"],"notBefore":0,"bearerOnly":false,"consentRequired":false,"standardFlowEnabled":true,"implicitFlowEnabled":false,"directAccessGrantsEnabled":false,"serviceAccountsEnabled":false,"publicClient":true,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{"pkce.code.challenge.method":"S256"},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"protocolMappers":[{"id":"b22870a3-53fe-45a0-9d35-869f4a8c1cbd","name":"locale","protocol":"openid-connect","protocolMapper":"oidc-usermodel-attribute-mapper","consentRequired":false,"config":{"userinfo.token.claim":"true","user.attribute":"locale","id.token.claim":"true","access.token.claim":"true","claim.name":"locale","jsonType.label":"String"}}],"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}}]'
+    headers:
+      Cache-Control:
+      - no-cache
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '7038'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 04 Jan 2023 15:19:43 GMT
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJKR1RiOE1LUUxOc2drZnFUOHZocGdZQzV0NkJ2RmN1d2tlcTAwOGpTLWZRIn0.eyJleHAiOjE2NzI4NDU2NDIsImlhdCI6MTY3Mjg0NTU4MiwianRpIjoiNDgwMTBkMjctY2FhZS00ZWUyLTkxOTQtNGUyYTY0ZGU1YWY5IiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiMmY0NmQ0N2YtZDZmMC00ZmIxLTgwYzEtZjFhNGJlMGZkOGM5IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6IjVhYmE1OWMxLWRmODEtNDIwMS1iNDZmLTIzNTQ3NGYyY2UzYiIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.XiXnLSX0rFAawLxkaj_tWKo8fnobe3t2pR4l59rDTO1BtB0AA9S9LIL6iEhOc6Mvfrten5d1VszdeOV6-p-G_V7u-uBBYGYitNTo_d6PkxeQToKKn_ltavl-VQFM6mbf63SzFw4iZxkk6hRxWHtlKe6oUh-Hlq1oIjmSqPC8lxmColBkDNhYnqXdfaie1bgJzqQIjeOT-gGPXnQTlQdcgZF80Jt4uxeDIbkt-zHkMqOZmGh6ELKyIKr8btKn5Q3z5Q2HJth9zxJvQ34PyX1rVGHGnX5jpbM_TFbRW4KvTpMFU1E5Vg0mjdgrwl9VzBITed_lLD3yenn8V9HlHIZnuQ
+      Connection:
+      - keep-alive
+      Content-type:
+      - application/json
+      User-Agent:
+      - python-requests/2.28.1
+    method: GET
+    uri: https://172.17.0.2:8443/auth/admin/realms/myrealm/clients/84753faa-85e9-4893-bf0f-ba95f35e928d/roles
+  response:
+    body:
+      string: '[{"id":"30909789-4803-4eea-9295-71f3a7714949","name":"new-role","description":"here
+        should go a description.","composite":false,"clientRole":true,"containerId":"84753faa-85e9-4893-bf0f-ba95f35e928d"}]'
+    headers:
+      Cache-Control:
+      - no-cache
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '200'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 04 Jan 2023 15:19:43 GMT
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"id": "30909789-4803-4eea-9295-71f3a7714949", "name": "new-role", "description":
+      "here should go a description. NEW", "composite": false, "clientRole": true,
+      "containerId": "84753faa-85e9-4893-bf0f-ba95f35e928d"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJKR1RiOE1LUUxOc2drZnFUOHZocGdZQzV0NkJ2RmN1d2tlcTAwOGpTLWZRIn0.eyJleHAiOjE2NzI4NDU2NDIsImlhdCI6MTY3Mjg0NTU4MiwianRpIjoiNDgwMTBkMjctY2FhZS00ZWUyLTkxOTQtNGUyYTY0ZGU1YWY5IiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiMmY0NmQ0N2YtZDZmMC00ZmIxLTgwYzEtZjFhNGJlMGZkOGM5IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6IjVhYmE1OWMxLWRmODEtNDIwMS1iNDZmLTIzNTQ3NGYyY2UzYiIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.XiXnLSX0rFAawLxkaj_tWKo8fnobe3t2pR4l59rDTO1BtB0AA9S9LIL6iEhOc6Mvfrten5d1VszdeOV6-p-G_V7u-uBBYGYitNTo_d6PkxeQToKKn_ltavl-VQFM6mbf63SzFw4iZxkk6hRxWHtlKe6oUh-Hlq1oIjmSqPC8lxmColBkDNhYnqXdfaie1bgJzqQIjeOT-gGPXnQTlQdcgZF80Jt4uxeDIbkt-zHkMqOZmGh6ELKyIKr8btKn5Q3z5Q2HJth9zxJvQ34PyX1rVGHGnX5jpbM_TFbRW4KvTpMFU1E5Vg0mjdgrwl9VzBITed_lLD3yenn8V9HlHIZnuQ
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '213'
+      Content-type:
+      - application/json
+      User-Agent:
+      - python-requests/2.28.1
+    method: PUT
+    uri: https://172.17.0.2:8443/auth/admin/realms/myrealm/roles-by-id/30909789-4803-4eea-9295-71f3a7714949
+  response:
+    body:
+      string: ''
+    headers:
+      Date:
+      - Wed, 04 Jan 2023 15:19:43 GMT
+    status:
+      code: 204
+      message: No Content
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJKR1RiOE1LUUxOc2drZnFUOHZocGdZQzV0NkJ2RmN1d2tlcTAwOGpTLWZRIn0.eyJleHAiOjE2NzI4NDU2NDIsImlhdCI6MTY3Mjg0NTU4MiwianRpIjoiNDgwMTBkMjctY2FhZS00ZWUyLTkxOTQtNGUyYTY0ZGU1YWY5IiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiMmY0NmQ0N2YtZDZmMC00ZmIxLTgwYzEtZjFhNGJlMGZkOGM5IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6IjVhYmE1OWMxLWRmODEtNDIwMS1iNDZmLTIzNTQ3NGYyY2UzYiIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.XiXnLSX0rFAawLxkaj_tWKo8fnobe3t2pR4l59rDTO1BtB0AA9S9LIL6iEhOc6Mvfrten5d1VszdeOV6-p-G_V7u-uBBYGYitNTo_d6PkxeQToKKn_ltavl-VQFM6mbf63SzFw4iZxkk6hRxWHtlKe6oUh-Hlq1oIjmSqPC8lxmColBkDNhYnqXdfaie1bgJzqQIjeOT-gGPXnQTlQdcgZF80Jt4uxeDIbkt-zHkMqOZmGh6ELKyIKr8btKn5Q3z5Q2HJth9zxJvQ34PyX1rVGHGnX5jpbM_TFbRW4KvTpMFU1E5Vg0mjdgrwl9VzBITed_lLD3yenn8V9HlHIZnuQ
+      Connection:
+      - keep-alive
+      Content-type:
+      - application/json
+      User-Agent:
+      - python-requests/2.28.1
+    method: GET
+    uri: https://172.17.0.2:8443/auth/admin/realms/myrealm/clients
+  response:
+    body:
+      string: '[{"id":"9332fcbf-111c-4efd-8eeb-0d55ec0b5ed0","clientId":"account","name":"${client_account}","rootUrl":"${authBaseUrl}","baseUrl":"/realms/myrealm/account/","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","defaultRoles":["view-profile","manage-account"],"redirectUris":["/realms/myrealm/account/*"],"webOrigins":[],"notBefore":0,"bearerOnly":false,"consentRequired":false,"standardFlowEnabled":true,"implicitFlowEnabled":false,"directAccessGrantsEnabled":false,"serviceAccountsEnabled":false,"publicClient":false,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}},{"id":"f9b66c6f-9cfd-4bb5-8944-df2c86da3966","clientId":"account-console","name":"${client_account-console}","rootUrl":"${authBaseUrl}","baseUrl":"/realms/myrealm/account/","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","redirectUris":["/realms/myrealm/account/*"],"webOrigins":[],"notBefore":0,"bearerOnly":false,"consentRequired":false,"standardFlowEnabled":true,"implicitFlowEnabled":false,"directAccessGrantsEnabled":false,"serviceAccountsEnabled":false,"publicClient":true,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{"pkce.code.challenge.method":"S256"},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"protocolMappers":[{"id":"be67f638-7ae5-44da-8e81-077f283bd9f8","name":"audience
+        resolve","protocol":"openid-connect","protocolMapper":"oidc-audience-resolve-mapper","consentRequired":false,"config":{}}],"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}},{"id":"a9eb1753-6add-4a5c-93fa-1d2ef0218ac5","clientId":"admin-cli","name":"${client_admin-cli}","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","redirectUris":[],"webOrigins":[],"notBefore":0,"bearerOnly":false,"consentRequired":false,"standardFlowEnabled":false,"implicitFlowEnabled":false,"directAccessGrantsEnabled":true,"serviceAccountsEnabled":false,"publicClient":true,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}},{"id":"2a42b9b8-6542-4b81-9d10-8e3620e06ac6","clientId":"broker","name":"${client_broker}","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","redirectUris":[],"webOrigins":[],"notBefore":0,"bearerOnly":false,"consentRequired":false,"standardFlowEnabled":true,"implicitFlowEnabled":false,"directAccessGrantsEnabled":false,"serviceAccountsEnabled":false,"publicClient":false,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}},{"id":"84753faa-85e9-4893-bf0f-ba95f35e928d","clientId":"my_client_12346289371","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","redirectUris":[],"webOrigins":[],"notBefore":0,"bearerOnly":false,"consentRequired":false,"standardFlowEnabled":true,"implicitFlowEnabled":false,"directAccessGrantsEnabled":true,"serviceAccountsEnabled":false,"publicClient":true,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":true,"nodeReRegistrationTimeout":-1,"protocolMappers":[{"id":"6b6c33ac-f439-454e-af0d-691aa8b21583","name":"realm.roles","protocol":"openid-connect","protocolMapper":"oidc-usermodel-realm-role-mapper","consentRequired":false,"config":{"id.token.claim":"true","access.token.claim":"true","claim.name":"roles","multivalued":"true","userinfo.token.claim":"true"}}],"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access"],"access":{"view":true,"configure":true,"manage":true}},{"id":"3e671d20-54c6-4c69-853c-263f6d6a1858","clientId":"realm-management","name":"${client_realm-management}","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","redirectUris":[],"webOrigins":[],"notBefore":0,"bearerOnly":true,"consentRequired":false,"standardFlowEnabled":true,"implicitFlowEnabled":false,"directAccessGrantsEnabled":false,"serviceAccountsEnabled":false,"publicClient":false,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}},{"id":"5419e9b9-3f3c-415d-ba1a-1f2b0d40e13e","clientId":"security-admin-console","name":"${client_security-admin-console}","rootUrl":"${authAdminUrl}","baseUrl":"/admin/myrealm/console/","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","redirectUris":["/admin/myrealm/console/*"],"webOrigins":["+"],"notBefore":0,"bearerOnly":false,"consentRequired":false,"standardFlowEnabled":true,"implicitFlowEnabled":false,"directAccessGrantsEnabled":false,"serviceAccountsEnabled":false,"publicClient":true,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{"pkce.code.challenge.method":"S256"},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"protocolMappers":[{"id":"b22870a3-53fe-45a0-9d35-869f4a8c1cbd","name":"locale","protocol":"openid-connect","protocolMapper":"oidc-usermodel-attribute-mapper","consentRequired":false,"config":{"userinfo.token.claim":"true","user.attribute":"locale","id.token.claim":"true","access.token.claim":"true","claim.name":"locale","jsonType.label":"String"}}],"defaultClientScopes":["web-origins","role_list","roles","profile","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}}]'
+    headers:
+      Cache-Control:
+      - no-cache
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '7038'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 04 Jan 2023 15:19:43 GMT
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJKR1RiOE1LUUxOc2drZnFUOHZocGdZQzV0NkJ2RmN1d2tlcTAwOGpTLWZRIn0.eyJleHAiOjE2NzI4NDU2NDIsImlhdCI6MTY3Mjg0NTU4MiwianRpIjoiNDgwMTBkMjctY2FhZS00ZWUyLTkxOTQtNGUyYTY0ZGU1YWY5IiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiMmY0NmQ0N2YtZDZmMC00ZmIxLTgwYzEtZjFhNGJlMGZkOGM5IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6IjVhYmE1OWMxLWRmODEtNDIwMS1iNDZmLTIzNTQ3NGYyY2UzYiIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.XiXnLSX0rFAawLxkaj_tWKo8fnobe3t2pR4l59rDTO1BtB0AA9S9LIL6iEhOc6Mvfrten5d1VszdeOV6-p-G_V7u-uBBYGYitNTo_d6PkxeQToKKn_ltavl-VQFM6mbf63SzFw4iZxkk6hRxWHtlKe6oUh-Hlq1oIjmSqPC8lxmColBkDNhYnqXdfaie1bgJzqQIjeOT-gGPXnQTlQdcgZF80Jt4uxeDIbkt-zHkMqOZmGh6ELKyIKr8btKn5Q3z5Q2HJth9zxJvQ34PyX1rVGHGnX5jpbM_TFbRW4KvTpMFU1E5Vg0mjdgrwl9VzBITed_lLD3yenn8V9HlHIZnuQ
+      Connection:
+      - keep-alive
+      Content-type:
+      - application/json
+      User-Agent:
+      - python-requests/2.28.1
+    method: GET
+    uri: https://172.17.0.2:8443/auth/admin/realms/myrealm/clients/84753faa-85e9-4893-bf0f-ba95f35e928d/roles
+  response:
+    body:
+      string: '[{"id":"30909789-4803-4eea-9295-71f3a7714949","name":"new-role","description":"here
+        should go a description. NEW","composite":false,"clientRole":true,"containerId":"84753faa-85e9-4893-bf0f-ba95f35e928d"}]'
+    headers:
+      Cache-Control:
+      - no-cache
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '204'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 04 Jan 2023 15:19:43 GMT
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJKR1RiOE1LUUxOc2drZnFUOHZocGdZQzV0NkJ2RmN1d2tlcTAwOGpTLWZRIn0.eyJleHAiOjE2NzI4NDU2NDIsImlhdCI6MTY3Mjg0NTU4MiwianRpIjoiNDgwMTBkMjctY2FhZS00ZWUyLTkxOTQtNGUyYTY0ZGU1YWY5IiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiMmY0NmQ0N2YtZDZmMC00ZmIxLTgwYzEtZjFhNGJlMGZkOGM5IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6IjVhYmE1OWMxLWRmODEtNDIwMS1iNDZmLTIzNTQ3NGYyY2UzYiIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.XiXnLSX0rFAawLxkaj_tWKo8fnobe3t2pR4l59rDTO1BtB0AA9S9LIL6iEhOc6Mvfrten5d1VszdeOV6-p-G_V7u-uBBYGYitNTo_d6PkxeQToKKn_ltavl-VQFM6mbf63SzFw4iZxkk6hRxWHtlKe6oUh-Hlq1oIjmSqPC8lxmColBkDNhYnqXdfaie1bgJzqQIjeOT-gGPXnQTlQdcgZF80Jt4uxeDIbkt-zHkMqOZmGh6ELKyIKr8btKn5Q3z5Q2HJth9zxJvQ34PyX1rVGHGnX5jpbM_TFbRW4KvTpMFU1E5Vg0mjdgrwl9VzBITed_lLD3yenn8V9HlHIZnuQ
+      Connection:
+      - keep-alive
+      Content-type:
+      - application/json
+      User-Agent:
+      - python-requests/2.28.1
+    method: GET
+    uri: https://172.17.0.2:8443/auth/admin/realms/myrealm
+  response:
+    body:
+      string: '{"id":"myrealm","realm":"myrealm","notBefore":0,"revokeRefreshToken":false,"refreshTokenMaxReuse":0,"accessTokenLifespan":300,"accessTokenLifespanForImplicitFlow":900,"ssoSessionIdleTimeout":1800,"ssoSessionMaxLifespan":36000,"ssoSessionIdleTimeoutRememberMe":0,"ssoSessionMaxLifespanRememberMe":0,"offlineSessionIdleTimeout":2592000,"offlineSessionMaxLifespanEnabled":false,"offlineSessionMaxLifespan":5184000,"accessCodeLifespan":60,"accessCodeLifespanUserAction":300,"accessCodeLifespanLogin":1800,"actionTokenGeneratedByAdminLifespan":43200,"actionTokenGeneratedByUserLifespan":300,"enabled":true,"sslRequired":"external","registrationAllowed":false,"registrationEmailAsUsername":false,"rememberMe":false,"verifyEmail":false,"loginWithEmailAllowed":true,"duplicateEmailsAllowed":false,"resetPasswordAllowed":false,"editUsernameAllowed":false,"bruteForceProtected":false,"permanentLockout":false,"maxFailureWaitSeconds":900,"minimumQuickLoginWaitSeconds":60,"waitIncrementSeconds":60,"quickLoginCheckMilliSeconds":1000,"maxDeltaTimeSeconds":43200,"failureFactor":30,"defaultRoles":["offline_access","uma_authorization"],"requiredCredentials":["password"],"otpPolicyType":"totp","otpPolicyAlgorithm":"HmacSHA1","otpPolicyInitialCounter":0,"otpPolicyDigits":6,"otpPolicyLookAheadWindow":1,"otpPolicyPeriod":30,"otpSupportedApplications":["FreeOTP","Google
+        Authenticator"],"webAuthnPolicyRpEntityName":"keycloak","webAuthnPolicySignatureAlgorithms":["ES256"],"webAuthnPolicyRpId":"","webAuthnPolicyAttestationConveyancePreference":"not
+        specified","webAuthnPolicyAuthenticatorAttachment":"not specified","webAuthnPolicyRequireResidentKey":"not
+        specified","webAuthnPolicyUserVerificationRequirement":"not specified","webAuthnPolicyCreateTimeout":0,"webAuthnPolicyAvoidSameAuthenticatorRegister":false,"webAuthnPolicyAcceptableAaguids":[],"webAuthnPolicyPasswordlessRpEntityName":"keycloak","webAuthnPolicyPasswordlessSignatureAlgorithms":["ES256"],"webAuthnPolicyPasswordlessRpId":"","webAuthnPolicyPasswordlessAttestationConveyancePreference":"not
+        specified","webAuthnPolicyPasswordlessAuthenticatorAttachment":"not specified","webAuthnPolicyPasswordlessRequireResidentKey":"not
+        specified","webAuthnPolicyPasswordlessUserVerificationRequirement":"not specified","webAuthnPolicyPasswordlessCreateTimeout":0,"webAuthnPolicyPasswordlessAvoidSameAuthenticatorRegister":false,"webAuthnPolicyPasswordlessAcceptableAaguids":[],"browserSecurityHeaders":{"contentSecurityPolicyReportOnly":"","xContentTypeOptions":"nosniff","xRobotsTag":"none","xFrameOptions":"SAMEORIGIN","contentSecurityPolicy":"frame-src
+        ''self''; frame-ancestors ''self''; object-src ''none'';","xXSSProtection":"1;
+        mode=block","strictTransportSecurity":"max-age=31536000; includeSubDomains"},"smtpServer":{},"eventsEnabled":false,"eventsListeners":["jboss-logging"],"enabledEventTypes":[],"adminEventsEnabled":false,"adminEventsDetailsEnabled":false,"internationalizationEnabled":false,"supportedLocales":[],"browserFlow":"browser","registrationFlow":"registration","directGrantFlow":"direct
+        grant","resetCredentialsFlow":"reset credentials","clientAuthenticationFlow":"clients","dockerAuthenticationFlow":"docker
+        auth","attributes":{},"userManagedAccessAllowed":false}'
+    headers:
+      Cache-Control:
+      - no-cache
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '3225'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 04 Jan 2023 15:19:43 GMT
+    status:
+      code: 200
+      message: OK
+- request:
+    body: 'null'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJKR1RiOE1LUUxOc2drZnFUOHZocGdZQzV0NkJ2RmN1d2tlcTAwOGpTLWZRIn0.eyJleHAiOjE2NzI4NDU2NDIsImlhdCI6MTY3Mjg0NTU4MiwianRpIjoiNDgwMTBkMjctY2FhZS00ZWUyLTkxOTQtNGUyYTY0ZGU1YWY5IiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiMmY0NmQ0N2YtZDZmMC00ZmIxLTgwYzEtZjFhNGJlMGZkOGM5IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6IjVhYmE1OWMxLWRmODEtNDIwMS1iNDZmLTIzNTQ3NGYyY2UzYiIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.XiXnLSX0rFAawLxkaj_tWKo8fnobe3t2pR4l59rDTO1BtB0AA9S9LIL6iEhOc6Mvfrten5d1VszdeOV6-p-G_V7u-uBBYGYitNTo_d6PkxeQToKKn_ltavl-VQFM6mbf63SzFw4iZxkk6hRxWHtlKe6oUh-Hlq1oIjmSqPC8lxmColBkDNhYnqXdfaie1bgJzqQIjeOT-gGPXnQTlQdcgZF80Jt4uxeDIbkt-zHkMqOZmGh6ELKyIKr8btKn5Q3z5Q2HJth9zxJvQ34PyX1rVGHGnX5jpbM_TFbRW4KvTpMFU1E5Vg0mjdgrwl9VzBITed_lLD3yenn8V9HlHIZnuQ
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '4'
+      Content-type:
+      - application/json
+      User-Agent:
+      - python-requests/2.28.1
+    method: DELETE
+    uri: https://172.17.0.2:8443/auth/admin/realms/myrealm
+  response:
+    body:
+      string: ''
+    headers:
+      Date:
+      - Wed, 04 Jan 2023 15:19:43 GMT
     status:
       code: 204
       message: No Content
