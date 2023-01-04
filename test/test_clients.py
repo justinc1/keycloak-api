@@ -32,28 +32,39 @@ class TestClients(KcBaseTestCase):
 
     def test_client_roles(self):
         client_payload = load_sample('./test/payloads/client.json')
-        clients = self.testbed.getKeycloak().build('clients', self.REALM)
-        svc_state = clients.create(client_payload).isOk()
+        clients_api = self.testbed.getKeycloak().build('clients', self.REALM)
+
+        # initial cleanup
+        ret = clients_api.removeFirstByKV('clientId', client_payload['clientId'])
+        ret = clients_api.findFirstByKV('clientId', client_payload['clientId'])
+        self.assertEqual(ret, [], 'Client should not exist before')
+        # create empty client
+        svc_state = clients_api.create(client_payload).isOk()
         self.assertTrue(svc_state, 'The service should return a 200.')
 
-        ret = clients.findFirstByKV('clientId', client_payload['clientId'])
+        ret = clients_api.findFirstByKV('clientId', client_payload['clientId'])
         self.assertNotEqual(ret, [], 'It should return the posted client')
 
+        # test client role create
         client_query = {'key': 'clientId', 'value': client_payload['clientId']}
-        client_roles_api = clients.roles(client_query)
+        client_roles_api = clients_api.roles(client_query)
         svc_roles_state = client_roles_api.create(
             {"name": "new-role", "description": "here should go a description."}).isOk()
         self.assertTrue(svc_roles_state, 'The client_roles service should return a 200.')
 
-        new_role = clients.get_roles(client_query)[0]
-        self.assertIsNotNone(new_role, 'It should return the posted client role.')
+        client_roles = clients_api.get_roles(client_query)
+        self.assertEqual(1, len(client_roles))
+        new_role = client_roles[0]
+        self.assertEqual("new-role", new_role.value["name"])
+        self.assertEqual("here should go a description.", new_role.value["description"])
 
+        # create realm role, it will be added as composite (sub-role) to client role
         role = {"name": "x_black_magic_x"}
         roles = self.testbed.getKeycloak().build("roles", self.REALM)
         state = roles.create(role).isOk()
-
         self.assertTrue(state, "A role should be created")
 
+        # test adding composite/sub-role
         state = new_role.composite().link(role['name']).isOk()
 
         self.assertTrue(state, "A composite role should be added to the current client role.")
@@ -61,6 +72,7 @@ class TestClients(KcBaseTestCase):
         composites_roles = new_role.composite().findAll().resp().json()
         self.assertEqual(composites_roles[0]['name'], 'x_black_magic_x', "We should have a composite role called: x_black_magic_x")
 
+        # test removing composite/sub-role
         state_delete = new_role.composite().unlink(role['name']).isOk()
         self.assertTrue(state, "A composite role should be deleted from the current client role.")
 
@@ -73,11 +85,11 @@ class TestClients(KcBaseTestCase):
         client_payload['clientId'] = 'test_client_roles_removal'
         client_role_name = "deleteme-role"
 
-        clients = self.testbed.getKeycloak().build('clients', self.REALM)
-        svc_state = clients.create(client_payload).isOk()
+        clients_api = self.testbed.getKeycloak().build('clients', self.REALM)
+        svc_state = clients_api.create(client_payload).isOk()
 
         client_query = {'key': 'clientId', 'value': client_payload['clientId']}
-        client_roles_api = clients.roles(client_query)
+        client_roles_api = clients_api.roles(client_query)
         svc_roles_state = client_roles_api.create(
             {"name": client_role_name, "description": "A role that need to be deleted."}).isOk()
 
