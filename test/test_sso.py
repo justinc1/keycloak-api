@@ -11,6 +11,8 @@ TEST_REALM = "TESTING"
 
 
 class Testing_SSO_API(KcBaseTestCase):
+    vcr_enabled = False
+
     def testing_CRUD_api(self):
         realm = self.master_realm
 
@@ -124,22 +126,16 @@ class Testing_SSO_API(KcBaseTestCase):
         is_empty = not users.findFirstByKV('username', 'The Punisher')
         self.assertTrue(is_empty)
 
-    @classmethod
-    def setUpClass(self):
-        self.testbed = TestBed(REALM, ADMIN_USER, ADMIN_PSW, ENDPOINT)
-        self.testbed.createRealms()
-        self.testbed.createUsers()
-        self.testbed.createClients()
+    def setUp(self):
+        super().setUp()
+        # self.testbed = TestBed(REALM, ADMIN_USER, ADMIN_PSW, ENDPOINT)
+        # self.testbed.createRealms()
+        # self.testbed.createUsers()
+        # self.testbed.createClients()
         self.kc = self.testbed.getKeycloak()
-        self.realm = self.testbed.REALM 
+        self.realm = self.testbed.REALM
         self.master_realm = self.testbed.getAdminRealm()
-        
-    @classmethod
-    def tearDownClass(self):
-        self.testbed.goodBye()
-        if self.master_realm.exist(TEST_REALM): 
-            self.master_realm.remove(TEST_REALM)
-        return True
+
 
 if __name__ == '__main__':
     unittest.main()

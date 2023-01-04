@@ -295,12 +295,12 @@ class TestingAuthenticationFlowsAPI(KcBaseTestCase):
         isConsistent(self.assertEqual, flows, amended_flow)
 
 
-    @classmethod
-    def setUpClass(cls):
-        super().setUpClass()
-        cls.testbed.deleteRealms()
-        cls.testbed.createRealms()
-        cls.authenticationFlow = cls.testbed.getKeycloak().build('authentication', cls.testbed.REALM)
+    def setUp(self):
+        super().setUp(create_all=False)
+        self.testbed.deleteRealms()
+        self.testbed.createRealms()
+        self.REALM = self.testbed.REALM
+        self.authenticationFlow = self.testbed.getKeycloak().build('authentication', self.testbed.REALM)
 
         basic_flow = {
             "alias": "test_number_0",
@@ -358,8 +358,8 @@ class TestingAuthenticationFlowsAPI(KcBaseTestCase):
             "builtIn": False
         }
 
-        cls.flows = [basic_flow, client_flow, basic_flow_2, flow_3, flow_4, flow_5, flow_6]
-        create_testing_flows(cls.flows, cls.authenticationFlow)
+        self.flows = [basic_flow, client_flow, basic_flow_2, flow_3, flow_4, flow_5, flow_6]
+        create_testing_flows(self.flows, self.authenticationFlow)
 
 
 if __name__ == '__main__':

@@ -32,16 +32,3 @@ class TestServerInfo(KcBaseTestCase):
         self.assertEqual("community " + expected_sv_p2, kc.server_info_compound_profile_version(2))
         self.assertEqual("community " + expected_sv, kc.server_info_compound_profile_version(3))
         self.assertEqual("community " + expected_sv, kc.server_info_compound_profile_version(10))
-
-
-    @classmethod
-    def setUpClass(cls):
-        super().setUpClass()
-        # self.testbed.createRealms()
-        # self.testbed.createUsers()
-        cls.REALM = cls.testbed.REALM
-
-    @classmethod
-    def tearDownClass(self):
-        # self.testbed.goodBye()
-        return 1

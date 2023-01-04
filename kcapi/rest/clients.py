@@ -1,4 +1,4 @@
-from copy import copy
+from copy import deepcopy
 
 from .crud import KeycloakCRUD
 
@@ -8,7 +8,9 @@ class Role():
         self.value = role
 
         # Note: Composites() kc param must be top-level API URL
-        kc_top_level = copy(kc)
+        # deepcopy is needed, otherwise we end with corrupted parent client_api (the shallow
+        # copied URLs would get patched to be suitable for client role)
+        kc_top_level = deepcopy(kc)
         for rest_method in kc_top_level.targets.targets:
             custom_url = kc_top_level.targets.targets[rest_method].copy()
             assert custom_url.resources[-1] == 'clients'
@@ -59,14 +61,6 @@ class Composites:
         return self.get()
 
 
-def hack_rest_roles_remove_endpoint(that, kc):
-    custom_delete = that.targets.targets['delete'].copy()
-    custom_delete.replaceResource('clients', 'roles-by-id')
-    kc.targets.targets['delete'] = custom_delete
-
-    return kc
-
-
 def new_child(kc, query, child_resource):
     client_id = kc.findFirst(query)['id']
     return KeycloakCRUD.get_child(kc, client_id, child_resource)
@@ -81,11 +75,26 @@ class Clients(KeycloakCRUD):
 
     def get_roles(self, client_query):
         roles = self.roles(client_query).findAll().resp().json()
-        return list(map(lambda role: Role(self, role), roles))
+
+        assert str(self.targets.targets["read"]).endswith("/clients")
+        ret = [Role(self, role) for role in roles]
+        assert str(self.targets.targets["read"]).endswith("/clients")
+
+        return ret
 
     def roles(self, client_query):
         client_id = super().findFirst(client_query)['id']
-        child = KeycloakCRUD.get_child(self, client_id, 'roles')
-        client_role_api = hack_rest_roles_remove_endpoint(self, child)
+        client_roles_api = KeycloakCRUD.get_child(self, client_id, 'roles')
+        client_roles_api = self.__hack_rest_roles_remove_and_update_endpoint(client_roles_api)
+        return client_roles_api
 
-        return client_role_api
+    def __hack_rest_roles_remove_and_update_endpoint(self, client_roles_api):
+        custom_delete = self.targets.targets['delete'].copy()
+        custom_delete.replaceResource('clients', 'roles-by-id')
+        client_roles_api.targets.targets['delete'] = custom_delete
+
+        custom_update = self.targets.targets['update'].copy()
+        custom_update.replaceResource('clients', 'roles-by-id')
+        client_roles_api.targets.targets['update'] = custom_update
+
+        return client_roles_api
