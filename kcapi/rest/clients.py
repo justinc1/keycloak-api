@@ -24,6 +24,8 @@ class Role():
 
 
 class ClientRoleCRUD(KeycloakCRUD):
+    _rest_params_read = {"briefRepresentation": False}
+
     """
     For RH SSO 7.4 (KC 9.0), role with attributes cannot be created.
     We need to first create role, then update it to add attributes.

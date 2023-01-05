@@ -208,3 +208,74 @@ class TestClients(KcBaseTestCase):
 
     def tearDown(self):
         self.testbed.goodBye()
+
+
+class TestClientRoleCRUD(KcBaseTestCase):
+    def setUp(self):
+        super().setUp(create_all=False)
+        self.testbed.goodBye()  # removes only realm
+        self.testbed.createRealms()
+        self.testbed.createClients()
+        self.REALM = self.testbed.REALM
+
+    def tearDown(self):
+        pass
+        # self.testbed.goodBye()
+
+    def _compare_role_doc(self, role1, role2):
+        r1 = copy(role1)
+        r2 = copy(role2)
+        for rr in [r1, r2]:
+            rr.pop("id", None)
+            rr.pop("containerid", None)
+        return r1 == r2
+
+    def test_ClientRoleCRUD_attributes(self, role_doc=000):
+        """
+        Ensure ClientRoleCRUD .get()/all()/... do always include also "attributes".
+        E.g. briefRepresentation=False must be used.
+        """
+        # the test role, without attributes
+        role_doc = {
+            "name": "new-role",
+            "description": "here should go a description.",
+            # "attributes": {
+            #     "ci-new-role-key0": [
+            #         "ci-new-role-value0"
+            #     ]
+            # },
+            'clientRole': True,
+            'composite': False,
+        }
+        expected_role = copy(role_doc)
+        expected_role["attributes"] = {}
+
+        client_clientId = "dc"
+        clients_api = self.testbed.getKeycloak().build('clients', self.REALM)
+        client_query = {'key': 'clientId', 'value': client_clientId}
+        client_roles_api = clients_api.roles(client_query)
+
+        # check initial state
+        client_roles = client_roles_api.all()
+        self.assertEqual(0, len(client_roles))
+
+        # prepare test role
+        svc_roles_state = client_roles_api.create(role_doc).isOk()
+        self.assertTrue(svc_roles_state, 'The client_roles service should return a 200.')
+        # ---------------------
+
+        # test .get(), .all(), findFirst...(), etc
+        client_roles = client_roles_api.all()
+        self.assertEqual(1, len(client_roles))
+        self.assertTrue(expected_role, client_roles[0])
+        role_id = client_roles[0]["id"]
+
+        client_roles = client_roles_api.findAll().verify().resp().json()
+        self.assertEqual(1, len(client_roles))
+        self.assertTrue(expected_role, client_roles[0])
+
+        role = client_roles_api.get(role_id)
+        self.assertTrue(expected_role, role)
+
+        role = client_roles_api.findFirstByKV("name", "new-role")
+        self.assertTrue(expected_role, role)
