@@ -4,6 +4,9 @@ from .kcsession import KcSession
 
 
 class KeycloakCRUD(object):
+    # some derived classes (roles) need extra query paramters for list/read REST operations
+    _rest_params_read = {}
+
     @classmethod
     def get_child(cls, that, resource_id, resource_name):
         # .get_child in derived classes need to return instance of derived class
@@ -58,12 +61,16 @@ class KeycloakCRUD(object):
         return ResponseHandler(url, method='Delete', payload=payload).handleResponse(ret)
         
     def get(self, _id):
+        params = self._rest_params_read
         url = self.targets.url('read')
         with KcSession() as session:
-            ret = session.get(str(self.setIdentifier(_id, url)), headers=self.headers())
+            ret = session.get(str(self.setIdentifier(_id, url)), params=params, headers=self.headers())
         return ResponseHandler(url, method='Get').handleResponse(ret)
 
     def findAll(self, params=None):
+        if not params:
+            # TODO drop method param params - now it can be set on per instance (or per-derived class) basis.
+            params = self._rest_params_read
         url = self.targets.url('read')
         with KcSession() as session:
             ret = session.get(url, params=params, headers=self.headers())

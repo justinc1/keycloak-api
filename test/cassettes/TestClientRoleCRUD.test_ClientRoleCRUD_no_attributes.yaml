@@ -1,0 +1,455 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.28.1
+    method: GET
+    uri: https://172.17.0.2:8443/auth/realms/master/.well-known/openid-configuration
+  response:
+    body:
+      string: '{"issuer":"https://172.17.0.2:8443/auth/realms/master","authorization_endpoint":"https://172.17.0.2:8443/auth/realms/master/protocol/openid-connect/auth","token_endpoint":"https://172.17.0.2:8443/auth/realms/master/protocol/openid-connect/token","token_introspection_endpoint":"https://172.17.0.2:8443/auth/realms/master/protocol/openid-connect/token/introspect","userinfo_endpoint":"https://172.17.0.2:8443/auth/realms/master/protocol/openid-connect/userinfo","end_session_endpoint":"https://172.17.0.2:8443/auth/realms/master/protocol/openid-connect/logout","jwks_uri":"https://172.17.0.2:8443/auth/realms/master/protocol/openid-connect/certs","check_session_iframe":"https://172.17.0.2:8443/auth/realms/master/protocol/openid-connect/login-status-iframe.html","grant_types_supported":["authorization_code","implicit","refresh_token","password","client_credentials"],"response_types_supported":["code","none","id_token","token","id_token
+        token","code id_token","code token","code id_token token"],"subject_types_supported":["public","pairwise"],"id_token_signing_alg_values_supported":["PS384","ES384","RS384","HS256","HS512","ES256","RS256","HS384","ES512","PS256","PS512","RS512"],"id_token_encryption_alg_values_supported":["RSA-OAEP","RSA1_5"],"id_token_encryption_enc_values_supported":["A128GCM","A128CBC-HS256"],"userinfo_signing_alg_values_supported":["PS384","ES384","RS384","HS256","HS512","ES256","RS256","HS384","ES512","PS256","PS512","RS512","none"],"request_object_signing_alg_values_supported":["PS384","ES384","RS384","HS256","HS512","ES256","RS256","HS384","ES512","PS256","PS512","RS512","none"],"response_modes_supported":["query","fragment","form_post"],"registration_endpoint":"https://172.17.0.2:8443/auth/realms/master/clients-registrations/openid-connect","token_endpoint_auth_methods_supported":["private_key_jwt","client_secret_basic","client_secret_post","tls_client_auth","client_secret_jwt"],"token_endpoint_auth_signing_alg_values_supported":["PS384","ES384","RS384","HS256","HS512","ES256","RS256","HS384","ES512","PS256","PS512","RS512"],"claims_supported":["aud","sub","iss","auth_time","name","given_name","family_name","preferred_username","email","acr"],"claim_types_supported":["normal"],"claims_parameter_supported":false,"scopes_supported":["openid","address","email","microprofile-jwt","offline_access","phone","profile","roles","web-origins"],"request_parameter_supported":true,"request_uri_parameter_supported":true,"code_challenge_methods_supported":["plain","S256"],"tls_client_certificate_bound_access_tokens":true,"introspection_endpoint":"https://172.17.0.2:8443/auth/realms/master/protocol/openid-connect/token/introspect"}'
+    headers:
+      Cache-Control:
+      - no-cache, must-revalidate, no-transform, no-store
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '2674'
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 05 Jan 2023 21:15:36 GMT
+    status:
+      code: 200
+      message: OK
+- request:
+    body: client_id=admin-cli&grant_type=password&realm=master&username=admin&password=admin
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '82'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      User-Agent:
+      - python-requests/2.28.1
+    method: POST
+    uri: https://172.17.0.2:8443/auth/realms/master/protocol/openid-connect/token
+  response:
+    body:
+      string: '{"access_token":"eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJjOEl1WGVFT3ljVG9DWnc0RnRPSUtETXFtcENqVTJkTU1CZFZCV2xnT0NRIn0.eyJleHAiOjE2NzI5NTMzOTYsImlhdCI6MTY3Mjk1MzMzNiwianRpIjoiY2E2ZDc3ZTktOWU3Mi00MDcwLWExZmYtOTNlOGYyNDM4OWY4IiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiMWMxZmE4ZWYtMjAxZS00N2YwLTk5NDMtYWFkMmZiZmJmMWZkIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6ImU0OWE0MGIyLWQ0MzUtNGY1OC1iYTgxLTY4ZGQyZDU4NGFiNSIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.M-mUsS3jAOtUKZAUZKMxEVI8R2SfOOM9qcJ2dq1wnQXJ0nvr6_WoFTkR0bUkY-Mza4OWA-DTV5ACuzvU3FB88FrAAQtqqsu06Cudu1p1XJ0SEleJWpqs3YySufNSe9FLbZMJ-0yiggFMmjtfMibd6upTmQaFFz1JyUVPwkSQotLX7QVUS8vTzbtK19GJrWwh2a87lDraoSjSFHSd5mSkvnCzHCIdQw48SLHQiPzz-NRH7ozXY1_gC6rMbrRtoJaltCoVA_xRv_Z4oDOVbU8-6EO6XxHDBcpGrdT6_oc0ov_Fu1-qbUMVH3_hh4uB6bzvP6iSMwzcI0ZhyZCsD7YAzw","expires_in":60,"refresh_expires_in":1800,"refresh_token":"eyJhbGciOiJIUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI5MjJlNmM4OC05ODc3LTRhZWItOTMzNy0wYWQyZmZjY2MwZTQifQ.eyJleHAiOjE2NzI5NTUxMzYsImlhdCI6MTY3Mjk1MzMzNiwianRpIjoiMDQyZjk4ZTgtOTE1ZC00ZGFiLThjNTQtYjQ2NmNlYWJhZDc2IiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwiYXVkIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiMWMxZmE4ZWYtMjAxZS00N2YwLTk5NDMtYWFkMmZiZmJmMWZkIiwidHlwIjoiUmVmcmVzaCIsImF6cCI6ImFkbWluLWNsaSIsInNlc3Npb25fc3RhdGUiOiJlNDlhNDBiMi1kNDM1LTRmNTgtYmE4MS02OGRkMmQ1ODRhYjUiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUifQ.uuUriM8sXzQeEWWST7ZoQ91x-pJjc7QZa5W5QJNRv8k","token_type":"bearer","not-before-policy":0,"session_state":"e49a40b2-d435-4f58-ba81-68dd2d584ab5","scope":"email
+        profile"}'
+    headers:
+      Cache-Control:
+      - no-store
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1726'
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 05 Jan 2023 21:15:36 GMT
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - KEYCLOAK_LOCALE=; Version=1; Comment=Expiring cookie; Expires=Thu, 01-Jan-1970
+        00:00:10 GMT; Max-Age=0; Path=/auth/realms/master/; HttpOnly
+      - KC_RESTART=; Version=1; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Max-Age=0;
+        Path=/auth/realms/master/; HttpOnly
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJjOEl1WGVFT3ljVG9DWnc0RnRPSUtETXFtcENqVTJkTU1CZFZCV2xnT0NRIn0.eyJleHAiOjE2NzI5NTMzOTYsImlhdCI6MTY3Mjk1MzMzNiwianRpIjoiY2E2ZDc3ZTktOWU3Mi00MDcwLWExZmYtOTNlOGYyNDM4OWY4IiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiMWMxZmE4ZWYtMjAxZS00N2YwLTk5NDMtYWFkMmZiZmJmMWZkIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6ImU0OWE0MGIyLWQ0MzUtNGY1OC1iYTgxLTY4ZGQyZDU4NGFiNSIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.M-mUsS3jAOtUKZAUZKMxEVI8R2SfOOM9qcJ2dq1wnQXJ0nvr6_WoFTkR0bUkY-Mza4OWA-DTV5ACuzvU3FB88FrAAQtqqsu06Cudu1p1XJ0SEleJWpqs3YySufNSe9FLbZMJ-0yiggFMmjtfMibd6upTmQaFFz1JyUVPwkSQotLX7QVUS8vTzbtK19GJrWwh2a87lDraoSjSFHSd5mSkvnCzHCIdQw48SLHQiPzz-NRH7ozXY1_gC6rMbrRtoJaltCoVA_xRv_Z4oDOVbU8-6EO6XxHDBcpGrdT6_oc0ov_Fu1-qbUMVH3_hh4uB6bzvP6iSMwzcI0ZhyZCsD7YAzw
+      Connection:
+      - keep-alive
+      Content-type:
+      - application/json
+      User-Agent:
+      - python-requests/2.28.1
+    method: GET
+    uri: https://172.17.0.2:8443/auth/admin/realms/ci-test-realm
+  response:
+    body:
+      string: '{"id":"ci-test-realm","realm":"ci-test-realm","notBefore":0,"revokeRefreshToken":false,"refreshTokenMaxReuse":0,"accessTokenLifespan":300,"accessTokenLifespanForImplicitFlow":900,"ssoSessionIdleTimeout":1800,"ssoSessionMaxLifespan":36000,"ssoSessionIdleTimeoutRememberMe":0,"ssoSessionMaxLifespanRememberMe":0,"offlineSessionIdleTimeout":2592000,"offlineSessionMaxLifespanEnabled":false,"offlineSessionMaxLifespan":5184000,"accessCodeLifespan":60,"accessCodeLifespanUserAction":300,"accessCodeLifespanLogin":1800,"actionTokenGeneratedByAdminLifespan":43200,"actionTokenGeneratedByUserLifespan":300,"enabled":true,"sslRequired":"external","registrationAllowed":false,"registrationEmailAsUsername":false,"rememberMe":false,"verifyEmail":false,"loginWithEmailAllowed":true,"duplicateEmailsAllowed":false,"resetPasswordAllowed":false,"editUsernameAllowed":false,"bruteForceProtected":false,"permanentLockout":false,"maxFailureWaitSeconds":900,"minimumQuickLoginWaitSeconds":60,"waitIncrementSeconds":60,"quickLoginCheckMilliSeconds":1000,"maxDeltaTimeSeconds":43200,"failureFactor":30,"defaultRoles":["offline_access","uma_authorization"],"requiredCredentials":["password"],"otpPolicyType":"totp","otpPolicyAlgorithm":"HmacSHA1","otpPolicyInitialCounter":0,"otpPolicyDigits":6,"otpPolicyLookAheadWindow":1,"otpPolicyPeriod":30,"otpSupportedApplications":["FreeOTP","Google
+        Authenticator"],"webAuthnPolicyRpEntityName":"keycloak","webAuthnPolicySignatureAlgorithms":["ES256"],"webAuthnPolicyRpId":"","webAuthnPolicyAttestationConveyancePreference":"not
+        specified","webAuthnPolicyAuthenticatorAttachment":"not specified","webAuthnPolicyRequireResidentKey":"not
+        specified","webAuthnPolicyUserVerificationRequirement":"not specified","webAuthnPolicyCreateTimeout":0,"webAuthnPolicyAvoidSameAuthenticatorRegister":false,"webAuthnPolicyAcceptableAaguids":[],"webAuthnPolicyPasswordlessRpEntityName":"keycloak","webAuthnPolicyPasswordlessSignatureAlgorithms":["ES256"],"webAuthnPolicyPasswordlessRpId":"","webAuthnPolicyPasswordlessAttestationConveyancePreference":"not
+        specified","webAuthnPolicyPasswordlessAuthenticatorAttachment":"not specified","webAuthnPolicyPasswordlessRequireResidentKey":"not
+        specified","webAuthnPolicyPasswordlessUserVerificationRequirement":"not specified","webAuthnPolicyPasswordlessCreateTimeout":0,"webAuthnPolicyPasswordlessAvoidSameAuthenticatorRegister":false,"webAuthnPolicyPasswordlessAcceptableAaguids":[],"browserSecurityHeaders":{"contentSecurityPolicyReportOnly":"","xContentTypeOptions":"nosniff","xRobotsTag":"none","xFrameOptions":"SAMEORIGIN","contentSecurityPolicy":"frame-src
+        ''self''; frame-ancestors ''self''; object-src ''none'';","xXSSProtection":"1;
+        mode=block","strictTransportSecurity":"max-age=31536000; includeSubDomains"},"smtpServer":{},"eventsEnabled":false,"eventsListeners":["jboss-logging"],"enabledEventTypes":[],"adminEventsEnabled":false,"adminEventsDetailsEnabled":false,"internationalizationEnabled":false,"supportedLocales":[],"browserFlow":"browser","registrationFlow":"registration","directGrantFlow":"direct
+        grant","resetCredentialsFlow":"reset credentials","clientAuthenticationFlow":"clients","dockerAuthenticationFlow":"docker
+        auth","attributes":{},"userManagedAccessAllowed":false}'
+    headers:
+      Cache-Control:
+      - no-cache
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '3237'
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 05 Jan 2023 21:15:36 GMT
+    status:
+      code: 200
+      message: OK
+- request:
+    body: 'null'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJjOEl1WGVFT3ljVG9DWnc0RnRPSUtETXFtcENqVTJkTU1CZFZCV2xnT0NRIn0.eyJleHAiOjE2NzI5NTMzOTYsImlhdCI6MTY3Mjk1MzMzNiwianRpIjoiY2E2ZDc3ZTktOWU3Mi00MDcwLWExZmYtOTNlOGYyNDM4OWY4IiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiMWMxZmE4ZWYtMjAxZS00N2YwLTk5NDMtYWFkMmZiZmJmMWZkIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6ImU0OWE0MGIyLWQ0MzUtNGY1OC1iYTgxLTY4ZGQyZDU4NGFiNSIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.M-mUsS3jAOtUKZAUZKMxEVI8R2SfOOM9qcJ2dq1wnQXJ0nvr6_WoFTkR0bUkY-Mza4OWA-DTV5ACuzvU3FB88FrAAQtqqsu06Cudu1p1XJ0SEleJWpqs3YySufNSe9FLbZMJ-0yiggFMmjtfMibd6upTmQaFFz1JyUVPwkSQotLX7QVUS8vTzbtK19GJrWwh2a87lDraoSjSFHSd5mSkvnCzHCIdQw48SLHQiPzz-NRH7ozXY1_gC6rMbrRtoJaltCoVA_xRv_Z4oDOVbU8-6EO6XxHDBcpGrdT6_oc0ov_Fu1-qbUMVH3_hh4uB6bzvP6iSMwzcI0ZhyZCsD7YAzw
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '4'
+      Content-type:
+      - application/json
+      User-Agent:
+      - python-requests/2.28.1
+    method: DELETE
+    uri: https://172.17.0.2:8443/auth/admin/realms/ci-test-realm
+  response:
+    body:
+      string: ''
+    headers:
+      Date:
+      - Thu, 05 Jan 2023 21:15:36 GMT
+    status:
+      code: 204
+      message: No Content
+- request:
+    body: '{"enabled": "true", "id": "ci-test-realm", "realm": "ci-test-realm"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJjOEl1WGVFT3ljVG9DWnc0RnRPSUtETXFtcENqVTJkTU1CZFZCV2xnT0NRIn0.eyJleHAiOjE2NzI5NTMzOTYsImlhdCI6MTY3Mjk1MzMzNiwianRpIjoiY2E2ZDc3ZTktOWU3Mi00MDcwLWExZmYtOTNlOGYyNDM4OWY4IiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiMWMxZmE4ZWYtMjAxZS00N2YwLTk5NDMtYWFkMmZiZmJmMWZkIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6ImU0OWE0MGIyLWQ0MzUtNGY1OC1iYTgxLTY4ZGQyZDU4NGFiNSIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.M-mUsS3jAOtUKZAUZKMxEVI8R2SfOOM9qcJ2dq1wnQXJ0nvr6_WoFTkR0bUkY-Mza4OWA-DTV5ACuzvU3FB88FrAAQtqqsu06Cudu1p1XJ0SEleJWpqs3YySufNSe9FLbZMJ-0yiggFMmjtfMibd6upTmQaFFz1JyUVPwkSQotLX7QVUS8vTzbtK19GJrWwh2a87lDraoSjSFHSd5mSkvnCzHCIdQw48SLHQiPzz-NRH7ozXY1_gC6rMbrRtoJaltCoVA_xRv_Z4oDOVbU8-6EO6XxHDBcpGrdT6_oc0ov_Fu1-qbUMVH3_hh4uB6bzvP6iSMwzcI0ZhyZCsD7YAzw
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '68'
+      Content-type:
+      - application/json
+      User-Agent:
+      - python-requests/2.28.1
+    method: POST
+    uri: https://172.17.0.2:8443/auth/admin/realms
+  response:
+    body:
+      string: ''
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      Date:
+      - Thu, 05 Jan 2023 21:15:37 GMT
+      Location:
+      - https://172.17.0.2:8443/auth/admin/realms/ci-test-realm
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{"enabled": true, "attributes": {}, "redirectUris": [], "clientId": "dc",
+      "protocol": "openid-connect", "directAccessGrantsEnabled": true}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJjOEl1WGVFT3ljVG9DWnc0RnRPSUtETXFtcENqVTJkTU1CZFZCV2xnT0NRIn0.eyJleHAiOjE2NzI5NTMzOTYsImlhdCI6MTY3Mjk1MzMzNiwianRpIjoiY2E2ZDc3ZTktOWU3Mi00MDcwLWExZmYtOTNlOGYyNDM4OWY4IiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiMWMxZmE4ZWYtMjAxZS00N2YwLTk5NDMtYWFkMmZiZmJmMWZkIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6ImU0OWE0MGIyLWQ0MzUtNGY1OC1iYTgxLTY4ZGQyZDU4NGFiNSIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.M-mUsS3jAOtUKZAUZKMxEVI8R2SfOOM9qcJ2dq1wnQXJ0nvr6_WoFTkR0bUkY-Mza4OWA-DTV5ACuzvU3FB88FrAAQtqqsu06Cudu1p1XJ0SEleJWpqs3YySufNSe9FLbZMJ-0yiggFMmjtfMibd6upTmQaFFz1JyUVPwkSQotLX7QVUS8vTzbtK19GJrWwh2a87lDraoSjSFHSd5mSkvnCzHCIdQw48SLHQiPzz-NRH7ozXY1_gC6rMbrRtoJaltCoVA_xRv_Z4oDOVbU8-6EO6XxHDBcpGrdT6_oc0ov_Fu1-qbUMVH3_hh4uB6bzvP6iSMwzcI0ZhyZCsD7YAzw
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '138'
+      Content-type:
+      - application/json
+      User-Agent:
+      - python-requests/2.28.1
+    method: POST
+    uri: https://172.17.0.2:8443/auth/admin/realms/ci-test-realm/clients
+  response:
+    body:
+      string: ''
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      Date:
+      - Thu, 05 Jan 2023 21:15:37 GMT
+      Location:
+      - https://172.17.0.2:8443/auth/admin/realms/ci-test-realm/clients/8e5f3ef5-8aa2-455a-8fa6-52c02eb2d12d
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJjOEl1WGVFT3ljVG9DWnc0RnRPSUtETXFtcENqVTJkTU1CZFZCV2xnT0NRIn0.eyJleHAiOjE2NzI5NTMzOTYsImlhdCI6MTY3Mjk1MzMzNiwianRpIjoiY2E2ZDc3ZTktOWU3Mi00MDcwLWExZmYtOTNlOGYyNDM4OWY4IiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiMWMxZmE4ZWYtMjAxZS00N2YwLTk5NDMtYWFkMmZiZmJmMWZkIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6ImU0OWE0MGIyLWQ0MzUtNGY1OC1iYTgxLTY4ZGQyZDU4NGFiNSIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.M-mUsS3jAOtUKZAUZKMxEVI8R2SfOOM9qcJ2dq1wnQXJ0nvr6_WoFTkR0bUkY-Mza4OWA-DTV5ACuzvU3FB88FrAAQtqqsu06Cudu1p1XJ0SEleJWpqs3YySufNSe9FLbZMJ-0yiggFMmjtfMibd6upTmQaFFz1JyUVPwkSQotLX7QVUS8vTzbtK19GJrWwh2a87lDraoSjSFHSd5mSkvnCzHCIdQw48SLHQiPzz-NRH7ozXY1_gC6rMbrRtoJaltCoVA_xRv_Z4oDOVbU8-6EO6XxHDBcpGrdT6_oc0ov_Fu1-qbUMVH3_hh4uB6bzvP6iSMwzcI0ZhyZCsD7YAzw
+      Connection:
+      - keep-alive
+      Content-type:
+      - application/json
+      User-Agent:
+      - python-requests/2.28.1
+    method: GET
+    uri: https://172.17.0.2:8443/auth/admin/realms/ci-test-realm/clients
+  response:
+    body:
+      string: '[{"id":"f03ae644-6598-4f82-96a6-b5c4ed5210c7","clientId":"account","name":"${client_account}","rootUrl":"${authBaseUrl}","baseUrl":"/realms/ci-test-realm/account/","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","defaultRoles":["manage-account","view-profile"],"redirectUris":["/realms/ci-test-realm/account/*"],"webOrigins":[],"notBefore":0,"bearerOnly":false,"consentRequired":false,"standardFlowEnabled":true,"implicitFlowEnabled":false,"directAccessGrantsEnabled":false,"serviceAccountsEnabled":false,"publicClient":false,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"defaultClientScopes":["web-origins","role_list","profile","roles","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}},{"id":"5c79ec52-1d02-404d-bf18-5bfbb6dc5dc2","clientId":"account-console","name":"${client_account-console}","rootUrl":"${authBaseUrl}","baseUrl":"/realms/ci-test-realm/account/","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","redirectUris":["/realms/ci-test-realm/account/*"],"webOrigins":[],"notBefore":0,"bearerOnly":false,"consentRequired":false,"standardFlowEnabled":true,"implicitFlowEnabled":false,"directAccessGrantsEnabled":false,"serviceAccountsEnabled":false,"publicClient":true,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{"pkce.code.challenge.method":"S256"},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"protocolMappers":[{"id":"8dc54d5d-7253-4d5c-93ee-34dcb676ab7c","name":"audience
+        resolve","protocol":"openid-connect","protocolMapper":"oidc-audience-resolve-mapper","consentRequired":false,"config":{}}],"defaultClientScopes":["web-origins","role_list","profile","roles","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}},{"id":"393dbed0-9d4a-4976-b556-58c1ad159827","clientId":"admin-cli","name":"${client_admin-cli}","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","redirectUris":[],"webOrigins":[],"notBefore":0,"bearerOnly":false,"consentRequired":false,"standardFlowEnabled":false,"implicitFlowEnabled":false,"directAccessGrantsEnabled":true,"serviceAccountsEnabled":false,"publicClient":true,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"defaultClientScopes":["web-origins","role_list","profile","roles","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}},{"id":"c378ac91-7b33-461f-aae7-892bc54741b5","clientId":"broker","name":"${client_broker}","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","redirectUris":[],"webOrigins":[],"notBefore":0,"bearerOnly":false,"consentRequired":false,"standardFlowEnabled":true,"implicitFlowEnabled":false,"directAccessGrantsEnabled":false,"serviceAccountsEnabled":false,"publicClient":false,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"defaultClientScopes":["web-origins","role_list","profile","roles","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}},{"id":"8e5f3ef5-8aa2-455a-8fa6-52c02eb2d12d","clientId":"dc","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","redirectUris":[],"webOrigins":[],"notBefore":0,"bearerOnly":false,"consentRequired":false,"standardFlowEnabled":true,"implicitFlowEnabled":false,"directAccessGrantsEnabled":true,"serviceAccountsEnabled":false,"publicClient":true,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":true,"nodeReRegistrationTimeout":-1,"defaultClientScopes":["web-origins","role_list","profile","roles","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}},{"id":"a9296109-7447-4d22-ab9e-897daaaf7f3c","clientId":"realm-management","name":"${client_realm-management}","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","redirectUris":[],"webOrigins":[],"notBefore":0,"bearerOnly":true,"consentRequired":false,"standardFlowEnabled":true,"implicitFlowEnabled":false,"directAccessGrantsEnabled":false,"serviceAccountsEnabled":false,"publicClient":false,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"defaultClientScopes":["web-origins","role_list","profile","roles","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}},{"id":"47f3291a-f8ef-425a-b10b-45751a545c4d","clientId":"security-admin-console","name":"${client_security-admin-console}","rootUrl":"${authAdminUrl}","baseUrl":"/admin/ci-test-realm/console/","surrogateAuthRequired":false,"enabled":true,"alwaysDisplayInConsole":false,"clientAuthenticatorType":"client-secret","redirectUris":["/admin/ci-test-realm/console/*"],"webOrigins":["+"],"notBefore":0,"bearerOnly":false,"consentRequired":false,"standardFlowEnabled":true,"implicitFlowEnabled":false,"directAccessGrantsEnabled":false,"serviceAccountsEnabled":false,"publicClient":true,"frontchannelLogout":false,"protocol":"openid-connect","attributes":{"pkce.code.challenge.method":"S256"},"authenticationFlowBindingOverrides":{},"fullScopeAllowed":false,"nodeReRegistrationTimeout":0,"protocolMappers":[{"id":"5abc9d17-b98d-4733-a791-961683247ef7","name":"locale","protocol":"openid-connect","protocolMapper":"oidc-usermodel-attribute-mapper","consentRequired":false,"config":{"userinfo.token.claim":"true","user.attribute":"locale","id.token.claim":"true","access.token.claim":"true","claim.name":"locale","jsonType.label":"String"}}],"defaultClientScopes":["web-origins","role_list","profile","roles","email"],"optionalClientScopes":["address","phone","offline_access","microprofile-jwt"],"access":{"view":true,"configure":true,"manage":true}}]'
+    headers:
+      Cache-Control:
+      - no-cache
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '6748'
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 05 Jan 2023 21:15:37 GMT
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJjOEl1WGVFT3ljVG9DWnc0RnRPSUtETXFtcENqVTJkTU1CZFZCV2xnT0NRIn0.eyJleHAiOjE2NzI5NTMzOTYsImlhdCI6MTY3Mjk1MzMzNiwianRpIjoiY2E2ZDc3ZTktOWU3Mi00MDcwLWExZmYtOTNlOGYyNDM4OWY4IiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiMWMxZmE4ZWYtMjAxZS00N2YwLTk5NDMtYWFkMmZiZmJmMWZkIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6ImU0OWE0MGIyLWQ0MzUtNGY1OC1iYTgxLTY4ZGQyZDU4NGFiNSIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.M-mUsS3jAOtUKZAUZKMxEVI8R2SfOOM9qcJ2dq1wnQXJ0nvr6_WoFTkR0bUkY-Mza4OWA-DTV5ACuzvU3FB88FrAAQtqqsu06Cudu1p1XJ0SEleJWpqs3YySufNSe9FLbZMJ-0yiggFMmjtfMibd6upTmQaFFz1JyUVPwkSQotLX7QVUS8vTzbtK19GJrWwh2a87lDraoSjSFHSd5mSkvnCzHCIdQw48SLHQiPzz-NRH7ozXY1_gC6rMbrRtoJaltCoVA_xRv_Z4oDOVbU8-6EO6XxHDBcpGrdT6_oc0ov_Fu1-qbUMVH3_hh4uB6bzvP6iSMwzcI0ZhyZCsD7YAzw
+      Connection:
+      - keep-alive
+      Content-type:
+      - application/json
+      User-Agent:
+      - python-requests/2.28.1
+    method: GET
+    uri: https://172.17.0.2:8443/auth/admin/realms/ci-test-realm/clients/8e5f3ef5-8aa2-455a-8fa6-52c02eb2d12d/roles?briefRepresentation=False
+  response:
+    body:
+      string: '[]'
+    headers:
+      Cache-Control:
+      - no-cache
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '2'
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 05 Jan 2023 21:15:37 GMT
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"name": "new-role", "description": "here should go a description."}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJjOEl1WGVFT3ljVG9DWnc0RnRPSUtETXFtcENqVTJkTU1CZFZCV2xnT0NRIn0.eyJleHAiOjE2NzI5NTMzOTYsImlhdCI6MTY3Mjk1MzMzNiwianRpIjoiY2E2ZDc3ZTktOWU3Mi00MDcwLWExZmYtOTNlOGYyNDM4OWY4IiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiMWMxZmE4ZWYtMjAxZS00N2YwLTk5NDMtYWFkMmZiZmJmMWZkIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6ImU0OWE0MGIyLWQ0MzUtNGY1OC1iYTgxLTY4ZGQyZDU4NGFiNSIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.M-mUsS3jAOtUKZAUZKMxEVI8R2SfOOM9qcJ2dq1wnQXJ0nvr6_WoFTkR0bUkY-Mza4OWA-DTV5ACuzvU3FB88FrAAQtqqsu06Cudu1p1XJ0SEleJWpqs3YySufNSe9FLbZMJ-0yiggFMmjtfMibd6upTmQaFFz1JyUVPwkSQotLX7QVUS8vTzbtK19GJrWwh2a87lDraoSjSFHSd5mSkvnCzHCIdQw48SLHQiPzz-NRH7ozXY1_gC6rMbrRtoJaltCoVA_xRv_Z4oDOVbU8-6EO6XxHDBcpGrdT6_oc0ov_Fu1-qbUMVH3_hh4uB6bzvP6iSMwzcI0ZhyZCsD7YAzw
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '68'
+      Content-type:
+      - application/json
+      User-Agent:
+      - python-requests/2.28.1
+    method: POST
+    uri: https://172.17.0.2:8443/auth/admin/realms/ci-test-realm/clients/8e5f3ef5-8aa2-455a-8fa6-52c02eb2d12d/roles
+  response:
+    body:
+      string: ''
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      Date:
+      - Thu, 05 Jan 2023 21:15:37 GMT
+      Location:
+      - https://172.17.0.2:8443/auth/admin/realms/ci-test-realm/clients/8e5f3ef5-8aa2-455a-8fa6-52c02eb2d12d/roles/new-role
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJjOEl1WGVFT3ljVG9DWnc0RnRPSUtETXFtcENqVTJkTU1CZFZCV2xnT0NRIn0.eyJleHAiOjE2NzI5NTMzOTYsImlhdCI6MTY3Mjk1MzMzNiwianRpIjoiY2E2ZDc3ZTktOWU3Mi00MDcwLWExZmYtOTNlOGYyNDM4OWY4IiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiMWMxZmE4ZWYtMjAxZS00N2YwLTk5NDMtYWFkMmZiZmJmMWZkIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6ImU0OWE0MGIyLWQ0MzUtNGY1OC1iYTgxLTY4ZGQyZDU4NGFiNSIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.M-mUsS3jAOtUKZAUZKMxEVI8R2SfOOM9qcJ2dq1wnQXJ0nvr6_WoFTkR0bUkY-Mza4OWA-DTV5ACuzvU3FB88FrAAQtqqsu06Cudu1p1XJ0SEleJWpqs3YySufNSe9FLbZMJ-0yiggFMmjtfMibd6upTmQaFFz1JyUVPwkSQotLX7QVUS8vTzbtK19GJrWwh2a87lDraoSjSFHSd5mSkvnCzHCIdQw48SLHQiPzz-NRH7ozXY1_gC6rMbrRtoJaltCoVA_xRv_Z4oDOVbU8-6EO6XxHDBcpGrdT6_oc0ov_Fu1-qbUMVH3_hh4uB6bzvP6iSMwzcI0ZhyZCsD7YAzw
+      Connection:
+      - keep-alive
+      Content-type:
+      - application/json
+      User-Agent:
+      - python-requests/2.28.1
+    method: GET
+    uri: https://172.17.0.2:8443/auth/admin/realms/ci-test-realm/clients/8e5f3ef5-8aa2-455a-8fa6-52c02eb2d12d/roles?briefRepresentation=False
+  response:
+    body:
+      string: '[{"id":"5369dc39-3836-4d01-bbda-ad2815bd69f6","name":"new-role","description":"here
+        should go a description.","composite":false,"clientRole":true,"containerId":"8e5f3ef5-8aa2-455a-8fa6-52c02eb2d12d","attributes":{}}]'
+    headers:
+      Cache-Control:
+      - no-cache
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '216'
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 05 Jan 2023 21:15:37 GMT
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJjOEl1WGVFT3ljVG9DWnc0RnRPSUtETXFtcENqVTJkTU1CZFZCV2xnT0NRIn0.eyJleHAiOjE2NzI5NTMzOTYsImlhdCI6MTY3Mjk1MzMzNiwianRpIjoiY2E2ZDc3ZTktOWU3Mi00MDcwLWExZmYtOTNlOGYyNDM4OWY4IiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiMWMxZmE4ZWYtMjAxZS00N2YwLTk5NDMtYWFkMmZiZmJmMWZkIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6ImU0OWE0MGIyLWQ0MzUtNGY1OC1iYTgxLTY4ZGQyZDU4NGFiNSIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.M-mUsS3jAOtUKZAUZKMxEVI8R2SfOOM9qcJ2dq1wnQXJ0nvr6_WoFTkR0bUkY-Mza4OWA-DTV5ACuzvU3FB88FrAAQtqqsu06Cudu1p1XJ0SEleJWpqs3YySufNSe9FLbZMJ-0yiggFMmjtfMibd6upTmQaFFz1JyUVPwkSQotLX7QVUS8vTzbtK19GJrWwh2a87lDraoSjSFHSd5mSkvnCzHCIdQw48SLHQiPzz-NRH7ozXY1_gC6rMbrRtoJaltCoVA_xRv_Z4oDOVbU8-6EO6XxHDBcpGrdT6_oc0ov_Fu1-qbUMVH3_hh4uB6bzvP6iSMwzcI0ZhyZCsD7YAzw
+      Connection:
+      - keep-alive
+      Content-type:
+      - application/json
+      User-Agent:
+      - python-requests/2.28.1
+    method: GET
+    uri: https://172.17.0.2:8443/auth/admin/realms/ci-test-realm/clients/8e5f3ef5-8aa2-455a-8fa6-52c02eb2d12d/roles?briefRepresentation=False
+  response:
+    body:
+      string: '[{"id":"5369dc39-3836-4d01-bbda-ad2815bd69f6","name":"new-role","description":"here
+        should go a description.","composite":false,"clientRole":true,"containerId":"8e5f3ef5-8aa2-455a-8fa6-52c02eb2d12d","attributes":{}}]'
+    headers:
+      Cache-Control:
+      - no-cache
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '216'
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 05 Jan 2023 21:15:37 GMT
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJjOEl1WGVFT3ljVG9DWnc0RnRPSUtETXFtcENqVTJkTU1CZFZCV2xnT0NRIn0.eyJleHAiOjE2NzI5NTMzOTYsImlhdCI6MTY3Mjk1MzMzNiwianRpIjoiY2E2ZDc3ZTktOWU3Mi00MDcwLWExZmYtOTNlOGYyNDM4OWY4IiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiMWMxZmE4ZWYtMjAxZS00N2YwLTk5NDMtYWFkMmZiZmJmMWZkIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6ImU0OWE0MGIyLWQ0MzUtNGY1OC1iYTgxLTY4ZGQyZDU4NGFiNSIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.M-mUsS3jAOtUKZAUZKMxEVI8R2SfOOM9qcJ2dq1wnQXJ0nvr6_WoFTkR0bUkY-Mza4OWA-DTV5ACuzvU3FB88FrAAQtqqsu06Cudu1p1XJ0SEleJWpqs3YySufNSe9FLbZMJ-0yiggFMmjtfMibd6upTmQaFFz1JyUVPwkSQotLX7QVUS8vTzbtK19GJrWwh2a87lDraoSjSFHSd5mSkvnCzHCIdQw48SLHQiPzz-NRH7ozXY1_gC6rMbrRtoJaltCoVA_xRv_Z4oDOVbU8-6EO6XxHDBcpGrdT6_oc0ov_Fu1-qbUMVH3_hh4uB6bzvP6iSMwzcI0ZhyZCsD7YAzw
+      Connection:
+      - keep-alive
+      Content-type:
+      - application/json
+      User-Agent:
+      - python-requests/2.28.1
+    method: GET
+    uri: https://172.17.0.2:8443/auth/admin/realms/ci-test-realm/clients/8e5f3ef5-8aa2-455a-8fa6-52c02eb2d12d/roles/5369dc39-3836-4d01-bbda-ad2815bd69f6?briefRepresentation=False
+  response:
+    body:
+      string: '{"error":"Could not find role"}'
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '31'
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 05 Jan 2023 21:15:37 GMT
+    status:
+      code: 404
+      message: Not Found
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJjOEl1WGVFT3ljVG9DWnc0RnRPSUtETXFtcENqVTJkTU1CZFZCV2xnT0NRIn0.eyJleHAiOjE2NzI5NTMzOTYsImlhdCI6MTY3Mjk1MzMzNiwianRpIjoiY2E2ZDc3ZTktOWU3Mi00MDcwLWExZmYtOTNlOGYyNDM4OWY4IiwiaXNzIjoiaHR0cHM6Ly8xNzIuMTcuMC4yOjg0NDMvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiMWMxZmE4ZWYtMjAxZS00N2YwLTk5NDMtYWFkMmZiZmJmMWZkIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6ImU0OWE0MGIyLWQ0MzUtNGY1OC1iYTgxLTY4ZGQyZDU4NGFiNSIsImFjciI6IjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImFkbWluIn0.M-mUsS3jAOtUKZAUZKMxEVI8R2SfOOM9qcJ2dq1wnQXJ0nvr6_WoFTkR0bUkY-Mza4OWA-DTV5ACuzvU3FB88FrAAQtqqsu06Cudu1p1XJ0SEleJWpqs3YySufNSe9FLbZMJ-0yiggFMmjtfMibd6upTmQaFFz1JyUVPwkSQotLX7QVUS8vTzbtK19GJrWwh2a87lDraoSjSFHSd5mSkvnCzHCIdQw48SLHQiPzz-NRH7ozXY1_gC6rMbrRtoJaltCoVA_xRv_Z4oDOVbU8-6EO6XxHDBcpGrdT6_oc0ov_Fu1-qbUMVH3_hh4uB6bzvP6iSMwzcI0ZhyZCsD7YAzw
+      Connection:
+      - keep-alive
+      Content-type:
+      - application/json
+      User-Agent:
+      - python-requests/2.28.1
+    method: GET
+    uri: https://172.17.0.2:8443/auth/admin/realms/ci-test-realm/clients/8e5f3ef5-8aa2-455a-8fa6-52c02eb2d12d/roles?briefRepresentation=False
+  response:
+    body:
+      string: '[{"id":"5369dc39-3836-4d01-bbda-ad2815bd69f6","name":"new-role","description":"here
+        should go a description.","composite":false,"clientRole":true,"containerId":"8e5f3ef5-8aa2-455a-8fa6-52c02eb2d12d","attributes":{}}]'
+    headers:
+      Cache-Control:
+      - no-cache
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '216'
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 05 Jan 2023 21:15:37 GMT
+    status:
+      code: 200
+      message: OK
+version: 1
