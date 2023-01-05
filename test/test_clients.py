@@ -46,18 +46,30 @@ class TestClients(KcBaseTestCase):
         ret = clients_api.findFirstByKV('clientId', client_payload['clientId'])
         self.assertNotEqual(ret, [], 'It should return the posted client')
 
-        # test client role create
+        # test client role create, with attributes
         client_query = {'key': 'clientId', 'value': client_payload['clientId']}
         client_roles_api = clients_api.roles(client_query)
-        svc_roles_state = client_roles_api.create(
-            {"name": "new-role", "description": "here should go a description."}).isOk()
+        role_doc = {
+            "name": "new-role",
+            "description": "here should go a description.",
+            "attributes": {
+                "ci-new-role-key0": [
+                    "ci-new-role-value0"
+                ]
+            },
+            'clientRole': True,
+            'composite': False,
+        }
+        svc_roles_state = client_roles_api.create(role_doc).isOk()
         self.assertTrue(svc_roles_state, 'The client_roles service should return a 200.')
 
         client_roles = clients_api.get_roles(client_query)
         self.assertEqual(1, len(client_roles))
         new_role = client_roles[0]
-        self.assertEqual("new-role", new_role.value["name"])
-        self.assertEqual("here should go a description.", new_role.value["description"])
+        new_role_min = copy(new_role.value)
+        new_role_min.pop("id")
+        new_role_min.pop("containerId")
+        self.assertEqual(role_doc, new_role_min)
 
         # create realm role, it will be added as composite (sub-role) to client role
         role = {"name": "x_black_magic_x"}
@@ -111,19 +123,48 @@ class TestClients(KcBaseTestCase):
         # URL is corrupted
         assert str(clients_api.targets.targets["read"]).endswith("/clients")
 
-        self.assertEqual("new-role", new_role_a.value["name"])
-        self.assertEqual("here should go a description.", new_role_a.value["description"])
+        new_role_a_min = copy(new_role_a.value)
+        new_role_a_min.pop("id")
+        new_role_a_min.pop("containerId")
+        self.assertEqual(
+            {
+                'attributes': {},
+                'clientRole': True,
+                'composite': False,
+                'description': 'here should go a description.',
+                'name': 'new-role'
+            },
+            new_role_a_min,
+        )
 
         # update role
         # We need to send full payload.
         new_data = copy(new_role_a.value)
-        new_data.update({"description": "here should go a description. NEW"})
+        new_data.update({
+            "description": "here should go a description. NEW",
+            "attributes": {
+                "ci-new-role-key0": [
+                    "ci-new-role-value0"
+                ]
+            },
+        })
         client_roles_api.update(new_role_a.value["id"], new_data).isOk()
 
         # check updated state
         new_role_b = clients_api.get_roles(client_query)[0]
-        self.assertEqual("new-role", new_role_b.value["name"])
-        self.assertEqual("here should go a description. NEW", new_role_b.value["description"])
+        new_role_b_min = copy(new_role_b.value)
+        new_role_b_min.pop("id")
+        new_role_b_min.pop("containerId")
+        self.assertEqual(
+            {
+                'attributes': {'ci-new-role-key0': ['ci-new-role-value0']},
+                'clientRole': True,
+                'composite': False,
+                'description': 'here should go a description. NEW',
+                'name': 'new-role'
+            },
+            new_role_b_min,
+        )
 
     def test_client_roles_removal(self):
         client_payload = load_sample('./test/payloads/client.json')

@@ -23,6 +23,21 @@ class Role():
         return Composites(self.kc, self.value['id'])
 
 
+class ClientRoleCRUD(KeycloakCRUD):
+    """
+    For RH SSO 7.4 (KC 9.0), role with attributes cannot be created.
+    We need to first create role, then update it to add attributes.
+
+    This will not be needed any more in RH SSO 7.5.
+    """
+    def create(self, payload):
+        ret = super().create(payload)
+        if "attributes" in payload:
+            role = self.findFirstByKV("name", payload["name"])
+            self.update(role["id"], payload).isOk()
+        return ret
+
+
 class Composites:
     def __init__(self, kc, roleID):
         # Note: kc must be top-level API URL
@@ -74,7 +89,9 @@ class Clients(KeycloakCRUD):
         return child
 
     def get_roles(self, client_query):
-        roles = self.roles(client_query).findAll().resp().json()
+        # TODO maybe move briefRepresentation=False into the RestURL class?
+        # So we always get same object returned.
+        roles = self.roles(client_query).findAll(dict(briefRepresentation=False)).resp().json()
 
         assert str(self.targets.targets["read"]).endswith("/clients")
         ret = [Role(self, role) for role in roles]
@@ -84,7 +101,7 @@ class Clients(KeycloakCRUD):
 
     def roles(self, client_query):
         client_id = super().findFirst(client_query)['id']
-        client_roles_api = KeycloakCRUD.get_child(self, client_id, 'roles')
+        client_roles_api = ClientRoleCRUD.get_child(self, client_id, 'roles')
         client_roles_api = self.__hack_rest_roles_remove_and_update_endpoint(client_roles_api)
         return client_roles_api
 

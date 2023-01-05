@@ -4,9 +4,10 @@ from .kcsession import KcSession
 
 
 class KeycloakCRUD(object):
-    @staticmethod
-    def get_child(that, resource_id, resource_name):
-        kc = KeycloakCRUD()
+    @classmethod
+    def get_child(cls, that, resource_id, resource_name):
+        # .get_child in derived classes need to return instance of derived class
+        kc = cls()
         kc.token = that.token
         kc.targets = that.targets.copy()
 
