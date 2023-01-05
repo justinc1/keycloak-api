@@ -74,7 +74,9 @@ class Clients(KeycloakCRUD):
         return child
 
     def get_roles(self, client_query):
-        roles = self.roles(client_query).findAll().resp().json()
+        # TODO maybe move briefRepresentation=False into the RestURL class?
+        # So we always get same object returned.
+        roles = self.roles(client_query).findAll(dict(briefRepresentation=False)).resp().json()
 
         assert str(self.targets.targets["read"]).endswith("/clients")
         ret = [Role(self, role) for role in roles]

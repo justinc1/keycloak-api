@@ -111,19 +111,48 @@ class TestClients(KcBaseTestCase):
         # URL is corrupted
         assert str(clients_api.targets.targets["read"]).endswith("/clients")
 
-        self.assertEqual("new-role", new_role_a.value["name"])
-        self.assertEqual("here should go a description.", new_role_a.value["description"])
+        new_role_a_min = copy(new_role_a.value)
+        new_role_a_min.pop("id")
+        new_role_a_min.pop("containerId")
+        self.assertEqual(
+            {
+                'attributes': {},
+                'clientRole': True,
+                'composite': False,
+                'description': 'here should go a description.',
+                'name': 'new-role'
+            },
+            new_role_a_min,
+        )
 
         # update role
         # We need to send full payload.
         new_data = copy(new_role_a.value)
-        new_data.update({"description": "here should go a description. NEW"})
+        new_data.update({
+            "description": "here should go a description. NEW",
+            "attributes": {
+                "ci-new-role-key0": [
+                    "ci-new-role-value0"
+                ]
+            },
+        })
         client_roles_api.update(new_role_a.value["id"], new_data).isOk()
 
         # check updated state
         new_role_b = clients_api.get_roles(client_query)[0]
-        self.assertEqual("new-role", new_role_b.value["name"])
-        self.assertEqual("here should go a description. NEW", new_role_b.value["description"])
+        new_role_b_min = copy(new_role_b.value)
+        new_role_b_min.pop("id")
+        new_role_b_min.pop("containerId")
+        self.assertEqual(
+            {
+                'attributes': {'ci-new-role-key0': ['ci-new-role-value0']},
+                'clientRole': True,
+                'composite': False,
+                'description': 'here should go a description. NEW',
+                'name': 'new-role'
+            },
+            new_role_b_min,
+        )
 
     def test_client_roles_removal(self):
         client_payload = load_sample('./test/payloads/client.json')
