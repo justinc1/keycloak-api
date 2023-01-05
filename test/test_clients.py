@@ -230,12 +230,8 @@ class TestClientRoleCRUD(KcBaseTestCase):
             rr.pop("containerid", None)
         return r1 == r2
 
-    def test_ClientRoleCRUD_attributes(self, role_doc=000):
-        """
-        Ensure ClientRoleCRUD .get()/all()/... do always include also "attributes".
-        E.g. briefRepresentation=False must be used.
-        """
-        # the test role, without attributes
+    def test_ClientRoleCRUD_no_attributes(self):
+        # the test role, without attributes, very minimal
         role_doc = {
             "name": "new-role",
             "description": "here should go a description.",
@@ -244,12 +240,38 @@ class TestClientRoleCRUD(KcBaseTestCase):
             #         "ci-new-role-value0"
             #     ]
             # },
+            # 'clientRole': True,
+            # 'composite': False,
+        }
+        expected_role = copy(role_doc)
+        expected_role.update({
+            "attributes": {},
+            'clientRole': True,
+            'composite': False,
+        })
+        self.do_test_ClientRoleCRUD_attributes(role_doc, expected_role)
+
+    def test_ClientRoleCRUD_with_attributes(self):
+        # the test role, with all fields
+        role_doc = {
+            "name": "new-role",
+            "description": "here should go a description.",
+            "attributes": {
+                "ci-new-role-key0": [
+                    "ci-new-role-value0"
+                ]
+            },
             'clientRole': True,
             'composite': False,
         }
         expected_role = copy(role_doc)
-        expected_role["attributes"] = {}
+        self.do_test_ClientRoleCRUD_attributes(role_doc, expected_role)
 
+    def do_test_ClientRoleCRUD_attributes(self, role_doc, expected_role):
+        """
+        Ensure ClientRoleCRUD .get()/all()/... do always include also "attributes".
+        E.g. briefRepresentation=False must be used.
+        """
         client_clientId = "dc"
         clients_api = self.testbed.getKeycloak().build('clients', self.REALM)
         client_query = {'key': 'clientId', 'value': client_clientId}
