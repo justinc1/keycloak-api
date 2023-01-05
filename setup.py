@@ -7,7 +7,7 @@ with open('README.md') as f:
 # This call to setup() does all the work
 setup(
     name="kcapi",
-    version="1.0.36",
+    version="1.0.37",
     description="A module to automate stuff in Keycloak.",
     long_description=readme,
     long_description_content_type="text/markdown",
