@@ -13,14 +13,29 @@ class Testing_Roles_And_Groups_API(KcBaseTestCase):
     vcr_enabled = False
   
     def testing_roles_creation(self):
-        role = {"name": "magic"}
-        roles = self.kc.build("roles", self.realm)
-        state = roles.create(role).isOk() 
+        role_doc = {"name": "magic"}
+        roles_api = self.kc.build("roles", self.realm)
+        state = roles_api.create(role_doc).isOk()
         self.assertTrue(state)
 
-        ret = roles.findFirstByKV('name', 'magic')
+        ret = roles_api.findFirstByKV('name', 'magic')
 
         self.assertTrue(ret, "We should get the created role back.")
+
+    def testing_roles_creation_with_attributes(self):
+        role_doc = {
+            "name": "magic",
+            "attributes": {
+                "magic-key0": ["magic-value0"],
+            },
+        }
+        roles_api = self.kc.build("roles", self.realm)
+        state = roles_api.create(role_doc).isOk()
+        self.assertTrue(state)
+
+        role = roles_api.findFirstByKV('name', 'magic')
+
+        self.assertEqual(role_doc["attributes"], role["attributes"])
 
 
     def testing_update_roles_creation(self):
