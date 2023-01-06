@@ -33,6 +33,8 @@ class ClientRoleCRUD(KeycloakCRUD):
     This will not be needed any more in RH SSO 7.5.
     """
     def create(self, payload):
+        # "composites" are setup via separated API
+        payload.pop("composites", None)
         ret = super().create(payload)
         if "attributes" in payload:
             role = self.findFirstByKV("name", payload["name"])
