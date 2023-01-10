@@ -3,7 +3,7 @@ from collections import namedtuple
 from .rest.crud import KeycloakCRUD
 from .rest.targets import Targets
 from .rest.groups import Groups
-from .rest.roles import RolesURLBuilder
+from .rest.roles import RealmRoleCRUD, RolesURLBuilder
 from .rest.users import Users
 from .rest.realms import Realms, RealmURLBuilder
 from .rest.url import RestURL
@@ -19,7 +19,8 @@ KCResourceTypes = {
     "groups": Groups,
     "realms": Realms,
     "authentication": AuthenticationFlows,
-    "clients": Clients
+    "clients": Clients,
+    "roles": RealmRoleCRUD,
 }
 
 URLBuilders = {
