@@ -32,7 +32,7 @@ class BaseClientScopesTestCase(KcBaseTestCase):
         },
     }
 
-    def setUp(self, *, create_all=True):
+    def setUp(self):
         super().setUp(create_all=False)
 
         if self.testbed.master_realm.exist(self.testbed.realm):
@@ -193,6 +193,63 @@ class TestClientScopeScopeMappingsCRUD(BaseClientScopesTestCase):
         scope_mappings = this_client_scope_scope_mappings_api.all()
         self.assertEqual(expected_scope_mappings, scope_mappings)
 
+
+class TestClientScopeScopeMappingsRealmCRUD(BaseClientScopesTestCase):
+
+    def setUp(self):
+        super().setUp()
+        self.client_scopes_api = self.testbed.kc.build("client-scopes", self.testbed.realm)
+        client_scopes_api = self.client_scopes_api
+        client_scopes_api.create(self.client_scope_doc)
+        self.client_scope = self.client_scopes_api.findFirstByKV("name", self.client_scope_name)
+        # client_scope_id = self.client_scope["id"]
+
+    def test_list(self):
+        realm_roles_api = self.testbed.kc.build("roles", self.testbed.realm)
+        client_scopes_api = self.testbed.kc.build("client-scopes", self.testbed.realm)
+        clients_api = self.testbed.kc.build("clients", self.testbed.realm)
+        client_scope_id = self.client_scope["id"]
+        this_client_scope_scope_mappings_realm_api = client_scopes_api.scope_mappings_realm_api(client_scope_id=client_scope_id)
+
+        # -----------------------------------------
+        # List client-scope with no mappings
+        self.assertEqual([], this_client_scope_scope_mappings_realm_api.all())
+
+    def test_create_remove(self):
+        realm_roles_api = self.testbed.kc.build("roles", self.testbed.realm)
+        client_scopes_api = self.testbed.kc.build("client-scopes", self.testbed.realm)
+        clients_api = self.testbed.kc.build("clients", self.testbed.realm)
+        client_scope_id = self.client_scope["id"]
+        this_client_scope_scope_mappings_realm_api = client_scopes_api.scope_mappings_realm_api(client_scope_id=client_scope_id)
+        realm_role0_name = "offline_access"
+        realm_role0 = realm_roles_api.findFirstByKV("name", realm_role0_name)
+        realm_role0_min = copy(realm_role0)
+        realm_role0_min.pop("attributes")
+        realm_role1_name = "uma_authorization"
+        realm_role1 = realm_roles_api.findFirstByKV("name", realm_role1_name)
+        realm_role1_min = copy(realm_role1)
+        realm_role1_min.pop("attributes")
+
+        # -----------------------------------------
+        # Create 1st mapping
+        this_client_scope_scope_mappings_realm_api.create([realm_role0]).isOk()
+        self.assertEqual([realm_role0_min], this_client_scope_scope_mappings_realm_api.all())
+        # Create 2nd mapping - it is added to 1st.
+        this_client_scope_scope_mappings_realm_api.create([realm_role1]).isOk()
+        self.assertEqual(
+            sorted([realm_role0_min, realm_role1_min], key=lambda d: d['name']),
+            sorted(this_client_scope_scope_mappings_realm_api.all(), key=lambda d: d['name']),
+        )
+
+        # -----------------------------------------
+        # Remove 1st mapping, 2nd one is left
+        this_client_scope_scope_mappings_realm_api.remove(None, [realm_role0]).isOk()
+        self.assertEqual([realm_role1_min], this_client_scope_scope_mappings_realm_api.all())
+        # Remove 2nd mapping.
+        this_client_scope_scope_mappings_realm_api.remove(None, [realm_role1]).isOk()
+        self.assertEqual([], this_client_scope_scope_mappings_realm_api.all())
+
+# TODO TestClientScopeScopeMappingsClientCRUD
 
 if __name__ == '__main__':
     unittest.main()

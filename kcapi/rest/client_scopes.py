@@ -19,6 +19,16 @@ class ClientScopeCRUD(KeycloakCRUD):
         scope_mappings_api = ClientScopeScopeMappingsCRUD.get_child(self, client_scope_id, "scope-mappings")
         return scope_mappings_api
 
+    def scope_mappings_realm_api(self, *, client_scope_id):
+        scope_mappings_api = self.scope_mappings_api(client_scope_id=client_scope_id)
+        scope_mappings_realm_api = ClientScopeScopeMappingsRealmCRUD.get_child(scope_mappings_api, None, "realm")
+        return scope_mappings_realm_api
+
+    # def scope_mappings_clients_api(self, *, client_scope_id, client_id):
+    #     scope_mappings_api = self.scope_mappings_api(client_scope_id=client_scope_id)
+    #     scope_mappings_clients_api = scope_mappings_api.get_child(ClientScopeScopeMappingsClientsCRUD, "clients", client_id)
+    #     return scope_mappings_clients_api
+
 
 class ClientScopeScopeMappingsCRUD(KeycloakCRUD):
     # GET /{realm}/client-scopes/{id}/scope-mappings
@@ -34,7 +44,8 @@ class ClientScopeScopeMappingsCRUD(KeycloakCRUD):
 
 class ClientScopeScopeMappingsRealmCRUD(KeycloakCRUD):
     # GET /{realm}/client-scopes/{id}/scope-mappings/realm
-    pass
+    def update(self, obj_id=None, payload=None):
+        raise NotImplementedError()
 
 
 class ClientScopeScopeMappingsClientCRUD(KeycloakCRUD):
