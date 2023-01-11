@@ -15,6 +15,10 @@ class ClientScopeCRUD(KeycloakCRUD):
     #         self.update(role["id"], payload).isOk()
     #     return ret
 
+    def scope_mappings_api(self, *, client_scope_id):
+        scope_mappings_api = ClientScopeScopeMappingsCRUD.get_child(self, client_scope_id, "scope-mappings")
+        return scope_mappings_api
+
 
 class ClientScopeScopeMappingsCRUD(KeycloakCRUD):
     # GET /{realm}/client-scopes/{id}/scope-mappings
