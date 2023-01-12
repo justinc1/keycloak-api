@@ -3,7 +3,7 @@ from copy import copy
 
 from kcapi.rest.crud import KeycloakCRUD
 
-from kcapi.rest.client_scopes import ClientScopeScopeMappingsCRUD
+from kcapi.rest.client_scopes import ClientScopeScopeMappingsCRUD, ClientScopeProtocolMapperCRUD
 from .testbed import TestBed, KcBaseTestCase
 
 
@@ -117,7 +117,7 @@ class TestClientScopesCRUD(BaseClientScopesTestCase):
             client_scope_min,
         )
 
-    def test_scope_mappings_api(self):
+    def test_get_subobjects_api(self):
         client_scopes_api = self.testbed.kc.build("client-scopes", self.testbed.realm)
         client_scopes_api.create(self.client_scope_doc)
         client_scope = client_scopes_api.findFirstByKV("name", self.client_scope_name)
@@ -125,6 +125,8 @@ class TestClientScopesCRUD(BaseClientScopesTestCase):
 
         this_client_scope_scope_mappings_api = client_scopes_api.scope_mappings_api(client_scope_id=client_scope_id)
         self.assertIsInstance(this_client_scope_scope_mappings_api, ClientScopeScopeMappingsCRUD)
+        this_client_scope_protocol_mapper_api = client_scopes_api.protocol_mapper_api(client_scope_id=client_scope_id)
+        self.assertIsInstance(this_client_scope_protocol_mapper_api, ClientScopeProtocolMapperCRUD)
 
 
 class TestClientScopeScopeMappingsCRUD(BaseClientScopesTestCase):
@@ -250,6 +252,99 @@ class TestClientScopeScopeMappingsRealmCRUD(BaseClientScopesTestCase):
         self.assertEqual([], this_client_scope_scope_mappings_realm_api.all())
 
 # TODO TestClientScopeScopeMappingsClientCRUD
+
+
+class TestClientScopeScopeMapperCRUD(BaseClientScopesTestCase):
+    """
+    If "protocolMappers" added to client_scope_doc, then:
+    - if client_scope is created, protocolMappers are added to it.
+    - if client_scope is updated, protocolMappers are ignored.
+    """
+
+    protocol_mapper_docs = [
+        # In web UI, select "Create", mapper type == "user attribute"
+        {
+            "config": {
+                "access.token.claim": "true",
+                "claim.name": "birthdate",
+                "id.token.claim": "true",
+                "jsonType.label": "String",
+                "user.attribute": "birthdate",
+                "userinfo.token.claim": "true"
+            },
+            "consentRequired": False,
+            "name": "birthdate",
+            "protocol": "openid-connect",
+            "protocolMapper": "oidc-usermodel-attribute-mapper"
+        },
+        # In web UI, select "Add builtin", zoneinfo
+        {
+            "name": "zoneinfo",
+            "protocol": "openid-connect",
+            "protocolMapper": "oidc-usermodel-attribute-mapper",
+            "consentRequired": False,
+            "config": {
+                "userinfo.token.claim": "true",
+                "user.attribute": "zoneinfo",
+                "id.token.claim": "true",
+                "access.token.claim": "true",
+                "claim.name": "zoneinfo",
+                "jsonType.label": "String",
+            },
+        },
+    ]
+
+    def setUp(self):
+        super().setUp()
+        self.client_scopes_api = self.testbed.kc.build("client-scopes", self.testbed.realm)
+        client_scopes_api = self.client_scopes_api
+        client_scopes_api.create(self.client_scope_doc)
+        self.client_scope = self.client_scopes_api.findFirstByKV("name", self.client_scope_name)
+        # client_scope_id = self.client_scope["id"]
+
+    def test_list(self):
+        client_scopes_api = self.client_scopes_api
+        client_scope_id = self.client_scope["id"]
+        this_client_scope_protocol_mapper_api = client_scopes_api.protocol_mapper_api(client_scope_id=client_scope_id)
+
+        # -----------------------------------------
+        # List client-scope with no mappings
+        self.assertEqual([], this_client_scope_protocol_mapper_api.all())
+
+    def test_create_remove(self):
+        client_scopes_api = self.client_scopes_api
+        client_scope_id = self.client_scope["id"]
+        this_client_scope_protocol_mapper_api = client_scopes_api.protocol_mapper_api(client_scope_id=client_scope_id)
+
+        # -----------------------------------------
+        # Create 1st mapper
+        this_client_scope_protocol_mapper_api.create(self.protocol_mapper_docs[0]).isOk()
+        protocol_mappers_min = this_client_scope_protocol_mapper_api.all()
+        for pm in protocol_mappers_min:
+            pm.pop("id")
+        self.assertEqual([self.protocol_mapper_docs[0]], protocol_mappers_min)
+        # Create 2nd mapping
+        this_client_scope_protocol_mapper_api.create(self.protocol_mapper_docs[1]).isOk()
+        protocol_mappers_min = this_client_scope_protocol_mapper_api.all()
+        for pm in protocol_mappers_min:
+            pm.pop("id")
+        self.assertEqual(
+            sorted(self.protocol_mapper_docs, key=lambda d: d['name']),
+            sorted(protocol_mappers_min, key=lambda d: d['name']),
+        )
+
+        # -----------------------------------------
+        # Remove 1st mapper, 2nd one is left
+        protocol_mappers = this_client_scope_protocol_mapper_api.all()
+        protocol_mappers = sorted(protocol_mappers, key=lambda d: d['name'])
+        self.assertEqual(["birthdate", "zoneinfo"], [pm["name"] for pm in protocol_mappers])
+        # Remove 1st mapper
+        this_client_scope_protocol_mapper_api.remove(protocol_mappers[0]["id"], None).isOk()
+        self.assertEqual([protocol_mappers[1]], this_client_scope_protocol_mapper_api.all())
+        # Remove 2nd mapper.
+        this_client_scope_protocol_mapper_api.remove(protocol_mappers[1]["id"], None).isOk()
+        self.assertEqual([], this_client_scope_protocol_mapper_api.all())
+
 
 if __name__ == '__main__':
     unittest.main()
