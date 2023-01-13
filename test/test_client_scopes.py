@@ -251,7 +251,64 @@ class TestClientScopeScopeMappingsRealmCRUD(BaseClientScopesTestCase):
         this_client_scope_scope_mappings_realm_api.remove(None, [realm_role1]).isOk()
         self.assertEqual([], this_client_scope_scope_mappings_realm_api.all())
 
-# TODO TestClientScopeScopeMappingsClientCRUD
+
+class TestClientScopeScopeMappingsClientCRUD(BaseClientScopesTestCase):
+    def setUp(self):
+        super().setUp()
+        self.client_scopes_api = self.testbed.kc.build("client-scopes", self.testbed.realm)
+        client_scopes_api = self.client_scopes_api
+        client_scopes_api.create(self.client_scope_doc)
+        self.client_scope = self.client_scopes_api.findFirstByKV("name", self.client_scope_name)
+
+        client_clientId = "account"
+        clients_api = self.testbed.kc.build("clients", self.testbed.realm)
+        self.client = clients_api.findFirstByKV("clientId", client_clientId)
+        client_query = dict(key="id", value=self.client["id"])
+        this_client_roles_api = clients_api.roles(client_query)
+        self.client_role_names = sorted([
+            "view-consent",
+            "view-profile",
+        ])
+        self.client_roles = [
+            this_client_roles_api.findFirstByKV("name", role_name, params=dict(briefRepresentation=True))
+            for role_name in self.client_role_names
+        ]
+
+        # this_client_scope_scope_mappings_client_api == cssm_client_api
+        self.cssm_client_api = self.client_scopes_api.scope_mappings_client_api(
+            client_scope_id=self.client_scope["id"],
+            client_id=self.client["id"],
+        )
+
+    def test_list(self):
+        cssm_client_api = self.cssm_client_api
+
+        # -----------------------------------------
+        # List client-scope with no mappings
+        self.assertEqual([], cssm_client_api.all())
+
+    def test_create_remove(self):
+        cssm_client_api = self.cssm_client_api
+
+        # -----------------------------------------
+        # Create 1st mapping
+        cssm_client_api.create([self.client_roles[0]]).isOk()
+        assigned_client_roles = sorted(cssm_client_api.all(), key=lambda d: d['name'])
+        self.assertEqual([self.client_roles[0]], assigned_client_roles)
+        # Create 2nd mapping
+        cssm_client_api.create([self.client_roles[1]]).isOk()
+        assigned_client_roles = sorted(cssm_client_api.all(), key=lambda d: d['name'])
+        self.assertEqual(self.client_roles, assigned_client_roles)
+
+        # -----------------------------------------
+        # Remove 1st mapper, 2nd one is left
+        cssm_client_api.remove(None, [self.client_roles[0]]).isOk()
+        assigned_client_roles = sorted(cssm_client_api.all(), key=lambda d: d['name'])
+        self.assertEqual([self.client_roles[1]], assigned_client_roles)
+        # Remove 2nd mapper.
+        cssm_client_api.remove(None, [self.client_roles[1]]).isOk()
+        assigned_client_roles = sorted(cssm_client_api.all(), key=lambda d: d['name'])
+        self.assertEqual([], assigned_client_roles)
 
 
 class TestClientScopeScopeMapperCRUD(BaseClientScopesTestCase):

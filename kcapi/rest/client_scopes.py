@@ -28,10 +28,10 @@ class ClientScopeCRUD(KeycloakCRUD):
         scope_mappings_realm_api = ClientScopeScopeMappingsRealmCRUD.get_child(scope_mappings_api, None, "realm")
         return scope_mappings_realm_api
 
-    # def scope_mappings_clients_api(self, *, client_scope_id, client_id):
-    #     scope_mappings_api = self.scope_mappings_api(client_scope_id=client_scope_id)
-    #     scope_mappings_clients_api = scope_mappings_api.get_child(ClientScopeScopeMappingsClientsCRUD, "clients", client_id)
-    #     return scope_mappings_clients_api
+    def scope_mappings_client_api(self, *, client_scope_id, client_id):
+        scope_mappings_api = self.scope_mappings_api(client_scope_id=client_scope_id)
+        scope_mappings_clients_api = ClientScopeScopeMappingsClientCRUD.get_child(scope_mappings_api, "clients", client_id)
+        return scope_mappings_clients_api
 
 
 class ClientScopeScopeMappingsCRUD(KeycloakCRUD):
