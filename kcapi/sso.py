@@ -10,6 +10,7 @@ from .rest.url import RestURL
 from .rest.idp import IdentityProviderURLBuilder
 from .rest.auth_flows import AuthenticationFlows, AuthenticationFlowURLBuilder
 from .rest.clients import Clients
+from .rest.client_scopes import ClientScopeCRUD
 from .rest.recovery import add_failiure_recovery_decorator
 
 from .oid import get_well_known_info, Token
@@ -21,6 +22,7 @@ KCResourceTypes = {
     "authentication": AuthenticationFlows,
     "clients": Clients,
     "roles": RealmRoleCRUD,
+    "client-scopes": ClientScopeCRUD,
 }
 
 URLBuilders = {

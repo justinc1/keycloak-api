@@ -74,8 +74,11 @@ def new_child(kc, query, child_resource):
 class Clients(KeycloakCRUD):
 
     def secrets(self, client_query):
-        obj = super().findFirst(client_query)
-        child = KeycloakCRUD.get_child(self, obj['id'], 'client-secret')
+        if client_query["key"] == "id":
+            client_id = client_query["value"]
+        else:
+            client_id = super().findFirst(client_query)
+        child = KeycloakCRUD.get_child(self, client_id, 'client-secret')
         return child
 
     def get_roles(self, client_query):
@@ -90,7 +93,10 @@ class Clients(KeycloakCRUD):
         return ret
 
     def roles(self, client_query):
-        client_id = super().findFirst(client_query)['id']
+        if client_query["key"] == "id":
+            client_id = client_query["value"]
+        else:
+            client_id = super().findFirst(client_query)['id']
         client_roles_api = ClientRoleCRUD.get_child(self, client_id, 'roles')
         client_roles_api = self.__hack_rest_roles_remove_and_update_endpoint(client_roles_api)
         return client_roles_api

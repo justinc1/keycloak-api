@@ -79,8 +79,9 @@ class KeycloakCRUD(object):
     def findFirst(self, params):
         return self.findFirstByKV(params['key'], params['value'])
 
-    def findFirstByKV(self, key, value):
-        rows = self.findAll().verify().resp().json()
+    def findFirstByKV(self, key, value, params=None):
+        # params are REST query/GET params
+        rows = self.findAll(params).verify().resp().json()
 
         for row in rows:
             # Some components do not have Name attribute.

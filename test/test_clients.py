@@ -93,6 +93,34 @@ class TestClients(KcBaseTestCase):
         self.assertEqual(empty_composites_role, [],
                          "We should have a empty roles")
 
+    def test_client_query_by_id(self):
+        # Test shortcut for roles() and secret() endpoint -
+        # special case if client_query={"key":"id", "value": UUID}
+        client_payload = load_sample('./test/payloads/client.json')
+        clients_api = self.testbed.getKeycloak().build('clients', self.REALM)
+
+        # initial cleanup
+        ret = clients_api.removeFirstByKV('clientId', client_payload['clientId'])
+        ret = clients_api.findFirstByKV('clientId', client_payload['clientId'])
+        self.assertEqual(ret, [], 'Client should not exist before')
+        # create empty client
+        # it will have 6 default roles, and one secret.
+        svc_state = clients_api.create(client_payload).isOk()
+        self.assertTrue(svc_state, 'The service should return a 200.')
+
+        client = clients_api.findFirstByKV('clientId', client_payload['clientId'])
+        self.assertNotEqual(client, [], 'It should return the posted client')
+        client_query = {"key": "id", "value": client["id"]}
+
+        client_roles_api = clients_api.roles(client_query)
+        client_roles = client_roles_api.all()
+        self.assertEqual(0, len(client_roles))
+
+        client_secrets_api = clients_api.secrets(client_query)
+        client_secret = client_secrets_api.all()
+        self.assertEqual("secret", client_secret["type"])
+
+
     def test_client_roles_update(self):
         client_payload = load_sample('./test/payloads/client.json')
         clients_api = self.testbed.getKeycloak().build('clients', self.REALM)
