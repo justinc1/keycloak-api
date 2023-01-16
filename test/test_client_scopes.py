@@ -51,19 +51,21 @@ class TestClientScopesCRUD(BaseClientScopesTestCase):
     def test_list(self):
         client_scopes_api = self.testbed.kc.build("client-scopes", self.testbed.realm)
         client_scopes = client_scopes_api.all()
+        client_scope_names = sorted([client_scope["name"] for client_scope in client_scopes])
         self.assertEqual(9, len(client_scopes), "by default there are 9 client scopes")
         self.assertEqual(
             self.default_client_scope_name,
-            [client_scope["name"] for client_scope in client_scopes],
+            client_scope_names,
         )
 
     def test_list2(self):
         client_scopes_api = self.testbed.kc.build("client-scopes", self.testbed.realm)
         client_scopes = client_scopes_api.all()
         self.assertEqual(9, len(client_scopes), "by default there are 9 client scopes")
+        client_scope_names = sorted([client_scope["name"] for client_scope in client_scopes])
         self.assertEqual(
             self.default_client_scope_name,
-            [client_scope["name"] for client_scope in client_scopes],
+            client_scope_names,
         )
 
     def test_create(self):
