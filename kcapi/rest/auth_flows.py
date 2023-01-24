@@ -82,7 +82,10 @@ class AuthenticationExecutionsBaseCRUD(KeycloakCRUD):
         # It is inlcuded into payload only.
         return super().update(None, payload)
 
-    # TODO create() should reconfigure "requirement" to correct value.
+    # TODO create() should reconfigure "requirement" to correct value
+    # Similar to BaseRoleCRUD.create().
+    # But AuthenticationExecutionsBaseCRUD .create() payload is
+    # totaly diffrent from .update() payload.
 
 
 class AuthenticationFlows(KeycloakCRUD):
