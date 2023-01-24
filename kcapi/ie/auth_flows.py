@@ -1,4 +1,5 @@
 from copy import copy
+from kcapi.rest.auth_flows import add_remote_id_to_payload
 
 
 # def create_flow(flow):
@@ -130,7 +131,7 @@ def get_matching_flow_from_server(flow, stored_flows):
 def merge_flows(flow_from_server = {}, local_flow={}):
     changed = False
     for key in local_flow.keys():
-        if key in flow_from_server and flow_from_server[key] != local_flow[key] and key != 'flowId':
+        if key in flow_from_server and flow_from_server[key] != local_flow[key] and key != 'flowId' and key != 'id':
             flow_from_server[key] = local_flow[key]
             changed = True
 
@@ -162,6 +163,7 @@ class AuthenticationFlowsImporter():
                 else:
                     flow_min = copy(flow)
                     flow_min.pop("authenticationConfigData", {})
+                    add_remote_id_to_payload(executions_api, flow_min)
                     executions_api.update(None, flow_min).isOk()
         else:
             # Create top-level flow.

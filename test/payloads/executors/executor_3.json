@@ -15,7 +15,6 @@
         "index": 0
     },
     {
-        "id": "e3bb638f-dfb3-49c0-9f93-89dd6fbb3e2a",
         "requirement": "REQUIRED",
         "displayName": "Registration User Creation",
         "requirementChoices": [
@@ -28,7 +27,6 @@
         "index": 0
     },
     {
-        "id": "51034887-0632-49c9-9be7-59d49f7f8452",
         "requirement": "REQUIRED",
         "displayName": "Profile Validation",
         "requirementChoices": [
@@ -41,7 +39,6 @@
         "index": 1
     },
     {
-        "id": "509c3afc-b6db-40c6-ad5f-0b3cf67a641d",
         "requirement": "REQUIRED",
         "displayName": "Password Validation",
         "requirementChoices": [
@@ -54,7 +51,6 @@
         "index": 2
     },
     {
-        "id": "5fbd9479-9207-4c79-9341-0c93c654d84e",
         "requirement": "DISABLED",
         "displayName": "Recaptcha",
         "requirementChoices": [

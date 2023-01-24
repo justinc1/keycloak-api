@@ -66,7 +66,27 @@ def build_action(kc, root_node, action_type):
 
     # Sadly the REST Endpoint to update executions components inside an authentication flow is somewhat broken.
     kc.update = choose_update_strategy(kc, root_node)
-    return kc
+
+    # type cast
+    kc2 = AuthenticationExecutionsBaseCRUD()
+    kc2.token = kc.token
+    kc2.targets = kc.targets
+    return kc2
+
+
+# For child execution or  child flow
+class AuthenticationExecutionsBaseCRUD(KeycloakCRUD):
+    def update(self, obj_id=None, payload=None):
+        # PUT /{realm}/authentication/flows/{flowAlias}/executions -
+        # execution_id is NOT part of update/PUT URL
+        # It is included into payload only.
+        assert "id" in payload
+        return super().update(None, payload)
+
+    # TODO create() should reconfigure "requirement" to correct value
+    # Similar to BaseRoleCRUD.create().
+    # But AuthenticationExecutionsBaseCRUD .create() payload is
+    # totaly diffrent from .update() payload.
 
 
 class AuthenticationFlows(KeycloakCRUD):
