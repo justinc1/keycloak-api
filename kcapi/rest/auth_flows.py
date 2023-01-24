@@ -79,7 +79,8 @@ class AuthenticationExecutionsBaseCRUD(KeycloakCRUD):
     def update(self, obj_id=None, payload=None):
         # PUT /{realm}/authentication/flows/{flowAlias}/executions -
         # execution_id is NOT part of update/PUT URL
-        # It is inlcuded into payload only.
+        # It is included into payload only.
+        assert "id" in payload
         return super().update(None, payload)
 
     # TODO create() should reconfigure "requirement" to correct value
